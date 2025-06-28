@@ -18,7 +18,7 @@
             color: #374151;
             line-height: 1.6;
             margin: 0;
-            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+            scroll-behavior: smooth;
         }
         /* Main content container with shadow and rounded corners */
         .container {
@@ -272,13 +272,12 @@
     <nav class="top-nav">
         <div class="text-xl font-bold text-gray-800 mb-2 md:mb-0">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
-            <a href="#about-me-section" class="top-nav-link active">Homepage 首页 / 个人信息</a>
-            <a href="#internship-section" class="top-nav-link">Internships 实习</a>
-            <a href="#research-publications-section" class="top-nav-link">Publications 出版物 / 科研产出</a>
-            <a href="#education-section" class="top-nav-link">Education 教育</a>
-            <a href="#skills-section" class="top-nav-link">Skills 技能</a>
-            <a href="#projects-section" class="top-nav-link">Projects 项目</a>
-            <a href="#patents-section" class="top-nav-link">Patents 专利</a>
+            <a href="index.html" class="top-nav-link active">Homepage 首页 / 个人信息</a>
+            <a href="internship.html" class="top-nav-link">Internships 实习</a>
+            <a href="research.html" class="top-nav-link">Publications 出版物 / 科研产出</a>
+            <a href="education.html" class="top-nav-link">Education 教育</a>
+            <a href="skills.html" class="top-nav-link">Skills 技能</a>
+            <!-- Removed separate Projects and Patents links as they are now under research.html -->
         </div>
     </nav>
 
@@ -288,7 +287,7 @@
             <img src="https://placehold.co/150x150/e0f2fe/1e40af?text=Your+Photo" alt="Profile Photo" class="profile-pic">
             <h2 class="text-2xl font-bold text-gray-900 mb-2">赵博</h2>
             <p class="text-gray-700 text-lg mb-4">香港中文大学(深圳) - 人工智能与机器人</p>
-            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>中国南京</p>
+            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
 
             <div class="contact-info">
                 <div class="contact-item">
@@ -303,15 +302,6 @@
                     <i class="fab fa-github"></i>
                     <a href="https://github.com/alex036225" target="_blank" class="text-gray-700">Github</a>
                 </div>
-                <!-- Adding placeholders for social media if available -->
-                <div class="contact-item">
-                    <i class="fab fa-twitter"></i>
-                    <a href="#" target="_blank" class="text-gray-700">Twitter (待补充)</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="#" target="_blank" class="text-gray-700">LinkedIn (待补充)</a>
-                </div>
                 <div class="contact-item">
                     <i class="fas fa-graduation-cap"></i>
                     <a href="#" target="_blank" class="text-gray-700">Google Scholar (待补充)</a>
@@ -319,7 +309,7 @@
             </div>
         </div>
 
-        <!-- Right Column: Main Content Sections -->
+        <!-- Right Column: Main Content Sections (Personal Info only for index.html) -->
         <div class="right-col">
             <!-- Section: 个人信息 (About Me) -->
             <section id="about-me-section" class="mb-10">
@@ -338,183 +328,6 @@
                 <p class="intro-text">
                     我正在积极寻找 LLM 应用、自然语言处理以及多模态融合方向的研究机会。如果你有任何合作或职位推荐，欢迎联系我。
                 </p>
-
-                <!-- Feature Cards -->
-                <div class="card-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-robot"></i>
-                        <h3>AI Researcher AI研究员</h3>
-                        <ul class="text-left text-sm text-gray-600 mt-2">
-                            <li><i class="fas fa-flask mr-2 text-blue-400"></i>研究重点: LLMs & 多模态 rPPG</li>
-                            <li><i class="fas fa-building mr-2 text-blue-400"></i>曾于顶尖实验室实习</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-brain"></i>
-                        <h3>Algorithm Designer 算法设计师</h3>
-                        <ul class="text-left text-sm text-gray-600 mt-2">
-                            <li><i class="fas fa-cogs mr-2 text-blue-400"></i>模型构建与算法设计</li>
-                            <li><i class="fas fa-code mr-2 text-blue-400"></i>熟练 Python, Pytorch, C++, Java</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-trophy"></i>
-                        <h3>Award Winner 获奖者</h3>
-                        <ul class="text-left text-sm text-gray-600 mt-2">
-                            <li><i class="fas fa-award mr-2 text-blue-400"></i>曾获学业奖学金</li>
-                            <li><i class="fas fa-medal mr-2 text-blue-400"></i>数学建模国三奖</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section: 实习经历 (Internship Experience) -->
-            <section id="internship-section" class="mb-10">
-                <h2 class="section-title">实习经历 / Internships</h2>
-                <div class="ml-5">
-                    <h3 class="subsection-title">大湾区大学</h3>
-                    <p class="text-gray-700">访问学生</p>
-                    <p class="meta-info">2024.12 - 2025.8</p>
-                    <ul class="project-contribution-list mt-2">
-                        <li>研究方向: 多模态大模型, 域泛化等</li>
-                        <li>主要职责: 作为访问学生, 深入参与国家四青人才实验室及省重点实验室的前沿科研项目, 聚焦多模态大模型和域泛化等前沿方向的研究与开发。</li>
-                        <li>核心贡献: 负责多模态数据预处理、模型构建与算法设计, 直接促成了多篇高水平科研论文的产出, 包括NeurIPS (CCF A类会议) 在投。此外, 由我们模型驱动的智能机器已成功在世界机器人嘉年华展出, 展现了科研成果的实际落地能力。</li>
-                        <li>技术应用: 在研究过程中, 熟练运用 Pytorch 深度学习框架、Python 编程语言以及 Slurm 集群系统进行算法开发与模型训练。</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section: 科研产出 (Research & Publications) -->
-            <section id="research-publications-section" class="mb-10">
-                <h2 class="section-title">科研产出 / Research & Publications</h2>
-                <div class="ml-5">
-                    <!-- PhysLLM Project -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <p class="item-title">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</p>
-                        <p class="meta-info">状态: 在投, NeurIPS, CCFA, 共同一作</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>研究背景: 远程光电容积描记术(PPG)在复杂环境(光照、运动伪影)下鲁棒性差, 现有方法难以有效融合多模态信息并捕捉长时序依赖。</li>
-                            <li>研究贡献:
-                                <ul class="ml-4">
-                                    <li>提出 PhysLLM, 一个结合 LLMs 与 PPG 专用组件的协同优化框架, rPPG 领域第一个大模型。</li>
-                                    <li>设计双域平稳算法(DDS), 在时频域对 PPG 信号自适应平滑, 有效降噪并增强信号稳定性。</li>
-                                    <li>设计视觉聚合器(VA), 高效融合多尺度视觉特征, 捕捉模态内复杂关系。</li>
-                                    <li>文本原型引导(TPG)策略将生理特征投影到 LLM 语义空间, 弥合表示鸿沟, 实现跨模态对齐。</li>
-                                    <li>通过生理线索感知提示学习, 利用 LLaVA 自动生成视觉/任务/统计线索, 并自适应融合, 增强模型对复杂场景的适应性。</li>
-                                </ul>
-                            </li>
-                            <li>论文链接: <a href="https://arxiv.org/abs/2505.03621" target="_blank">https://arxiv.org/abs/2505.03621</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Towards Universal rPPG Project -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <p class="item-title">Towards Universal rPPG: Optimal Transport-Based Multi-Source Domain Generalization for Remote Physiological Measurement</p>
-                        <p class="meta-info">状态: 在投, NeurIPS, CCFA, 独立一作</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>背景挑战: 远程光电容积描记术(rPPG)是一种非接触式生理信号测量技术, 在健康监测中潜力巨大。然而, 现有方法易受光照、运动伪影等干扰, 且在处理长时序依赖和多模态信息融合方面存在局限。大型语言模型(LLMs)在捕捉长距离依赖方面表现出色, 但在 rPPG 连续、噪声敏感的信号特性面前仍面临挑战。因此, 迫切需要一种能有效整合视觉和文本信息、提升 rPPG 鲁棒性的先进框架。</li>
-                            <li>研究贡献:
-                                <ul class="ml-4">
-                                    <li>提出一个基于最优传输理论的多源领域泛化框架, 旨在提升端到端 rPPG 的泛化能力。</li>
-                                    <li>创新引入一个即插即用的 OT 模块 OTAdapter, 显式对齐多个源领域间的特征分布, 从而增强模型的泛化性。</li>
-                                    <li>提供理论依据: 推导了一个新的基于 OT 差异的泛化边界, 从理论上将源领域间的差异与未见目标领域的预期误差联系起来。</li>
-                                    <li>结合大型语言模型(LLMs)与 rPPG, 并利用 OTAdapter 进行集成, 进一步增强了模型在复杂真实世界环境中的适应性和稳定性。</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- CardiacMamba Project -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <p class="item-title">CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement</p>
-                        <p class="meta-info">状态: 在投, JBHI, JCR Q1, 三作</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>背景挑战: 心率(HR)估计对于健康监测至关重要, 而远程光电容积描记术(PPG)提供了一种非侵入性解决方案。然而, 传统的单一模态方法(如基于RGB摄像机或射频(RF)雷达)在平衡鲁棒性和准确性方面面临挑战, 这主要受光照变化、运动伪影和肤色偏差等因素的影响。例如, RGB信号易受环境光照影响, 而RF信号则对横向运动敏感且数据获取难度较大。现有的多模态融合策略在跨模态特征对齐、频域特征利用以及处理不同人口群体(如肤色差异)的公平性方面仍存在不足。因此, 迫切需要一种能够有效融合 RGB 视觉信息和 RF 雷达信号互补优势的框架, 以提升 rPPG 在复杂真实世界场景中的准确性、鲁棒性和公平性。</li>
-                            <li>研究贡献:
-                                <ul class="ml-4">
-                                    <li>提出 CardiacMamba, 一个融合 RGB 视频和 RF 传感器数据的多模态框架, 用于精确的 rPPG 心率估计。</li>
-                                    <li>创新性地引入了时域差分 Mamba 模块(TDMM)和分叉差分卷积融合(BDCF)进行双层特征提取与对齐, 捕捉动态信号变化并增强特征表示。</li>
-                                    <li>核心在于双向特征交互阶段, 通过双向状态空间模型(Bi-SSM)共享状态转换矩阵, 实现 RGB 和 RF 模态的协同建模, 有效整合跨模态信息并提升全局上下文感知。</li>
-                                    <li>设计了通道式快速傅里叶变换(CFFT)进行双向特征融合, 将特征映射到频域, 自适应增强与心率相关的频带并抑制噪声, 从而提升心率估计的准确性和周期性检测能力。</li>
-                                </ul>
-                            </li>
-                            <li>成果: CardiacMamba 在 EquiPleth 数据集上展现了最先进的性能, 显著缓解了肤色偏差问题, 并在模态缺失场景下保持了强大的鲁棒性, 有效推动了 rPPG 技术在医疗领域的可靠应用。</li>
-                            <li>论文链接: <a href="https://arxiv.org/abs/2502.13624" target="_blank">https://arxiv.org/abs/2502.13624</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- NMI Project (In preparation) -->
-                    <div class="mb-6">
-                        <p class="item-title">NMI</p>
-                        <p class="meta-info">状态: 筹备, Nature Machine Intelligence, 一作</p>
-                        <!-- No detailed background/contribution provided in original PDF for NMI -->
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section: 项目经历 (Projects) -->
-            <section id="projects-section" class="mb-10">
-                <h2 class="section-title">项目经历 / Projects</h2>
-                <div class="ml-5">
-                    <!-- Information Diffusion Model Project -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <p class="item-title">信息扩散模型建立</p>
-                        <p class="meta-info">2023.06 (排名: 1/133)</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>探究信息扩散能力, 旨在定量分析病毒式市场营销、谣言控制等实际场景;</li>
-                            <li>建立合适的信息扩散模型, 利用 Java 对信息节点激活机制进行代码实现;</li>
-                            <li>对数据集节点的影响能力进行初步排序, 依据单点的影响力制定合理的种子节点选择策略。</li>
-                        </ul>
-                    </div>
-
-                    <!-- Quantum Annealing Project -->
-                    <div class="mb-6">
-                        <p class="item-title">基于量子退火算法——QUBO 模型的信用评分卡组合优化问题 (国三)</p>
-                        <p class="meta-info">2023.04</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>结合量子退火算法与 QUBO 模型, 列出数学模型所需数学方程;</li>
-                            <li>使用 pyqubo 库建立 QUBO 模型, 将数学模型进行代码实现, 利用 neal 库中的退火算法函数求解模型;</li>
-                            <li>完成 10000 字论文一篇, 获得 Mathorcup 数模竞赛国家三等奖。</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section: 专利成果 (Patents) -->
-            <section id="patents-section" class="mb-10">
-                <h2 class="section-title">专利成果 / Patents</h2>
-                <ul class="project-contribution-list ml-5">
-                    <li>基于大语言模型的跨模态远程生理信号感知 (审核, 发明专利)</li>
-                    <li>基于时频大语言模型的框架增强时间序列方法 (审核, 发明专利)</li>
-                    <li>基于最优运输理论的鲁棒远程生理信号感知 (审核, 发明专利)</li>
-                </ul>
-            </section>
-
-            <!-- Section: 教育背景 (Education) - Moved to later, but still present -->
-            <section id="education-section" class="mb-10">
-                <h2 class="section-title">教育背景 / Education</h2>
-                <div class="ml-5">
-                    <h3 class="subsection-title">香港中文大学(深圳)</h3>
-                    <p class="text-gray-700">人工智能与机器人, 硕士</p>
-                    <p class="meta-info">2025.09 - 2027.06</p>
-
-                    <h3 class="subsection-title">山东大学</h3>
-                    <p class="text-gray-700">数学与应用数学, 本科</p>
-                    <p class="meta-info">GPA: 87.42/100</p>
-                    <ul class="project-contribution-list mt-2">
-                        <li>荣誉: 连续三年获得学业奖学金</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section: 技能 (Skills) - Moved to later, but still present -->
-            <section id="skills-section" class="mb-10">
-                <h2 class="section-title">技能 / Skills</h2>
-                <ul class="project-contribution-list ml-5">
-                    <li>编程语言: Python(常用), C++, Java</li>
-                    <li>熟悉 Pytorch 深度学习环境</li>
-                    <li>熟悉 Linux 操作系统及 Slurm 集群系统</li>
-                </ul>
             </section>
         </div>
     </div>
