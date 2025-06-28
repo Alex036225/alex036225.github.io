@@ -292,9 +292,7 @@
     <nav class="top-nav">
         <div class="text-xl font-bold text-gray-800 mb-2 md:mb-0">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
-            <a href="#education-section" class="top-nav-link">Education 教育</a>
-            <a href="#skills-section" class="top-nav-link">Skills 技能</a>
-            <a href="#research-focus-section" class="top-nav-link">Research Focus 研究方向</a>
+            <a href="#about-me-section" class="top-nav-link">Homepage 首页 / 个人信息</a>
             <a href="#internship-section" class="top-nav-link">Internships 实习</a>
             <a href="#research-publications-section" class="top-nav-link">Publications 出版物 / 科研产出</a>
             <a href="#projects-section" class="top-nav-link">Projects 项目经历</a>
@@ -330,8 +328,17 @@
         </div>
 
         <div class="right-col">
-            <section id="education-section" class="mb-10 section-content">
-                <h2 class="section-title">教育 / Education</h2>
+            <section id="about-me-section" class="mb-10 section-content">
+                <h2 class="section-title">个人信息 / About Me</h2>
+                <p class="intro-text">
+                    你好，我是赵博。目前我是香港中文大学（深圳）人工智能与机器人方向的硕士研究生。本科毕业于山东大学数学与应用数学专业。
+                </p>
+
+                <p class="intro-text">
+                    我正在积极寻找 LLM 应用、计算机视觉以及多模态融合方向的研究机会。如果你有任何合作或职位推荐，欢迎联系我。
+                </p>
+
+                <h3 class="subsection-title">教育 / Education</h3>
                 <div class="ml-5">
                     <h3 class="subsection-title">香港中文大学(深圳)</h3>
                     <p class="text-gray-700">人工智能与机器人, 硕士</p>
@@ -344,10 +351,8 @@
                         <li>荣誉: 连续三年获得学业奖学金</li>
                     </ul>
                 </div>
-            </section>
 
-            <section id="skills-section" class="mb-10 section-content">
-                <h2 class="section-title">技能 / Skills</h2>
+                <h3 class="subsection-title">技能 / Skills</h3>
                 <div class="ml-5">
                     <h3 class="subsection-title">编程语言</h3>
                     <ul class="project-contribution-list mt-2">
@@ -359,11 +364,8 @@
                         <li>熟悉Linux操作系统及Slurm 集群系统</li>
                     </ul>
                 </div>
-            </section>
-            
-            <section id="research-focus-section" class="mb-10 section-content">
-                <h2 class="section-title">研究方向 / Research Focus</h2>
-                <div class="highlight-box">
+
+                <div class="highlight-box mt-10">
                     <p>
                         <i class="fas fa-quote-left text-blue-500 mr-2"></i>
                         我的研究重点是利用 <span class="font-semibold">大型语言模型 (LLMs)</span> 来解决跨模态生理信号传感领域的复杂问题。这包括在非接触式心率测量 (rPPG) 中，有效融合多模态信息、捕捉长时序依赖，以及提升模型在复杂真实世界环境中的适应性和稳定性。
@@ -557,16 +559,14 @@
                 sectionObserver.observe(section);
             });
 
-            // Initial setup: show the "Education" section (first visible section) and set its link as active
-            // Find the first section element to be displayed initially
-            const firstSectionElement = document.querySelector('.right-col .section-content');
-            if (firstSectionElement) {
-                const initialSectionId = '#' + firstSectionElement.id;
-                const initialNavLink = document.querySelector(`.top-nav-link[href="${initialSectionId}"]`);
+            // Initial setup: show the "About Me" section (first visible section) and set its link as active
+            const initialSectionId = window.location.hash || '#about-me-section';
+            const initialNavLink = document.querySelector(`.top-nav-link[href="${initialSectionId}"]`);
+            if (initialNavLink) {
                 setActiveLink(initialNavLink);
                 showSection(initialSectionId); // Ensure the initial section is active and visible
             } else {
-                // Fallback if no sections are found (unlikely, but good for robustness)
+                // Fallback to the first section if no hash or invalid hash
                 setActiveLink(navLinks[0]);
                 showSection(navLinks[0].getAttribute('href'));
             }
