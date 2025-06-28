@@ -93,7 +93,7 @@
             color: #4b5563;
         }
         .contact-item i {
-                color: #3b82f6;
+            color: #3b82f6;
             width: 24px;
             text-align: center;
             margin-right: 10px;
@@ -466,7 +466,20 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.top-nav-link');
-            
+            const sections = document.querySelectorAll('.right-col section');
+
+            // Function to hide all sections and show the active one
+            function showSection(targetId) {
+                sections.forEach(section => {
+                    // Check if the section's ID matches the target ID (without the '#')
+                    if ('#' + section.id === targetId) {
+                        section.style.display = 'block'; // Show the target section
+                    } else {
+                        section.style.display = 'none'; // Hide other sections
+                    }
+                });
+            }
+
             // Function to set the active class on navigation links
             function setActiveLink(clickedLink) {
                 navLinks.forEach(link => {
@@ -478,13 +491,19 @@
             // Add click event listeners to navigation links
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
-                    // event.preventDefault(); // Removed to allow default scrolling behavior
+                    event.preventDefault(); // Prevent default anchor link behavior (scrolling)
+                    const targetId = this.getAttribute('href'); // Get the target section ID
+                    showSection(targetId); // Show the target section
                     setActiveLink(this); // Set active class for the clicked link
+
+                    // Update the URL hash without scrolling the page
+                    window.history.pushState(null, '', targetId);
                 });
             });
 
-            // Set the active link on page load based on the URL hash, or default to "About Me"
+            // Initial display: show the section based on the URL hash or default to "About Me"
             const initialSectionId = window.location.hash || '#about-me-section';
+            showSection(initialSectionId);
             const initialNavLink = document.querySelector(`.top-nav-link[href="${initialSectionId}"]`);
             if (initialNavLink) {
                 setActiveLink(initialNavLink);
