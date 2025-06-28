@@ -4,83 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赵博 - 个人简历</title>
+    <!-- Tailwind CSS CDN for modern styling -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts - Inter for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* General body styles, setting font, background, and default text color */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #374151;
+            background-color: #f3f4f6; /* Light gray background */
+            color: #374151; /* Dark gray text */
             line-height: 1.6;
+            margin: 0;
+            padding: 20px; /* Padding around the whole page */
         }
+
+        /* Main container for the resume content, centered with shadow and rounded corners */
         .container {
             max-width: 960px;
-            margin: 40px auto;
+            margin: 40px auto; /* Center the container horizontally */
             background-color: #ffffff;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            padding: 30px 40px; /* More padding inside the container */
         }
+
+        /* Header section styling for personal information */
         .header {
-            border-bottom: 2px solid #e5e7eb;
+            border-bottom: 2px solid #e5e7eb; /* Subtle bottom border */
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
+        .header h1 {
+            color: #1f2937; /* Darker title color */
+            font-size: 2.5rem; /* Larger font size for name */
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            color: #4b5563; /* Slightly darker contact info */
+            font-size: 1.125rem; /* Slightly larger for contact info */
+        }
+
+        /* Styling for main section titles (e.g., 教育背景, 科研经历) */
         .section-title {
-            font-weight: 700;
-            font-size: 1.625rem; /* ~26px */
-            color: #1f2937;
+            font-weight: 700; /* Bold */
+            font-size: 1.75rem; /* Larger font size */
+            color: #1f2937; /* Dark gray */
             margin-bottom: 20px;
             position: relative;
-            padding-left: 20px;
+            padding-left: 25px; /* Space for the accent bar */
+            border-bottom: 1px solid #d1d5db; /* Light gray line under title */
+            padding-bottom: 10px;
+            margin-top: 40px; /* More space above sections */
         }
+        /* Vertical accent bar next to section titles */
         .section-title::before {
             content: '';
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 8px;
-            height: 100%;
+            width: 8px; /* Width of the accent bar */
+            height: 80%; /* Height of the accent bar relative to title */
             background-color: #3b82f6; /* Blue-500 */
-            border-radius: 2px;
+            border-radius: 2px; /* Slightly rounded corners for the bar */
         }
+
+        /* Styling for sub-section titles (e.g., 大学名称) */
         .subsection-title {
-            font-weight: 600;
-            font-size: 1.125rem; /* ~18px */
+            font-weight: 600; /* Semi-bold */
+            font-size: 1.25rem; /* ~20px */
             color: #1f2937;
             margin-top: 1.5rem;
             margin-bottom: 0.5rem;
         }
+
+        /* Styling for individual item titles (e.g., 项目名称, 论文名称) */
         .item-title {
             font-weight: 600;
-            color: #1f2937;
+            color: #2563eb; /* A darker blue for prominent items */
             margin-bottom: 0.25rem;
+            font-size: 1.05rem;
         }
+
+        /* General list styling */
         ul {
-            list-style: disc;
-            margin-left: 20px;
-            padding-left: 0;
-        }
-        li {
-            margin-bottom: 0.5rem;
-        }
-        .meta-info {
-            color: #6b7280;
-            font-size: 0.9em;
-        }
-        .project-contribution-list {
             list-style: none; /* Remove default disc */
             margin-left: 0;
             padding-left: 0;
         }
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5em; /* Indent for custom bullet */
+            text-indent: -1.5em; /* Negative indent for custom bullet */
+        }
+
+        /* Meta information (dates, status) */
+        .meta-info {
+            color: #6b7280; /* Gray text */
+            font-size: 0.9em;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Custom bullet points for contribution lists */
         .project-contribution-list li::before {
-            content: '• '; /* Custom bullet point */
+            content: '•'; /* Custom bullet point character */
             color: #3b82f6; /* Blue-500 */
             font-weight: bold;
             display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+            width: 1em; /* Space for the bullet */
+            padding-right: 0.5em;
+        }
+
+        /* Link styling */
+        a {
+            color: #3b82f6; /* Blue-500 */
+            text-decoration: none;
+            transition: color 0.2s ease-in-out; /* Smooth transition for hover */
+        }
+        a:hover {
+            color: #1e40af; /* Darker blue on hover */
+            text-decoration: underline;
+        }
+
+        /* Print-specific styles for pagination */
+        @media print {
+            body {
+                background-color: #ffffff; /* White background for print */
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none; /* Remove shadow in print */
+                margin: 0;
+                padding: 20mm; /* A4 page margins */
+                max-width: none; /* Use full width for print */
+                width: 210mm; /* A4 width */
+                min-height: 297mm; /* A4 height */
+                page-break-after: always; /* Force page break after each container if it gets too long */
+            }
+            /* Force page breaks after each major section for better readability in print */
+            section {
+                page-break-before: auto; /* Allow breaks within sections if needed */
+                page-break-after: avoid; /* Avoid breaking immediately after a section heading */
+            }
+            .section-title {
+                page-break-after: avoid; /* Keep title with the content below it */
+            }
+            /* Ensure list items don't break across pages awkwardly */
+            ul, ol {
+                page-break-inside: avoid;
+            }
+            li {
+                page-break-inside: avoid;
+            }
+            a[href]:after {
+                content: " (" attr(href) ")"; /* Show link URLs in print */
+            }
+            /* Hide non-essential elements if any, for clean print */
+            /* .some-web-only-element { display: none; } */
         }
     </style>
 </head>
@@ -88,8 +170,8 @@
     <div class="container">
         <!-- Header Section -->
         <header class="header text-center">
-            <h1 class="text-4xl font-bold text-gray-900 mb-2">赵博</h1>
-            <p class="text-lg text-gray-600">电话: 15771116225 | 邮箱: 3057018496@qq.com</p>
+            <h1 class="font-bold text-gray-900 mb-2">赵博</h1>
+            <p class="text-gray-600">电话: 15771116225 | 邮箱: 3057018496@qq.com</p>
         </header>
 
         <!-- Education Background Section -->
@@ -140,7 +222,7 @@
             <h2 class="section-title">科研经历</h2>
             <div class="ml-5">
                 <!-- PhysLLM Project -->
-                <div class="mb-6">
+                <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                     <p class="item-title">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</p>
                     <p class="meta-info">状态: 在投, NeurIPS, CCFA, 共同一作</p>
                     <ul class="project-contribution-list mt-2">
@@ -159,7 +241,7 @@
                 </div>
 
                 <!-- Towards Universal rPPG Project -->
-                <div class="mb-6">
+                <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                     <p class="item-title">Towards Universal rPPG: Optimal Transport-Based Multi-Source Domain Generalization for Remote Physiological Measurement</p>
                     <p class="meta-info">状态: 在投, NeurIPS, CCFA, 独立一作</p>
                     <ul class="project-contribution-list mt-2">
@@ -176,7 +258,7 @@
                 </div>
 
                 <!-- CardiacMamba Project -->
-                <div class="mb-6">
+                <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                     <p class="item-title">CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement</p>
                     <p class="meta-info">状态: 在投, JBHI, JCR Q1, 三作</p>
                     <ul class="project-contribution-list mt-2">
@@ -208,7 +290,7 @@
             <h2 class="section-title">项目经历</h2>
             <div class="ml-5">
                 <!-- Information Diffusion Model Project -->
-                <div class="mb-6">
+                <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                     <p class="item-title">信息扩散模型建立</p>
                     <p class="meta-info">2023.06 (排名: 1/133)</p>
                     <ul class="project-contribution-list mt-2">
