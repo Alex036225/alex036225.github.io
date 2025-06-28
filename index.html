@@ -231,7 +231,7 @@
             background: linear-gradient(to right, #2b4c6e, #3a5c7f);
             border-left-color: #3f88c5;
             color: #e0e6ed;
-            box-shadow: 0 6psx 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         /* 特性卡片网格 */
@@ -761,7 +761,7 @@
 </head>
 <body class="antialiased">
     <nav class="top-nav">
-        <div class="text-2xl font-bold text-gray-800 mb-3 md:mb-0 dark:text-gray-200 transition-colors duration-500">赵博</div>
+        <div class="text-2xl font-bold text-gray-900 mb-3 md:mb-0 dark:text-gray-200 transition-colors duration-500">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
             <a href="#about-me-section" class="top-nav-link active">首页 / 个人信息</a>
             <a href="#internship-section" class="top-nav-link">实习经历</a>
@@ -779,8 +779,8 @@
         <div class="left-col text-center">
             <img id="profile-photo" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/picture.jpg" alt="Profile Photo" class="profile-pic">
             
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-2 mt-4 dark:text-gray-100 transition-colors duration-500">赵博</h2>
-            <p class="text-gray-600 mb-4 text-lg dark:text-gray-300 transition-colors duration-500"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-2 mt-4 dark:text-white transition-colors duration-500">赵博</h2>
+            <p class="text-gray-800 mb-4 text-lg dark:text-gray-200 transition-colors duration-500"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
 
             <div class="contact-info">
                 <div class="contact-item">
@@ -854,6 +854,10 @@
                             <i class="fas fa-chart-line"></i>
                             <h3>研究方向</h3>
                             <p>多模态大模型, 域泛化, rPPG</p>
+                            <!-- LLM 触发按钮 -->
+                            <button class="llm-trigger-button mt-4" data-research-topic="多模态大模型, 域泛化, rPPG">
+                                <i class="fas fa-magic mr-2"></i> 查看 LLM 洞察
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -922,7 +926,7 @@
                             <ul class="project-contribution-list mt-2">
                                 <li>背景挑战: 传统 rPPG 单模态方法受环境、运动影响，多模态融合存在特征对齐、频域利用和公平性不足。</li>
                                 <li>研究贡献: 提出 CardiacMamba 融合 RGB-RF 数据，引入时域差分 Mamba 模块(TDMM)和分叉差分卷积融合(BDCF)进行双层特征提取与对齐，通过双向状态空间模型(Bi-SSM)协同建模，设计通道式快速傅里叶变换(CFFT)进行双向特征融合。</li>
-                                <li>成果: 在 EquiPleth 数据集上性能卓越，缓解肤色偏差，模态缺失场景下鲁棒性强。</li>
+                                <li>成果: 在 EquiPleth 数据集上展现了最先进的性能，显著缓解了肤色偏差问题，并在模态缺失场景下保持了强大的鲁棒性，有效推动了 rPPG 技术在医疗领域的可靠应用。</li>
                                 <li>论文链接: <a href="https://arxiv.org/abs/2502.13624" target="_blank" class="text-blue-600 hover:underline dark:text-blue-300">https://arxiv.org/abs/2502.13624</a></li>
                             </ul>
                         </div>
@@ -1029,15 +1033,15 @@
 
             // 初始化暗黑模式：检查 localStorage 或系统偏好
             function initDarkMode() {
-                const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
                 const storedTheme = localStorage.getItem('theme');
 
-                if (storedTheme === 'dark' || (storedTheme === null && prefersDarkScheme)) {
+                // 默认设置为亮色模式
+                if (storedTheme === 'dark') { // 如果 localStorage 明确指定了暗黑模式
                     htmlElement.classList.add('dark');
-                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // 日间模式图标
-                } else {
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // 显示太阳图标（切换到亮色）
+                } else { // 否则默认使用亮色模式，或者如果 localStorage 为 'light' 或空
                     htmlElement.classList.remove('dark');
-                    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // 夜间模式图标
+                    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // 显示月亮图标（切换到暗黑）
                 }
             }
 
