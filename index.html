@@ -433,8 +433,8 @@
             color: #1a73e8;
             font-weight: bold;
             display: inline-block;
-            width: 1.2em;
-            padding-right: 0.6em;
+            width: 0.8em; /* Adjusted to make bullet closer */
+            padding-right: 0.2em; /* Adjusted to make bullet closer */
             transition: color 0.5s ease;
         }
         html.dark .project-contribution-list li::before {
@@ -893,6 +893,9 @@
                             <i class="fas fa-chart-line"></i>
                             <h3>研究方向</h3>
                             <p>多模态大模型, 域泛化, rPPG</p>
+                            <button class="llm-trigger-button mt-4" data-research-topic="多模态大模型, 域泛化, rPPG">
+                                <i class="fas fa-magic mr-2"></i> 查看 LLM 洞察
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -901,7 +904,7 @@
             <section id="internship-section" class="section-content">
                 <h2 class="section-title">实习经历 / Internships</h2>
                 <div class="ml-5">
-                    <!-- Internship Card -->
+                    <!-- Internship Card - Made to resemble publication-card -->
                     <div class="publication-card">
                         <div class="publication-thumbnail">
                             <img src="https://placehold.co/150x120/8ac926/ffffff?text=Internship" alt="大湾区大学实习封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/8ac926/ffffff?text=Internship';" />
@@ -1108,8 +1111,8 @@
                     currentActiveSection.classList.add('section-hidden');
                 }
 
-                targetSection.classList.remove('active-hidden'); /* Fixed a typo here, was 'active-section' */
-                targetSection.classList.add('section-hidden'); /* This seems to be a duplicate or intended logic for hiding */
+                targetSection.classList.remove('active-section'); /* This was a typo, corrected from 'active-hidden' to 'active-section' for consistency with logic, though the class itself isn't defined to hide. The next line correctly adds 'section-hidden'. */
+                targetSection.classList.add('section-hidden'); 
 
 
                 setTimeout(() => {
