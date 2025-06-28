@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赵博 - 个人主页</title>
-    <!-- Tailwind CSS CDN for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Base body styling */
@@ -96,7 +93,7 @@
             color: #4b5563;
         }
         .contact-item i {
-            color: #3b82f6;
+                color: #3b82f6;
             width: 24px;
             text-align: center;
             margin-right: 10px;
@@ -267,22 +264,19 @@
     </style>
 </head>
 <body class="antialiased">
-    <!-- Top Navigation Bar -->
     <nav class="top-nav">
         <div class="text-xl font-bold text-gray-800 mb-2 md:mb-0">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
-            <!-- Updated hrefs for in-page navigation -->
             <a href="#about-me-section" class="top-nav-link active">Homepage 首页 / 个人信息</a>
             <a href="#internship-section" class="top-nav-link">Internships 实习</a>
             <a href="#research-publications-section" class="top-nav-link">Publications 出版物 / 科研产出</a>
-            <!-- Education and Skills links removed as per request -->
+            <a href="#projects-section" class="top-nav-link">Projects 项目经历</a>
+            <a href="#patents-section" class="top-nav-link">Patents 专利成果</a>
         </div>
     </nav>
 
     <div class="container">
-        <!-- Left Column: Profile and Contact Info -->
         <div class="left-col text-center">
-            <!-- Directly setting the image source, replace with your actual GitHub Raw image link -->
             <img id="profile-photo" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/picture.jpg" alt="Profile Photo" class="profile-pic">
             
             <h2 class="text-2xl font-bold text-gray-900 mb-2 mt-4">赵博</h2>
@@ -308,9 +302,7 @@
             </div>
         </div>
 
-        <!-- Right Column: Main Content Sections -->
         <div class="right-col">
-            <!-- Section: 个人信息 (About Me) -->
             <section id="about-me-section" class="mb-10">
                 <h2 class="section-title">个人信息 / About Me</h2>
                 <p class="intro-text">
@@ -328,7 +320,6 @@
                     我正在积极寻找 LLM 应用、计算机视觉以及多模态融合方向的研究机会。如果你有任何合作或职位推荐，欢迎联系我。
                 </p>
 
-                <!-- Merged Section: 教育 / Education -->
                 <h2 class="section-title">教育 / Education</h2>
                 <div class="ml-5">
                     <h3 class="subsection-title">香港中文大学(深圳)</h3>
@@ -343,7 +334,6 @@
                     </ul>
                 </div>
 
-                <!-- Merged Section: 技能 / Skills -->
                 <h2 class="section-title">技能 / Skills</h2>
                 <div class="ml-5">
                     <h3 class="subsection-title">编程语言</h3>
@@ -358,7 +348,6 @@
                 </div>
             </section>
 
-            <!-- Section: 实习经历 (Internship Experience) -->
             <section id="internship-section" class="mb-10">
                 <h2 class="section-title">实习经历 / Internships</h2>
                 <div class="ml-5">
@@ -374,11 +363,9 @@
                 </div>
             </section>
 
-            <!-- Section: 科研产出 (Research & Publications) -->
             <section id="research-publications-section" class="mb-10">
                 <h2 class="section-title">科研产出 / Research & Publications</h2>
                 <div class="ml-5">
-                    <!-- PhysLLM Project -->
                     <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                         <p class="item-title">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</p>
                         <p class="meta-info">状态: 在投, NeurIPS, CCFA, 共同一作</p>
@@ -397,7 +384,6 @@
                         </ul>
                     </div>
 
-                    <!-- Towards Universal rPPG Project -->
                     <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                         <p class="item-title">Towards Universal rPPG: Optimal Transport-Based Multi-Source Domain Generalization for Remote Physiological Measurement</p>
                         <p class="meta-info">状态: 在投, NeurIPS, CCFA, 独立一作</p>
@@ -414,7 +400,6 @@
                         </ul>
                     </div>
 
-                    <!-- CardiacMamba Project -->
                     <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                         <p class="item-title">CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement</p>
                         <p class="meta-info">状态: 在投, JBHI, JCR Q1, 三作</p>
@@ -433,20 +418,16 @@
                         </ul>
                     </div>
 
-                    <!-- NMI Project (In preparation) -->
                     <div class="mb-6">
                         <p class="item-title">NMI</p>
                         <p class="meta-info">状态: 筹备, Nature Machine Intelligence, 一作</p>
-                        <!-- No detailed background/contribution provided in original PDF for NMI -->
-                    </div>
+                        </div>
                 </div>
             </section>
 
-            <!-- Section: 项目经历 (Projects) -->
             <section id="projects-section" class="mb-10">
                 <h2 class="section-title">项目经历 / Projects</h2>
                 <div class="ml-5">
-                    <!-- Information Diffusion Model Project -->
                     <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                         <p class="item-title">信息扩散模型建立</p>
                         <p class="meta-info">2023.06 (排名: 1/133)</p>
@@ -457,7 +438,6 @@
                         </ul>
                     </div>
 
-                    <!-- Quantum Annealing Project -->
                     <div class="mb-6">
                         <p class="item-title">基于量子退火算法——QUBO 模型的信用评分卡组合优化问题 (国三)</p>
                         <p class="meta-info">2023.04</p>
@@ -470,7 +450,6 @@
                 </div>
             </section>
 
-            <!-- Section: 专利成果 (Patents) -->
             <section id="patents-section" class="mb-10">
                 <h2 class="section-title">专利成果 / Patents</h2>
                 <div class="ml-5">
@@ -487,19 +466,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.top-nav-link');
-            const sections = document.querySelectorAll('.right-col section');
-
-            // Function to hide all sections and show the active one
-            function showSection(targetId) {
-                sections.forEach(section => {
-                    if ('#' + section.id === targetId) {
-                        section.style.display = 'block'; // Show the target section
-                    } else {
-                        section.style.display = 'none'; // Hide other sections
-                    }
-                });
-            }
-
+            
             // Function to set the active class on navigation links
             function setActiveLink(clickedLink) {
                 navLinks.forEach(link => {
@@ -511,16 +478,13 @@
             // Add click event listeners to navigation links
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default anchor link behavior (scrolling)
-                    const targetId = this.getAttribute('href'); // Get the target section ID
-                    showSection(targetId); // Show the target section
+                    // event.preventDefault(); // Removed to allow default scrolling behavior
                     setActiveLink(this); // Set active class for the clicked link
                 });
             });
 
-            // Initial display: show the "About Me" section and set its link as active
+            // Set the active link on page load based on the URL hash, or default to "About Me"
             const initialSectionId = window.location.hash || '#about-me-section';
-            showSection(initialSectionId);
             const initialNavLink = document.querySelector(`.top-nav-link[href="${initialSectionId}"]`);
             if (initialNavLink) {
                 setActiveLink(initialNavLink);
