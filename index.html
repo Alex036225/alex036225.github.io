@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赵博 - 个人主页</title>
     <!-- Tailwind CSS CDN for modern styling -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
@@ -18,7 +18,7 @@
             color: #374151;
             line-height: 1.6;
             margin: 0;
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
         }
         /* Main content container with shadow and rounded corners */
         .container {
@@ -272,12 +272,12 @@
     <nav class="top-nav">
         <div class="text-xl font-bold text-gray-800 mb-2 md:mb-0">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
-            <a href="index.html" class="top-nav-link active">Homepage 首页 / 个人信息</a>
-            <a href="internship.html" class="top-nav-link">Internships 实习</a>
-            <a href="research.html" class="top-nav-link">Publications 出版物 / 科研产出</a>
-            <a href="education.html" class="top-nav-link">Education 教育</a>
-            <a href="skills.html" class="top-nav-link">Skills 技能</a>
-            <!-- Removed separate Projects and Patents links as they are now under research.html -->
+            <!-- Updated hrefs for in-page navigation -->
+            <a href="#about-me-section" class="top-nav-link active">Homepage 首页 / 个人信息</a>
+            <a href="#internship-section" class="top-nav-link">Internships 实习</a>
+            <a href="#research-publications-section" class="top-nav-link">Publications 出版物 / 科研产出</a>
+            <a href="#education-section" class="top-nav-link">Education 教育</a>
+            <a href="#skills-section" class="top-nav-link">Skills 技能</a>
         </div>
     </nav>
 
@@ -309,7 +309,7 @@
             </div>
         </div>
 
-        <!-- Right Column: Main Content Sections (Personal Info only for index.html) -->
+        <!-- Right Column: Main Content Sections -->
         <div class="right-col">
             <!-- Section: 个人信息 (About Me) -->
             <section id="about-me-section" class="mb-10">
@@ -329,8 +329,7 @@
                     我正在积极寻找 LLM 应用、自然语言处理以及多模态融合方向的研究机会。如果你有任何合作或职位推荐，欢迎联系我。
                 </p>
             </section>
-        <!-- Right Column: Main Content Sections -->
-        <div class="right-col">
+
             <!-- Section: 实习经历 (Internship Experience) -->
             <section id="internship-section" class="mb-10">
                 <h2 class="section-title">实习经历 / Internships</h2>
@@ -346,7 +345,8 @@
                     </ul>
                 </div>
             </section>
-        <!-- Section: 科研产出 (Research & Publications) -->
+
+            <!-- Section: 科研产出 (Research & Publications) -->
             <section id="research-publications-section" class="mb-10">
                 <h2 class="section-title">科研产出 / Research & Publications</h2>
                 <div class="ml-5">
@@ -452,6 +452,61 @@
                         <li>基于最优运输理论的鲁棒远程生理信号感知 (审核, 发明专利)</li>
                     </ul>
                 </div>
+            </section>
+
+            <!-- Section: Education (Empty - Add your content here!) -->
+            <section id="education-section" class="mb-10">
+                <h2 class="section-title">教育 / Education</h2>
+                <div class="ml-5">
+                    <p class="text-gray-700">请在这里添加您的教育背景信息。</p>
+                    <!-- Example structure:
+                    <h3 class="subsection-title">香港中文大学（深圳）</h3>
+                    <p class="text-gray-700">硕士 - 人工智能与机器人</p>
+                    <p class="meta-info">2023.09 - 2025.08 (预计)</p>
+                    <ul class="project-contribution-list mt-2">
+                        <li>主修课程: 机器学习、深度学习、自然语言处理等</li>
+                        <li>相关项目/荣誉</li>
+                    </ul>
+                    <h3 class="subsection-title">山东大学</h3>
+                    <p class="text-gray-700">本科 - 数学与应用数学</p>
+                    <p class="meta-info">2019.09 - 2023.06</p>
+                    <ul class="project-contribution-list mt-2">
+                        <li>相关课程: 高等数学、线性代数、概率论与数理统计、数学建模等</li>
+                        <li>荣誉/奖项</li>
+                    </ul>
+                    -->
+                </div>
+            </section>
+
+            <!-- Section: Skills (Empty - Add your content here!) -->
+            <section id="skills-section" class="mb-10">
+                <h2 class="section-title">技能 / Skills</h2>
+                <div class="ml-5">
+                    <p class="text-gray-700">请在这里添加您的技能列表。</p>
+                    <!-- Example structure:
+                    <h3 class="subsection-title">编程语言</h3>
+                    <ul class="project-contribution-list mt-2">
+                        <li>Python (熟练): PyTorch, TensorFlow, NumPy, Pandas</li>
+                        <li>Java (中等)</li>
+                    </ul>
+                    <h3 class="subsection-title">机器学习与深度学习</h3>
+                    <ul class="project-contribution-list mt-2">
+                        <li>大型语言模型 (LLMs)</li>
+                        <li>多模态融合</li>
+                        <li>自然语言处理 (NLP)</li>
+                        <li>计算机视觉 (CV)</li>
+                        <li>领域泛化 (Domain Generalization)</li>
+                    </ul>
+                    <h3 class="subsection-title">工具与平台</h3>
+                    <ul class="project-contribution-list mt-2">
+                        <li>Git, GitHub</li>
+                        <li>Linux, Slurm</li>
+                        <li>LaTeX</li>
+                    </ul>
+                    -->
+                </div>
+            </section>
+
         </div>
     </div>
 </body>
