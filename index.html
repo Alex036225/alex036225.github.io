@@ -11,9 +11,9 @@
         /* Base body styles, with an even lighter gradient background, mimicking a Mac desktop background feel */
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #fbfcfd, #f2f6fa, #e6f0ff); /* Slightly more complex gradient */
-            background-size: 200% 200%; /* Make background larger than viewport */
-            animation: flowingGradient 15s ease infinite alternate; /* Flowing gradient animation */
+            /* background: linear-gradient(135deg, #fbfcfd, #f2f6fa, #e6f0ff); Removed this as hero-background will handle the main background visually */
+            /* background-size: 200% 200%; */
+            /* animation: flowingGradient 15s ease infinite alternate; */
             color: #2e3a47; /* Slightly darker text color for a premium feel */
             line-height: 1.75; /* Increased line height for better readability */
             margin: 0;
@@ -21,8 +21,30 @@
             display: flex;
             flex-direction: column;
             /* Global transition for theme changes */
-            transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+            transition: color 0.5s ease; /* Only text color transitions with theme now */
+            overflow-y: scroll; /* Ensure scrollbar is always visible for custom styling */
+            position: relative; /* Needed for z-indexing hero-background relative to body children */
+            z-index: 1; /* Ensure body children are above hero-background */
         }
+
+        /* Hero Background specific styles */
+        #hero-background {
+            position: fixed;
+            inset: 0; /* Top, right, bottom, left to 0 */
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Place it behind everything else */
+            background: linear-gradient(135deg, #fbfcfd, #f2f6fa, #e6f0ff); /* Light mode background */
+            background-size: 200% 200%;
+            animation: flowingGradient 15s ease infinite alternate;
+            transition: background 0.5s ease; /* Transition for theme change */
+        }
+
+        html.dark #hero-background {
+            background: linear-gradient(135deg, #1a2a3a, #0d1a2a, #0a141f); /* Dark mode background */
+        }
+
         /* Keyframe animation for flowing gradient */
         @keyframes flowingGradient {
             0% {
@@ -33,12 +55,76 @@
             }
         }
 
-        /* Dark mode body background */
-        html.dark body {
-            background: linear-gradient(135deg, #1a2a3a, #0d1a2a, #0a141f); /* Dark gradient */
-            background-size: 200% 200%; /* Apply to dark mode too */
-            animation: flowingGradient 15s ease infinite alternate; /* Reuse animation */
-            color: #e0e6ed; /* Light text */
+        /* Particle animation (subtle dots) */
+        #hero-background::before,
+        #hero-background::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none; /* Allows clicks to pass through */
+            z-index: 1; /* Above background, below content */
+        }
+
+        #hero-background::before {
+            background: radial-gradient(circle at 20% 80%, rgba(26, 115, 232, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 20%, rgba(26, 115, 232, 0.08) 0%, transparent 40%);
+            animation: move-bg 30s infinite linear;
+            opacity: 0.8;
+        }
+        html.dark #hero-background::before {
+            background: radial-gradient(circle at 20% 80%, rgba(63, 136, 197, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 20%, rgba(63, 136, 197, 0.08) 0%, transparent 40%);
+        }
+
+        #hero-background::after {
+            background: radial-gradient(circle at 50% 50%, rgba(26, 115, 232, 0.05) 0%, transparent 60%);
+            animation: move-bg-alt 45s infinite linear;
+            opacity: 0.6;
+        }
+        html.dark #hero-background::after {
+            background: radial-gradient(circle at 50% 50%, rgba(63, 136, 197, 0.05) 0%, transparent 60%);
+        }
+
+        @keyframes move-bg {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        @keyframes move-bg-alt {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-150px, -150px); }
+        }
+
+        /* Custom Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05); /* Light background for the track */
+            border-radius: 10px;
+        }
+        html.dark ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05); /* Dark background for the track in dark mode */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(26, 115, 232, 0.5); /* Blue thumb */
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        html.dark ::-webkit-scrollbar-thumb {
+            background: rgba(63, 136, 197, 0.5); /* Darker blue thumb in dark mode */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(26, 115, 232, 0.7); /* Darker blue on hover */
+        }
+        html.dark ::-webkit-scrollbar-thumb:hover {
+            background: rgba(63, 136, 197, 0.7); /* Even darker blue on hover in dark mode */
         }
 
         /* --- Custom CSS for Name, Location, Phone Clarity and Font Style (Higher Priority and Mode-Specific) --- */
@@ -105,6 +191,8 @@
             flex-grow: 1;
             border: 1px solid rgba(220, 220, 220, 0.4); /* Extremely thin semi-transparent border */
             transition: background-color 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+            position: relative; /* Ensure it's above the hero-background */
+            z-index: 1; /* Ensure it's above hero-background */
         }
         /* Dark mode container styles */
         html.dark .container {
@@ -638,16 +726,17 @@
         /* New styles for publication cards */
         .publication-card {
             display: flex;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly more transparent to let hero background show */
             border: 1px solid rgba(220, 220, 220, 0.6);
             border-radius: 18px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.02);
             margin-bottom: 25px; /* Spacing between cards */
             overflow: hidden; /* Ensures rounded corners are applied to children */
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            position: relative; /* Needed for link hint positioning */
         }
         html.dark .publication-card {
-            background-color: #2a3d52;
+            background-color: rgba(30, 45, 60, 0.9); /* Dark background, slightly transparent */
             border-color: rgba(60, 80, 100, 0.6);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.05);
         }
@@ -790,6 +879,39 @@
             transform: rotate(180deg);
         }
 
+        /* Back to Top button styles */
+        #backToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed position */
+            bottom: 30px; /* Place at bottom */
+            right: 30px; /* Place at right */
+            z-index: 999; /* High z-index to be on top */
+            font-size: 1.5rem;
+            background-color: rgba(26, 115, 232, 0.8); /* Semi-transparent blue */
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 50%; /* Circular button */
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0; /* Start hidden for animation */
+        }
+
+        #backToTopBtn:hover {
+            background-color: rgba(26, 115, 232, 1);
+            transform: translateY(-3px);
+        }
+        html.dark #backToTopBtn {
+            background-color: rgba(63, 136, 197, 0.8);
+        }
+        html.dark #backToTopBtn:hover {
+            background-color: rgba(63, 136, 197, 1);
+        }
+        #backToTopBtn.show {
+            opacity: 1;
+        }
+
 
         /* Responsive adjustments for publication cards */
         @media (max-width: 768px) {
@@ -867,6 +989,9 @@
     </style>
 </head>
 <body class="antialiased">
+    <!-- Hero Background Element -->
+    <div id="hero-background"></div>
+
     <nav class="top-nav">
         <div class="text-2xl font-bold text-black mb-3 md:mb-0 dark:text-gray-200 transition-colors duration-500">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
@@ -1205,6 +1330,11 @@
         </div>
     </div>
 
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" title="回到顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.top-nav-link');
@@ -1213,6 +1343,7 @@
             const htmlElement = document.documentElement;
             const darkModeToggle = document.getElementById('darkModeToggle');
             const scrollProgressBar = document.getElementById('scroll-progress-bar');
+            const backToTopBtn = document.getElementById('backToTopBtn');
 
             // Function to initialize dark mode based on localStorage
             function initDarkMode() {
@@ -1305,6 +1436,28 @@
                 const scrolled = document.documentElement.scrollTop;
                 const progress = (scrolled / scrollableHeight) * 100;
                 scrollProgressBar.style.width = `${progress}%`;
+
+                // Show/hide back to top button
+                if (scrolled > 300) { // Show button after scrolling 300px
+                    backToTopBtn.classList.add('show');
+                    backToTopBtn.style.display = 'block'; // Ensure it's block to animate opacity
+                } else {
+                    backToTopBtn.classList.remove('show');
+                    // Hide completely after transition for accessibility/layout
+                    setTimeout(() => {
+                         if (!backToTopBtn.classList.contains('show')) { // Only hide if not re-shown during timeout
+                             backToTopBtn.style.display = 'none';
+                         }
+                    }, 300); // Match opacity transition duration
+                }
+            }
+
+            // Function to scroll to top smoothly
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
 
             // Initialize dark mode on page load
@@ -1362,6 +1515,9 @@
             window.addEventListener('scroll', updateScrollProgressBar);
             // Initial call to set progress bar state
             updateScrollProgressBar();
+
+            // Add event listener for back to top button
+            backToTopBtn.addEventListener('click', scrollToTop);
 
             // Handle collapsible content
             document.querySelectorAll('.toggle-button').forEach(button => {
