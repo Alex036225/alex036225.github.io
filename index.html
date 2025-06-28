@@ -136,6 +136,10 @@
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .feature-card:hover {
             transform: translateY(-5px);
@@ -260,6 +264,9 @@
                 text-align: left;
                 margin-bottom: 0; /* Remove extra margin */
             }
+            .card-grid {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
         }
     </style>
 </head>
@@ -267,11 +274,12 @@
     <nav class="top-nav">
         <div class="text-xl font-bold text-gray-800 mb-2 md:mb-0">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
-            <a href="#about-me-section" class="top-nav-link active">Homepage 首页 / 个人信息</a>
-            <a href="#internship-section" class="top-nav-link">Internships 实习</a>
-            <a href="#research-publications-section" class="top-nav-link">Publications 出版物 / 科研产出</a>
-            <a href="#projects-section" class="top-nav-link">Projects 项目经历</a>
-            <a href="#patents-section" class="top-nav-link">Patents 专利成果</a>
+            <a href="#about-me-section" class="top-nav-link active">首页 / 个人信息</a>
+            <a href="#education-section" class="top-nav-link">教育背景</a>
+            <a href="#internship-section" class="top-nav-link">实习经历</a>
+            <a href="#research-publications-section" class="top-nav-link">科研产出</a>
+            <a href="#projects-section" class="top-nav-link">项目经历</a>
+            <a href="#patents-section" class="top-nav-link">专利成果</a>
         </div>
     </nav>
 
@@ -280,7 +288,7 @@
             <img id="profile-photo" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/picture.jpg" alt="Profile Photo" class="profile-pic">
             
             <h2 class="text-2xl font-bold text-gray-900 mb-2 mt-4">赵博</h2>
-            <p class="text-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
+            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
 
             <div class="contact-info">
                 <div class="contact-item">
@@ -305,39 +313,54 @@
         <div class="right-col">
             <section id="about-me-section" class="mb-10">
                 <h2 class="section-title">个人信息 / About Me</h2>
-
-
-                <h2 class="section-title">教育 / Education</h2>
                 <div class="ml-5">
-                    <h3 class="subsection-title">香港中文大学(深圳)</h3>
+                    <!-- Removed the intro-text paragraph as requested -->
+                    <div class="highlight-box">
+                        <p>
+                            <i class="fas fa-quote-left text-blue-500 mr-2"></i>
+                            我的研究重点是利用 <span class="font-semibold">大型语言模型 (LLMs)</span> 来解决跨模态生理信号传感领域的复杂问题。这包括在非接触式心率测量 (rPPG) 中，有效融合多模态信息、捕捉长时序依赖，以及提升模型在复杂真实世界环境中的适应性和稳定性。
+                        </p>
+                    </div>
+
+                    <h2 class="section-title">技能 / Skills</h2>
+                    <div class="card-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-code"></i>
+                            <h3>编程语言</h3>
+                            <p>Python (常用), C++, Java</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-brain"></i>
+                            <h3>深度学习框架</h3>
+                            <p>熟悉 PyTorch 环境</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-server"></i>
+                            <h3>开发环境</h3>
+                            <p>Linux 操作系统, Slurm 集群系统</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>研究方向</h3>
+                            <p>多模态大模型, 域泛化, rPPG</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education-section" class="mb-10">
+                <h2 class="section-title">教育背景 / Education</h2>
+                <div class="ml-5">
+                    <h3 class="subsection-title">香港中文大学（深圳）</h3>
                     <p class="text-gray-700">人工智能与机器人, 硕士</p>
-                    <p class="meta-info">2025.09-2027.06</p>
+                    <p class="meta-info">2025.09 - 2027.06</p>
                     <h3 class="subsection-title">山东大学</h3>
                     <p class="text-gray-700">数学与应用数学, 本科</p>
-                    <p class="meta-info">2021.09-2025.06</p>
+                    <p class="meta-info">2021.09 - 2025.06</p>
                     <ul class="project-contribution-list mt-2">
                         <li>GPA: 87.42/100</li>
                         <li>荣誉: 连续三年获得学业奖学金</li>
                     </ul>
-                </div>
-
-                <h2 class="section-title">技能 / Skills</h2>
-                <div class="ml-5">
-                    <h3 class="subsection-title">编程语言</h3>
-                    <ul class="project-contribution-list mt-2">
-                        <li>Python(常用), C++, Java</li>
-                    </ul>
-                    <h3 class="subsection-title">开发环境与系统</h3>
-                    <ul class="project-contribution-list mt-2">
-                        <li>熟悉 Pytorch 环境</li>
-                        <li>熟悉Linux操作系统及Slurm 集群系统</li>
-                    </ul>
-                </div>
-                 <div class="highlight-box">
-                    <p>
-                        <i class="fas fa-quote-left text-blue-500 mr-2"></i>
-                        我的研究重点是利用 <span class="font-semibold">大型语言模型 (LLMs)</span> 来解决跨模态生理信号传感领域的复杂问题。这包括在非接触式心率测量 (rPPG) 中，有效融合多模态信息、捕捉长时序依赖，以及提升模型在复杂真实世界环境中的适应性和稳定性。
-                    </p>
                 </div>
             </section>
 
@@ -414,7 +437,7 @@
                     <div class="mb-6">
                         <p class="item-title">NMI</p>
                         <p class="meta-info">状态: 筹备, Nature Machine Intelligence, 一作</p>
-                        </div>
+                    </div>
                 </div>
             </section>
 
