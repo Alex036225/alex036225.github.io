@@ -296,6 +296,15 @@
             filter: drop-shadow(0 0 15px rgba(63, 136, 197, 0.6));
         }
 
+        /* Image loading effect: blur-in */
+        .image-loading-blur {
+            filter: blur(10px); /* Start blurred */
+            transition: filter 0.7s ease-out; /* Smooth transition for blur removal */
+        }
+        .image-loaded {
+            filter: blur(0); /* Fully clear */
+        }
+
         /* Contact info box styles */
         .contact-info {
             background-color: #fcfdfe; /* Extremely light background color */
@@ -1051,7 +1060,7 @@
 
     <div class="container">
         <div class="left-col text-center">
-            <img id="profile-photo" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/picture.jpg" alt="Profile Photo" class="profile-pic">
+            <img id="profile-photo" class="profile-pic image-loading-blur" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/picture.jpg" alt="Profile Photo" />
             
             <h2 class="text-3xl font-extrabold text-black dark:text-gray-100 transition-colors duration-500">赵博</h2>
 
@@ -1138,7 +1147,7 @@
                     <!-- Internship Card - Made to resemble publication-card -->
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/8ac926/ffffff?text=Internship" alt="大湾区大学实习封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/8ac926/ffffff?text=Internship';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/8ac926/ffffff?text=Internship" alt="大湾区大学实习封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/8ac926/ffffff?text=Internship';" />
                             <span class="status-icon" title="实习"><i class="fas fa-briefcase"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1167,7 +1176,7 @@
                 <div class="ml-5">
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/a8dadc/1d3557?text=Paper+1" alt="PhysLLM 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/a8dadc/1d3557?text=Paper+1';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/a8dadc/1d3557?text=Paper+1" alt="PhysLLM 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/a8dadc/1d3557?text=Paper+1';" />
                             <span class="status-icon" title="状态: 在投"><i class="fas fa-hourglass-half"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1190,7 +1199,7 @@
 
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/fcca46/2a2a2a?text=Paper+2" alt="Optimal Transport 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/fcca46/2a2a2a?text=Paper+2';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/fcca46/2a2a2a?text=Paper+2" alt="Optimal Transport 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/fcca46/2a2a2a?text=Paper+2';" />
                             <span class="status-icon" title="状态: 在投"><i class="fas fa-hourglass-half"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1212,7 +1221,7 @@
 
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/20c997/ffffff?text=Paper+3" alt="CardiacMamba 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/20c997/ffffff?text=Paper+3';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/20c997/ffffff?text=Paper+3" alt="CardiacMamba 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/20c997/ffffff?text=Paper+3';" />
                             <span class="status-icon" title="状态: 在投"><i class="fas fa-hourglass-half"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1236,7 +1245,7 @@
 
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/e83e8c/ffffff?text=Paper+4" alt="CCBR 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/e83e8c/ffffff?text=Paper+4';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/e83e8c/ffffff?text=Paper+4" alt="CCBR 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/e83e8c/ffffff?text=Paper+4';" />
                             <span class="status-icon" title="状态: 在写"><i class="fas fa-pencil-alt"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1255,7 +1264,7 @@
 
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/007bff/ffffff?text=Paper+5" alt="NMI 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/007bff/ffffff?text=Paper+5';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/007bff/ffffff?text=Paper+5" alt="NMI 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/007bff/ffffff?text=Paper+5';" />
                             <span class="status-icon" title="状态: 筹备"><i class="fas fa-spinner fa-spin"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1279,7 +1288,7 @@
                 <div class="ml-5">
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/f94144/ffffff?text=Project+1" alt="信息扩散模型封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/f94144/ffffff?text=Project+1';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/f94144/ffffff?text=Project+1" alt="信息扩散模型封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/f94144/ffffff?text=Project+1';" />
                             <span class="status-icon" title="项目"><i class="fas fa-project-diagram"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1302,7 +1311,7 @@
 
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/577590/ffffff?text=Project+2" alt="量子退火算法项目封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/577590/ffffff?text=Project+2';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/577590/ffffff?text=Project+2" alt="量子退火算法项目封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/577590/ffffff?text=Project+2';" />
                             <span class="status-icon" title="项目"><i class="fas fa-flask"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1330,7 +1339,7 @@
                 <div class="ml-5">
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/43aa8b/ffffff?text=Patent+1" alt="专利1封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/43aa8b/ffffff?text=Patent+1';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/43aa8b/ffffff?text=Patent+1" alt="专利1封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/43aa8b/ffffff?text=Patent+1';" />
                             <span class="status-icon" title="专利"><i class="fas fa-certificate"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1343,7 +1352,7 @@
                     </div>
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/90be6d/ffffff?text=Patent+2" alt="专利2封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/90be6d/ffffff?text=Patent+2';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/90be6d/ffffff?text=Patent+2" alt="专利2封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/90be6d/ffffff?text=Patent+2';" />
                             <span class="status-icon" title="专利"><i class="fas fa-certificate"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1356,7 +1365,7 @@
                     </div>
                     <div class="publication-card">
                         <div class="publication-thumbnail">
-                            <img src="https://placehold.co/150x120/f9c74f/ffffff?text=Patent+3" alt="专利3封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/f9c74f/ffffff?text=Patent+3';" />
+                            <img class="image-loading-blur" src="https://placehold.co/150x120/f9c74f/ffffff?text=Patent+3" alt="专利3封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/f9c74f/ffffff?text=Patent+3';" />
                             <span class="status-icon" title="专利"><i class="fas fa-certificate"></i></span>
                         </div>
                         <div class="publication-details">
@@ -1621,6 +1630,25 @@
                         console.error("Collapsible content not found for this button.");
                     }
                 });
+            });
+
+            // Image loading blur effect
+            const images = document.querySelectorAll('img.image-loading-blur');
+            images.forEach(img => {
+                if (img.complete) { // If image is already loaded (e.g., from cache)
+                    img.classList.remove('image-loading-blur');
+                    img.classList.add('image-loaded');
+                } else {
+                    img.onload = () => {
+                        img.classList.remove('image-loading-blur');
+                        img.classList.add('image-loaded');
+                    };
+                    img.onerror = () => { // Fallback for broken images
+                        img.classList.remove('image-loading-blur');
+                        img.classList.add('image-loaded'); // Still reveal, but might show broken icon
+                        console.warn('Failed to load image:', img.src);
+                    };
+                }
             });
         });
     </script>
