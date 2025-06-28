@@ -485,7 +485,7 @@
             opacity: 0;
             visibility: hidden;
             transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0s linear 0.6s;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Removed visibility transition */
             position: absolute;
             width: 100%;
             left: 0;
@@ -496,7 +496,7 @@
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0s linear 0s;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Removed visibility transition */
             position: relative;
         }
 
@@ -543,153 +543,6 @@
         }
         html.dark #darkModeToggle i {
             transform: rotate(180deg); /* Rotate icon to show different state */
-        }
-
-        /* LLM Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .modal-overlay.open {
-            opacity: 1;
-            visibility: visible;
-        }
-        html.dark .modal-overlay {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            position: relative;
-            transform: translateY(-20px);
-            opacity: 0;
-            transition: transform 0.3s ease-out, opacity 0.3s ease-out, background-color 0.3s ease;
-        }
-        .modal-overlay.open .modal-content {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        html.dark .modal-content {
-            background-color: #2a3d52;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            color: #e0e6ed;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        html.dark .modal-header {
-            border-bottom-color: #4a5c70;
-        }
-
-        .modal-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin: 0;
-        }
-        html.dark .modal-header h2 {
-            color: #e0e6ed;
-        }
-
-        .modal-close-btn {
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: #6b7280;
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-        .modal-close-btn:hover {
-            color: #374151;
-        }
-        html.dark .modal-close-btn {
-            color: #aebacd;
-        }
-        html.dark .modal-close-btn:hover {
-            color: #e0e6ed;
-        }
-
-        .modal-body {
-            font-size: 1rem;
-            line-height: 1.6;
-            max-height: 400px; /* Limit height for scroll */
-            overflow-y: auto; /* Enable scrolling */
-            padding-right: 10px; /* Space for scrollbar */
-            color: #374151;
-        }
-        html.dark .modal-body {
-            color: #c9d6e4;
-        }
-
-        .modal-body p {
-            margin-bottom: 10px;
-        }
-
-        .loading-spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #1a73e8;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-            display: block;
-        }
-        html.dark .loading-spinner {
-            border-top-color: #3f88c5;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* LLM Trigger Button */
-        .llm-trigger-button {
-            background-color: #1a73e8;
-            color: #ffffff;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .llm-trigger-button:hover {
-            background-color: #155bb5;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
-        }
-        html.dark .llm-trigger-button {
-            background-color: #3f88c5;
-        }
-        html.dark .llm-trigger-button:hover {
-            background-color: #2f6a9e;
-            box-shadow: 0 4px 10px rgba(63, 136, 197, 0.3);
         }
 
         /* New styles for publication cards */
@@ -1043,19 +896,6 @@
         </div>
     </div>
 
-    <div id="llmInsightModal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">研究方向洞察</h2>
-                <button class="modal-close-btn" id="closeModal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div id="llmInsightContent"></div>
-                <div id="llmLoadingSpinner" class="loading-spinner" style="display: none;"></div>
-            </div>
-        </div>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.top-nav-link');
@@ -1063,13 +903,6 @@
             let currentActiveSection = null;
             const htmlElement = document.documentElement;
             const darkModeToggle = document.getElementById('darkModeToggle');
-
-            const llmTriggerButtons = document.querySelectorAll('.llm-trigger-button');
-            const llmInsightModal = document.getElementById('llmInsightModal');
-            const closeModalBtn = document.getElementById('closeModal');
-            const llmInsightContent = document.getElementById('llmInsightContent');
-            const llmLoadingSpinner = document.getElementById('llmLoadingSpinner');
-            const modalTitle = document.getElementById('modalTitle');
 
             function initDarkMode() {
                 const storedTheme = localStorage.getItem('theme');
@@ -1108,15 +941,14 @@
                     currentActiveSection.classList.add('section-hidden');
                 }
 
-                targetSection.classList.remove('active-section'); /* This was a typo, corrected from 'active-hidden' to 'active-section' for consistency with logic, though the class itself isn't defined to hide. The next line correctly adds 'section-hidden'. */
-                targetSection.classList.add('section-hidden'); 
-
+                // Ensure the target section is initially hidden for the transition
+                targetSection.classList.add('section-hidden');
 
                 setTimeout(() => {
                     targetSection.classList.remove('section-hidden');
                     targetSection.classList.add('active-section');
                     currentActiveSection = targetSection;
-                }, 10); 
+                }, 10); // Small delay to allow CSS to register initial hidden state
             }
 
             function setActiveLink(clickedLink) {
@@ -1126,53 +958,9 @@
                 clickedLink.classList.add('active');
             }
 
-            async function getLLMInsight(topic) {
-                llmInsightContent.innerHTML = ''; 
-                llmLoadingSpinner.style.display = 'block'; 
-                modalTitle.textContent = `Getting insights for "${topic}"...`; 
-
-                let chatHistory = [];
-                const prompt = `Please summarize the latest research trends and potential challenges regarding "${topic}" in Chinese, concisely and highlighting key points, around 300 words.`; 
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                const payload = { contents: chatHistory };
-                const apiKey = ""; 
-
-                try {
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(`API request failed: ${response.status} - ${errorData.error.message || response.statusText}`); 
-                    }
-
-                    const result = await response.json();
-                    
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        llmInsightContent.innerHTML = `<p>${text.replace(/\n/g, '</p><p>')}</p>`; 
-                        modalTitle.textContent = `LLM insights for "${topic}"`; 
-                    } else {
-                        llmInsightContent.innerHTML = '<p>Sorry, no insights could be retrieved for this research topic. Please try again later.</p>'; 
-                        modalTitle.textContent = `Failed to get insights`; 
-                    }
-                } catch (error) {
-                    console.error("LLM API call failed:", error); 
-                    llmInsightContent.innerHTML = `<p>Error loading content: ${error.message} Please check network or try again later.</p>`; 
-                    modalTitle.textContent = `Failed to get insights`; 
-                } finally {
-                    llmLoadingSpinner.style.display = 'none'; 
-                }
-            }
-
             initDarkMode();
 
+            // Set initial section based on URL hash or default to about-me
             const initialSectionId = window.location.hash || '#about-me-section';
             const initialNavLink = document.querySelector(`.top-nav-link[href="${initialSectionId}"]`);
             
@@ -1200,24 +988,6 @@
             });
 
             darkModeToggle.addEventListener('click', toggleDarkMode);
-
-            llmTriggerButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const topic = this.dataset.researchTopic; 
-                    llmInsightModal.classList.add('open'); 
-                    getLLMInsight(topic); 
-                });
-            });
-
-            closeModalBtn.addEventListener('click', function() {
-                llmInsightModal.classList.remove('open');
-            });
-
-            llmInsightModal.addEventListener('click', function(event) {
-                if (event.target === llmInsightModal) {
-                    llmInsightModal.classList.remove('open');
-                }
-            });
         });
     </script>
 </body>
