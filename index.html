@@ -11,9 +11,6 @@
         /* Base body styles, with an even lighter gradient background, mimicking a Mac desktop background feel */
         body {
             font-family: 'Inter', sans-serif;
-            /* background: linear-gradient(135deg, #fbfcfd, #f2f6fa, #e6f0ff); Removed this as hero-background will handle the main background visually */
-            /* background-size: 200% 200%; */
-            /* animation: flowingGradient 15s ease infinite alternate; */
             color: #2e3a47; /* Slightly darker text color for a premium feel */
             line-height: 1.75; /* Increased line height for better readability */
             margin: 0;
@@ -35,14 +32,14 @@
             height: 100%;
             overflow: hidden;
             z-index: 0; /* Place it behind everything else */
-            background: linear-gradient(135deg, #fbfcfd, #f2f6fa, #e6f0ff); /* Light mode background */
+            background: linear-gradient(135deg, #fbfcfd, #f2f6fa, #e6f0ff); /* Light mode background - now with more subtle color depth */
             background-size: 200% 200%;
             animation: flowingGradient 15s ease infinite alternate;
             transition: background 0.5s ease; /* Transition for theme change */
         }
 
         html.dark #hero-background {
-            background: linear-gradient(135deg, #1a2a3a, #0d1a2a, #0a141f); /* Dark mode background */
+            background: linear-gradient(135deg, #1a2a3a, #0d1a2a, #0a141f); /* Dark mode background - deepened */
         }
 
         /* Keyframe animation for flowing gradient */
@@ -69,23 +66,23 @@
         }
 
         #hero-background::before {
-            background: radial-gradient(circle at 20% 80%, rgba(26, 115, 232, 0.1) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 20%, rgba(26, 115, 232, 0.08) 0%, transparent 40%);
+            background: radial-gradient(circle at 20% 80%, rgba(26, 115, 232, 0.15) 0%, transparent 40%), /* Slightly more pronounced */
+                        radial-gradient(circle at 80% 20%, rgba(26, 115, 232, 0.12) 0%, transparent 40%);
             animation: move-bg 30s infinite linear;
             opacity: 0.8;
         }
         html.dark #hero-background::before {
-            background: radial-gradient(circle at 20% 80%, rgba(63, 136, 197, 0.1) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 20%, rgba(63, 136, 197, 0.08) 0%, transparent 40%);
+            background: radial-gradient(circle at 20% 80%, rgba(63, 136, 197, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 20%, rgba(63, 136, 197, 0.12) 0%, transparent 40%);
         }
 
         #hero-background::after {
-            background: radial-gradient(circle at 50% 50%, rgba(26, 115, 232, 0.05) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 50%, rgba(26, 115, 232, 0.08) 0%, transparent 60%); /* Slightly more pronounced */
             animation: move-bg-alt 45s infinite linear;
             opacity: 0.6;
         }
         html.dark #hero-background::after {
-            background: radial-gradient(circle at 50% 50%, rgba(63, 136, 197, 0.05) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 50%, rgba(63, 136, 197, 0.08) 0%, transparent 60%);
         }
 
         @keyframes move-bg {
@@ -112,19 +109,19 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: rgba(26, 115, 232, 0.5); /* Blue thumb */
+            background: linear-gradient(180deg, rgba(26, 115, 232, 0.5), rgba(21, 91, 181, 0.5)); /* Gradient thumb */
             border-radius: 10px;
             transition: background 0.3s ease;
         }
         html.dark ::-webkit-scrollbar-thumb {
-            background: rgba(63, 136, 197, 0.5); /* Darker blue thumb in dark mode */
+            background: linear-gradient(180deg, rgba(63, 136, 197, 0.5), rgba(47, 106, 158, 0.5)); /* Darker blue gradient thumb in dark mode */
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(26, 115, 232, 0.7); /* Darker blue on hover */
+            background: linear-gradient(180deg, rgba(26, 115, 232, 0.7), rgba(21, 91, 181, 0.7)); /* Darker gradient on hover */
         }
         html.dark ::-webkit-scrollbar-thumb:hover {
-            background: rgba(63, 136, 197, 0.7); /* Even darker blue on hover in dark mode */
+            background: linear-gradient(180deg, rgba(63, 136, 197, 0.7), rgba(47, 106, 158, 0.7)); /* Even darker gradient on hover in dark mode */
         }
 
         /* --- Custom CSS for Name, Location, Phone Clarity and Font Style (Higher Priority and Mode-Specific) --- */
@@ -314,7 +311,7 @@
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1), inset 0 1px 4px rgba(0, 0, 0, 0.05);
         }
 
-        /* Individual contact info item styles */
+        /* Individual contact info item styles with refined icon effects */
         .contact-item {
             display: flex;
             align-items: center;
@@ -332,11 +329,19 @@
             text-align: center;
             margin-right: 15px;
             font-size: 1.35em; /* Slightly larger icon */
-            transition: color 0.5s ease;
+            transition: color 0.5s ease, transform 0.2s ease-out, filter 0.2s ease-out; /* Added transform and filter */
         }
         html.dark .contact-item i {
             color: #3f88c5;
         }
+        .contact-item:hover i { /* Icon hover effect */
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 5px rgba(26, 115, 232, 0.4)); /* Subtle glow on hover */
+        }
+        html.dark .contact-item:hover i {
+            filter: drop-shadow(0 0 5px rgba(63, 136, 197, 0.4));
+        }
+
         .contact-item a {
             color: #1a73e8;
             transition: color 0.2s ease-in-out;
@@ -468,11 +473,15 @@
             font-size: 2rem;
             color: #1a73e8;
             margin-bottom: 15px;
-            transition: color 0.5s ease;
+            transition: color 0.5s ease, transform 0.2s ease-out; /* Added transform for icon hover */
         }
         html.dark .feature-card i {
             color: #3f88c5;
         }
+        .feature-card:hover i {
+            transform: scale(1.1); /* Icon slightly scales on card hover */
+        }
+
         .feature-card h3 {
             font-weight: 700;
             font-size: 1.1rem;
@@ -513,8 +522,9 @@
             margin-bottom: 25px;
             position: relative;
             padding-left: 35px;
-            border-bottom: 3px solid;
-            border-image: linear-gradient(to right, #1a73e8, rgba(26, 115, 232, 0.1)) 1;
+            /* Updated border-bottom for artistic effect */
+            border-bottom: 3px dashed; /* Dashed border */
+            border-image: linear-gradient(to right, #1a73e8, rgba(26, 115, 232, 0.2), transparent) 1; /* More complex gradient */
             padding-bottom: 12px;
             margin-top: 50px;
             letter-spacing: 0.03em;
@@ -522,7 +532,7 @@
         }
         html.dark .section-title {
             color: #e0e6ed;
-            border-image: linear-gradient(to right, #3f88c5, rgba(63, 136, 197, 0.1)) 1;
+            border-image: linear-gradient(to right, #3f88c5, rgba(63, 136, 197, 0.2), transparent) 1;
         }
 
         /* Vertical accent bar next to section title - refined gradient */
@@ -591,15 +601,24 @@
         }
         .project-contribution-list li::before {
             content: '•';
-            color: #1a73e8;
+            /* Applying a subtle gradient to the bullet point */
+            background: linear-gradient(to right, #1a73e8, #6aa5dd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #1a73e8; /* Fallback for browsers not supporting background-clip */
             font-weight: bold;
             display: inline-block;
             width: 0.8em; /* Adjusted to make bullet closer */
             padding-right: 0.2em; /* Adjusted to make bullet closer */
-            transition: color 0.5s ease;
+            transition: color 0.5s ease, background 0.5s ease;
         }
         html.dark .project-contribution-list li::before {
-            color: #3f88c5;
+            background: linear-gradient(to right, #3f88c5, #b0d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #3f88c5; /* Fallback */
         }
 
         /* Meta info (date, status) */
@@ -783,11 +802,16 @@
             justify-content: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             color: #1a73e8; /* Default icon color */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-out; /* Added transform */
         }
         html.dark .publication-thumbnail .status-icon {
             background-color: rgba(40, 55, 70, 0.9);
             color: #3f88c5;
         }
+        .publication-thumbnail .status-icon:hover { /* Icon inside thumbnail hover effect */
+            transform: scale(1.15);
+        }
+
 
         .publication-details {
             flex-grow: 1;
@@ -797,40 +821,56 @@
         .publication-details .item-title {
             margin-bottom: 5px;
             font-size: 1.05rem; /* Adjust title font size within card */
+            font-weight: 700; /* Ensure title is bold */
+            color: #1f2937; /* Stronger color for title */
             transition: color 0.3s ease; /* Transition for hover highlight */
         }
         html.dark .publication-details .item-title {
-            color: #b0d2ff; /* Default in dark mode */
+            color: #e0e6ed; /* Default in dark mode */
         }
+        .publication-card:hover .publication-details .item-title {
+            color: #1a73e8; /* Highlight title on card hover */
+        }
+        html.dark .publication-card:hover .publication-details .item-title {
+            color: #b0d2ff;
+        }
+
         .publication-details .meta-info {
-            margin-bottom: 10px;
+            color: #6b7280;
             font-size: 0.85em; /* Adjust meta info font size within card */
+            margin-bottom: 10px;
             transition: color 0.3s ease; /* Transition for hover highlight */
         }
         html.dark .publication-details .meta-info {
             color: #9baac2; /* Default in dark mode */
         }
+        .publication-card:hover .publication-details .meta-info {
+            color: #4c5a6d; /* Highlight meta info on card hover */
+        }
+        html.dark .publication-card:hover .publication-details .meta-info {
+            color: #c9d6e4;
+        }
+
         .publication-details .project-contribution-list {
             margin-top: 10px;
         }
         .publication-details .project-contribution-list li {
             margin-bottom: 5px;
             font-size: 0.9em;
+            color: #4c5a6d; /* Ensure consistent color */
+            transition: color 0.3s ease; /* Ensure consistent color transition */
+        }
+        html.dark .publication-details .project-contribution-list li {
+            color: #c9d6e4;
         }
         .publication-details .project-contribution-list li::before {
             margin-right: 0.4em;
         }
         /* Highlight text inside publication card on hover */
-        .publication-card:hover .item-title {
-            color: #155bb5; /* Darker blue on hover */
+        .publication-card:hover .publication-details .project-contribution-list li {
+            color: #374151; /* Slightly darker gray on hover */
         }
-        html.dark .publication-card:hover .item-title {
-            color: #7abfff; /* Lighter blue on hover in dark mode */
-        }
-        .publication-card:hover .meta-info {
-            color: #5d6776; /* Slightly darker gray on hover */
-        }
-        html.dark .publication-card:hover .meta-info {
+        html.dark .publication-card:hover .publication-details .project-contribution-list li {
             color: #d1d5db; /* Lighter gray on hover in dark mode */
         }
 
