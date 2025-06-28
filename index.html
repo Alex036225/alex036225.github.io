@@ -231,7 +231,7 @@
             background: linear-gradient(to right, #2b4c6e, #3a5c7f);
             border-left-color: #3f88c5;
             color: #e0e6ed;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6psx 20px rgba(0, 0, 0, 0.2);
         }
 
         /* 特性卡片网格 */
@@ -650,117 +650,111 @@
             box-shadow: 0 4px 10px rgba(63, 136, 197, 0.3);
         }
 
+        /* New styles for publication cards */
+        .publication-card {
+            display: flex;
+            background-color: #ffffff;
+            border: 1px solid rgba(220, 220, 220, 0.6);
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.02);
+            margin-bottom: 25px; /* Spacing between cards */
+            overflow: hidden; /* Ensures rounded corners are applied to children */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+        html.dark .publication-card {
+            background-color: #2a3d52;
+            border-color: rgba(60, 80, 100, 0.6);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.05);
+        }
 
-        /* 响应式调整 */
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), 0 3px 8px rgba(0, 0, 0, 0.05);
+        }
+        html.dark .publication-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .publication-thumbnail {
+            flex-shrink: 0; /* Prevents thumbnail from shrinking */
+            width: 150px; /* Fixed width for thumbnail */
+            height: 120px; /* Fixed height */
+            position: relative;
+            background-color: #f0f4f8; /* Placeholder background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        html.dark .publication-thumbnail {
+            background-color: #3a5c7f;
+        }
+
+        .publication-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px 0 0 18px; /* Rounded only on the left side */
+        }
+
+        .publication-thumbnail .status-icon {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: #1a73e8; /* Default icon color */
+        }
+        html.dark .publication-thumbnail .status-icon {
+            background-color: rgba(40, 55, 70, 0.9);
+            color: #3f88c5;
+        }
+
+        .publication-details {
+            flex-grow: 1;
+            padding: 20px;
+            text-align: left;
+        }
+        .publication-details .item-title {
+            margin-bottom: 5px;
+            font-size: 1.05rem; /* Adjust title font size within card */
+        }
+        .publication-details .meta-info {
+            margin-bottom: 10px;
+            font-size: 0.85em; /* Adjust meta info font size within card */
+        }
+        .publication-details .project-contribution-list {
+            margin-top: 10px;
+        }
+        .publication-details .project-contribution-list li {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+        .publication-details .project-contribution-list li::before {
+            margin-right: 0.4em;
+        }
+
+        /* 响应式调整 for publication cards */
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                padding: 20px;
-                margin-top: 20px;
-                gap: 20px;
-                border-radius: 16px; /* 移动端略小圆角 */
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-            }
-            .left-col {
-                max-width: 100%;
-                border-right: none;
-                padding-right: 0;
-                padding-bottom: 20px;
-                border-bottom: 1px solid #e5e7eb;
-            }
-            html.dark .left-col {
-                border-bottom-color: rgba(60, 80, 100, 0.6);
-            }
-
-            .right-col {
-                max-width: 100%;
-                padding-left: 0;
-            }
-            .profile-pic {
-                margin-bottom: 20px;
-                width: 160px; /* 移动端图片尺寸进一步调整 */
-                height: 160px;
-            }
-            .top-nav {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px 20px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-            }
-            .top-nav .flex {
-                flex-direction: column;
-                width: 100%;
-                gap: 8px;
-                margin-top: 10px;
-            }
-            .top-nav-link {
-                width: 100%;
-                text-align: left;
-                padding: 10px 15px;
-            }
-            #darkModeToggle {
-                margin-left: 0; /* 移动端靠左对齐 */
-                width: 100%;
-                justify-content: flex-start;
-                margin-top: 10px;
-            }
-            .card-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            .feature-card {
-                padding: 15px;
+            .publication-card {
+                flex-direction: column; /* Stack vertically on small screens */
                 border-radius: 12px;
             }
-            .feature-card i {
-                font-size: 1.6rem;
-                margin-bottom: 10px;
+            .publication-thumbnail {
+                width: 100%; /* Full width thumbnail */
+                height: 150px; /* Maintain height */
+                border-radius: 12px 12px 0 0; /* Rounded top corners */
             }
-            .feature-card h3 {
-                font-size: 1rem;
+            .publication-thumbnail img {
+                border-radius: 12px 12px 0 0;
             }
-            .feature-card p {
-                font-size: 0.85rem;
-            }
-            .education-details {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .education-details .major {
-                margin-bottom: 0.3em;
-            }
-            .section-title {
-                font-size: 1.75rem;
-                padding-left: 20px;
-            }
-            .section-title::before {
-                width: 6px;
-                height: 70%;
-            }
-            .subsection-title {
-                font-size: 1.2rem;
-            }
-            .item-title {
-                font-size: 1rem;
-            }
-            li {
-                font-size: 0.95rem;
-            }
-
-            .modal-content {
-                width: 95%;
-                padding: 20px;
-            }
-            .modal-header h2 {
-                font-size: 1.2rem;
-            }
-            .modal-close-btn {
-                font-size: 1.5rem;
-            }
-            .modal-body {
-                font-size: 0.9rem;
+            .publication-details {
+                padding: 15px;
             }
         }
     </style>
@@ -883,66 +877,85 @@
             <section id="research-publications-section" class="section-content">
                 <h2 class="section-title">科研产出 / Research & Publications</h2>
                 <div class="ml-5">
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <p class="item-title">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</p>
-                        <p class="meta-info">状态: 在投, NeurIPS, CCFA, 共同一作</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>研究背景: 远程光电容积描记术(PPG)在复杂环境(光照、运动伪影)下鲁棒性差, 现有方法难以有效融合多模态信息并捕捉长时序依赖。</li>
-                            <li>研究贡献:
-                                <ul class="ml-4">
-                                    <li>提出 PhysLLM, 一个结合 LLMs 与 PPG 专用组件的协同优化框架, rPPG 领域第一个大模型。</li>
-                                    <li>设计双域平稳算法(DDS), 在时频域对 PPG 信号自适应平滑, 有效降噪并增强信号稳定性。</li>
-                                    <li>设计视觉聚合器(VA), 高效融合多尺度视觉特征, 捕捉模态内复杂关系。</li>
-                                    <li>文本原型引导(TPG)策略将生理特征投影到 LLM 语义空间, 弥合表示鸿沟, 实现跨模态对齐。</li>
-                                    <li>通过生理线索感知提示学习, 利用 LLaVA 自动生成视觉/任务/统计线索, 并自适应融合, 增强模型对复杂场景的适应性。</li>
-                                </ul>
-                            </li>
-                            <li>论文链接: <a href="https://arxiv.org/abs/2505.03621" target="_blank" class="text-blue-600 hover:underline dark:text-blue-300">https://arxiv.org/abs/2505.03621</a></li>
-                        </ul>
+                    <!-- Publication Card 1 -->
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/a8dadc/1d3557?text=Paper+1" alt="PhysLLM 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/a8dadc/1d3557?text=Paper+1';" />
+                            <span class="status-icon" title="状态: 在投"><i class="fas fa-hourglass-half"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</p>
+                            <p class="meta-info">状态: 在投, NeurIPS, CCFA, 共同一作</p>
+                            <ul class="project-contribution-list mt-2">
+                                <li>研究背景: 远程光电容积描记术(PPG)在复杂环境(光照、运动伪影)下鲁棒性差, 现有方法难以有效融合多模态信息并捕捉长时序依赖。</li>
+                                <li>研究贡献: 提出 PhysLLM, 一个结合 LLMs 与 PPG 专用组件的协同优化框架, rPPG 领域第一个大模型。设计双域平稳算法(DDS), 视觉聚合器(VA), 文本原型引导(TPG)策略, 并通过生理线索感知提示学习增强模型适应性。</li>
+                                <li>论文链接: <a href="https://arxiv.org/abs/2505.03621" target="_blank" class="text-blue-600 hover:underline dark:text-blue-300">https://arxiv.org/abs/2505.03621</a></li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <p class="item-title">Towards Universal rPPG: Optimal Transport-Based Multi-Source Domain Generalization for Remote Physiological Measurement</p>
-                        <p class="meta-info">状态: 在投, NeurIPS, CCFA, 独立一作</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>背景挑战: 远程光电容积描记术(rPPG)是一种非接触式生理信号测量技术, 在健康监测中潜力巨大。然而, 现有方法易受光照、运动伪影等干扰, 且在处理长时序依赖和多模态信息融合方面存在局限。大型语言模型(LLMs)在捕捉长距离依赖方面表现出色, 但在 rPPG 连续、噪声敏感的信号特性面前仍面临挑战。因此, 迫切需要一种能有效整合视觉和文本信息、提升 rPPG 鲁棒性的先进框架。</li>
-                            <li>研究贡献:
-                                <ul class="ml-4">
-                                    <li>提出一个基于最优传输理论的多源领域泛化框架, 旨在提升端到端 rPPG 的泛化能力。</li>
-                                    <li>创新引入一个即插即用的 OT 模块 OTAdapter, 显式对齐多个源领域间的特征分布, 从而增强模型的泛化性。</li>
-                                    <li>提供理论依据: 推导了一个新的基于 OT 差异的泛化边界, 从理论上将源领域间的差异与未见目标领域的预期误差联系起来。</li>
-                                    <li>结合大型语言模型(LLMs)与 rPPG, 并利用 OTAdapter 进行集成, 进一步增强了模型在复杂真实世界环境中的适应性和稳定性。</li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <!-- Publication Card 2 -->
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/fcca46/2a2a2a?text=Paper+2" alt="Optimal Transport 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/fcca46/2a2a2a?text=Paper+2';" />
+                            <span class="status-icon" title="状态: 在投"><i class="fas fa-hourglass-half"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">Towards Universal rPPG: Optimal Transport-Based Multi-Source Domain Generalization for Remote Physiological Measurement</p>
+                            <p class="meta-info">状态: 在投, NeurIPS, CCFA, 独立一作</p>
+                            <ul class="project-contribution-list mt-2">
+                                <li>背景挑战: 远程光电容积描记术(rPPG)非接触式生理信号测量存在鲁棒性差、长时序依赖和多模态融合局限等问题。</li>
+                                <li>研究贡献: 提出基于最优传输理论的多源领域泛化框架，创新引入 OTAdapter 对齐特征分布，提供泛化边界理论依据，结合 LLMs 增强模型适应性。</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="mb-6">
-                        <p class="item-title">CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement</p>
-                        <p class="meta-info">状态: 在投, JBHI, JCR Q1, 三作</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>背景挑战: 心率(HR)估计对于健康监测至关重要, 而远程光电容积描记术(PPG)提供了一种非侵入性解决方案。然而, 传统的单一模态方法(如基于RGB摄像机或射频(RF)雷达)在平衡鲁棒性和准确性方面面临挑战, 这主要受光照变化、运动伪影和肤色偏差等因素的影响。例如, RGB信号易受环境光照影响, 而RF信号则对横向运动敏感且数据获取难度较大。现有的多模态融合策略在跨模态特征对齐、频域特征利用以及处理不同人口群体(如肤色差异)的公平性方面仍存在不足。因此, 迫切需要一种能够有效融合 RGB 视觉信息和 RF 雷达信号互补优势的框架, 以提升 rPPG 在复杂真实世界场景中的准确性、鲁棒性和公平性。</li>
-                            <li>研究贡献:
-                                <ul class="ml-4">
-                                    <li>提出 CardiacMamba, 一个融合 RGB 视频和 RF 传感器数据的多模态框架, 用于精确的 rPPG 心率估计。</li>
-                                    <li>创新性地引入了时域差分 Mamba 模块(TDMM)和分叉差分卷积融合(BDCF)进行双层特征提取与对齐, 捕捉动态信号变化并增强特征表示。</li>
-                                    <li>核心在于双向特征交互阶段, 通过双向状态空间模型(Bi-SSM)共享状态转换矩阵, 实现 RGB 和 RF 模态的协同建模, 有效整合跨模态信息并提升全局上下文感知。</li>
-                                    <li>设计了通道式快速傅里叶变换(CFFT)进行双向特征融合, 将特征映射到频域, 自适应增强与心率相关的频带并抑制噪声, 从而提升心率估计的准确性和周期性检测能力。</li>
-                                </ul>
-                            </li>
-                            <li>成果: CardiacMamba 在 EquiPleth 数据集上展现了最先进的性能, 显著缓解了肤色偏差问题, 并在模态缺失场景下保持了强大的鲁棒性, 有效推动了 rPPG 技术在医疗领域的可靠应用。</li>
-                            <li>论文链接: <a href="https://arxiv.org/abs/2502.13624" target="_blank" class="text-blue-600 hover:underline dark:text-blue-300">https://arxiv.org/abs/2502.13624</a></li>
-                        </ul>
+                    <!-- Publication Card 3 -->
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/a9b4c2/223344?text=Paper+3" alt="CardiacMamba 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/a9b4c2/223344?text=Paper+3';" />
+                            <span class="status-icon" title="状态: 在投"><i class="fas fa-hourglass-half"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement</p>
+                            <p class="meta-info">状态: 在投, JBHI, JCR Q1, 三作</p>
+                            <ul class="project-contribution-list mt-2">
+                                <li>背景挑战: 传统 rPPG 单模态方法受环境、运动影响，多模态融合存在特征对齐、频域利用和公平性不足。</li>
+                                <li>研究贡献: 提出 CardiacMamba 融合 RGB-RF 数据，引入时域差分 Mamba 模块(TDMM)和分叉差分卷积融合(BDCF)进行双层特征提取与对齐，通过双向状态空间模型(Bi-SSM)协同建模，设计通道式快速傅里叶变换(CFFT)进行双向特征融合。</li>
+                                <li>成果: 在 EquiPleth 数据集上性能卓越，缓解肤色偏差，模态缺失场景下鲁棒性强。</li>
+                                <li>论文链接: <a href="https://arxiv.org/abs/2502.13624" target="_blank" class="text-blue-600 hover:underline dark:text-blue-300">https://arxiv.org/abs/2502.13624</a></li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="mb-6">
-                        <p class="item-title">CCBR</p>
-                        <p class="meta-info">状态: 在写, CCBR, 三作</p>
+                    <!-- Publication Card 4 -->
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/c2c8d1/334455?text=Paper+4" alt="CCBR 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/c2c8d1/334455?text=Paper+4';" />
+                            <span class="status-icon" title="状态: 在写"><i class="fas fa-pencil-alt"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">CCBR</p>
+                            <p class="meta-info">状态: 在写, CCBR, 三作</p>
+                            <ul class="project-contribution-list mt-2">
+                                <li>详细描述: 筹备中的论文，目前正在撰写阶段。</li>
+                            </ul>
+                        </div>
                     </div>
-                    
-                    <div class="mb-6">
-                        <p class="item-title">NMI</p>
-                        <p class="meta-info">状态: 筹备, Nature Machine Intelligence, 一作</p>
+
+                    <!-- Publication Card 5 -->
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/dfe6e9/445566?text=Paper+5" alt="NMI 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/dfe6e9/445566?text=Paper+5';" />
+                            <span class="status-icon" title="状态: 筹备"><i class="fas fa-spinner fa-spin"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">NMI</p>
+                            <p class="meta-info">状态: 筹备, Nature Machine Intelligence, 一作</p>
+                            <ul class="project-contribution-list mt-2">
+                                <li>详细描述: 一项处于初期筹备阶段的重要研究，旨在为 Nature Machine Intelligence 准备。</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1006,7 +1019,8 @@
             let currentActiveSection = null;
             const htmlElement = document.documentElement;
             const darkModeToggle = document.getElementById('darkModeToggle');
-            const llmTriggerButton = document.querySelector('.llm-trigger-button');
+            // 获取所有 LLM 触发按钮，因为现在可能有很多个
+            const llmTriggerButtons = document.querySelectorAll('.llm-trigger-button');
             const llmInsightModal = document.getElementById('llmInsightModal');
             const closeModalBtn = document.getElementById('closeModal');
             const llmInsightContent = document.getElementById('llmInsightContent');
@@ -1149,12 +1163,15 @@
 
             darkModeToggle.addEventListener('click', toggleDarkMode);
 
-            // LLM 按钮点击事件
-            llmTriggerButton.addEventListener('click', function() {
-                const topic = this.dataset.researchTopic; // 获取研究方向
-                llmInsightModal.classList.add('open'); // 打开模态框
-                getLLMInsight(topic); // 调用 LLM API
+            // LLM 按钮点击事件（针对所有按钮）
+            llmTriggerButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const topic = this.dataset.researchTopic; // 获取研究方向
+                    llmInsightModal.classList.add('open'); // 打开模态框
+                    getLLMInsight(topic); // 调用 LLM API
+                });
             });
+
 
             // 关闭模态框事件
             closeModalBtn.addEventListener('click', function() {
