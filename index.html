@@ -384,6 +384,11 @@
         .right-col {
             flex: 3;
             padding-left: 20px;
+            /* Remove position: relative if it's not strictly needed for other child elements
+               and if you want it to behave purely in flow for height calculation.
+               However, if section-content uses absolute positioning, this must be relative.
+               Since we are changing section-content, let's keep it relative for now
+               as it might be needed for other elements not directly managed by this change. */
         }
         /* Intro text styles */
         .intro-text {
@@ -692,22 +697,18 @@
 
         /* Section transition styles */
         .section-content {
+            /* Removed position: absolute; width: 100%; left: 0; top: 0; */
             opacity: 0;
-            visibility: hidden;
             transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Removed visibility transition */
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            display: none; /* Hidden by default and takes no space */
         }
 
         .section-content.active-section {
             opacity: 1;
-            visibility: visible;
             transform: translateY(0);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Removed visibility transition */
-            position: relative;
+            display: block; /* Or flex/grid depending on inner content layout */
+            position: relative; /* Keep it relative to flow within right-col */
         }
 
         /* Ensure right-col can contain absolutely positioned children */
@@ -1166,7 +1167,8 @@
                         <!-- Education Card 1: Hong Kong Chinese University (Shenzhen) -->
                         <div class="publication-card">
                             <div class="publication-thumbnail">
-                                <img class="image-loading-blur" src="https://placehold.co/150x120/4a4e69/ffffff?text=CUHK(SZ)" alt="香港中文大学（深圳）封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/4a4e69/ffffff?text=CUHK(SZ)';" />
+                                <!-- Actual CUHK(SZ) logo image -->
+                                <img class="image-loading-blur" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/The_Chinese_University_of_Hong_Kong%2C_Shenzhen_logo.svg/1200px-The_Chinese_University_of_Hong_Kong%2C_Shenzhen_logo.svg.png" alt="香港中文大学（深圳）校徽" onerror="this.onerror=null;this.src='https://placehold.co/150x120/4a4e69/ffffff?text=CUHK(SZ)%20Logo';" />
                                 <span class="status-icon" title="教育经历"><i class="fas fa-graduation-cap"></i></span>
                             </div>
                             <div class="publication-details">
@@ -1183,7 +1185,8 @@
                         <!-- Education Card 2: Shandong University -->
                         <div class="publication-card">
                             <div class="publication-thumbnail">
-                                <img class="image-loading-blur" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/Shandong_University.jpg"  alt="山东大学封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/5e503f/ffffff?text=SDU';" />
+                                <!-- Actual Shandong University logo image -->
+                                <img class="image-loading-blur" src="https://upload.wikimedia.org/wikipedia/zh/thumb/4/4b/Shandong_University_logo.svg/1200px-Shandong_University_logo.svg.png" alt="山东大学校徽" onerror="this.onerror=null;this.src='https://placehold.co/150x120/5e503f/ffffff?text=SDU%20Logo';" />
                                 <span class="status-icon" title="教育经历"><i class="fas fa-graduation-cap"></i></span>
                             </div>
                             <div class="publication-details">
@@ -1524,13 +1527,12 @@
                     return;
                 }
 
-                // Hide the currently active section if one exists
-                if (currentActiveSection) {
-                    currentActiveSection.classList.remove('active-section');
-                    currentActiveSection.classList.add('section-hidden');
-
+                // Hide all sections first
+                sections.forEach(section => {
+                    section.classList.remove('active-section');
+                    section.classList.add('section-hidden'); // This now applies display: none
                     // Reset About Me animations when moving away from it
-                    if (currentActiveSection.id === 'about-me-section') {
+                    if (section.id === 'about-me-section') {
                         if (aboutMeHighlightBox) {
                             aboutMeHighlightBox.classList.remove('intro-visible');
                             aboutMeHighlightBox.classList.add('intro-hidden');
@@ -1539,12 +1541,12 @@
                             aboutMeKeyword.classList.remove('animate-pulse-keyword');
                         }
                     }
-                }
+                });
 
-                // A small timeout allows the browser to register the 'remove' class before adding 'active'
+                // A small timeout allows the browser to register the 'display: none' before adding 'display: block'
                 // This ensures the transition effect works correctly.
                 setTimeout(() => {
-                    targetSection.classList.remove('section-hidden'); // Ensure it's not hidden if it was
+                    targetSection.classList.remove('section-hidden');
                     targetSection.classList.add('active-section');
                     currentActiveSection = targetSection;
 
@@ -1650,7 +1652,7 @@
                         }
                     }
                 } else {
-                    section.classList.add('section-hidden');
+                    section.classList.add('section-hidden'); /* This now sets display: none */
                 }
             });
 
