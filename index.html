@@ -20,7 +20,8 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            transition: background-color 0.5s ease, color 0.5s ease; /* Added for dark mode transition */
+            /* Global transition for theme changes */
+            transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
         }
         /* Keyframe animation for flowing gradient */
         @keyframes flowingGradient {
@@ -45,6 +46,7 @@
         .left-col h2 {
             color: #000000 !important; /* Force black color in light mode */
             font-family: 'SimSun', 'FangSong', 'STSong', serif !important; /* Set to Songti-like fonts */
+            transition: color 0.5s ease;
         }
         html.dark .left-col h2 { /* Specific rule for dark mode */
             color: #f3f4f6 !important; /* Force light gray in dark mode (gray-100 equivalent) */
@@ -54,6 +56,7 @@
         .top-nav > div.text-2xl {
             color: #000000 !important; /* Force black color in light mode */
             font-family: 'SimSun', 'FangSong', 'STSong', serif !important; /* Set to Songti-like fonts */
+            transition: color 0.5s ease;
         }
         html.dark .top-nav > div.text-2xl { /* Specific rule for dark mode */
             color: #e5e7eb !important; /* Force light gray in dark mode (gray-200 equivalent) */
@@ -63,6 +66,7 @@
         .left-col p.text-gray-700 { /* Targeting the specific paragraph for location */
             color: #000000 !important; /* Force black color in light mode */
             font-family: 'SimSun', 'FangSong', 'STSong', serif !important; /* Set to Songti-like fonts */
+            transition: color 0.5s ease;
         }
         html.dark .left-col p.text-gray-700 { /* Specific rule for dark mode */
             color: #e5e7eb !important; /* Force light gray in dark mode (gray-200 equivalent) */
@@ -71,6 +75,7 @@
         /* For the phone number "15771116225" */
         .contact-item span.text-gray-700 { /* Targeting the specific span for phone number */
             color: #000000 !important; /* Force black color in light mode */
+            transition: color 0.5s ease;
         }
         html.dark .contact-item span.text-gray-700 { /* Specific rule for dark mode */
             color: #d1d5db !important; /* Force light gray in dark mode (gray-300 equivalent) */
@@ -79,6 +84,7 @@
         /* For the contact links (email, GitHub, Google Scholar) */
         .contact-item a.text-gray-700 { /* Targeting the specific links in contact info */
             color: #000000 !important; /* Force black color in light mode */
+            transition: color 0.5s ease;
         }
         html.dark .contact-item a.text-gray-700 { /* Specific rule for dark mode */
             color: #d1d5db !important; /* Force light gray in dark mode (gray-300 equivalent) */
@@ -299,6 +305,35 @@
         }
         html.dark .highlight-box .font-semibold {
             color: #b0d2ff; /* Lighter blue in dark mode for emphasis */
+        }
+
+        /* Initial hidden state for highlight-box for fade-in effect */
+        .highlight-box.intro-hidden {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        /* Visible state for highlight-box for fade-in effect */
+        .highlight-box.intro-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Keyframe animation for keyword pulse */
+        @keyframes keywordPulse {
+            0% { transform: scale(1); color: inherit; }
+            50% { transform: scale(1.05); color: #1a73e8; } /* Light mode highlight color */
+            100% { transform: scale(1); color: inherit; }
+        }
+        /* Dark mode keyframe animation for keyword pulse */
+        html.dark @keyframes keywordPulse {
+            0% { transform: scale(1); color: inherit; }
+            50% { transform: scale(1.05); color: #b0d2ff; } /* Dark mode highlight color */
+            100% { transform: scale(1); color: inherit; }
+        }
+        /* Class to apply the keyword pulse animation */
+        .highlight-box .keyword-to-animate.animate-pulse-keyword {
+            animation: keywordPulse 1.5s ease-in-out forwards; /* forwards keeps final state */
         }
 
 
@@ -851,7 +886,7 @@
         <div class="left-col text-center">
             <img id="profile-photo" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/picture.jpg" alt="Profile Photo" class="profile-pic">
             
-            <h2 class="text-3xl font-extrabold text-black dark:text-gray-100 transition-all duration-500">赵博</h2>
+            <h2 class="text-3xl font-extrabold text-black dark:text-gray-100 transition-colors duration-500">赵博</h2>
 
             <p class="text-gray-700 mb-4 text-lg dark:text-gray-200 transition-colors duration-500"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
 
@@ -879,10 +914,11 @@
             <section id="about-me-section" class="section-content">
                 <h2 class="section-title">个人信息 / About Me</h2>
                 <div class="ml-5">
-                    <div class="highlight-box">
+                    <!-- Added intro-hidden class for initial fade-in animation -->
+                    <div class="highlight-box intro-hidden">
                         <p>
                             <i class="fas fa-quote-left text-blue-500 mr-2"></i>
-                            我的研究重点是利用 <span class="font-semibold text-blue-800 dark:text-blue-300">大型语言模型 (LLMs)</span> 来解决跨模态生理信号传感领域的复杂问题。这包括在非接触式心率测量 (rPPG) 中，有效融合多模态信息、捕捉长时序依赖，以及提升模型在复杂真实世界环境中的适应性和稳定性。
+                            我的研究重点是利用 <span class="font-semibold text-blue-800 dark:text-blue-300 keyword-to-animate">大型语言模型 (LLMs)</span> 来解决跨模态生理信号传感领域的复杂问题。这包括在非接触式心率测量 (rPPG) 中，有效融合多模态信息、捕捉长时序依赖，以及提升模型在复杂真实世界环境中的适应性和稳定性。
                         </p>
                     </div>
 
@@ -1207,6 +1243,8 @@
             // Function to show a specific section with transition
             function showSection(targetId) {
                 const targetSection = document.querySelector(targetId);
+                const aboutMeHighlightBox = document.querySelector('#about-me-section .highlight-box');
+                const aboutMeKeyword = document.querySelector('#about-me-section .keyword-to-animate');
 
                 // If no target section found or it's already active, do nothing
                 if (!targetSection || targetSection === currentActiveSection) {
@@ -1216,11 +1254,18 @@
                 // Hide the currently active section if one exists
                 if (currentActiveSection) {
                     currentActiveSection.classList.remove('active-section');
-                    // Add 'section-hidden' temporarily to ensure transition out works
-                    currentActiveSection.classList.add('section-hidden'); 
-                    // To prevent flickers, after transition, set display none
-                    // However, 'visibility: hidden' and 'opacity: 0' combined with absolute positioning
-                    // are usually sufficient without needing display:none which breaks transitions.
+                    currentActiveSection.classList.add('section-hidden');
+
+                    // Reset About Me animations when moving away from it
+                    if (currentActiveSection.id === 'about-me-section') {
+                        if (aboutMeHighlightBox) {
+                            aboutMeHighlightBox.classList.remove('intro-visible');
+                            aboutMeHighlightBox.classList.add('intro-hidden');
+                        }
+                        if (aboutMeKeyword) {
+                            aboutMeKeyword.classList.remove('animate-pulse-keyword');
+                        }
+                    }
                 }
 
                 // A small timeout allows the browser to register the 'remove' class before adding 'active'
@@ -1229,7 +1274,21 @@
                     targetSection.classList.remove('section-hidden'); // Ensure it's not hidden if it was
                     targetSection.classList.add('active-section');
                     currentActiveSection = targetSection;
-                }, 10); // Small delay
+
+                    // Trigger About Me animations when it becomes active
+                    if (targetSection.id === 'about-me-section') {
+                        if (aboutMeHighlightBox) {
+                            aboutMeHighlightBox.classList.remove('intro-hidden');
+                            aboutMeHighlightBox.classList.add('intro-visible');
+                        }
+                        if (aboutMeKeyword) {
+                            // Give a small delay to ensure the element is visible before animation starts
+                            setTimeout(() => {
+                                aboutMeKeyword.classList.add('animate-pulse-keyword');
+                            }, 500); // Start animation 0.5s after fade-in
+                        }
+                    }
+                }, 10);
             }
 
             // Function to set the active navigation link
@@ -1255,11 +1314,26 @@
             const initialSectionId = window.location.hash || '#about-me-section';
             const initialNavLink = document.querySelector(`.top-nav-link[href="${initialSectionId}"]`);
             
-            // Initialize all sections as hidden, then show the active one
+            // Get elements for initial About Me animation setup
+            const aboutMeHighlightBox = document.querySelector('#about-me-section .highlight-box');
+            const aboutMeKeyword = document.querySelector('#about-me-section .keyword-to-animate');
+
             sections.forEach(section => {
                 if ('#' + section.id === initialSectionId) {
                     section.classList.add('active-section');
                     currentActiveSection = section;
+                    // Trigger animations if About Me is the initial section
+                    if (section.id === 'about-me-section') {
+                        if (aboutMeHighlightBox) {
+                            aboutMeHighlightBox.classList.remove('intro-hidden');
+                            aboutMeHighlightBox.classList.add('intro-visible');
+                        }
+                        if (aboutMeKeyword) {
+                            setTimeout(() => {
+                                aboutMeKeyword.classList.add('animate-pulse-keyword');
+                            }, 500);
+                        }
+                    }
                 } else {
                     section.classList.add('section-hidden');
                 }
