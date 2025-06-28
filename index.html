@@ -925,124 +925,62 @@
             color: #3f88c5; /* Fallback */
         }
 
-        /* Meta info (date, status) */
-        .meta-info {
-            color: #6b7280;
-            font-size: 0.9em;
-            margin-bottom: 0.8rem;
-            transition: color 0.5s ease;
-        }
-        html.dark .meta-info {
-            color: #9baac2;
-        }
-
-        /* New styles for profession and date combination */
-        .education-details {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            color: #4c5a6d;
-            font-size: 1rem;
-            margin-top: 0.3rem;
-            margin-bottom: 0.9rem;
-            flex-wrap: wrap;
-            transition: color 0.5s ease;
-        }
-        html.dark .education-details {
-            color: #c9d6e4;
-        }
-        .education-details .major {
-            font-weight: 600;
-        }
-        .education-details .dates {
-            color: #6b7280;
-            font-size: 0.9em;
-            white-space: nowrap;
-            transition: color 0.5s ease;
-        }
-        html.dark .education-details .dates {
-            color: #9baac2;
-        }
-
-        /* Section transition styles */
-        .section-content {
+        /* Styles for the collapsible content */
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
             opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Removed visibility transition */
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: 0;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            margin-top: 0; /* Ensure no initial margin */
         }
 
-        .section-content.active-section {
+        .collapsible-content.expanded {
+            max-height: 500px; /* Adjust this value as needed to accommodate content */
             opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Removed visibility transition */
-            position: relative;
+            margin-top: 10px; /* Add some spacing when expanded */
         }
 
-        /* Ensure right-col can contain absolutely positioned children */
-        .right-col {
-            position: relative;
-        }
-
-        /* Dark mode toggle button styles */
-        #darkModeToggle {
-            background-color: #f0f4f8; /* Background in light mode */
-            border: 1px solid rgba(220, 220, 220, 0.6);
-            border-radius: 9999px;
-            padding: 8px 12px;
-            cursor: pointer;
+        /* Styles for the toggle button */
+        .toggle-button {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            color: #4c5a6d;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            margin-left: 20px; /* Spacing from nav links */
-            flex-shrink: 0; /* Prevent shrinking */
+            background-color: #f0f4f8; /* Light background for button */
+            color: #1a73e8; /* Blue text */
+            padding: 8px 15px;
+            border-radius: 9999px; /* Pill shape */
+            border: 1px solid rgba(220, 220, 220, 0.6);
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px; /* Space from content above */
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            white-space: nowrap; /* Prevent text wrapping */
         }
-        #darkModeToggle i {
-            margin: 0;
-            transition: transform 0.3s ease;
-        }
-        #darkModeToggle:hover {
-            background-color: #e6f0ff;
-            color: #1a73e8;
-            box-shadow: 0 2px 8px rgba(26, 115, 232, 0.1);
-        }
-        /* Dark mode toggle button styles */
-        html.dark #darkModeToggle {
+        html.dark .toggle-button {
             background-color: #2a3d52;
             border-color: rgba(60, 80, 100, 0.6);
-            color: #e0e6ed;
-        }
-        html.dark #darkModeToggle:hover {
-            background-color: #3a5c7f;
             color: #b0d2ff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-        html.dark #darkModeToggle i {
-            transform: rotate(180deg); /* Rotate icon to show different state */
         }
 
-        /* Scroll progress bar styles */
-        #scroll-progress-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 4px;
-            background: linear-gradient(to right, #1a73e8, #3f88c5); /* Blue gradient */
-            width: 0%;
-            border-radius: 0 0 4px 4px; /* Rounded bottom corners */
-            transition: width 0.1s linear; /* Smooth transition for width */
-            z-index: 1001; /* Ensure it's above other elements if needed */
+        .toggle-button:hover {
+            background-color: #e6f0ff;
+            color: #155bb5;
+            box-shadow: 0 2px 8px rgba(26, 115, 232, 0.1);
+            transform: translateY(-2px);
         }
-        html.dark #scroll-progress-bar {
-            background: linear-gradient(to right, #3f88c5, #6aa5dd);
+        html.dark .toggle-button:hover {
+            background-color: #3a5c7f;
+            color: #7abfff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-button i {
+            margin-left: 8px; /* Space between text and icon */
+            transition: transform 0.3s ease;
+        }
+        .toggle-button.expanded i {
+            transform: rotate(180deg);
         }
 
 
@@ -1628,7 +1566,7 @@
                 const viewportHeight = document.documentElement.clientHeight;
                 const navHeight = getTopNavHeight();
                 // We consider the scrollable area to be from the bottom of the nav to the end of content
-                const scrollableContentHeight = totalHeight - viewportHeight; // Simple total scrollable height
+                const scrollableContentHeight = totalHeight - viewportHeight; 
                 
                 // Adjust scroll position by nav height for accurate progress calculation
                 const scrolled = document.documentElement.scrollTop;
