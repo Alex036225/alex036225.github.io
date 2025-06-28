@@ -1074,24 +1074,50 @@
             <section id="projects-section" class="section-content">
                 <h2 class="section-title">项目经历 / Projects</h2>
                 <div class="ml-5">
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <p class="item-title">信息扩散模型建立</p>
-                        <p class="meta-info">2023.06 (排名: 1/133)</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>探究信息扩散能力, 旨在定量分析病毒式市场营销、谣言控制等实际场景;</li>
-                            <li>建立合适的信息扩散模型, 利用 Java 对信息节点激活机制进行代码实现;</li>
-                            <li>对数据集节点的影响能力进行初步排序, 依据单点的影响力制定合理的种子节点选择策略。</li>
-                        </ul>
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/f94144/ffffff?text=Project+1" alt="信息扩散模型封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/f94144/ffffff?text=Project+1';" />
+                            <span class="status-icon" title="项目"><i class="fas fa-project-diagram"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">信息扩散模型建立</p>
+                            <p class="meta-info">2023.06 (排名: 1/133)</p>
+                            <div class="collapsible-wrapper">
+                                <ul class="project-contribution-list mt-2">
+                                    <li>探究信息扩散能力, 旨在定量分析病毒式市场营销、谣言控制等实际场景;</li>
+                                    <div class="collapsible-content">
+                                        <li>建立合适的信息扩散模型, 利用 Java 对信息节点激活机制进行代码实现;</li>
+                                        <li>对数据集节点的影响能力进行初步排序, 依据单点的影响力制定合理的种子节点选择策略。</li>
+                                    </div>
+                                </ul>
+                                <button class="toggle-button" data-target=".collapsible-content">
+                                    <span>查看详情</span> <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mb-6">
-                        <p class="item-title">基于量子退火算法——QUBO 模型的信用评分卡组合优化问题 (国三)</p>
-                        <p class="meta-info">2023.04</p>
-                        <ul class="project-contribution-list mt-2">
-                            <li>结合量子退火算法与 QUBO 模型, 列出数学模型所需数学方程;</li>
-                            <li>使用 pyqubo 库建立 QUBO 模型, 将数学模型进行代码实现, 利用 neal 库中的退火算法函数求解模型;</li>
-                            <li>完成 10000 字论文一篇, 获得 Mathorcup 数模竞赛国家三等奖。</li>
-                        </ul>
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/577590/ffffff?text=Project+2" alt="量子退火算法项目封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/577590/ffffff?text=Project+2';" />
+                            <span class="status-icon" title="项目"><i class="fas fa-flask"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">基于量子退火算法——QUBO 模型的信用评分卡组合优化问题 (国三)</p>
+                            <p class="meta-info">2023.04</p>
+                            <div class="collapsible-wrapper">
+                                <ul class="project-contribution-list mt-2">
+                                    <li>结合量子退火算法与 QUBO 模型, 列出数学模型所需数学方程;</li>
+                                    <div class="collapsible-content">
+                                        <li>使用 pyqubo 库建立 QUBO 模型, 将数学模型进行代码实现, 利用 neal 库中的退火算法函数求解模型;</li>
+                                        <li>完成 10000 字论文一篇, 获得 Mathorcup 数模竞赛国家三等奖。</li>
+                                    </div>
+                                </ul>
+                                <button class="toggle-button" data-target=".collapsible-content">
+                                    <span>查看详情</span> <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1099,11 +1125,45 @@
             <section id="patents-section" class="section-content">
                 <h2 class="section-title">专利成果 / Patents</h2>
                 <div class="ml-5">
-                    <ul class="project-contribution-list">
-                        <li>基于大语言模型的跨模态远程生理信号感知 (审核, 发明专利)</li>
-                        <li>基于时频大语言模型的框架增强时间序列方法 (审核, 发明专利)</li>
-                        <li>基于最优运输理论的鲁棒远程生理信号感知 (审核, 发明专利)</li>
-                    </ul>
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/43aa8b/ffffff?text=Patent+1" alt="专利1封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/43aa8b/ffffff?text=Patent+1';" />
+                            <span class="status-icon" title="专利"><i class="fas fa-certificate"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">基于大语言模型的跨模态远程生理信号感知</p>
+                            <p class="meta-info">状态: 审核, 发明专利</p>
+                            <ul class="project-contribution-list mt-2">
+                                <li>此专利聚焦于利用大语言模型提升跨模态远程生理信号感知的准确性和鲁棒性。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/90be6d/ffffff?text=Patent+2" alt="专利2封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/90be6d/ffffff?text=Patent+2';" />
+                            <span class="status-icon" title="专利"><i class="fas fa-certificate"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">基于时频大语言模型的框架增强时间序列方法</p>
+                            <p class="meta-info">状态: 审核, 发明专利</p>
+                            <ul class="project-contribution-list mt-2">
+                                <li>此专利探索如何通过结合时频分析和大语言模型框架来增强时间序列数据的处理和分析能力。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="publication-card">
+                        <div class="publication-thumbnail">
+                            <img src="https://placehold.co/150x120/f9c74f/ffffff?text=Patent+3" alt="专利3封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/f9c74f/ffffff?text=Patent+3';" />
+                            <span class="status-icon" title="专利"><i class="fas fa-certificate"></i></span>
+                        </div>
+                        <div class="publication-details">
+                            <p class="item-title">基于最优运输理论的鲁棒远程生理信号感知</p>
+                            <p class="meta-info">状态: 审核, 发明专利</p>
+                            <ul class="project-contribution-list mt-2">
+                                <li>此专利利用最优运输理论来提高远程生理信号感知的鲁棒性，使其在复杂环境下表现更稳定。</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
