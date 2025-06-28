@@ -283,11 +283,24 @@
     <div class="container">
         <!-- Left Column: Profile and Contact Info -->
         <div class="left-col text-center">
-            <img src="https://placehold.co/150x150/e0f2fe/1e40af?text=Your+Photo" alt="Profile Photo" class="profile-pic">
-            <h2 class="text-2xl font-bold text-gray-900 mb-2">赵博</h2>
+            <img id="profile-photo" src="https://placehold.co/150x150/e0f2fe/1e40af?text=Your+Photo" alt="Profile Photo" class="profile-pic">
+            
+            <!-- Hidden file input for image upload -->
+            <input type="file" id="profile-upload" accept="image/*" class="hidden">
+            <!-- Button to trigger file input -->
+            <button id="upload-button" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200">
+                上传头像
+            </button>
+
+            <h2 class="text-2xl font-bold text-gray-900 mb-2 mt-4">赵博</h2>
+            <p class="text-gray-700 text-lg mb-4">香港中文大学(深圳) - 人工智能与机器人</p>
             <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
 
             <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span class="text-gray-700">15771116225</span>
+                ="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <span class="text-gray-700">15771116225</span>
@@ -487,6 +500,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.top-nav-link');
             const sections = document.querySelectorAll('.right-col section');
+            const profilePhoto = document.getElementById('profile-photo');
+            const profileUpload = document.getElementById('profile-upload');
+            const uploadButton = document.getElementById('upload-button');
 
             // Function to hide all sections and show the active one
             function showSection(targetId) {
@@ -516,6 +532,31 @@
                     setActiveLink(this); // Set active class for the clicked link
                 });
             });
+
+            // Handle profile picture upload
+            if (uploadButton && profileUpload && profilePhoto) {
+                uploadButton.addEventListener('click', function() {
+                    profileUpload.click(); // Trigger the hidden file input click
+                });
+
+                profileUpload.addEventListener('change', function() {
+                    if (this.files && this.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            profilePhoto.src = e.target.result; // Set image source to selected file
+                            localStorage.setItem('profileImage', e.target.result); // Store in local storage
+                        };
+                        reader.readAsDataURL(this.files[0]); // Read file as data URL
+                    }
+                });
+
+                // Load profile picture from local storage on page load
+                const savedImage = localStorage.getItem('profileImage');
+                if (savedImage) {
+                    profilePhoto.src = savedImage;
+                }
+            }
+
 
             // Initial display: show the "About Me" section and set its link as active
             const initialSectionId = window.location.hash || '#about-me-section';
