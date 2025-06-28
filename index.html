@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赵博 - 个人主页</title>
-    <!-- Tailwind CSS CDN for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Base body styling */
@@ -18,6 +15,7 @@
             color: #374151;
             line-height: 1.6;
             margin: 0;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
         /* Main content container with shadow and rounded corners */
         .container {
@@ -61,6 +59,7 @@
         .top-nav-link.active {
             color: #2563eb; /* Active link color */
             font-weight: 600;
+            background-color: #e0f2fe; /* Light blue background for active */
         }
 
         /* Left Column for profile and contact */
@@ -79,7 +78,12 @@
             display: block;
             border: 4px solid #3b82f6; /* Blue border */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out; /* Smooth hover effect */
         }
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
         /* Contact info box styling */
         .contact-info {
             background-color: #f9fafb;
@@ -106,6 +110,19 @@
         .right-col {
             flex: 3; /* Takes 3 parts of the available space */
         }
+        /* Section transition styles */
+        .section-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            display: none; /* Hidden by default for JS to control */
+        }
+        .section-content.active {
+            opacity: 1;
+            transform: translateY(0);
+            display: block; /* Shown when active */
+        }
+
         /* Introduction text styling */
         .intro-text {
             font-size: 1.125rem;
@@ -122,6 +139,11 @@
             margin-bottom: 25px;
             color: #1e40af; /* Darker blue text */
             font-size: 1.05rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .highlight-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
         /* Grid for feature cards */
         .card-grid {
@@ -267,26 +289,23 @@
     </style>
 </head>
 <body class="antialiased">
-    <!-- Top Navigation Bar -->
     <nav class="top-nav">
         <div class="text-xl font-bold text-gray-800 mb-2 md:mb-0">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
-            <!-- Updated hrefs for in-page navigation -->
-            <a href="#about-me-section" class="top-nav-link active">Homepage 首页 / 个人信息</a>
+            <a href="#about-me-section" class="top-nav-link">Homepage 首页 / 个人信息</a>
             <a href="#internship-section" class="top-nav-link">Internships 实习</a>
             <a href="#research-publications-section" class="top-nav-link">Publications 出版物 / 科研产出</a>
-            <!-- Education and Skills links removed as per request -->
+            <a href="#projects-section" class="top-nav-link">Projects 项目经历</a>
+            <a href="#patents-section" class="top-nav-link">Patents 专利成果</a>
         </div>
     </nav>
 
     <div class="container">
-        <!-- Left Column: Profile and Contact Info -->
         <div class="left-col text-center">
-            <!-- Directly setting the image source, replace with your actual GitHub Raw image link -->
             <img id="profile-photo" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/picture.jpg" alt="Profile Photo" class="profile-pic">
             
             <h2 class="text-2xl font-bold text-gray-900 mb-2 mt-4">赵博</h2>
-            <p class="text-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
+            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
 
             <div class="contact-info">
                 <div class="contact-item">
@@ -308,10 +327,8 @@
             </div>
         </div>
 
-        <!-- Right Column: Main Content Sections -->
         <div class="right-col">
-            <!-- Section: 个人信息 (About Me) -->
-            <section id="about-me-section" class="mb-10">
+            <section id="about-me-section" class="mb-10 section-content">
                 <h2 class="section-title">个人信息 / About Me</h2>
                 <p class="intro-text">
                     你好，我是赵博。目前我是香港中文大学（深圳）人工智能与机器人方向的硕士研究生。本科毕业于山东大学数学与应用数学专业。
@@ -328,7 +345,6 @@
                     我正在积极寻找 LLM 应用、计算机视觉以及多模态融合方向的研究机会。如果你有任何合作或职位推荐，欢迎联系我。
                 </p>
 
-                <!-- Merged Section: 教育 / Education -->
                 <h2 class="section-title">教育 / Education</h2>
                 <div class="ml-5">
                     <h3 class="subsection-title">香港中文大学(深圳)</h3>
@@ -343,7 +359,6 @@
                     </ul>
                 </div>
 
-                <!-- Merged Section: 技能 / Skills -->
                 <h2 class="section-title">技能 / Skills</h2>
                 <div class="ml-5">
                     <h3 class="subsection-title">编程语言</h3>
@@ -358,8 +373,7 @@
                 </div>
             </section>
 
-            <!-- Section: 实习经历 (Internship Experience) -->
-            <section id="internship-section" class="mb-10">
+            <section id="internship-section" class="mb-10 section-content">
                 <h2 class="section-title">实习经历 / Internships</h2>
                 <div class="ml-5">
                     <h3 class="subsection-title">大湾区大学</h3>
@@ -374,11 +388,9 @@
                 </div>
             </section>
 
-            <!-- Section: 科研产出 (Research & Publications) -->
-            <section id="research-publications-section" class="mb-10">
+            <section id="research-publications-section" class="mb-10 section-content">
                 <h2 class="section-title">科研产出 / Research & Publications</h2>
                 <div class="ml-5">
-                    <!-- PhysLLM Project -->
                     <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                         <p class="item-title">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</p>
                         <p class="meta-info">状态: 在投, NeurIPS, CCFA, 共同一作</p>
@@ -397,7 +409,6 @@
                         </ul>
                     </div>
 
-                    <!-- Towards Universal rPPG Project -->
                     <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                         <p class="item-title">Towards Universal rPPG: Optimal Transport-Based Multi-Source Domain Generalization for Remote Physiological Measurement</p>
                         <p class="meta-info">状态: 在投, NeurIPS, CCFA, 独立一作</p>
@@ -414,7 +425,6 @@
                         </ul>
                     </div>
 
-                    <!-- CardiacMamba Project -->
                     <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                         <p class="item-title">CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement</p>
                         <p class="meta-info">状态: 在投, JBHI, JCR Q1, 三作</p>
@@ -433,20 +443,16 @@
                         </ul>
                     </div>
 
-                    <!-- NMI Project (In preparation) -->
                     <div class="mb-6">
                         <p class="item-title">NMI</p>
-                        <p class="meta-info">状态: 筹备, Nature Machine Intelligence, 一作</p>
-                        <!-- No detailed background/contribution provided in original PDF for NMI -->
+                        <p class="meta-info">状态: 筹备中, Nature Machine Intelligence, 一作</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Section: 项目经历 (Projects) -->
-            <section id="projects-section" class="mb-10">
+            <section id="projects-section" class="mb-10 section-content">
                 <h2 class="section-title">项目经历 / Projects</h2>
                 <div class="ml-5">
-                    <!-- Information Diffusion Model Project -->
                     <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                         <p class="item-title">信息扩散模型建立</p>
                         <p class="meta-info">2023.06 (排名: 1/133)</p>
@@ -457,7 +463,6 @@
                         </ul>
                     </div>
 
-                    <!-- Quantum Annealing Project -->
                     <div class="mb-6">
                         <p class="item-title">基于量子退火算法——QUBO 模型的信用评分卡组合优化问题 (国三)</p>
                         <p class="meta-info">2023.04</p>
@@ -470,8 +475,7 @@
                 </div>
             </section>
 
-            <!-- Section: 专利成果 (Patents) -->
-            <section id="patents-section" class="mb-10">
+            <section id="patents-section" class="mb-10 section-content">
                 <h2 class="section-title">专利成果 / Patents</h2>
                 <div class="ml-5">
                     <ul class="project-contribution-list">
@@ -487,15 +491,16 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.top-nav-link');
-            const sections = document.querySelectorAll('.right-col section');
+            const sections = document.querySelectorAll('.right-col .section-content');
+            const topNav = document.querySelector('.top-nav');
 
-            // Function to hide all sections and show the active one
+            // Function to show a section with a fade-in animation
             function showSection(targetId) {
                 sections.forEach(section => {
                     if ('#' + section.id === targetId) {
-                        section.style.display = 'block'; // Show the target section
+                        section.classList.add('active'); // Add active class to trigger fade-in
                     } else {
-                        section.style.display = 'none'; // Hide other sections
+                        section.classList.remove('active'); // Remove active class to fade out and hide
                     }
                 });
             }
@@ -505,25 +510,65 @@
                 navLinks.forEach(link => {
                     link.classList.remove('active'); // Remove active from all links
                 });
-                clickedLink.classList.add('active'); // Add active to the clicked link
+                if (clickedLink) {
+                    clickedLink.classList.add('active'); // Add active to the clicked link
+                }
             }
 
             // Add click event listeners to navigation links
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default anchor link behavior (scrolling)
+                    event.preventDefault(); // Prevent default anchor link behavior
                     const targetId = this.getAttribute('href'); // Get the target section ID
-                    showSection(targetId); // Show the target section
-                    setActiveLink(this); // Set active class for the clicked link
+                    
+                    // Smooth scroll to the target section
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // Update active link immediately for responsiveness
+                    setActiveLink(this);
+                    
+                    // Show section with a slight delay to allow scroll to start
+                    setTimeout(() => {
+                         showSection(targetId);
+                    }, 100); 
                 });
             });
 
-            // Initial display: show the "About Me" section and set its link as active
+            // Intersection Observer to update active navigation link on scroll
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: `-${topNav.offsetHeight}px 0px 0px 0px`, // Offset for sticky nav
+                threshold: 0.5 // When 50% of the section is visible
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentSectionId = '#' + entry.target.id;
+                        const currentNavLink = document.querySelector(`.top-nav-link[href="${currentSectionId}"]`);
+                        setActiveLink(currentNavLink);
+                        showSection(currentSectionId); // Ensure section is visible when intersected
+                    }
+                });
+            }, observerOptions);
+
+            // Observe each section
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Initial setup: show the "About Me" section and set its link as active
             const initialSectionId = window.location.hash || '#about-me-section';
-            showSection(initialSectionId);
             const initialNavLink = document.querySelector(`.top-nav-link[href="${initialSectionId}"]`);
             if (initialNavLink) {
                 setActiveLink(initialNavLink);
+                showSection(initialSectionId); // Ensure the initial section is active and visible
+            } else {
+                // Fallback to the first section if no hash or invalid hash
+                setActiveLink(navLinks[0]);
+                showSection(navLinks[0].getAttribute('href'));
             }
         });
     </script>
