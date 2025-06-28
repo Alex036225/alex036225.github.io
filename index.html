@@ -8,35 +8,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Base body styling with a subtle gradient background */
+        /* 基础 body 样式，带微妙的渐变背景 */
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* Lighter, more modern gradient */
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* 更亮、更现代的渐变 */
             color: #374151;
             line-height: 1.6;
             margin: 0;
-            min-height: 100vh; /* Ensure body takes full viewport height */
+            min-height: 100vh; /* 确保 body 占据完整视口高度 */
             display: flex;
             flex-direction: column;
         }
-        /* Main content container with enhanced shadow and rounded corners */
+        /* 主内容容器，带增强的阴影和圆角 */
         .container {
-            max-width: 1100px; /* Wider container for the new layout */
-            margin: 30px auto; /* Centered with vertical margin */
+            max-width: 1100px; /* 新布局的更宽容器 */
+            margin: 30px auto; /* 垂直居中，带垂直外边距 */
             background-color: #ffffff;
-            border-radius: 16px; /* More rounded corners */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+            border-radius: 16px; /* 更多圆角 */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* 更明显的阴影 */
             padding: 30px;
-            display: flex; /* Use flexbox for two-column layout */
-            gap: 40px; /* More space between columns */
-            flex-grow: 1; /* Allow container to grow and fill space */
+            display: flex; /* 使用 flexbox 进行两列布局 */
+            gap: 40px; /* 列之间更大的间距 */
+            flex-grow: 1; /* 允许容器增长并填充空间 */
         }
-        /* Top Navigation Bar styles */
+        /* 顶部导航栏样式 */
         .top-nav {
             background-color: #ffffff;
             padding: 15px 40px;
-            border-bottom: 2px solid #e0e7ff; /* Lighter, more subtle border */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+            border-bottom: 2px solid #e0e7ff; /* 更亮、更微妙的边框 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 增强的阴影 */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,119 +48,119 @@
         .top-nav-link {
             color: #4b5563;
             font-weight: 500;
-            padding: 10px 18px; /* Slightly larger clickable area */
-            border-radius: 8px; /* More rounded */
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Added transform for hover */
+            padding: 10px 18px; /* 稍大的可点击区域 */
+            border-radius: 8px; /* 更多圆角 */
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out; /* 为悬停添加了 transform */
             white-space: nowrap;
         }
         .top-nav-link:hover {
-            background-color: #eef2ff; /* Lighter blue hover */
-            color: #3b82f6; /* Blue text on hover */
-            transform: translateY(-2px); /* Slight lift on hover */
+            background-color: #eef2ff; /* 浅蓝色悬停背景 */
+            color: #3b82f6; /* 悬停时蓝色文本 */
+            transform: translateY(-2px); /* 悬停时轻微上浮 */
             text-decoration: none;
         }
         .top-nav-link.active {
-            background-color: #3b82f6; /* Solid blue for active */
-            color: #ffffff; /* White text for active */
+            background-color: #3b82f6; /* 活跃时纯蓝色 */
+            color: #ffffff; /* 活跃时白色文本 */
             font-weight: 600;
-            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* Shadow for active link */
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); /* 活跃链接阴影 */
         }
 
-        /* Left Column for profile and contact */
+        /* 左侧列用于个人资料和联系方式 */
         .left-col {
             flex: 1;
-            min-width: 280px; /* Increased min-width */
-            max-width: 320px; /* Slightly larger max-width */
-            padding-right: 20px; /* Add some padding to the right for separation */
-            border-right: 1px solid #e5e7eb; /* Subtle separator line */
+            min-width: 280px; /* 增加最小宽度 */
+            max-width: 320px; /* 略大的最大宽度 */
+            padding-right: 20px; /* 为分隔添加右侧内边距 */
+            border-right: 1px solid #e5e7eb; /* 微妙的分隔线 */
         }
-        /* Profile picture styling - Enhanced */
+        /* 个人照片样式 - 增强 */
         .profile-pic {
-            width: 220px; /* Increased width */
-            height: 220px; /* Increased height */
+            width: 220px; /* 增加宽度 */
+            height: 220px; /* 增加高度 */
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 25px auto; /* Center image */
+            margin: 0 auto 25px auto; /* 图片居中 */
             display: block;
-            border: 5px solid #3b82f6; /* Blue border */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+            border: 5px solid #3b82f6; /* 蓝色边框 */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 更明显的阴影 */
             transition: transform 0.3s ease-in-out;
         }
         .profile-pic:hover {
-            transform: scale(1.03); /* Slight zoom on hover */
+            transform: scale(1.03); /* 悬停时轻微缩放 */
         }
-        /* Contact info box styling */
+        /* 联系信息框样式 */
         .contact-info {
-            background-color: #f9fafb; /* Lighter background */
-            padding: 25px; /* More padding */
-            border-radius: 12px; /* More rounded */
-            margin-top: 30px; /* More space from profile */
+            background-color: #f9fafb; /* 浅色背景 */
+            padding: 25px; /* 更多内边距 */
+            border-radius: 12px; /* 更多圆角 */
+            margin-top: 30px; /* 与个人资料的更大间距 */
             border: 1px solid #e5e7eb;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* 内部阴影增加深度 */
         }
-        /* Individual contact item styling */
+        /* 单个联系信息项样式 */
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 12px; /* More space between items */
+            margin-bottom: 12px; /* 项之间更大的间距 */
             color: #4b5563;
-            font-size: 0.98rem; /* Slightly larger font */
+            font-size: 0.98rem; /* 略大的字体大小 */
         }
         .contact-item i {
-            color: #3b82f6; /* Blue accent */
-            width: 28px; /* Larger icon area */
+            color: #3b82f6; /* 蓝色强调色 */
+            width: 28px; /* 更大的图标区域 */
             text-align: center;
-            margin-right: 12px; /* More space */
-            font-size: 1.2em; /* Larger icons */
+            margin-right: 12px; /* 更大间距 */
+            font-size: 1.2em; /* 更大的图标 */
         }
         .contact-item a {
-            color: #2563eb; /* Link color */
+            color: #2563eb; /* 链接颜色 */
             transition: color 0.2s ease-in-out;
         }
         .contact-item a:hover {
-            color: #1e40af; /* Darker blue on hover */
+            color: #1e40af; /* 悬停时深蓝色 */
             text-decoration: underline;
         }
 
-        /* Right Column for main content sections */
+        /* 右侧列用于主内容区 */
         .right-col {
             flex: 3;
-            padding-left: 20px; /* Add some padding to the left for separation */
+            padding-left: 20px; /* 为分隔添加左侧内边距 */
         }
-        /* Introduction text styling */
+        /* 介绍文本样式 */
         .intro-text {
-            font-size: 1.15rem; /* Slightly larger */
+            font-size: 1.15rem; /* 略大 */
             line-height: 1.8;
             margin-bottom: 30px;
             color: #374151;
         }
-        /* Highlight box for quotes/key messages - Enhanced */
+        /* 引用/关键信息高亮框 - 增强 */
         .highlight-box {
-            background: linear-gradient(to right, #e0f2fe, #f0f9ff); /* Gradient background */
-            border-left: 6px solid #3b82f6; /* Thicker blue accent bar */
-            padding: 25px; /* More padding */
-            border-radius: 12px; /* More rounded */
+            background: linear-gradient(to right, #e0f2fe, #f0f9ff); /* 渐变背景 */
+            border-left: 6px solid #3b82f6; /* 更粗的蓝色强调条 */
+            padding: 25px; /* 更多内边距 */
+            border-radius: 12px; /* 更多圆角 */
             margin-bottom: 30px;
             color: #1e40af;
             font-size: 1.05rem;
             line-height: 1.7;
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1); /* Subtle shadow */
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1); /* 微妙的阴影 */
         }
-        /* Grid for feature cards */
+        /* 特性卡片网格 */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly larger min-width for cards */
-            gap: 25px; /* More space between cards */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 卡片最小宽度略大 */
+            gap: 25px; /* 卡片之间更大间距 */
             margin-top: 35px;
         }
-        /* Styling for individual feature cards - Enhanced */
+        /* 单个特性卡片样式 - 增强 */
         .feature-card {
             background-color: #ffffff;
             border: 1px solid #e5e7eb;
-            border-radius: 12px; /* More rounded */
+            border-radius: 12px; /* 更多圆角 */
             padding: 25px;
             text-align: center;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* 增强的阴影 */
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             display: flex;
             flex-direction: column;
@@ -168,117 +168,117 @@
             align-items: center;
         }
         .feature-card:hover {
-            transform: translateY(-8px) scale(1.02); /* More pronounced lift and slight zoom */
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+            transform: translateY(-8px) scale(1.02); /* 更明显的上浮和轻微缩放 */
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15); /* 悬停时更强的阴影 */
         }
         .feature-card i {
-            font-size: 3rem; /* Larger icons */
+            font-size: 2.5rem; /* 调整图标大小，使其更小 */
             color: #3b82f6;
-            margin-bottom: 20px; /* More space */
+            margin-bottom: 20px; /* 更大间距 */
         }
         .feature-card h3 {
-            font-weight: 700; /* Bolder */
-            font-size: 1.25rem; /* Larger font size */
+            font-weight: 700; /* 更粗 */
+            font-size: 1.25rem; /* 更大的字体大小 */
             color: #1f2937;
             margin-bottom: 12px;
         }
         .feature-card p {
-            font-size: 1rem; /* Slightly larger font */
+            font-size: 1rem; /* 略大的字体大小 */
             color: #4b5563;
         }
 
-        /* Section Title Styling (e.g., 教育背景, 科研经历) - Enhanced */
+        /* 章节标题样式 (例如：教育背景, 科研经历) - 增强 */
         .section-title {
-            font-weight: 800; /* Extra bold */
-            font-size: 2rem; /* Even larger font size */
+            font-weight: 800; /* 超粗体 */
+            font-size: 2rem; /* 甚至更大的字体大小 */
             color: #1f2937;
-            margin-bottom: 25px; /* More space below title */
+            margin-bottom: 25px; /* 标题下方更大间距 */
             position: relative;
-            padding-left: 30px; /* More space for the accent bar */
-            border-bottom: 2px solid #e5e7eb; /* Thicker, softer line under title */
+            padding-left: 30px; /* 为强调条留出更多空间 */
+            border-bottom: 2px solid #e5e7eb; /* 更粗、更柔和的标题下方线条 */
             padding-bottom: 12px;
-            margin-top: 50px; /* More space above sections */
+            margin-top: 50px; /* 章节上方更大间距 */
         }
-        /* Vertical accent bar next to section titles - Gradient accent */
+        /* 章节标题旁边的垂直强调条 - 渐变强调 */
         .section-title::before {
             content: '';
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 10px; /* Wider accent bar */
-            height: 90%; /* Taller accent bar */
-            background: linear-gradient(to bottom, #3b82f6, #2563eb); /* Blue gradient */
-            border-radius: 3px; /* Slightly more rounded corners for the bar */
+            width: 10px; /* 更宽的强调条 */
+            height: 90%; /* 更高的强调条 */
+            background: linear-gradient(to bottom, #3b82f6, #2563eb); /* 蓝色渐变 */
+            border-radius: 3px; /* 强调条略微圆角 */
         }
-        /* Sub-section titles */
+        /* 副章节标题 */
         .subsection-title {
-            font-weight: 700; /* Bolder */
-            font-size: 1.4rem; /* Larger font size */
+            font-weight: 700; /* 更粗 */
+            font-size: 1.4rem; /* 更大的字体大小 */
             color: #1f2937;
             margin-top: 2rem;
             margin-bottom: 0.75rem;
         }
-        /* Individual item titles */
+        /* 单个项目标题 */
         .item-title {
             font-weight: 700;
-            color: #2563eb; /* A darker blue for prominent items */
+            color: #2563eb; /* 突出项目的深蓝色 */
             margin-bottom: 0.4rem;
-            font-size: 1.15rem; /* Slightly larger */
+            font-size: 1.15rem; /* 略大 */
         }
-        /* List styling for project contributions, etc. */
+        /* 项目贡献等列表样式 */
         ul {
             list-style: none;
             margin-left: 0;
             padding-left: 0;
         }
         li {
-            margin-bottom: 0.7rem; /* More space between list items */
-            padding-left: 1.8em; /* Indent for custom bullet */
-            text-indent: -1.8em; /* Negative indent for custom bullet */
-            color: #4b5563; /* Consistent text color */
+            margin-bottom: 0.7rem; /* 列表项之间更大间距 */
+            padding-left: 1.8em; /* 自定义项目符号的缩进 */
+            text-indent: -1.8em; /* 自定义项目符号的负缩进 */
+            color: #4b5563; /* 统一文本颜色 */
         }
         .project-contribution-list li::before {
             content: '•';
             color: #3b82f6; /* Blue-500 */
             font-weight: bold;
             display: inline-block;
-            width: 1.2em; /* More space for the bullet */
+            width: 1.2em; /* 项目符号的更多空间 */
             padding-right: 0.6em;
         }
-        /* Meta information (dates, status) */
+        /* 元信息（日期、状态） */
         .meta-info {
             color: #6b7280;
-            font-size: 0.95em; /* Slightly larger */
+            font-size: 0.95em; /* 略大 */
             margin-bottom: 1rem;
         }
-        /* New style for combined major and date */
+        /* 专业和日期组合的新样式 */
         .education-details {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             color: #4b5563;
-            font-size: 1.05rem; /* Adjust font size as needed */
+            font-size: 1.05rem; /* 根据需要调整字体大小 */
             margin-top: 0.35rem;
             margin-bottom: 1rem;
             flex-wrap: wrap;
         }
         .education-details .major {
-            font-weight: 600; /* Bolder for major */
+            font-weight: 600; /* 专业部分更粗 */
         }
         .education-details .dates {
             color: #6b7280;
-            font-size: 0.98em; /* Slightly smaller for dates */
+            font-size: 0.98em; /* 日期部分略小 */
             white-space: nowrap;
         }
 
-        /* Section Transition Styles */
+        /* 章节过渡样式 */
         .section-content {
             opacity: 0;
             visibility: hidden;
-            transform: translateY(20px); /* Start slightly below */
+            transform: translateY(20px); /* 从下方稍微开始 */
             transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0s linear 0.6s;
-            position: absolute; /* Use absolute positioning for overlaying sections during transition */
+            position: absolute; /* 使用绝对定位在过渡期间覆盖章节 */
             width: 100%;
             left: 0;
             top: 0;
@@ -289,15 +289,15 @@
             visibility: visible;
             transform: translateY(0);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0s linear 0s;
-            position: relative; /* Make active section flow naturally */
+            position: relative; /* 使活跃章节自然流动 */
         }
 
-        /* Ensure right-col can contain absolutely positioned children */
+        /* 确保 right-col 可以包含绝对定位的子元素 */
         .right-col {
             position: relative;
         }
 
-        /* Responsive adjustments */
+        /* 响应式调整 */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -307,10 +307,10 @@
             }
             .left-col {
                 max-width: 100%;
-                border-right: none; /* Remove border on small screens */
+                border-right: none; /* 在小屏幕上移除边框 */
                 padding-right: 0;
-                padding-bottom: 20px; /* Add padding below left column */
-                border-bottom: 1px solid #e5e7eb; /* Add bottom border for separation */
+                padding-bottom: 20px; /* 在左列下方添加内边距 */
+                border-bottom: 1px solid #e5e7eb; /* 添加底部边框用于分隔 */
             }
             .right-col {
                 max-width: 100%;
@@ -318,7 +318,7 @@
             }
             .profile-pic {
                 margin-bottom: 20px;
-                width: 180px; /* Adjust size for mobile */
+                width: 180px; /* 为移动设备调整尺寸 */
                 height: 180px;
             }
             .top-nav {
@@ -407,7 +407,7 @@
                         </p>
                     </div>
 
-                    <!-- Education Section Starts Here -->
+                    <!-- 教育背景章节开始 -->
                     <h2 class="section-title">教育背景 / Education</h2>
                     <div class="ml-5">
                         <h3 class="subsection-title">香港中文大学（深圳）</h3>
@@ -425,7 +425,7 @@
                             <li>荣誉: 连续三年获得学业奖学金</li>
                         </ul>
                     </div>
-                    <!-- Education Section Ends Here -->
+                    <!-- 教育背景章节结束 -->
 
                     <h2 class="section-title">技能 / Skills</h2>
                     <div class="card-grid">
@@ -574,73 +574,73 @@
             const sections = document.querySelectorAll('.right-col section');
             let currentActiveSection = null;
 
-            // Function to show a section with fade/slide effect
+            // 显示带有淡入/滑动效果的章节函数
             function showSection(targetId) {
                 const targetSection = document.querySelector(targetId);
 
-                // If the target section is already active or not found, do nothing.
+                // 如果目标章节已经是活跃的或未找到，则不执行任何操作。
                 if (!targetSection || targetSection === currentActiveSection) {
                     return;
                 }
 
-                // If there's an currently active section, hide it first.
+                // 如果当前有活跃章节，则先将其隐藏。
                 if (currentActiveSection) {
                     currentActiveSection.classList.remove('active-section');
                     currentActiveSection.classList.add('section-hidden');
                 }
 
-                // Prepare the target section to be hidden before activating it.
-                // This ensures the transition happens from the 'hidden' state.
+                // 准备目标章节，使其在激活之前处于隐藏状态。
+                // 这确保了 CSS 过渡能够从“隐藏”状态正确触发。
                 targetSection.classList.remove('active-section');
                 targetSection.classList.add('section-hidden');
 
-                // A small timeout ensures the browser applies the 'section-hidden' class
-                // before 'active-section' is added, allowing the CSS transition to fire correctly.
+                // 短暂的延迟确保浏览器在添加“active-section”之前应用“section-hidden”类，
+                // 从而使 CSS 过渡正确触发。
                 setTimeout(() => {
                     targetSection.classList.remove('section-hidden');
                     targetSection.classList.add('active-section');
-                    currentActiveSection = targetSection; // Update the reference to the currently active section
+                    currentActiveSection = targetSection; // 更新对当前活跃章节的引用
                 }, 10); 
             }
 
-            // Function to set the active class on navigation links
+            // 设置导航链接活跃状态的函数
             function setActiveLink(clickedLink) {
                 navLinks.forEach(link => {
-                    link.classList.remove('active'); // Remove 'active' class from all links
+                    link.classList.remove('active'); // 从所有链接中移除“active”类
                 });
-                clickedLink.classList.add('active'); // Add 'active' class to the clicked link
+                clickedLink.classList.add('active'); // 为被点击的链接添加“active”类
             }
 
-            // Initialize the page by showing the correct section based on URL hash or default.
+            // 初始化页面，根据 URL 哈希或默认值显示正确的章节。
             const initialSectionId = window.location.hash || '#about-me-section';
             const initialNavLink = document.querySelector(`.top-nav-link[href="${initialSectionId}"]`);
             
-            // Loop through all sections to set their initial state.
+            // 遍历所有章节以设置其初始状态。
             sections.forEach(section => {
                 if ('#' + section.id === initialSectionId) {
-                    // This is the section that should be visible initially.
+                    // 这是最初应该可见的章节。
                     section.classList.add('active-section');
-                    currentActiveSection = section; // Set it as the current active section
+                    currentActiveSection = section; // 将其设置为当前活跃章节
                 } else {
-                    // All other sections should be hidden initially.
+                    // 所有其他章节最初应该隐藏。
                     section.classList.add('section-hidden');
                 }
             });
 
-            // Set the 'active' class on the corresponding navigation link.
+            // 为相应的导航链接设置“active”类。
             if (initialNavLink) {
                 setActiveLink(initialNavLink);
             }
 
-            // Add click event listeners to navigation links to handle section switching.
+            // 为导航链接添加点击事件监听器，以处理章节切换。
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default anchor link behavior (e.g., jumping to hash)
-                    const targetId = this.getAttribute('href'); // Get the target section ID from the href attribute
-                    showSection(targetId); // Call showSection to handle the transition
-                    setActiveLink(this); // Update the active state of navigation links
+                    event.preventDefault(); // 阻止默认的锚点链接行为（例如，跳转到哈希）
+                    const targetId = this.getAttribute('href'); // 从 href 属性获取目标章节 ID
+                    showSection(targetId); // 调用 showSection 处理过渡
+                    setActiveLink(this); // 更新导航链接的活跃状态
 
-                    // Update the URL hash to reflect the current section without causing a page reload.
+                    // 更新 URL 哈希以反映当前章节，而不会导致页面重新加载。
                     window.history.pushState(null, '', targetId);
                 });
             });
