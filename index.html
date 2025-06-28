@@ -3,207 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>赵博 - 个人简历主页</title>
+    <title>赵博 - 个人主页</title>
     <!-- Tailwind CSS CDN for modern styling -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Google Fonts - Inter for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General body styles, setting font, background, and default text color */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            color: #374151; /* Dark gray text */
+            background-color: #f3f4f6;
+            color: #374151;
             line-height: 1.6;
             margin: 0;
-            padding: 20px; /* Padding around the whole page */
         }
-
-        /* Main container for the resume content, centered with shadow and rounded corners */
         .container {
-            max-width: 960px;
-            margin: 40px auto; /* Center the container horizontally */
+            max-width: 1100px; /* Wider container for the new layout */
+            margin: 0 auto;
             background-color: #ffffff;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-            padding: 30px 40px; /* More padding inside the container */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 30px; /* Space from top nav */
+            display: flex; /* Use flexbox for two-column layout */
+            gap: 30px; /* Space between columns */
         }
-
-        /* Header section styling for personal information */
-        .header {
-            border-bottom: 2px solid #e5e7eb; /* Subtle bottom border */
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+        /* Top Navigation Bar */
+        .top-nav {
+            background-color: #ffffff;
+            padding: 15px 40px;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .header h1 {
-            color: #1f2937; /* Darker title color */
-            font-size: 2.5rem; /* Larger font size for name */
-            margin-bottom: 0.5rem;
+        .top-nav-link {
+            color: #4b5563;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
         }
-        .header p {
-            color: #4b5563; /* Slightly darker contact info */
-            font-size: 1.125rem; /* Slightly larger for contact info */
-        }
-
-        /* Styling for main section titles (e.g., 教育背景, 科研经历) */
-        .section-title {
-            font-weight: 700; /* Bold */
-            font-size: 1.75rem; /* Larger font size */
-            color: #1f2937; /* Dark gray */
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 25px; /* Space for the accent bar */
-            border-bottom: 1px solid #d1d5db; /* Light gray line under title */
-            padding-bottom: 10px;
-            margin-top: 40px; /* More space above sections */
-        }
-        /* Vertical accent bar next to section titles */
-        .section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 8px; /* Width of the accent bar */
-            height: 80%; /* Height of the accent bar relative to title */
-            background-color: #3b82f6; /* Blue-500 */
-            border-radius: 2px; /* Slightly rounded corners for the bar */
-        }
-
-        /* Styling for sub-section titles (e.g., 大学名称) */
-        .subsection-title {
-            font-weight: 600; /* Semi-bold */
-            font-size: 1.25rem; /* ~20px */
+        .top-nav-link:hover {
+            background-color: #e5e7eb;
             color: #1f2937;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
+            text-decoration: none;
+        }
+        .top-nav-link.active {
+            color: #2563eb; /* Active link color */
+            font-weight: 600;
         }
 
-        /* Styling for individual item titles (e.g., 项目名称, 论文名称) */
-        .item-title {
-            font-weight: 600;
-            color: #2563eb; /* A darker blue for prominent items */
-            margin-bottom: 0.25rem;
+        /* Left Column Styles */
+        .left-col {
+            flex: 1; /* Takes 1 part of the available space */
+            min-width: 250px; /* Minimum width for left column */
+            max-width: 300px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Circular image */
+            object-fit: cover;
+            margin: 0 auto 20px auto; /* Center image */
+            display: block;
+            border: 4px solid #3b82f6; /* Blue border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            background-color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #e5e7eb;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #4b5563;
+        }
+        .contact-item i {
+            color: #3b82f6;
+            width: 24px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        /* Right Column Styles */
+        .right-col {
+            flex: 3; /* Takes 3 parts of the available space */
+        }
+        .intro-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #374151;
+        }
+        .highlight-box {
+            background-color: #e0f2fe; /* Light blue background */
+            border-left: 5px solid #3b82f6; /* Blue accent bar */
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            color: #1e40af; /* Darker blue text */
             font-size: 1.05rem;
         }
-
-        /* General list styling */
-        ul {
-            list-style: none; /* Remove default disc */
-            margin-left: 0;
-            padding-left: 0;
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
-        li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5em; /* Indent for custom bullet */
-            text-indent: -1.5em; /* Negative indent for custom bullet */
-        }
-
-        /* Meta information (dates, status) */
-        .meta-info {
-            color: #6b7280; /* Gray text */
-            font-size: 0.9em;
-            margin-bottom: 0.75rem;
-        }
-
-        /* Custom bullet points for contribution lists */
-        .project-contribution-list li::before {
-            content: '•'; /* Custom bullet point character */
-            color: #3b82f6; /* Blue-500 */
-            font-weight: bold;
-            display: inline-block;
-            width: 1em; /* Space for the bullet */
-            padding-right: 0.5em;
-        }
-
-        /* Link styling */
-        a {
-            color: #3b82f6; /* Blue-500 */
-            text-decoration: none;
-            transition: color 0.2s ease-in-out; /* Smooth transition for hover */
-        }
-        a:hover {
-            color: #1e40af; /* Darker blue on hover */
-            text-decoration: underline;
-        }
-
-        /* Navigation specific styles */
-        .nav-link {
-            display: block; /* Make links block level */
-            padding: 12px 20px;
-            background-color: #e0f2fe; /* Light blue background */
-            color: #1e40af; /* Darker blue text */
-            font-weight: 600;
-            border-radius: 8px;
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        .feature-card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-        .nav-link:hover {
-            background-color: #bfdbfe; /* Slightly darker blue on hover */
-            transform: translateY(-2px); /* Slight lift effect */
-            text-decoration: none; /* Remove underline on hover for buttons */
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #4b5563;
         }
 
-        /* Print-specific styles (will not affect web navigation) */
-        @media print {
-            body {
-                background-color: #ffffff; /* White background for print */
-                margin: 0;
-                padding: 0;
-            }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
             .container {
-                box-shadow: none; /* Remove shadow in print */
-                margin: 0;
-                padding: 20mm; /* A4 page margins */
-                max-width: none; /* Use full width for print */
-                width: 210mm; /* A4 width */
-                min-height: 297mm; /* A4 height */
-                page-break-after: auto; /* Allow auto page break */
+                flex-direction: column; /* Stack columns on smaller screens */
+                padding: 20px;
+                margin-top: 15px;
             }
-            section {
-                page-break-before: auto;
-                page-break-after: avoid;
+            .left-col, .right-col {
+                max-width: 100%; /* Full width */
             }
-            .section-title {
-                page-break-after: avoid;
+            .profile-pic {
+                margin-bottom: 15px;
             }
-            ul, ol, li {
-                page-break-inside: avoid;
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 20px;
             }
-            a[href]:after {
-                content: " (" attr(href) ")";
+            .top-nav .flex {
+                flex-direction: column;
+                width: 100%;
             }
-            /* Hide navigation and other non-essential elements for print */
-            nav, .welcome-text {
-                display: none;
+            .top-nav-link {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 5px;
             }
         }
     </style>
 </head>
 <body class="antialiased">
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="text-xl font-bold text-gray-800">赵博</div>
+        <div class="flex space-x-4">
+            <a href="index.html" class="top-nav-link active">Homepage 首页</a>
+            <a href="education.html" class="top-nav-link">Education 教育</a>
+            <a href="internship.html" class="top-nav-link">Internships 实习</a>
+            <a href="research.html" class="top-nav-link">Publications 出版物 / Research 科研</a>
+            <a href="projects.html" class="top-nav-link">Projects 项目</a>
+            <a href="patents.html" class="top-nav-link">Patents 专利</a>
+            <!-- 可以根据需要添加更多链接 -->
+        </div>
+    </nav>
+
     <div class="container">
-        <!-- Header Section -->
-        <header class="header text-center">
-            <h1 class="font-bold text-gray-900 mb-2">赵博</h1>
-            <p class="text-gray-600">电话: 15771116225 | 邮箱: 3057018496@qq.com</p>
-        </header>
+        <!-- Left Column: Profile and Contact Info -->
+        <div class="left-col text-center">
+            <img src="https://placehold.co/150x150/e0f2fe/1e40af?text=Your+Photo" alt="Profile Photo" class="profile-pic">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Jinxian Xie 金娴谢</h2>
+            <p class="text-gray-700 text-lg mb-4">Nanjing University 南京大学</p>
+            <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt mr-2"></i>Nanjing, China 中国南京</p>
 
-        <section class="mb-8 text-center welcome-text">
-            <p class="text-lg text-gray-700 mb-6">欢迎来到我的个人简历页面，请通过以下导航了解更多信息：</p>
-        </section>
-
-        <!-- Navigation Section -->
-        <nav class="mb-10">
-            <h2 class="section-title">简历导航</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-5">
-                <a href="education.html" class="nav-link">教育背景</a>
-                <a href="skills.html" class="nav-link">技能</a>
-                <a href="internship.html" class="nav-link">实习经历</a>
-                <a href="research.html" class="nav-link">科研经历</a>
-                <a href="projects.html" class="nav-link">项目经历</a>
-                <a href="patents.html" class="nav-link">专利成果</a>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:3057018496@qq.com" class="text-gray-700">Email 邮箱</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-twitter"></i>
+                    <a href="#" target="_blank" class="text-gray-700">Twitter 推特</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="#" target="_blank" class="text-gray-700">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="#" target="_blank" class="text-gray-700">Instagram</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/alex036225" target="_blank" class="text-gray-700">Github</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <a href="#" target="_blank" class="text-gray-700">Google Scholar</a>
+                </div>
             </div>
-        </nav>
+        </div>
+
+        <!-- Right Column: Introduction and Highlights -->
+        <div class="right-col">
+            <p class="intro-text">
+                我的名字是金娴谢 (发音为"jin-shee-ahng SHEE-eh")，我是在南京大学的一名 incoming graduate student。我在北京交通大学获得了信息与计算科学学士学位。目前，我在微软担任研究实习生，我有幸与首席研究员 Justin Ding 合作。在此之前，我在北京大学在万军骁教授的指导下获得了宝贵的研究经验。
+            </p>
+
+            <div class="highlight-box">
+                <p>
+                    <i class="fas fa-quote-left text-blue-500 mr-2"></i>
+                    我的研究重点是利用 <span class="font-semibold">Large Language Models</span> 来解决复杂系统问题。这包括在非结构化数据、定量数据和新兴科学发现中应用自然语言处理。
+                    <br><br>
+                    My research focus on leveraging <span class="font-semibold">Large Language Models</span> to address complex systems. This includes applications in natural language processing for unstructured data, quantitative trading, and advancing scientific discovery.
+                </p>
+            </div>
+
+            <p class="intro-text">
+                我正在积极寻找 LLM 应用和自然语言处理方面的研究助理机会。欢迎联系我，或从我的 <a href="research.html" class="text-blue-500 hover:text-blue-700">Publications</a> 了解更多信息。
+            </p>
+
+            <!-- Feature Cards -->
+            <div class="card-grid">
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Researcher AI研究员</h3>
+                    <ul class="text-left text-sm text-gray-600 mt-2">
+                        <li><i class="fas fa-flask mr-2 text-blue-400"></i>研究重点在于 LLMs 和 NLP</li>
+                        <li><i class="fas fa-building mr-2 text-blue-400"></i>在顶尖机构实习</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>Content Creator 内容创作者</h3>
+                    <ul class="text-left text-sm text-gray-600 mt-2">
+                        <li><i class="fas fa-blog mr-2 text-blue-400"></i>技术博客浏览量 50万+</li>
+                        <li><i class="fas fa-share-alt mr-2 text-blue-400"></i>活跃于 Xiaohongshu 小红书活跃用户</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Life Explorer 生活探索</h3>
+                    <ul class="text-left text-sm text-gray-600 mt-2">
+                        <li><i class="fas fa-plane mr-2 text-blue-400"></i>访问过全球 9 个国家</li>
+                        <li><i class="fas fa-map-marked-alt mr-2 text-blue-400"></i>旅行过中国 32 个省份</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
