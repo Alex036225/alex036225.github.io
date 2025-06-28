@@ -225,15 +225,24 @@
             font-size: 0.9em;
             margin-bottom: 0.75rem;
         }
-        /* Link styling */
-        a {
-            color: #3b82f6; /* Blue-500 */
-            text-decoration: none;
-            transition: color 0.2s ease-in-out; /* Smooth transition for hover */
+        /* New style for combined major and date */
+        .education-details {
+            display: flex; /* Use flexbox to align items in a row */
+            justify-content: space-between; /* Space between major and date */
+            align-items: baseline; /* Align text at the baseline */
+            color: #4b5563; /* Consistent text color */
+            font-size: 1rem; /* Adjust font size as needed */
+            margin-top: 0.25rem; /* Small margin from institution name */
+            margin-bottom: 0.75rem; /* Standard spacing after this line */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens if content is too long */
         }
-        a:hover {
-            color: #1e40af; /* Darker blue on hover */
-            text-decoration: underline;
+        .education-details .major {
+            font-weight: 500; /* Slightly bolder for major */
+        }
+        .education-details .dates {
+            color: #6b7280; /* Lighter color for dates */
+            font-size: 0.95em; /* Slightly smaller for dates */
+            white-space: nowrap; /* Prevent dates from wrapping unless forced by small screen */
         }
 
         /* Responsive adjustments */
@@ -267,6 +276,13 @@
             .card-grid {
                 grid-template-columns: 1fr; /* Single column on small screens */
             }
+            .education-details {
+                flex-direction: column; /* Stack major and dates on very small screens */
+                align-items: flex-start;
+            }
+            .education-details .major {
+                margin-bottom: 0.2em; /* Small space when stacked */
+            }
         }
     </style>
 </head>
@@ -275,7 +291,6 @@
         <div class="text-xl font-bold text-gray-800 mb-2 md:mb-0">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
             <a href="#about-me-section" class="top-nav-link active">首页 / 个人信息</a>
-            <a href="#education-section" class="top-nav-link">教育背景</a>
             <a href="#internship-section" class="top-nav-link">实习经历</a>
             <a href="#research-publications-section" class="top-nav-link">科研产出</a>
             <a href="#projects-section" class="top-nav-link">项目经历</a>
@@ -314,13 +329,32 @@
             <section id="about-me-section" class="mb-10">
                 <h2 class="section-title">个人信息 / About Me</h2>
                 <div class="ml-5">
-                    <!-- Removed the intro-text paragraph as requested -->
                     <div class="highlight-box">
                         <p>
                             <i class="fas fa-quote-left text-blue-500 mr-2"></i>
                             我的研究重点是利用 <span class="font-semibold">大型语言模型 (LLMs)</span> 来解决跨模态生理信号传感领域的复杂问题。这包括在非接触式心率测量 (rPPG) 中，有效融合多模态信息、捕捉长时序依赖，以及提升模型在复杂真实世界环境中的适应性和稳定性。
                         </p>
                     </div>
+
+                    <!-- Education Section Starts Here -->
+                    <h2 class="section-title">教育背景 / Education</h2>
+                    <div class="ml-5">
+                        <h3 class="subsection-title">香港中文大学（深圳）</h3>
+                        <p class="education-details">
+                            <span class="major">人工智能与机器人, 硕士</span>
+                            <span class="dates">2025.09 - 2027.06</span>
+                        </p>
+                        <h3 class="subsection-title">山东大学</h3>
+                        <p class="education-details">
+                            <span class="major">数学与应用数学, 本科</span>
+                            <span class="dates">2021.09 - 2025.06</span>
+                        </p>
+                        <ul class="project-contribution-list mt-2">
+                            <li>GPA: 87.42/100</li>
+                            <li>荣誉: 连续三年获得学业奖学金</li>
+                        </ul>
+                    </div>
+                    <!-- Education Section Ends Here -->
 
                     <h2 class="section-title">技能 / Skills</h2>
                     <div class="card-grid">
@@ -345,22 +379,6 @@
                             <p>多模态大模型, 域泛化, rPPG</p>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section id="education-section" class="mb-10">
-                <h2 class="section-title">教育背景 / Education</h2>
-                <div class="ml-5">
-                    <h3 class="subsection-title">香港中文大学（深圳）</h3>
-                    <p class="text-gray-700">人工智能与机器人, 硕士</p>
-                    <p class="meta-info">2025.09 - 2027.06</p>
-                    <h3 class="subsection-title">山东大学</h3>
-                    <p class="text-gray-700">数学与应用数学, 本科</p>
-                    <p class="meta-info">2021.09 - 2025.06</p>
-                    <ul class="project-contribution-list mt-2">
-                        <li>GPA: 87.42/100</li>
-                        <li>荣誉: 连续三年获得学业奖学金</li>
-                    </ul>
                 </div>
             </section>
 
