@@ -384,11 +384,6 @@
         .right-col {
             flex: 3;
             padding-left: 20px;
-            /* Remove position: relative if it's not strictly needed for other child elements
-               and if you want it to behave purely in flow for height calculation.
-               However, if section-content uses absolute positioning, this must be relative.
-               Since we are changing section-content, let's keep it relative for now
-               as it might be needed for other elements not directly managed by this change. */
         }
         /* Intro text styles */
         .intro-text {
@@ -412,15 +407,30 @@
             color: #1a5bb5;
             font-size: 1.08rem;
             line-height: 1.7;
-            box-shadow: 0 6px 20px rgba(26, 115, 232, 0.08);
-            transition: background 0.5s ease, border-left-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+            /* Enhanced box shadow similar to other cards */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08), 0 1px 5px rgba(0, 0, 0, 0.03);
+            /* Add backdrop filter for frosted glass effect */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            /* Ensure all transitions for dynamic effects are covered */
+            transition: background 0.5s ease, border-left-color 0.5s ease, color 0.5s ease, 
+                        box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, backdrop-filter 0.5s ease;
         }
         html.dark .highlight-box {
             background: linear-gradient(to right, #2b4c6e, #3a5c7f);
             border-left-color: #3f88c5;
             color: #e0e6ed;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 1px 5px rgba(0, 0, 0, 0.1); /* Dark mode shadow */
         }
+        /* Hover effect for highlight box, mirroring publication cards */
+        .highlight-box:hover {
+            transform: translateY(-5px) scale(1.01); /* Add slight lift and scale */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06); /* More pronounced shadow on hover */
+        }
+        html.dark .highlight-box:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
         /* Style for highlighted keywords within the highlight-box */
         .highlight-box .font-semibold {
             transition: color 0.3s ease;
@@ -587,7 +597,7 @@
             background: linear-gradient(to bottom, #3f88c5, #2f6a9e);
         }
 
-        /* Subsection title */
+        /* Subsection title - for top-level sections that are not `section-title` */
         .subsection-title {
             font-weight: 700;
             font-size: 1.35rem;
@@ -599,6 +609,22 @@
         html.dark .subsection-title {
             color: #e0e6ed;
         }
+
+        /* New: Subsection title style specifically for inside main-section-card */
+        .subsection-title-in-card {
+            font-weight: 700;
+            font-size: 1.6rem; /* Slightly larger than normal subsection-title but smaller than section-title */
+            color: #1f2937;
+            margin-top: 30px; /* Adjust spacing as needed */
+            margin-bottom: 20px;
+            transition: color 0.5s ease;
+            padding-left: 0; /* Remove padding from section-title */
+            border-bottom: none; /* Remove border from section-title */
+        }
+        html.dark .subsection-title-in-card {
+            color: #e0e6ed;
+        }
+
 
         /* Individual item title */
         .item-title {
@@ -697,7 +723,6 @@
 
         /* Section transition styles */
         .section-content {
-            /* Removed position: absolute; width: 100%; left: 0; top: 0; */
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -770,6 +795,25 @@
         }
         html.dark #scroll-progress-bar {
             background: linear-gradient(to right, #3f88c5, #6aa5dd);
+        }
+
+        /* New styles for a general section content card wrapper */
+        .main-section-card {
+            background-color: rgba(255, 255, 255, 0.7); /* Consistent with other cards */
+            backdrop-filter: blur(10px); /* Frosted glass */
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(220, 220, 220, 0.4); /* Thin, soft border */
+            border-radius: 18px; /* Consistent rounded corners */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08), 0 1px 5px rgba(0, 0, 0, 0.03);
+            padding: 25px; /* Internal padding for content */
+            margin-top: 25px; /* Space from the main section title */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, backdrop-filter 0.5s ease;
+        }
+
+        html.dark .main-section-card {
+            background-color: rgba(30, 45, 60, 0.7);
+            border-color: rgba(60, 80, 100, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 1px 5px rgba(0, 0, 0, 0.1);
         }
 
 
@@ -1153,8 +1197,9 @@
         <div class="right-col">
             <section id="about-me-section" class="section-content">
                 <h2 class="section-title">个人信息 / About Me</h2>
-                <div class="ml-5">
-                    <!-- Added intro-hidden class for initial fade-in animation -->
+                <!-- New wrapper for the main content of the section, acting as a large card -->
+                <div class="main-section-card">
+                    <!-- The highlight box is now acting as an inner card itself -->
                     <div class="highlight-box intro-hidden">
                         <p>
                             <i class="fas fa-quote-left text-blue-500 mr-2"></i>
@@ -1162,8 +1207,10 @@
                         </p>
                     </div>
 
-                    <h2 class="section-title">教育背景 / Education</h2>
-                    <div class="ml-5">
+                    <!-- Changed h2 to h3 and class from section-title to subsection-title-in-card -->
+                    <h3 class="subsection-title-in-card">教育背景 / Education</h3>
+                    <!-- Removed ml-5 as main-section-card provides padding -->
+                    <div>
                         <!-- Education Card 1: Hong Kong Chinese University (Shenzhen) -->
                         <div class="publication-card">
                             <div class="publication-thumbnail">
@@ -1201,7 +1248,9 @@
                             </div>
                         </div>
                     </div>
-                    <h2 class="section-title">技能 / Skills</h2>
+                    <!-- Changed h2 to h3 and class from section-title to subsection-title-in-card -->
+                    <h3 class="subsection-title-in-card">技能 / Skills</h3>
+                    <!-- Removed ml-5 as main-section-card provides padding -->
                     <div class="card-grid">
                         <div class="feature-card">
                             <i class="fas fa-code"></i>
