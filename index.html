@@ -761,14 +761,13 @@
 </head>
 <body class="antialiased">
     <nav class="top-nav">
-        <div class="text-2xl font-bold text-gray-900 mb-3 md:mb-0 dark:text-gray-200 transition-colors duration-500">赵博</div>
+        <div class="text-2xl font-bold text-gray-800 mb-3 md:mb-0 dark:text-gray-200 transition-colors duration-500">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
             <a href="#about-me-section" class="top-nav-link active">首页 / 个人信息</a>
             <a href="#internship-section" class="top-nav-link">实习经历</a>
             <a href="#research-publications-section" class="top-nav-link">科研产出</a>
             <a href="#projects-section" class="top-nav-link">项目经历</a>
             <a href="#patents-section" class="top-nav-link">专利成果</a>
-            <!-- 暗黑模式切换按钮 -->
             <button id="darkModeToggle" class="flex items-center">
                 <i class="fas fa-moon"></i>
             </button>
@@ -779,8 +778,8 @@
         <div class="left-col text-center">
             <img id="profile-photo" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/picture.jpg" alt="Profile Photo" class="profile-pic">
             
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-2 mt-4 dark:text-white transition-colors duration-500">赵博</h2>
-            <p class="text-gray-800 mb-4 text-lg dark:text-gray-200 transition-colors duration-500"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-2 mt-4 dark:text-white transition-colors duration-500">赵博</h2>
+            <p class="text-gray-700 mb-4 text-lg dark:text-gray-200 transition-colors duration-500"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
 
             <div class="contact-info">
                 <div class="contact-item">
@@ -813,7 +812,6 @@
                         </p>
                     </div>
 
-                    <!-- 教育背景章节开始 -->
                     <h2 class="section-title">教育背景 / Education</h2>
                     <div class="ml-5">
                         <h3 class="subsection-title">香港中文大学（深圳）</h3>
@@ -831,8 +829,6 @@
                             <li>荣誉: 连续三年获得学业奖学金</li>
                         </ul>
                     </div>
-                    <!-- 教育背景章节结束 -->
-
                     <h2 class="section-title">技能 / Skills</h2>
                     <div class="card-grid">
                         <div class="feature-card">
@@ -854,7 +850,6 @@
                             <i class="fas fa-chart-line"></i>
                             <h3>研究方向</h3>
                             <p>多模态大模型, 域泛化, rPPG</p>
-                            <!-- LLM 触发按钮 -->
                             <button class="llm-trigger-button mt-4" data-research-topic="多模态大模型, 域泛化, rPPG">
                                 <i class="fas fa-magic mr-2"></i> 查看 LLM 洞察
                             </button>
@@ -881,7 +876,6 @@
             <section id="research-publications-section" class="section-content">
                 <h2 class="section-title">科研产出 / Research & Publications</h2>
                 <div class="ml-5">
-                    <!-- Publication Card 1 -->
                     <div class="publication-card">
                         <div class="publication-thumbnail">
                             <img src="https://placehold.co/150x120/a8dadc/1d3557?text=Paper+1" alt="PhysLLM 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/a8dadc/1d3557?text=Paper+1';" />
@@ -898,7 +892,6 @@
                         </div>
                     </div>
 
-                    <!-- Publication Card 2 -->
                     <div class="publication-card">
                         <div class="publication-thumbnail">
                             <img src="https://placehold.co/150x120/fcca46/2a2a2a?text=Paper+2" alt="Optimal Transport 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/fcca46/2a2a2a?text=Paper+2';" />
@@ -914,7 +907,6 @@
                         </div>
                     </div>
 
-                    <!-- Publication Card 3 -->
                     <div class="publication-card">
                         <div class="publication-thumbnail">
                             <img src="https://placehold.co/150x120/a9b4c2/223344?text=Paper+3" alt="CardiacMamba 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/a9b4c2/223344?text=Paper+3';" />
@@ -932,7 +924,6 @@
                         </div>
                     </div>
 
-                    <!-- Publication Card 4 -->
                     <div class="publication-card">
                         <div class="publication-thumbnail">
                             <img src="https://placehold.co/150x120/c2c8d1/334455?text=Paper+4" alt="CCBR 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/c2c8d1/334455?text=Paper+4';" />
@@ -947,7 +938,6 @@
                         </div>
                     </div>
 
-                    <!-- Publication Card 5 -->
                     <div class="publication-card">
                         <div class="publication-thumbnail">
                             <img src="https://placehold.co/150x120/dfe6e9/445566?text=Paper+5" alt="NMI 论文封面" onerror="this.onerror=null;this.src='https://placehold.co/150x120/dfe6e9/445566?text=Paper+5';" />
@@ -1002,7 +992,6 @@
         </div>
     </div>
 
-    <!-- LLM 洞察模态框 -->
     <div id="llmInsightModal" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-header">
