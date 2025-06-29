@@ -1567,24 +1567,33 @@
                 }
             }
 
+            // Function to set the active navigation link (MOVED TO TOP)
+            function setActiveLink(clickedLink) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                clickedLink.classList.add('active');
+            }
+
             // Function to show a specific section with transition
             function showSection(targetId) {
                 const targetSection = document.querySelector(targetId);
                 const aboutMeHighlightBox = document.querySelector('#about-me-section .highlight-box');
                 const aboutMeKeyword = document.querySelector('#about-me-section .keyword-to-animate');
-                const navHeight = getTopNavHeight(); // Get current navigation height
+                const navHeight = getTopNavHeight();
 
-                // If no target section found or it's already active, do nothing
                 if (!targetSection || targetSection === currentActiveSection) {
                     return;
                 }
 
-                // Hide all sections first
-                sections.forEach(section => {
-                    section.classList.remove('active-section');
-                    section.classList.add('section-hidden'); // This now applies display: none
+                // If there's an active section, fade it out first
+                if (currentActiveSection) {
+                    // Start the fade-out and slide-down transition
+                    currentActiveSection.classList.remove('active-section');
+                    currentActiveSection.classList.add('section-hidden');
+
                     // Reset About Me animations when moving away from it
-                    if (section.id === 'about-me-section') {
+                    if (currentActiveSection.id === 'about-me-section') {
                         if (aboutMeHighlightBox) {
                             aboutMeHighlightBox.classList.remove('intro-visible');
                             aboutMeHighlightBox.classList.add('intro-hidden');
@@ -1593,44 +1602,77 @@
                             aboutMeKeyword.classList.remove('animate-pulse-keyword');
                         }
                     }
-                });
 
-                // A small timeout allows the browser to register the 'display: none' before adding 'display: block'
-                // This ensures the transition effect works correctly.
-                setTimeout(() => {
+                    // Use a temporary flag to ensure the transitionend listener fires only once per transition
+                    let transitionEnded = false;
+                    const onTransitionEnd = (event) => {
+                        // Ensure it's the opacity transition property that ended to avoid multiple triggers
+                        if (event.propertyName === 'opacity' && !transitionEnded) {
+                            transitionEnded = true;
+                            currentActiveSection.removeEventListener('transitionend', onTransitionEnd);
+                            currentActiveSection.style.display = 'none'; // Hide old section after its transition
+
+                            // Now, prepare and show the new section
+                            targetSection.style.display = 'block'; // Make the new section take up space
+                            // A small timeout allows the browser to re-render with display: block before applying active-section
+                            // This ensures the fade-in animation plays correctly.
+                            setTimeout(() => {
+                                targetSection.classList.remove('section-hidden');
+                                targetSection.classList.add('active-section');
+                                currentActiveSection = targetSection;
+
+                                // Scroll to the top of the newly activated section, accounting for sticky nav
+                                const scrollPosition = targetSection.offsetTop - navHeight;
+                                window.scrollTo({
+                                    top: scrollPosition,
+                                    behavior: 'smooth'
+                                });
+
+                                // Trigger About Me animations if it's the new active section
+                                if (targetSection.id === 'about-me-section') {
+                                    if (aboutMeHighlightBox) {
+                                        aboutMeHighlightBox.classList.remove('intro-hidden');
+                                        aboutMeHighlightBox.classList.add('intro-visible');
+                                    }
+                                    if (aboutMeKeyword) {
+                                        setTimeout(() => {
+                                            aboutMeKeyword.classList.add('animate-pulse-keyword');
+                                        }, 500); // Start animation 0.5s after fade-in
+                                    }
+                                }
+                            }, 10); // Small delay to ensure display: block applies before transition
+                        }
+                    };
+                    currentActiveSection.addEventListener('transitionend', onTransitionEnd);
+
+                } else {
+                    // This block handles the initial load or if there was no prior active section
+                    // Ensure target is visible and then activate for animation
+                    targetSection.style.display = 'block'; // Ensure it's block before applying active-section
                     targetSection.classList.remove('section-hidden');
                     targetSection.classList.add('active-section');
                     currentActiveSection = targetSection;
 
-                    // Scroll to the top of the newly activated section, accounting for sticky nav
+                    // Scroll to the top of the newly activated section
                     const scrollPosition = targetSection.offsetTop - navHeight;
                     window.scrollTo({
                         top: scrollPosition,
                         behavior: 'smooth'
                     });
 
-                    // Trigger About Me animations when it becomes active
+                    // Trigger About Me animations if it's the initial active section
                     if (targetSection.id === 'about-me-section') {
                         if (aboutMeHighlightBox) {
                             aboutMeHighlightBox.classList.remove('intro-hidden');
                             aboutMeHighlightBox.classList.add('intro-visible');
                         }
                         if (aboutMeKeyword) {
-                            // Give a small delay to ensure the element is visible before animation starts
                             setTimeout(() => {
                                 aboutMeKeyword.classList.add('animate-pulse-keyword');
-                            }, 500); // Start animation 0.5s after fade-in
+                            }, 500);
                         }
                     }
-                }, 10);
-            }
-
-            // Function to set the active navigation link
-            function setActiveLink(clickedLink) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-                clickedLink.classList.add('active');
+                }
             }
 
             // Function to update the scroll progress bar
@@ -1676,6 +1718,14 @@
                 });
             }
 
+            // Initial setup for sections: ensure all non-active sections are hidden from the start
+            sections.forEach(section => {
+                if (!section.classList.contains('active-section')) {
+                    section.classList.add('section-hidden'); // This applies opacity 0 and transform and display: none
+                    section.style.display = 'none'; // Directly hide them so they don't take up space initially
+                }
+            });
+
             // Initialize dark mode on page load
             initDarkMode();
 
@@ -1683,16 +1733,20 @@
             const initialSectionId = window.location.hash || '#about-me-section';
             const initialNavLink = document.querySelector(`.top-nav-link[href="${initialSectionId}"]`);
             
-            // Get elements for initial About Me animation setup
-            const aboutMeHighlightBox = document.querySelector('#about-me-section .highlight-box');
-            const aboutMeKeyword = document.querySelector('#about-me-section .keyword-to-animate');
+            // Activate the initial section directly without a fade-out from nothing
+            if (initialNavLink) {
+                setActiveLink(initialNavLink); // This call is now safe because setActiveLink is defined above
+                const targetSection = document.querySelector(initialSectionId);
+                if (targetSection) {
+                    targetSection.style.display = 'block'; // Ensure it's visible before activating
+                    targetSection.classList.remove('section-hidden'); // Remove hidden state
+                    targetSection.classList.add('active-section'); // Apply active state
+                    currentActiveSection = targetSection;
 
-            sections.forEach(section => {
-                if ('#' + section.id === initialSectionId) {
-                    section.classList.add('active-section');
-                    currentActiveSection = section;
-                    // Trigger animations if About Me is the initial section
-                    if (section.id === 'about-me-section') {
+                    // Trigger About Me animations if it's the initial section
+                    if (targetSection.id === 'about-me-section') {
+                        const aboutMeHighlightBox = document.querySelector('#about-me-section .highlight-box');
+                        const aboutMeKeyword = document.querySelector('#about-me-section .keyword-to-animate');
                         if (aboutMeHighlightBox) {
                             aboutMeHighlightBox.classList.remove('intro-hidden');
                             aboutMeHighlightBox.classList.add('intro-visible');
@@ -1703,14 +1757,7 @@
                             }, 500);
                         }
                     }
-                } else {
-                    section.classList.add('section-hidden'); /* This now sets display: none */
                 }
-            });
-
-            // Set the active navigation link
-            if (initialNavLink) {
-                setActiveLink(initialNavLink);
             }
 
             // Add event listeners for navigation links
@@ -1720,8 +1767,6 @@
                     const targetId = this.getAttribute('href');
                     showSection(targetId);
                     setActiveLink(this);
-                    // No need to manually update hash here, showSection handles scroll, and hash will update naturally.
-                    // window.history.pushState(null, '', targetId); // Moved into showSection for better control
                 });
             });
 
