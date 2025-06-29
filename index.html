@@ -8,28 +8,367 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Define CSS Variables for Light Mode */
+        :root {
+            /* General */
+            --color-body-text: #2e3a47;
+            --color-body-bg-start: #fbfcfd;
+            --color-body-bg-mid: #f2f6fa;
+            --color-body-bg-end: #e6f0ff;
+            --color-body-text-shadow: none; /* No text shadow in light mode */
+
+            /* Hero Background */
+            --color-hero-bg-before-radial-1: rgba(0, 200, 255, 0.00); /* transparent */
+            --color-hero-bg-before-radial-2: rgba(0, 200, 255, 0.00); /* transparent */
+            --color-hero-bg-before-linear: rgba(0,200,255,0.00); /* transparent */
+            --color-hero-bg-after-radial: rgba(0, 200, 255, 0.00); /* transparent */
+
+            /* Scrollbar */
+            --color-scrollbar-track: rgba(0, 255, 255, 0.05); /* Very subtle tint */
+            --color-scrollbar-thumb-start: #00bcd4;
+            --color-scrollbar-thumb-end: #007bff;
+            --color-scrollbar-thumb-hover-start: #00e0ff;
+            --color-scrollbar-thumb-hover-end: #00aaff;
+
+            /* Container */
+            --color-container-bg: rgba(255, 255, 255, 0.85);
+            --color-container-shadow-1: rgba(0, 0, 0, 0.1);
+            --color-container-shadow-2: rgba(0, 0, 0, 0.08);
+            --color-container-border: rgba(220, 220, 220, 0.4);
+
+            /* Top Navigation */
+            --color-nav-bg: rgba(255, 255, 255, 0.9);
+            --color-nav-shadow: rgba(0, 0, 0, 0.08);
+            --color-nav-border-bottom: none;
+            --color-nav-title: #000000;
+            --color-nav-link-text: #4c5a6d;
+            --color-nav-link-hover-bg: #e6f0ff;
+            --color-nav-link-hover-text: #1a73e8;
+            --color-nav-link-hover-shadow: rgba(26, 115, 232, 0.1);
+            --color-nav-link-hover-border: transparent;
+            --color-nav-link-active-bg-start: #1a73e8;
+            --color-nav-link-active-bg-end: #155bb5;
+            --color-nav-link-active-text: #ffffff;
+            --color-nav-link-active-shadow: rgba(26, 115, 232, 0.4);
+            --color-nav-link-active-border: transparent;
+
+            /* Left Column / Profile */
+            --color-profile-pic-border: #1a73e8;
+            --color-profile-pic-shadow-1: rgba(0, 0, 0, 0.1);
+            --color-profile-pic-shadow-2: rgba(26, 115, 232, 0.2);
+            --color-profile-pic-hover-filter: rgba(26, 115, 232, 0.6);
+            --color-left-col-border-right: rgba(220, 220, 220, 0.6);
+            --color-left-col-border-bottom-mobile: rgba(220, 220, 220, 0.6);
+
+            /* Contact Info */
+            --color-contact-info-bg: rgba(252, 253, 254, 0.8);
+            --color-contact-info-border: rgba(230, 230, 230, 0.6);
+            --color-contact-info-shadow-1: rgba(0, 0, 0, 0.03);
+            --color-contact-info-shadow-2: rgba(0, 0, 0, 0.02);
+            --color-contact-item-text: #4c5a6d;
+            --color-contact-icon: #1a73e8;
+            --color-contact-icon-hover-filter: none; /* No glow in light mode */
+            --color-contact-link: #1a73e8;
+            --color-contact-link-hover: #155bb5;
+
+            /* Right Column / Content */
+            --color-intro-text: #374151;
+
+            /* Highlight Box */
+            --color-highlight-box-bg-start: #eaf6ff;
+            --color-highlight-box-bg-end: #f7fdff;
+            --color-highlight-box-border-left: #1a73e8;
+            --color-highlight-box-text: #1a5bb5;
+            --color-highlight-box-shadow-1: rgba(0, 0, 0, 0.08);
+            --color-highlight-box-shadow-2: rgba(0, 0, 0, 0.03);
+            --color-highlight-box-hover-shadow-1: rgba(0, 0, 0, 0.12);
+            --color-highlight-box-hover-shadow-2: rgba(0, 0, 0, 0.06);
+            --color-highlight-box-hover-border: rgba(220, 220, 220, 0.6);
+            --color-highlight-box-keyword: #1a73e8;
+            --color-highlight-box-keyword-pulse: #1a73e8;
+            --color-highlight-box-keyword-shadow: none;
+
+            /* Section Titles */
+            --color-section-title-text: #1f2937;
+            --color-section-title-border-start: #1a73e8;
+            --color-section-title-border-end: rgba(26, 115, 232, 0.2);
+            --color-section-title-accent-start: #1a73e8;
+            --color-section-title-accent-end: #155bb5;
+            --color-section-title-text-shadow: none;
+            --color-section-title-accent-shadow: none;
+
+            --color-subsection-title-text: #1f2937;
+            --color-item-title-text: #1a73e8;
+            --color-item-title-text-hover: #155bb5;
+            --color-item-title-text-shadow: none;
+
+            /* Feature Cards */
+            --color-feature-card-bg: rgba(255, 255, 255, 0.9);
+            --color-feature-card-border: rgba(220, 220, 220, 0.6);
+            --color-feature-card-shadow-1: rgba(0, 0, 0, 0.06);
+            --color-feature-card-shadow-2: rgba(0, 0, 0, 0.03);
+            --color-feature-card-hover-bg: rgba(248, 251, 255, 0.95);
+            --color-feature-card-hover-shadow-1: rgba(0, 0, 0, 0.1);
+            --color-feature-card-hover-shadow-2: rgba(0, 0, 0, 0.05);
+            --color-feature-card-hover-border: rgba(26, 115, 232, 0.5);
+            --color-feature-card-icon: #1a73e8;
+            --color-feature-card-icon-shadow: none;
+            --color-feature-card-title: #1f2937;
+            --color-feature-card-text: #4c5a6d;
+            --color-feature-card-hover-title: #155bb5;
+            --color-feature-card-hover-text: #374151;
+
+            /* Lists */
+            --color-list-item-text: #4c5a6d;
+            --color-list-bullet-gradient-start: #1a73e8;
+            --color-list-bullet-gradient-end: #6aa5dd;
+            --color-list-bullet-fallback: #1a73e8;
+            --color-list-bullet-shadow: none;
+
+            /* Meta Info */
+            --color-meta-info-text: #6b7280;
+
+            /* Education/Publication Cards */
+            --color-main-section-card-bg: rgba(255, 255, 255, 0.7);
+            --color-main-section-card-border: rgba(220, 220, 220, 0.4);
+            --color-main-section-card-shadow-1: rgba(0, 0, 0, 0.08);
+            --color-main-section-card-shadow-2: rgba(0, 0, 0, 0.03);
+
+            --color-publication-card-bg: rgba(255, 255, 255, 0.7);
+            --color-publication-card-border: rgba(220, 220, 220, 0.4);
+            --color-publication-card-shadow-1: rgba(0, 0, 0, 0.08);
+            --color-publication-card-shadow-2: rgba(0, 0, 0, 0.03);
+            --color-publication-card-hover-bg: rgba(255, 255, 255, 0.85);
+            --color-publication-card-hover-shadow-1: rgba(0, 0, 0, 0.12);
+            --color-publication-card-hover-shadow-2: rgba(0, 0, 0, 0.06);
+            --color-publication-card-hover-border: rgba(220, 220, 220, 0.4);
+
+            --color-publication-thumbnail-bg: #f7f7f7;
+            --color-status-icon-bg: rgba(255, 255, 255, 0.9);
+            --color-status-icon-shadow: rgba(0, 0, 0, 0.1);
+            --color-status-icon-color: #1a73e8;
+            --color-status-icon-hover-shadow: none;
+
+            --color-publication-details-title: #1f2937;
+            --color-publication-details-meta: #6b7280;
+            --color-publication-details-hover-title: #1a73e8;
+            --color-publication-details-hover-meta: #4c5a6d;
+            --color-publication-link-text: #1a73e8;
+            --color-publication-link-hover-text: #155bb5;
+
+            /* Toggle Buttons (Read More, Dark Mode) */
+            --color-toggle-button-bg: #f0f4f8;
+            --color-toggle-button-border: rgba(220, 220, 220, 0.6);
+            --color-toggle-button-text: #1a73e8;
+            --color-toggle-button-shadow: none;
+            --color-toggle-button-hover-bg: #e6f0ff;
+            --color-toggle-button-hover-text: #155bb5;
+            --color-toggle-button-hover-shadow: rgba(26, 115, 232, 0.1);
+
+            /* Back to Top Button */
+            --color-back-to-top-bg: rgba(26, 115, 232, 0.8);
+            --color-back-to-top-color: white;
+            --color-back-to-top-border: none;
+            --color-back-to-top-shadow: rgba(0, 0, 0, 0.2);
+            --color-back-to-top-hover-bg: rgba(26, 115, 232, 1);
+            --color-back-to-top-hover-shadow: rgba(0, 0, 0, 0.3);
+
+            /* Scroll Progress Bar */
+            --color-scroll-progress-bar-start: #1a73e8;
+            --color-scroll-progress-bar-end: #3f88c5;
+            --color-scroll-progress-bar-shadow: none;
+        }
+
+        /* Dark Mode Overrides for CSS Variables */
+        html.dark {
+            /* General */
+            --color-body-text: #d8dee9;
+            --color-body-bg-start: #0f1c2c;
+            --color-body-bg-mid: #0a141f;
+            --color-body-bg-end: #070f1a;
+            --color-body-text-shadow: 0 0 2px rgba(0, 255, 255, 0.05), 0 0 5px rgba(0, 255, 255, 0.02);
+
+            /* Hero Background */
+            --color-hero-bg-before-radial-1: rgba(0, 200, 255, 0.1);
+            --color-hero-bg-before-radial-2: rgba(0, 200, 255, 0.08);
+            --color-hero-bg-before-linear: rgba(0,200,255,0.03);
+            --color-hero-bg-after-radial: rgba(0, 200, 255, 0.05);
+
+            /* Scrollbar */
+            --color-scrollbar-track: rgba(0, 255, 255, 0.03);
+            --color-scrollbar-thumb-start: #00e0ff;
+            --color-scrollbar-thumb-end: #00aaff;
+            --color-scrollbar-thumb-hover-start: #00ffff;
+            --color-scrollbar-thumb-hover-end: #00ccff;
+
+            /* Container */
+            --color-container-bg: rgba(15, 28, 44, 0.75);
+            --color-container-shadow-1: rgba(0, 255, 255, 0.1);
+            --color-container-shadow-2: rgba(0, 255, 255, 0.05);
+            --color-container-inset-shadow: inset 0 0 15px rgba(0, 255, 255, 0.02);
+            --color-container-border: rgba(0, 255, 255, 0.15);
+
+            /* Top Navigation */
+            --color-nav-bg: rgba(15, 28, 44, 0.85);
+            --color-nav-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+            --color-nav-border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            --color-nav-title: #e0e6ed;
+            --color-nav-link-text: #92a4b9;
+            --color-nav-link-hover-bg: rgba(0, 200, 255, 0.1);
+            --color-nav-link-hover-text: #00e0ff;
+            --color-nav-link-hover-shadow: 0 3px 15px rgba(0, 255, 255, 0.4);
+            --color-nav-link-hover-border: rgba(0, 255, 255, 0.3);
+            --color-nav-link-active-bg-start: #00bcd4;
+            --color-nav-link-active-bg-end: #007bff;
+            --color-nav-link-active-text: #ffffff;
+            --color-nav-link-active-shadow: 0 4px 15px rgba(0, 255, 255, 0.6);
+            --color-nav-link-active-border: #00e0ff;
+
+            /* Left Column / Profile */
+            --color-profile-pic-border: #00e0ff;
+            --color-profile-pic-shadow-1: 0 8px 30px rgba(0, 255, 255, 0.2);
+            --color-profile-pic-shadow-2: inset 0 0 15px rgba(0, 255, 255, 0.1);
+            --color-profile-pic-hover-filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
+            --color-left-col-border-right: rgba(0, 255, 255, 0.1);
+            --color-left-col-border-bottom-mobile: rgba(0, 255, 255, 0.1);
+
+            /* Contact Info */
+            --color-contact-info-bg: rgba(25, 45, 65, 0.85);
+            --color-contact-info-border: rgba(0, 255, 255, 0.1);
+            --color-contact-info-shadow-1: 0 3px 15px rgba(0, 255, 255, 0.1);
+            --color-contact-info-shadow-2: inset 0 0 8px rgba(0, 255, 255, 0.05);
+            --color-contact-item-text: #d8dee9;
+            --color-contact-icon: #00e0ff;
+            --color-contact-icon-hover-filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+            --color-contact-link: #00e0ff;
+            --color-contact-link-hover: #00aaff;
+
+            /* Right Column / Content */
+            --color-intro-text: #d8dee9;
+
+            /* Highlight Box */
+            --color-highlight-box-bg-start: rgba(0, 200, 255, 0.05);
+            --color-highlight-box-bg-end: rgba(0, 200, 255, 0.02);
+            --color-highlight-box-border-left: #00e0ff;
+            --color-highlight-box-text: #b0c0d0;
+            --color-highlight-box-shadow-1: 0 5px 20px rgba(0, 255, 255, 0.2);
+            --color-highlight-box-shadow-2: 0 0 30px rgba(0, 255, 255, 0.1);
+            --color-highlight-box-inset-shadow: inset 0 0 10px rgba(0, 255, 255, 0.05);
+            --color-highlight-box-border-top: 1px solid rgba(0, 255, 255, 0.08);
+            --color-highlight-box-border-right: 1px solid rgba(0, 255, 255, 0.05);
+            --color-highlight-box-hover-shadow-1: 0 15px 50px rgba(0, 255, 255, 0.3);
+            --color-highlight-box-hover-shadow-2: 0 0 80px rgba(0, 255, 255, 0.15);
+            --color-highlight-box-hover-border: rgba(0, 255, 255, 0.3);
+            --color-highlight-box-keyword: #00ffff;
+            --color-highlight-box-keyword-pulse: #00ffff;
+            --color-highlight-box-keyword-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(0, 255, 255, 0.5);
+
+            /* Section Titles */
+            --color-section-title-text: #e0e6ed;
+            --color-section-title-border-start: #00e0ff;
+            --color-section-title-border-end: rgba(0, 255, 255, 0.2);
+            --color-section-title-accent-start: #00e0ff;
+            --color-section-title-accent-end: #007bff;
+            --color-section-title-text-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+            --color-section-title-accent-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+
+            --color-subsection-title-text: #e0e6ed;
+            --color-item-title-text: #00ffff;
+            --color-item-title-text-hover: #00aaff;
+            --color-item-title-text-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+
+            /* Feature Cards */
+            --color-feature-card-bg: rgba(25, 45, 65, 0.8);
+            --color-feature-card-border: rgba(0, 255, 255, 0.1);
+            --color-feature-card-shadow-1: 0 4px 20px rgba(0, 255, 255, 0.1);
+            --color-feature-card-shadow-2: inset 0 0 8px rgba(0, 255, 255, 0.03);
+            --color-feature-card-hover-bg: rgba(30, 50, 70, 0.9);
+            --color-feature-card-hover-shadow-1: 0 10px 30px rgba(0, 255, 255, 0.3);
+            --color-feature-card-hover-shadow-2: inset 0 0 15px rgba(0, 255, 255, 0.1);
+            --color-feature-card-hover-border: rgba(0, 255, 255, 0.5);
+            --color-feature-card-icon: #00e0ff;
+            --color-feature-card-icon-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+            --color-feature-card-title: #e0e6ed;
+            --color-feature-card-text: #b0c0d0;
+            --color-feature-card-hover-title: #00ffff;
+            --color-feature-card-hover-text: #e0e6ed;
+
+            /* Lists */
+            --color-list-item-text: #b0c0d0;
+            --color-list-bullet-gradient-start: #00e0ff;
+            --color-list-bullet-gradient-end: #00aaff;
+            --color-list-bullet-fallback: #00e0ff;
+            --color-list-bullet-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+
+            /* Meta Info */
+            --color-meta-info-text: #92a4b9;
+
+            /* Education/Publication Cards */
+            --color-main-section-card-bg: rgba(25, 45, 65, 0.75);
+            --color-main-section-card-border: rgba(0, 255, 255, 0.1);
+            --color-main-section-card-shadow-1: 0 5px 20px rgba(0, 255, 255, 0.2);
+            --color-main-section-card-shadow-2: inset 0 0 10px rgba(0, 255, 255, 0.05);
+
+            --color-publication-card-bg: rgba(25, 45, 65, 0.7);
+            --color-publication-card-border: rgba(0, 255, 255, 0.1);
+            --color-publication-card-shadow-1: 0 5px 20px rgba(0, 255, 255, 0.15);
+            --color-publication-card-shadow-2: inset 0 0 8px rgba(0, 255, 255, 0.05);
+            --color-publication-card-hover-bg: rgba(30, 50, 70, 0.85);
+            --color-publication-card-hover-shadow-1: 0 15px 50px rgba(0, 255, 255, 0.4);
+            --color-publication-card-hover-shadow-2: inset 0 0 10px rgba(0, 255, 255, 0.1);
+            --color-publication-card-hover-border: rgba(0, 255, 255, 0.4);
+
+            --color-publication-thumbnail-bg: #1a2a3a;
+            --color-status-icon-bg: rgba(0, 255, 255, 0.1);
+            --color-status-icon-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+            --color-status-icon-color: #00e0ff;
+            --color-status-icon-hover-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+
+            --color-publication-details-title: #e0e6ed;
+            --color-publication-details-meta: #92a4b9;
+            --color-publication-details-hover-title: #00ffff;
+            --color-publication-details-hover-meta: #b0c0d0;
+            --color-publication-link-text: #00e0ff;
+            --color-publication-link-hover-text: #00aaff;
+
+            /* Toggle Buttons (Read More, Dark Mode) */
+            --color-toggle-button-bg: rgba(0, 255, 255, 0.08);
+            --color-toggle-button-border: rgba(0, 255, 255, 0.2);
+            --color-toggle-button-text: #00e0ff;
+            --color-toggle-button-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            --color-toggle-button-hover-bg: rgba(0, 255, 255, 0.15);
+            --color-toggle-button-hover-text: #00ffff;
+            --color-toggle-button-hover-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+
+            /* Back to Top Button */
+            --color-back-to-top-bg: rgba(0, 200, 255, 0.7);
+            --color-back-to-top-color: white;
+            --color-back-to-top-border: 1px solid rgba(0, 255, 255, 0.3);
+            --color-back-to-top-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+            --color-back-to-top-hover-bg: rgba(0, 255, 255, 0.9);
+            --color-back-to-top-hover-shadow: 0 6px 20px rgba(0, 255, 255, 0.8);
+
+            /* Scroll Progress Bar */
+            --color-scroll-progress-bar-start: #00e0ff;
+            --color-scroll-progress-bar-end: #00aaff;
+            --color-scroll-progress-bar-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+        }
+
         /* Base body styles, with a dark, techy gradient background and Inter font */
         body {
             font-family: 'Inter', sans-serif;
-            color: #d8dee9; /* Light grey text for techy feel */
-            line-height: 1.75; /* Increased line height for better readability */
+            color: var(--color-body-text); /* Use CSS Variable */
+            line-height: 1.75;
             margin: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background: linear-gradient(135deg, #0f1c2c, #0a141f, #070f1a); /* Dark techy background */
-            transition: color 0.5s ease;
+            background: linear-gradient(135deg, var(--color-body-bg-start), var(--color-body-bg-mid), var(--color-body-bg-end)); /* Use CSS Variables */
+            transition: color 0.5s ease, background 0.5s ease; /* Transition for theme changes */
             overflow-y: scroll;
             position: relative;
             z-index: 1;
-            /* Added text shadow for a subtle digital glow effect */
-            text-shadow: 0 0 2px rgba(0, 255, 255, 0.05), 0 0 5px rgba(0, 255, 255, 0.02);
-        }
-
-        /* Light mode body override */
-        html:not(.dark) body {
-            color: #2e3a47; /* Slightly darker text color for light mode */
-            background: linear-gradient(135deg, #fbfcfd, #f2f6fa, #e6f0ff); /* Light mode background */
+            text-shadow: var(--color-body-text-shadow); /* Use CSS Variable */
         }
 
         /* Hero Background specific styles - more dynamic and abstract tech patterns */
@@ -42,12 +381,7 @@
             z-index: 0;
             background-size: 200% 200%;
             animation: flowingGradient 20s ease infinite alternate; /* Slower, more deliberate animation */
-            transition: background 0.5s ease;
-        }
-
-        /* Dark mode hero background - more pronounced gradients */
-        html.dark #hero-background {
-            background: linear-gradient(135deg, #0d1a2a, #0a141f, #050a10);
+            transition: background 0.5s ease; /* Transition for background gradient */
         }
 
         /* Keyframe animation for flowing gradient (subtle shift) */
@@ -71,27 +405,20 @@
 
         #hero-background::before {
             /* More defined, sharp-edged patterns with glowing blue/cyan */
-            background: radial-gradient(circle at 20% 80%, rgba(0, 200, 255, 0.1) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 200, 255, 0.08) 0%, transparent 40%),
-                        repeating-linear-gradient(0deg, rgba(0,200,255,0.03), transparent 1px, transparent 20px),
-                        repeating-linear-gradient(90deg, rgba(0,200,255,0.03), transparent 1px, transparent 20px);
+            background: radial-gradient(circle at 20% 80%, var(--color-hero-bg-before-radial-1) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 20%, var(--color-hero-bg-before-radial-2) 0%, transparent 40%),
+                        repeating-linear-gradient(0deg, var(--color-hero-bg-before-linear), transparent 1px, transparent 20px),
+                        repeating-linear-gradient(90deg, var(--color-hero-bg-before-linear), transparent 1px, transparent 20px);
             animation: move-bg 40s infinite linear;
             opacity: 0.9;
-        }
-        html.dark #hero-background::before {
-            background: radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.08) 0%, transparent 40%),
-                        repeating-linear-gradient(0deg, rgba(0,255,255,0.03), transparent 1px, transparent 20px),
-                        repeating-linear-gradient(90deg, rgba(0,255,255,0.03), transparent 1px, transparent 20px);
+            transition: background 0.5s ease; /* Transition for theme changes */
         }
 
         #hero-background::after {
-            background: radial-gradient(circle at 50% 50%, rgba(0, 200, 255, 0.05) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 50%, var(--color-hero-bg-after-radial) 0%, transparent 60%);
             animation: move-bg-alt 55s infinite linear;
             opacity: 0.7;
-        }
-        html.dark #hero-background::after {
-            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 60%);
+            transition: background 0.5s ease; /* Transition for theme changes */
         }
 
         @keyframes move-bg {
@@ -109,68 +436,47 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: rgba(0, 255, 255, 0.05); /* Cyan tint for track */
+            background: var(--color-scrollbar-track);
             border-radius: 10px;
-        }
-        html.dark ::-webkit-scrollbar-track {
-            background: rgba(0, 255, 255, 0.03);
+            transition: background 0.5s ease; /* Transition for theme changes */
         }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #00bcd4, #007bff); /* Blue to Cyan gradient thumb */
+            background: linear-gradient(180deg, var(--color-scrollbar-thumb-start), var(--color-scrollbar-thumb-end));
             border-radius: 10px;
-            transition: background 0.3s ease;
-        }
-        html.dark ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #00e0ff, #00aaff); /* Brighter cyan to blue gradient thumb */
+            transition: background 0.3s ease; /* Transition for theme changes */
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #00e0ff, #00aaff); /* Brighter on hover */
-        }
-        html.dark ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #00ffff, #00ccff);
+            background: linear-gradient(180deg, var(--color-scrollbar-thumb-hover-start), var(--color-scrollbar-thumb-hover-end));
         }
 
         /* --- Custom CSS for Name, Location, Phone Clarity and Font Style (Higher Priority and Mode-Specific) --- */
         /* For the large name "赵博" below the profile picture */
         .left-col h2 {
-            color: #e0e6ed !important; /* Light text in dark mode */
-            font-family: 'Inter', sans-serif !important; /* Keep Inter for modern tech */
+            color: var(--color-main-title); /* Use CSS Variable */
+            font-family: 'Inter', sans-serif !important;
             transition: color 0.5s ease;
-        }
-        html:not(.dark) .left-col h2 { /* Specific rule for light mode */
-            color: #000000 !important;
         }
 
         /* For the name "赵博" in the top navigation bar */
         .top-nav > div.text-2xl {
-            color: #e0e6ed !important;
+            color: var(--color-nav-title); /* Use CSS Variable */
             font-family: 'Inter', sans-serif !important;
             transition: color 0.5s ease;
             cursor: pointer;
         }
-        html:not(.dark) .top-nav > div.text-2xl {
-            color: #000000 !important;
-        }
 
         /* For the location "中国深圳" */
         .left-col p.text-gray-700 {
-            color: #b0c0d0 !important; /* Slightly desaturated light blue */
+            color: var(--color-location-text); /* Use CSS Variable */
             font-family: 'Inter', sans-serif !important;
             transition: color 0.5s ease;
-        }
-        html:not(.dark) .left-col p.text-gray-700 {
-            color: #374151 !important; /* Darker gray in light mode */
         }
 
         /* For the phone number "15771116225" and other contact links */
         .contact-item span.text-gray-700,
         .contact-item a.text-gray-700 {
-            color: #b0c0d0 !important;
+            color: var(--color-contact-item-text); /* Use CSS Variable */
             transition: color 0.5s ease;
-        }
-        html:not(.dark) .contact-item span.text-gray-700,
-        html:not(.dark) .contact-item a.text-gray-700 {
-            color: #374151 !important;
         }
         /* --- End Custom CSS --- */
 
@@ -178,36 +484,29 @@
         .container {
             max-width: 1100px;
             margin: 30px auto;
-            background-color: rgba(15, 28, 44, 0.75); /* Darker, more opaque glass */
-            backdrop-filter: blur(30px) saturate(1.5); /* Stronger blur and saturation */
+            background-color: var(--color-container-bg); /* Use CSS Variable */
+            backdrop-filter: blur(30px) saturate(1.5);
             -webkit-backdrop-filter: blur(30px) saturate(1.5);
-            border-radius: 20px; /* Consistent, slightly less rounded corners for tech look */
-            /* Multi-layered shadow with a subtle blue/cyan glow */
-            box-shadow: 0 10px 40px rgba(0, 255, 255, 0.1), 0 0 60px rgba(0, 255, 255, 0.05), inset 0 0 15px rgba(0, 255, 255, 0.02);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--color-container-shadow-1), 0 0 60px var(--color-container-shadow-2), var(--color-container-inset-shadow); /* Use CSS Variables */
             padding: 35px;
             display: flex;
             gap: 50px;
             flex-grow: 1;
-            border: 1px solid rgba(0, 255, 255, 0.15); /* Thin, glowing border */
+            border: 1px solid var(--color-container-border); /* Use CSS Variable */
             transition: background-color 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease;
             position: relative;
             z-index: 1;
         }
-        /* Light mode container styles */
-        html:not(.dark) .container {
-            background-color: rgba(255, 255, 255, 0.85); /* Lighter semi-transparent background */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 30px 80px rgba(0, 0, 0, 0.08);
-            border-color: rgba(220, 220, 220, 0.4);
-        }
 
         /* Top navigation bar styles - more robust glass effect */
         .top-nav {
-            background-color: rgba(15, 28, 44, 0.85); /* More opaque, darker glass */
+            background-color: var(--color-nav-bg); /* Use CSS Variable */
             backdrop-filter: blur(25px) saturate(1.5);
             -webkit-backdrop-filter: blur(25px) saturate(1.5);
             padding: 15px 40px;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.1); /* Subtle glowing border */
-            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1); /* Distinct glowing shadow */
+            border-bottom: var(--color-nav-border-bottom); /* Use CSS Variable */
+            box-shadow: var(--color-nav-shadow); /* Use CSS Variable */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -217,61 +516,33 @@
             z-index: 1000;
             transition: background-color 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease;
         }
-        /* Light mode top nav styles */
-        html:not(.dark) .top-nav {
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-            border-bottom: none;
-        }
 
         .top-nav-link {
-            color: #92a4b9; /* Slightly muted light blue */
+            color: var(--color-nav-link-text); /* Use CSS Variable */
             font-weight: 500;
             padding: 10px 20px;
             border-radius: 9999px;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
             white-space: nowrap;
-            /* Add subtle border for definition */
-            border: 1px solid transparent;
-        }
-        /* Dark mode nav link color */
-        html.dark .top-nav-link {
-            color: #92a4b9;
-        }
-        /* Light mode nav link color */
-        html:not(.dark) .top-nav-link {
-            color: #4c5a6d;
+            border: 1px solid var(--color-nav-link-border); /* Use CSS Variable */
         }
 
         .top-nav-link:hover {
-            background-color: rgba(0, 200, 255, 0.1); /* Subtle cyan background on hover */
-            color: #00e0ff; /* Electric cyan color */
+            background-color: var(--color-nav-link-hover-bg); /* Use CSS Variable */
+            color: var(--color-nav-link-hover-text); /* Use CSS Variable */
             transform: translateY(-2px);
-            box-shadow: 0 3px 15px rgba(0, 255, 255, 0.4); /* Glowing shadow */
-            border-color: rgba(0, 255, 255, 0.3); /* Cyan border on hover */
+            box-shadow: var(--color-nav-link-hover-shadow); /* Use CSS Variable */
+            border-color: var(--color-nav-link-hover-border); /* Use CSS Variable */
             text-decoration: none;
-        }
-        /* Light mode nav link hover effects */
-        html:not(.dark) .top-nav-link:hover {
-            background-color: #e6f0ff;
-            color: #1a73e8;
-            box-shadow: 0 3px 10px rgba(26, 115, 232, 0.1);
-            border-color: transparent; /* No specific border for light mode hover */
         }
 
         .top-nav-link.active {
-            background: linear-gradient(135deg, #00bcd4, #007bff); /* Vibrant tech gradient */
-            color: #ffffff;
+            background: linear-gradient(135deg, var(--color-nav-link-active-bg-start), var(--color-nav-link-active-bg-end)); /* Use CSS Variable */
+            color: var(--color-nav-link-active-text); /* Use CSS Variable */
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.6); /* Stronger glowing shadow */
+            box-shadow: var(--color-nav-link-active-shadow); /* Use CSS Variable */
             transform: translateY(-1px);
-            border-color: #00e0ff; /* Solid cyan border for active */
-        }
-        /* Light mode active nav link styles */
-        html:not(.dark) .top-nav-link.active {
-            background: linear-gradient(135deg, #1a73e8, #155bb5);
-            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.4);
-            border-color: transparent;
+            border-color: var(--color-nav-link-active-border); /* Use CSS Variable */
         }
 
         /* Left column styles */
@@ -280,11 +551,8 @@
             min-width: 280px;
             max-width: 320px;
             padding-right: 20px;
-            border-right: 1px solid rgba(0, 255, 255, 0.1); /* Subtle techy border */
+            border-right: 1px solid var(--color-left-col-border-right); /* Use CSS Variable */
             transition: border-color 0.5s ease;
-        }
-        html:not(.dark) .left-col {
-            border-color: rgba(220, 220, 220, 0.6);
         }
 
         /* Profile photo styles - more refined with hover glow */
@@ -295,20 +563,13 @@
             object-fit: cover;
             margin: 0 auto 25px auto;
             display: block;
-            border: 5px solid #00e0ff; /* Electric cyan border */
-            box-shadow: 0 8px 30px rgba(0, 255, 255, 0.2), inset 0 0 15px rgba(0, 255, 255, 0.1); /* Outer glow, inner sheen */
+            border: 5px solid var(--color-profile-pic-border); /* Use CSS Variable */
+            box-shadow: var(--color-profile-pic-shadow-1), var(--color-profile-pic-shadow-2); /* Use CSS Variables */
             transition: transform 0.3s ease-in-out, border-color 0.5s ease, box-shadow 0.5s ease, filter 0.3s ease;
-        }
-        html:not(.dark) .profile-pic {
-            border-color: #1a73e8;
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1), inset 0 0 12px rgba(26, 115, 232, 0.2);
         }
         .profile-pic:hover {
             transform: scale(1.04);
-            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)); /* Stronger, electric glow on hover */
-        }
-        html:not(.dark) .profile-pic:hover {
-            filter: drop-shadow(0 0 15px rgba(26, 115, 232, 0.6));
+            filter: var(--color-profile-pic-hover-filter); /* Use CSS Variable */
         }
 
         /* Image loading effect: blur-in */
@@ -322,20 +583,15 @@
 
         /* Contact info box styles - techy glass look */
         .contact-info {
-            background-color: rgba(25, 45, 65, 0.85); /* Darker, more saturated glass */
+            background-color: var(--color-contact-info-bg); /* Use CSS Variable */
             backdrop-filter: blur(15px) saturate(1.5);
             -webkit-backdrop-filter: blur(15px) saturate(1.5);
             padding: 25px;
-            border-radius: 16px; /* Slightly less rounded */
+            border-radius: 16px;
             margin-top: 30px;
-            border: 1px solid rgba(0, 255, 255, 0.1); /* Thin glowing border */
-            box-shadow: 0 3px 15px rgba(0, 255, 255, 0.1), inset 0 0 8px rgba(0, 255, 255, 0.05); /* Subtle glow */
+            border: 1px solid var(--color-contact-info-border); /* Use CSS Variable */
+            box-shadow: var(--color-contact-info-shadow-1), var(--color-contact-info-shadow-2); /* Use CSS Variables */
             transition: background-color 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease;
-        }
-        html:not(.dark) .contact-info {
-            background-color: rgba(252, 253, 254, 0.8);
-            border-color: rgba(230, 230, 230, 0.6);
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03), inset 0 1px 4px rgba(0, 0, 0, 0.02);
         }
 
         /* Individual contact info item styles with refined icon effects */
@@ -343,45 +599,30 @@
             display: flex;
             align-items: center;
             margin-bottom: 14px;
-            color: #d8dee9; /* Light text color */
+            color: var(--color-contact-item-text); /* Use CSS Variable */
             font-size: 1rem;
             transition: color 0.5s ease;
         }
-        html:not(.dark) .contact-item {
-            color: #4c5a6d;
-        }
         .contact-item i {
-            color: #00e0ff; /* Electric cyan accent color */
+            color: var(--color-contact-icon); /* Use CSS Variable */
             width: 30px;
             text-align: center;
             margin-right: 15px;
             font-size: 1.35em;
             transition: color 0.5s ease, transform 0.2s ease-out, filter 0.2s ease-out;
         }
-        html:not(.dark) .contact-item i {
-            color: #1a73e8;
-        }
         .contact-item:hover i {
             transform: scale(1.1);
-            filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6)); /* More pronounced glow on hover */
-        }
-        html:not(.dark) .contact-item:hover i {
-            filter: drop-shadow(0 0 5px rgba(26, 115, 232, 0.4));
+            filter: var(--color-contact-icon-hover-filter); /* Use CSS Variable */
         }
 
         .contact-item a {
-            color: #00e0ff; /* Electric cyan link color */
+            color: var(--color-contact-link); /* Use CSS Variable */
             transition: color 0.2s ease-in-out;
         }
-        html:not(.dark) .contact-item a {
-            color: #1a73e8;
-        }
         .contact-item a:hover {
-            color: #00aaff; /* Darker blue on hover */
+            color: var(--color-contact-link-hover); /* Use CSS Variable */
             text-decoration: underline;
-        }
-        html:not(.dark) .contact-item a:hover {
-            color: #155bb5;
         }
 
         /* Right column styles */
@@ -395,59 +636,39 @@
             line-height: 1.8;
             letter-spacing: 0.01em;
             margin-bottom: 30px;
-            color: #d8dee9; /* Light text */
-        }
-        html:not(.dark) .intro-text {
-            color: #374151;
+            color: var(--color-intro-text); /* Use CSS Variable */
         }
 
         /* Quote/key info highlight box - refined techy look */
         .highlight-box {
-            background: linear-gradient(to right, rgba(0, 200, 255, 0.05), rgba(0, 200, 255, 0.02)); /* Subtle cyan gradient */
-            border-left: 6px solid #00e0ff; /* Electric cyan border */
+            background: linear-gradient(to right, var(--color-highlight-box-bg-start), var(--color-highlight-box-bg-end)); /* Use CSS Variables */
+            border-left: 6px solid var(--color-highlight-box-border-left); /* Use CSS Variable */
             padding: 28px;
-            border-radius: 16px; /* Consistent rounded corners */
+            border-radius: 16px;
             margin-bottom: 35px;
-            color: #b0c0d0; /* Soft tech text */
+            color: var(--color-highlight-box-text); /* Use CSS Variable */
             font-size: 1.08rem;
             line-height: 1.7;
-            /* Enhanced box shadow with glow */
-            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2), 0 0 30px rgba(0, 255, 255, 0.1), inset 0 0 10px rgba(0, 255, 255, 0.05);
+            box-shadow: 0 5px 20px var(--color-highlight-box-shadow-1), 0 0 30px var(--color-highlight-box-shadow-2), var(--color-highlight-box-inset-shadow); /* Use CSS Variables */
             backdrop-filter: blur(10px) saturate(1.2);
             -webkit-backdrop-filter: blur(10px) saturate(1.2);
-            border-top: 1px solid rgba(0, 255, 255, 0.08); /* Top border for emphasis */
-            border-right: 1px solid rgba(0, 255, 255, 0.05); /* Right border for emphasis */
+            border-top: var(--color-highlight-box-border-top); /* Use CSS Variable */
+            border-right: var(--color-highlight-box-border-right); /* Use CSS Variable */
             transition: background 0.5s ease, border-left-color 0.5s ease, color 0.5s ease,
                         box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, backdrop-filter 0.5s ease, border-color 0.5s ease;
-        }
-        html:not(.dark) .highlight-box {
-            background: linear-gradient(to right, #eaf6ff, #f7fdff);
-            border-left-color: #1a73e8;
-            color: #1a5bb5;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08), 0 1px 5px rgba(0, 0, 0, 0.03);
-            border-top: none;
-            border-right: none;
         }
         /* Hover effect for highlight box, mirroring publication cards */
         .highlight-box:hover {
             transform: translateY(-5px) scale(1.005);
-            box-shadow: 0 15px 50px rgba(0, 255, 255, 0.3), 0 0 80px rgba(0, 255, 255, 0.15); /* Stronger glow on hover */
-            border-color: rgba(0, 255, 255, 0.3); /* Stronger border on hover */
-        }
-        html:not(.dark) .highlight-box:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06);
-            border-color: rgba(220, 220, 220, 0.6); /* Restore default border for light mode */
+            box-shadow: 0 15px 50px var(--color-highlight-box-hover-shadow-1), 0 0 80px var(--color-highlight-box-hover-shadow-2); /* Use CSS Variables */
+            border-color: var(--color-highlight-box-hover-border); /* Use CSS Variable */
         }
 
         /* Style for highlighted keywords within the highlight-box */
         .highlight-box .font-semibold {
-            color: #00ffff; /* Bright cyan for keywords */
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Subtle glow */
+            color: var(--color-highlight-box-keyword); /* Use CSS Variable */
+            text-shadow: var(--color-highlight-box-keyword-shadow); /* Use CSS Variable */
             transition: color 0.3s ease, text-shadow 0.3s ease;
-        }
-        html:not(.dark) .highlight-box .font-semibold {
-            color: #1a73e8;
-            text-shadow: none;
         }
 
         /* Initial hidden state for highlight-box for fade-in effect */
@@ -465,13 +686,8 @@
         /* Keyframe animation for keyword pulse (electric pulse) */
         @keyframes keywordPulse {
             0% { transform: scale(1); color: inherit; text-shadow: none; }
-            50% { transform: scale(1.05); color: #00ffff; text-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(0, 255, 255, 0.5); }
+            50% { transform: scale(1.05); color: var(--color-highlight-box-keyword-pulse); text-shadow: var(--color-highlight-box-keyword-shadow); } /* Use CSS Variables */
             100% { transform: scale(1); color: inherit; text-shadow: none; }
-        }
-        html:not(.dark) @keyframes keywordPulse {
-            0% { transform: scale(1); color: inherit; }
-            50% { transform: scale(1.05); color: #1a73e8; }
-            100% { transform: scale(1); color: inherit; }
         }
         /* Class to apply the keyword pulse animation */
         .highlight-box .keyword-to-animate.animate-pulse-keyword {
@@ -487,110 +703,75 @@
         }
         /* Individual feature card styles - techy squircle and soft shadow */
         .feature-card {
-            background-color: rgba(25, 45, 65, 0.8); /* Dark glass */
+            background-color: var(--color-feature-card-bg); /* Use CSS Variable */
             backdrop-filter: blur(10px) saturate(1.2);
             -webkit-backdrop-filter: blur(10px) saturate(1.2);
-            border: 1px solid rgba(0, 255, 255, 0.1); /* Subtle glowing border */
-            border-radius: 16px; /* Consistent techy rounded corners */
+            border: 1px solid var(--color-feature-card-border); /* Use CSS Variable */
+            border-radius: 16px;
             padding: 20px;
             text-align: center;
-            /* Enhanced soft shadow with subtle glow */
-            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1), inset 0 0 8px rgba(0, 255, 255, 0.03);
+            box-shadow: 0 4px 20px var(--color-feature-card-shadow-1), var(--color-feature-card-shadow-2); /* Use CSS Variables */
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, backdrop-filter 0.5s ease;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-        html:not(.dark) .feature-card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-color: rgba(220, 220, 220, 0.6);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06), 0 1px 5px rgba(0, 0, 0, 0.03);
-        }
 
         .feature-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3), inset 0 0 15px rgba(0, 255, 255, 0.1); /* Stronger glow on hover */
-            background-color: rgba(30, 50, 70, 0.9); /* Slightly darker on hover */
-            border-color: rgba(0, 255, 255, 0.5); /* Stronger cyan border */
-        }
-        html:not(.dark) .feature-card:hover {
-            background-color: rgba(248, 251, 255, 0.95);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 3px 8px rgba(0, 0, 0, 0.05);
-            border-color: rgba(26, 115, 232, 0.5);
+            box-shadow: 0 10px 30px var(--color-feature-card-hover-shadow-1), var(--color-feature-card-hover-shadow-2); /* Use CSS Variables */
+            background-color: var(--color-feature-card-hover-bg); /* Use CSS Variable */
+            border-color: var(--color-feature-card-hover-border); /* Use CSS Variable */
         }
 
         .feature-card i {
             font-size: 2rem;
-            color: #00e0ff; /* Electric cyan */
+            color: var(--color-feature-card-icon); /* Use CSS Variable */
             margin-bottom: 15px;
-            transition: color 0.5s ease, transform 0.2s ease-out, text-shadow 0.2s ease-out; /* Added text-shadow transition */
-        }
-        html:not(.dark) .feature-card i {
-            color: #1a73e8;
+            transition: color 0.5s ease, transform 0.2s ease-out, text-shadow 0.2s ease-out;
         }
         .feature-card:hover i {
             transform: scale(1.1);
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8); /* Glowing icon on hover */
-        }
-        html:not(.dark) .feature-card:hover i {
-            text-shadow: none;
+            text-shadow: var(--color-feature-card-icon-shadow); /* Use CSS Variable */
         }
 
         .feature-card h3 {
             font-weight: 700;
             font-size: 1.1rem;
-            color: #e0e6ed; /* Light text for titles */
+            color: var(--color-feature-card-title); /* Use CSS Variable */
             margin-bottom: 8px;
             transition: color 0.5s ease;
-        }
-        html:not(.dark) .feature-card h3 {
-            color: #1f2937;
         }
         .feature-card p {
             font-size: 0.95rem;
             line-height: 1.5;
-            color: #b0c0d0; /* Muted light text for descriptions */
+            color: var(--color-feature-card-text); /* Use CSS Variable */
             transition: color 0.5s ease;
-        }
-        html:not(.dark) .feature-card p {
-            color: #4c5a6d;
         }
         /* Highlight text inside feature card on hover */
         .feature-card:hover h3 {
-            color: #00ffff; /* Brighter cyan on hover */
-        }
-        html:not(.dark) .feature-card:hover h3 {
-            color: #155bb5;
+            color: var(--color-feature-card-hover-title); /* Use CSS Variable */
         }
         .feature-card:hover p {
-            color: #e0e6ed; /* Brighter light text on hover */
-        }
-        html:not(.dark) .feature-card:hover p {
-            color: #374151;
+            color: var(--color-feature-card-hover-text); /* Use CSS Variable */
         }
 
         /* Section title styles - more tech quality */
         .section-title {
             font-weight: 800;
             font-size: 2.2rem;
-            color: #e0e6ed; /* Light text */
+            color: var(--color-section-title-text); /* Use CSS Variable */
             margin-bottom: 25px;
             position: relative;
             padding-left: 35px;
-            /* Updated border-bottom for artistic effect - circuit-like */
-            border-bottom: 2px solid; /* Solid border to act as base for gradient */
-            border-image: linear-gradient(to right, #00e0ff, rgba(0, 255, 255, 0.2), transparent) 1; /* More complex gradient */
+            border-bottom: 2px solid;
+            border-image: linear-gradient(to right, var(--color-section-title-border-start), var(--color-section-title-border-end), transparent) 1; /* Use CSS Variables */
             padding-bottom: 12px;
             margin-top: 50px;
-            letter-spacing: 0.05em; /* Increased letter spacing */
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.2); /* Subtle glow */
+            letter-spacing: 0.05em;
+            text-shadow: var(--color-section-title-text-shadow); /* Use CSS Variable */
             transition: color 0.5s ease, border-image 0.5s ease, text-shadow 0.5s ease;
-        }
-        html:not(.dark) .section-title {
-            color: #1f2937;
-            border-image: linear-gradient(to right, #1a73e8, rgba(26, 115, 232, 0.2), transparent) 1;
-            text-shadow: none;
         }
 
         /* Vertical accent bar next to section title - refined gradient */
@@ -602,62 +783,48 @@
             transform: translateY(-50%);
             width: 10px;
             height: 90%;
-            background: linear-gradient(to bottom, #00e0ff, #007bff); /* Electric gradient */
+            background: linear-gradient(to bottom, var(--color-section-title-accent-start), var(--color-section-title-accent-end)); /* Use CSS Variables */
             border-radius: 3px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Glowing accent */
+            box-shadow: var(--color-section-title-accent-shadow); /* Use CSS Variable */
             transition: background 0.5s ease, box-shadow 0.5s ease;
-        }
-        html:not(.dark) .section-title::before {
-            background: linear-gradient(to bottom, #1a73e8, #155bb5);
-            box-shadow: none;
         }
 
         /* Subsection title - for top-level sections that are not `section-title` */
         .subsection-title {
             font-weight: 700;
             font-size: 1.35rem;
-            color: #e0e6ed; /* Light text */
+            color: var(--color-subsection-title-text); /* Use CSS Variable */
             margin-top: 2rem;
             margin-bottom: 0.6rem;
             transition: color 0.5s ease;
-        }
-        html:not(.dark) .subsection-title {
-            color: #1f2937;
         }
 
         /* New: Subsection title style specifically for inside main-section-card */
         .subsection-title-in-card {
             font-weight: 700;
             font-size: 1.6rem;
-            color: #e0e6ed; /* Light text */
+            color: var(--color-subsection-title-text); /* Use CSS Variable */
             margin-top: 30px;
             margin-bottom: 20px;
             transition: color 0.5s ease;
             padding-left: 0;
             border-bottom: none;
         }
-        html:not(.dark) .subsection-title-in-card {
-            color: #1f2937;
-        }
 
         /* Individual item title */
         .item-title {
             font-weight: 700;
-            color: #00ffff; /* Bright cyan for titles */
+            color: var(--color-item-title-text); /* Use CSS Variable */
             margin-bottom: 0.3rem;
             font-size: 1.15rem;
             transition: color 0.5s ease;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.2); /* Subtle title glow */
+            text-shadow: var(--color-item-title-text-shadow); /* Use CSS Variable */
         }
-        html:not(.dark) .item-title {
-            color: #1a73e8;
-            text-shadow: none;
+        .item-title a { /* Specific for links within item-title */
+            color: var(--color-item-title-text);
         }
-        html:not(.dark) .item-title a {
-            color: #1a73e8;
-        }
-        html:not(.dark) .item-title a:hover {
-            color: #155bb5;
+        .item-title a:hover {
+            color: var(--color-item-title-text-hover);
         }
 
         /* Project contribution list styles */
@@ -670,45 +837,31 @@
             margin-bottom: 0.7rem;
             padding-left: 1.8em;
             text-indent: -1.8em;
-            color: #b0c0d0; /* Muted light text */
+            color: var(--color-list-item-text); /* Use CSS Variable */
             transition: color 0.5s ease;
-        }
-        html:not(.dark) li {
-            color: #4c5a6d;
         }
         .project-contribution-list li::before {
             content: '•';
             /* Applying a subtle glowing gradient to the bullet point */
-            background: linear-gradient(to right, #00e0ff, #00aaff);
+            background: linear-gradient(to right, var(--color-list-bullet-gradient-start), var(--color-list-bullet-gradient-end)); /* Use CSS Variables */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            color: #00e0ff; /* Fallback */
+            color: var(--color-list-bullet-fallback); /* Fallback */
             font-weight: bold;
             display: inline-block;
             width: 0.8em;
             padding-right: 0.2em;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Bullet glow */
+            text-shadow: var(--color-list-bullet-shadow); /* Use CSS Variable */
             transition: color 0.5s ease, background 0.5s ease, text-shadow 0.5s ease;
-        }
-        html:not(.dark) .project-contribution-list li::before {
-            background: linear-gradient(to right, #1a73e8, #6aa5dd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: #1a73e8; /* Fallback */
-            text-shadow: none;
         }
 
         /* Meta info (date, status) */
         .meta-info {
-            color: #92a4b9; /* Slightly desaturated light blue */
+            color: var(--color-meta-info-text); /* Use CSS Variable */
             font-size: 0.9em;
             margin-bottom: 0.8rem;
             transition: color 0.5s ease;
-        }
-        html:not(.dark) .meta-info {
-            color: #6b7280;
         }
 
         /* New styles for profession and date combination */
@@ -716,27 +869,21 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            color: #b0c0d0; /* Muted light text */
+            color: var(--color-education-details); /* Use CSS Variable */
             font-size: 1rem;
             margin-top: 0.3rem;
             margin-bottom: 0.9rem;
             flex-wrap: wrap;
             transition: color 0.5s ease;
         }
-        html:not(.dark) .education-details {
-            color: #4c5a6d;
-        }
         .education-details .major {
             font-weight: 600;
         }
         .education-details .dates {
-            color: #92a4b9; /* Slightly desaturated light blue */
+            color: var(--color-education-dates); /* Use CSS Variable */
             font-size: 0.9em;
             white-space: nowrap;
             transition: color 0.5s ease;
-        }
-        html:not(.dark) .education-details .dates {
-            color: #6b7280;
         }
 
         /* Section transition styles */
@@ -761,8 +908,8 @@
 
         /* Dark mode toggle button styles - techy button */
         #darkModeToggle {
-            background-color: rgba(0, 255, 255, 0.08); /* Subtle cyan background */
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            background-color: var(--color-toggle-button-bg); /* Use CSS Variable */
+            border: 1px solid var(--color-toggle-button-border); /* Use CSS Variable */
             border-radius: 9999px;
             padding: 8px 12px;
             cursor: pointer;
@@ -770,33 +917,21 @@
             align-items: center;
             justify-content: center;
             font-size: 1.1rem;
-            color: #00e0ff; /* Electric cyan icon */
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); /* Glowing shadow */
+            color: var(--color-toggle-button-text); /* Use CSS Variable */
+            box-shadow: var(--color-toggle-button-shadow); /* Use CSS Variable */
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
             margin-left: 20px;
             flex-shrink: 0;
-        }
-        html:not(.dark) #darkModeToggle {
-            background-color: #f0f4f8;
-            border-color: rgba(220, 220, 220, 0.6);
-            color: #4c5a6d;
-            box-shadow: none;
         }
         #darkModeToggle i {
             margin: 0;
             transition: transform 0.3s ease;
         }
         #darkModeToggle:hover {
-            background-color: rgba(0, 255, 255, 0.15); /* More intense cyan background on hover */
-            color: #00ffff; /* Brighter cyan */
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); /* More intense glow */
-            transform: scale(1.05); /* Slight scale on hover */
-        }
-        html:not(.dark) #darkModeToggle:hover {
-            background-color: #e6f0ff;
-            color: #1a73e8;
-            box-shadow: 0 2px 8px rgba(26, 115, 232, 0.1);
-            transform: none; /* No scale for light mode */
+            background-color: var(--color-toggle-button-hover-bg); /* Use CSS Variable */
+            color: var(--color-toggle-button-hover-text); /* Use CSS Variable */
+            box-shadow: var(--color-toggle-button-hover-shadow); /* Use CSS Variable */
+            transform: scale(1.05);
         }
         html.dark #darkModeToggle i {
             transform: rotate(180deg);
@@ -808,66 +943,47 @@
             bottom: 0;
             left: 0;
             height: 4px;
-            background: linear-gradient(to right, #00e0ff, #00aaff); /* Bright cyan to blue gradient */
+            background: linear-gradient(to right, var(--color-scroll-progress-bar-start), var(--color-scroll-progress-bar-end)); /* Use CSS Variables */
             width: 0%;
             border-radius: 0 0 4px 4px;
-            transition: width 0.1s linear;
+            transition: width 0.1s linear, background 0.5s ease, box-shadow 0.5s ease;
             z-index: 1001;
-            box-shadow: 0 0 8px rgba(0, 255, 255, 0.5); /* Subtle glow */
-        }
-        html:not(.dark) #scroll-progress-bar {
-            background: linear-gradient(to right, #1a73e8, #3f88c5);
-            box-shadow: none;
+            box-shadow: var(--color-scroll-progress-bar-shadow); /* Use CSS Variable */
         }
 
         /* New styles for a general section content card wrapper */
         .main-section-card {
-            background-color: rgba(25, 45, 65, 0.75); /* Darker glass, consistent with container */
+            background-color: var(--color-main-section-card-bg); /* Use CSS Variable */
             backdrop-filter: blur(15px) saturate(1.2);
             -webkit-backdrop-filter: blur(15px) saturate(1.2);
-            border: 1px solid rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--color-main-section-card-border); /* Use CSS Variable */
             border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(0, 255, 255, 0.05);
+            box-shadow: var(--color-main-section-card-shadow-1), var(--color-main-section-card-shadow-2); /* Use CSS Variables */
             padding: 25px;
             margin-top: 25px;
             transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, backdrop-filter 0.5s ease;
-        }
-        html:not(.dark) .main-section-card {
-            background-color: rgba(255, 255, 255, 0.7);
-            border-color: rgba(220, 220, 220, 0.4);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08), 0 1px 5px rgba(0, 0, 0, 0.03);
         }
 
         /* New styles for publication cards - techy, glowing cards */
         .publication-card {
             display: flex;
-            background-color: rgba(25, 45, 65, 0.7); /* Darker glass, consistent */
+            background-color: var(--color-publication-card-bg); /* Use CSS Variable */
             backdrop-filter: blur(10px) saturate(1.2);
             -webkit-backdrop-filter: blur(10px) saturate(1.2);
-            border: 1px solid rgba(0, 255, 255, 0.1);
-            border-radius: 16px; /* Consistent techy rounded corners */
-            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.15), inset 0 0 8px rgba(0, 255, 255, 0.05); /* Subtle glow */
+            border: 1px solid var(--color-publication-card-border); /* Use CSS Variable */
+            border-radius: 16px;
+            box-shadow: var(--color-publication-card-shadow-1), var(--color-publication-card-shadow-2); /* Use CSS Variables */
             margin-bottom: 25px;
             overflow: hidden;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, backdrop-filter 0.5s ease;
             position: relative;
         }
-        html:not(.dark) .publication-card {
-            background-color: rgba(255, 255, 255, 0.7);
-            border-color: rgba(220, 220, 220, 0.4);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08), 0 1px 5px rgba(0, 0, 0, 0.03);
-        }
 
         .publication-card:hover {
             transform: translateY(-5px) scale(1.005);
-            box-shadow: 0 15px 50px rgba(0, 255, 255, 0.4), inset 0 0 10px rgba(0, 255, 255, 0.1); /* Stronger glow on hover */
-            background-color: rgba(30, 50, 70, 0.85); /* Slightly darker on hover */
-            border-color: rgba(0, 255, 255, 0.4); /* Stronger cyan border */
-        }
-        html:not(.dark) .publication-card:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06);
-            background-color: rgba(255, 255, 255, 0.85);
-            border-color: rgba(220, 220, 220, 0.4);
+            box-shadow: var(--color-publication-card-hover-shadow-1), var(--color-publication-card-hover-shadow-2); /* Use CSS Variables */
+            background-color: var(--color-publication-card-hover-bg); /* Use CSS Variable */
+            border-color: var(--color-publication-card-hover-border); /* Use CSS Variable */
         }
 
         .publication-thumbnail {
@@ -875,16 +991,13 @@
             width: 150px;
             height: 120px;
             position: relative;
-            background-color: #1a2a3a; /* Dark techy background for thumbnails */
+            background-color: var(--color-publication-thumbnail-bg); /* Use CSS Variable */
             display: flex;
             align-items: center;
             justify-content: center;
             transition: background-color 0.5s ease;
         }
-        html:not(.dark) .publication-thumbnail {
-            background-color: #f7f7f7;
-        }
-        
+            
         .publication-thumbnail img {
             width: 80%;
             height: 80%;
@@ -896,28 +1009,20 @@
             position: absolute;
             top: 8px;
             right: 8px;
-            background-color: rgba(0, 255, 255, 0.1); /* Subtle cyan background */
+            background-color: var(--color-status-icon-bg); /* Use CSS Variable */
             border-radius: 50%;
             width: 30px;
             height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); /* Glowing icon shadow */
-            color: #00e0ff; /* Electric cyan icon color */
+            box-shadow: var(--color-status-icon-shadow); /* Use CSS Variable */
+            color: var(--color-status-icon-color); /* Use CSS Variable */
             transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-out, box-shadow 0.3s ease;
-        }
-        html:not(.dark) .publication-thumbnail .status-icon {
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            color: #1a73e8;
         }
         .publication-thumbnail .status-icon:hover {
             transform: scale(1.15);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8); /* More intense glow on hover */
-        }
-        html:not(.dark) .publication-thumbnail .status-icon:hover {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Restore default for light mode */
+            box-shadow: var(--color-status-icon-hover-shadow); /* Use CSS Variable */
         }
 
         .publication-details {
@@ -929,34 +1034,22 @@
             margin-bottom: 5px;
             font-size: 1.05rem;
             font-weight: 700;
-            color: #e0e6ed; /* Light text for titles */
+            color: var(--color-publication-details-title); /* Use CSS Variable */
             transition: color 0.3s ease;
         }
-        html:not(.dark) .publication-details .item-title {
-            color: #1f2937;
-        }
         .publication-card:hover .publication-details .item-title {
-            color: #00ffff; /* Highlight title on card hover */
-        }
-        html:not(.dark) .publication-card:hover .publication-details .item-title {
-            color: #1a73e8;
+            color: var(--color-publication-details-hover-title); /* Use CSS Variable */
         }
 
         .publication-details .meta-info {
-            color: #92a4b9; /* Muted light text */
+            color: var(--color-publication-details-meta); /* Use CSS Variable */
             font-size: 0.85em;
             line-height: 1.4;
             margin-bottom: 10px;
             transition: color 0.3s ease;
         }
-        html:not(.dark) .publication-details .meta-info {
-            color: #6b7280;
-        }
         .publication-card:hover .publication-details .meta-info {
-            color: #b0c0d0; /* Brighter muted text on card hover */
-        }
-        html:not(.dark) .publication-card:hover .publication-details .meta-info {
-            color: #4c5a6d;
+            color: var(--color-publication-details-hover-meta); /* Use CSS Variable */
         }
 
         .publication-details .project-contribution-list {
@@ -966,33 +1059,22 @@
             margin-bottom: 5px;
             font-size: 0.9em;
             line-height: 1.5;
-            color: #b0c0d0; /* Muted light text */
+            color: var(--color-list-item-text); /* Use CSS Variable */
             transition: color 0.3s ease;
-        }
-        html:not(.dark) .publication-details .project-contribution-list li {
-            color: #4c5a6d;
         }
         .publication-details .project-contribution-list li::before {
             content: '•';
-            background: linear-gradient(to right, #00e0ff, #00aaff);
+            background: linear-gradient(to right, var(--color-list-bullet-gradient-start), var(--color-list-bullet-gradient-end)); /* Use CSS Variables */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            color: #00e0ff; /* Fallback */
+            color: var(--color-list-bullet-fallback); /* Fallback */
             font-weight: bold;
             display: inline-block;
             width: 0.8em;
             padding-right: 0.2em;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Bullet glow */
+            text-shadow: var(--color-list-bullet-shadow); /* Use CSS Variable */
             transition: color 0.5s ease, background 0.5s ease, text-shadow 0.5s ease;
-        }
-        html:not(.dark) .project-contribution-list li::before {
-            background: linear-gradient(to right, #1a73e8, #6aa5dd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: #1a73e8; /* Fallback */
-            text-shadow: none;
         }
 
         /* Styles for the collapsible content */
@@ -1014,37 +1096,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: rgba(0, 255, 255, 0.08); /* Subtle cyan background */
-            color: #00e0ff; /* Electric cyan text */
+            background-color: var(--color-toggle-button-bg); /* Use CSS Variable */
+            color: var(--color-toggle-button-text); /* Use CSS Variable */
             padding: 8px 15px;
             border-radius: 9999px;
-            border: 1px solid rgba(0, 255, 255, 0.2); /* Cyan border */
+            border: 1px solid var(--color-toggle-button-border); /* Use CSS Variable */
             font-size: 0.9em;
             font-weight: 600;
             cursor: pointer;
             margin-top: 15px;
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
             white-space: nowrap;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); /* Glowing shadow */
-        }
-        html:not(.dark) .toggle-button {
-            background-color: #f0f4f8;
-            border-color: rgba(220, 220, 220, 0.6);
-            color: #1a73e8;
-            box-shadow: none;
+            box-shadow: var(--color-toggle-button-shadow); /* Use CSS Variable */
         }
 
         .toggle-button:hover {
-            background-color: rgba(0, 255, 255, 0.15); /* More intense cyan background on hover */
-            color: #00ffff; /* Brighter cyan */
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); /* More intense glow */
+            background-color: var(--color-toggle-button-hover-bg); /* Use CSS Variable */
+            color: var(--color-toggle-button-hover-text); /* Use CSS Variable */
+            box-shadow: var(--color-toggle-button-hover-shadow); /* Use CSS Variable */
             transform: translateY(-2px);
-        }
-        html:not(.dark) .toggle-button:hover {
-            background-color: #e6f0ff;
-            color: #155bb5;
-            box-shadow: 0 2px 8px rgba(26, 115, 232, 0.1);
-            transform: none;
         }
 
         .toggle-button i {
@@ -1063,31 +1133,21 @@
             right: 30px;
             z-index: 999;
             font-size: 1.5rem;
-            background-color: rgba(0, 200, 255, 0.7); /* Semi-transparent cyan blue */
-            color: white;
+            background-color: var(--color-back-to-top-bg); /* Use CSS Variable */
+            color: var(--color-back-to-top-color); /* Use CSS Variable */
             cursor: pointer;
             padding: 10px 15px;
             border-radius: 50%;
-            border: 1px solid rgba(0, 255, 255, 0.3); /* Subtle cyan border */
-            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4); /* Glowing shadow */
+            border: var(--color-back-to-top-border); /* Use CSS Variable */
+            box-shadow: var(--color-back-to-top-shadow); /* Use CSS Variable */
             transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
             opacity: 0;
         }
 
         #backToTopBtn:hover {
-            background-color: rgba(0, 255, 255, 0.9); /* Brighter cyan on hover */
-            transform: translateY(-5px) scale(1.05); /* Lift and scale */
-            box-shadow: 0 6px 20px rgba(0, 255, 255, 0.8); /* More intense glow */
-        }
-        html:not(.dark) #backToTopBtn {
-            background-color: rgba(26, 115, 232, 0.8);
-            border: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        html:not(.dark) #backToTopBtn:hover {
-            background-color: rgba(26, 115, 232, 1);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-color: var(--color-back-to-top-hover-bg); /* Use CSS Variable */
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--color-back-to-top-hover-shadow); /* Use CSS Variable */
         }
         #backToTopBtn.show {
             opacity: 1;
@@ -1120,13 +1180,10 @@
             .left-col {
                 border-right: none;
                 padding-right: 0;
-                border-bottom: 1px solid rgba(0, 255, 255, 0.1); /* Techy border for mobile */
+                border-bottom: 1px solid var(--color-left-col-border-bottom-mobile); /* Use CSS Variable */
                 max-width: 100%;
                 min-width: unset;
                 padding-bottom: 20px;
-            }
-            html:not(.dark) .left-col {
-                border-bottom-color: rgba(220, 220, 220, 0.6);
             }
             .right-col {
                 padding-left: 0;
@@ -1178,7 +1235,7 @@
 
     <nav class="top-nav">
         <!-- Added id="mainTitle" and cursor: pointer style for clickability -->
-        <div id="mainTitle" class="text-2xl font-bold text-black mb-3 md:mb-0 dark:text-gray-200 transition-colors duration-500">赵博</div>
+        <div id="mainTitle" class="text-2xl font-bold mb-3 md:mb-0 transition-colors duration-500">赵博</div>
         <div class="flex flex-wrap md:space-x-4 space-x-2 justify-center md:justify-start w-full md:w-auto">
             <a href="#about-me-section" class="top-nav-link active">首页 / 个人信息</a>
             <a href="#internship-section" class="top-nav-link">实习经历</a>
@@ -1196,26 +1253,26 @@
         <div class="left-col text-center">
             <img id="profile-photo" class="profile-pic image-loading-blur" src="https://raw.githubusercontent.com/alex036225/alex036225.github.io/main/picture.jpg" alt="Profile Photo" />
             
-            <h2 class="text-3xl font-extrabold text-black dark:text-gray-100 transition-colors duration-500">赵博</h2>
+            <h2 class="text-3xl font-extrabold transition-colors duration-500">赵博</h2>
 
-            <p class="text-gray-700 mb-4 text-lg dark:text-gray-200 transition-colors duration-500"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
+            <p class="mb-4 text-lg transition-colors duration-500"><i class="fas fa-map-marker-alt mr-2"></i>中国深圳</p>
 
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span class="text-gray-700 dark:text-gray-300 transition-colors duration-500">15771116225</span>
+                    <span class="transition-colors duration-500">15771116225</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:3057018496@qq.com" class="text-gray-700 dark:text-gray-300 transition-colors duration-500">3057018496@qq.com</a>
+                    <a href="mailto:3057018496@qq.com" class="transition-colors duration-500">3057018496@qq.com</a>
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-github"></i>
-                    <a href="https://github.com/alex036225" target="_blank" class="text-gray-700 dark:text-gray-300 transition-colors duration-500">Github</a>
+                    <a href="https://github.com/alex036225" target="_blank" class="transition-colors duration-500">Github</a>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-graduation-cap"></i>
-                    <a href="#" target="_blank" class="text-gray-700 dark:text-gray-300 transition-colors duration-500">Google Scholar</a>
+                    <a href="#" target="_blank" class="transition-colors duration-500">Google Scholar</a>
                 </div>
             </div>
         </div>
@@ -1228,8 +1285,8 @@
                     <!-- The highlight box is now acting as an inner card itself -->
                     <div class="highlight-box intro-hidden">
                         <p>
-                            <i class="fas fa-quote-left text-blue-500 mr-2"></i>
-                            我的研究重点是利用 <span class="font-semibold text-blue-800 dark:text-blue-300 keyword-to-animate">大型语言模型 (LLMs)</span> 来解决跨模态生理信号传感领域的复杂问题。这包括在非接触式心率测量 (rPPG) 中，有效融合多模态信息、捕捉长时序依赖，以及提升模型在复杂真实世界环境中的适应性和稳定性。
+                            <i class="fas fa-quote-left mr-2"></i>
+                            我的研究重点是利用 <span class="font-semibold keyword-to-animate">大型语言模型 (LLMs)</span> 来解决跨模态生理信号传感领域的复杂问题。这包括在非接触式心率测量 (rPPG) 中，有效融合多模态信息、捕捉长时序依赖，以及提升模型在复杂真实世界环境中的适应性和稳定性。
                         </p>
                     </div>
 
@@ -1249,9 +1306,17 @@
                                 <p class="meta-info">
                                     <span class="major">人工智能与机器人, 硕士</span> | <span class="dates">2025.09 - 2027.06</span>
                                 </p>
-                                <ul class="project-contribution-list mt-2">
-                                    <li>硕士研究方向和主要课程。</li>
-                                </ul>
+                                <div class="collapsible-wrapper">
+                                    <ul class="project-contribution-list mt-2">
+                                        <li>硕士研究方向和主要课程。</li>
+                                        <div class="collapsible-content">
+                                            <li>（此处可添加更多详情）</li>
+                                        </div>
+                                    </ul>
+                                    <button class="toggle-button" data-target=".collapsible-content">
+                                        <span>查看详情</span> <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -1267,10 +1332,18 @@
                                 <p class="meta-info">
                                     <span class="major">数学与应用数学, 本科</span> | <span class="dates">2021.09 - 2025.06</span>
                                 </p>
-                                <ul class="project-contribution-list mt-2">
-                                    <li>GPA: 87.42/100</li>
-                                    <li>荣誉: 连续三年获得学业奖学金</li>
-                                </ul>
+                                <div class="collapsible-wrapper">
+                                    <ul class="project-contribution-list mt-2">
+                                        <li>GPA: 87.42/100</li>
+                                        <li>荣誉: 连续三年获得学业奖学金</li>
+                                        <div class="collapsible-content">
+                                            <li>（此处可添加更多详情）</li>
+                                        </div>
+                                    </ul>
+                                    <button class="toggle-button" data-target=".collapsible-content">
+                                        <span>查看详情</span> <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1348,7 +1421,7 @@
                                     <li>研究背景: 远程光电容积描记术(PPG)在复杂环境(光照、运动伪影)下鲁棒性差, 现有方法难以有效融合多模态信息并捕捉长时序依赖。</li>
                                     <div class="collapsible-content">
                                         <li>研究贡献: 提出 PhysLLM, 一个结合 LLMs 与 PPG 专用组件的协同优化框架, rPPG 领域第一个大模型。设计双域平稳算法(DDS), 视觉聚合器(VA), 文本原型引导(TPG)策略, 并通过生理线索感知提示学习增强模型适应性。</li>
-                                        <li>论文链接: <a href="https://arxiv.org/abs/2505.03621" target="_blank" class="text-blue-600 hover:underline dark:text-blue-300">https://arxiv.org/abs/2505.03621</a></li>
+                                        <li>论文链接: <a href="https://arxiv.org/abs/2505.03621" target="_blank">https://arxiv.org/abs/2505.03621</a></li>
                                     </div>
                                 </ul>
                                 <button class="toggle-button" data-target=".collapsible-content">
@@ -1394,7 +1467,7 @@
                                     <div class="collapsible-content">
                                         <li>研究贡献: 提出 CardiacMamba 融合 RGB-RF 数据，引入时域差分 Mamba 模块(TDMM)和分叉差分卷积融合(BDCF)进行双层特征提取与对齐，通过双向状态空间模型(Bi-SSM)协同建模，设计通道式快速傅里叶变换(CFFT)进行双向特征融合。</li>
                                         <li>成果: 在 EquiPleth 数据集上展现了最先进的性能，显著缓解了肤色偏差问题，并在模态缺失场景下保持了强大的鲁棒性，有效推动了 rPPG 技术在医疗领域的可靠应用。</li>
-                                        <li>论文链接: <a href="https://arxiv.org/abs/2502.13624" target="_blank" class="text-blue-600 hover:underline dark:text-blue-300">https://arxiv.org/abs/2502.13624</a></li>
+                                        <li>论文链接: <a href="https://arxiv.org/abs/2502.13624" target="_blank">https://arxiv.org/abs/2502.13624</a></li>
                                     </div>
                                 </ul>
                                 <button class="toggle-button" data-target=".collapsible-content">
@@ -1590,7 +1663,7 @@
                 }
             }
 
-            // Function to set the active navigation link (MOVED TO TOP)
+            // Function to set the active navigation link
             function setActiveLink(clickedLink) {
                 navLinks.forEach(link => {
                     link.classList.remove('active');
