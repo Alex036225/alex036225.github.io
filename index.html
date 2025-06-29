@@ -1958,9 +1958,9 @@
                 // Update text for all toggle buttons based on their current state
                 document.querySelectorAll('.toggle-button').forEach(button => {
                     const textSpan = button.querySelector('span');
-                    // Find the closest parent that contains a collapsible-content (either a publication-details or a collapsible-wrapper)
-                    const parentContainer = button.closest('.publication-details, .collapsible-wrapper');
-                    const collapsibleContent = parentContainer ? parentContainer.querySelector('.collapsible-content') : null;
+                    // Find the closest parent publication-details to find its associated collapsible-content
+                    const publicationDetails = button.closest('.publication-details');
+                    const collapsibleContent = publicationDetails ? publicationDetails.querySelector('.collapsible-content') : null;
 
                     if (collapsibleContent && collapsibleContent.classList.contains('expanded')) {
                         textSpan.textContent = translations[lang]['hide_details'];
@@ -2115,9 +2115,9 @@
 
             document.querySelectorAll('.toggle-button').forEach(button => {
                 button.addEventListener('click', function() {
-                    // Find the closest parent that contains a collapsible-content
-                    const parentContainer = this.closest('.publication-details, .collapsible-wrapper');
-                    const collapsibleContent = parentContainer ? parentContainer.querySelector('.collapsible-content') : null;
+                    // Correctly find the publication-details ancestor that contains both the button and the collapsible-content
+                    const publicationDetails = this.closest('.publication-details');
+                    const collapsibleContent = publicationDetails ? publicationDetails.querySelector('.collapsible-content') : null;
                     const icon = this.querySelector('i');
                     const textSpan = this.querySelector('span');
 
