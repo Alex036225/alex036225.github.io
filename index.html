@@ -853,6 +853,7 @@
             color: var(--color-list-item-text); /* Use CSS Variable */
             transition: color 0.5s ease;
         }
+        /* Specific styling for the bullet point in project-contribution-list */
         .project-contribution-list li::before {
             content: '•';
             /* Applying a subtle glowing gradient to the bullet point */
@@ -1346,12 +1347,13 @@
                                     <p class="meta-info">
                                         <span class="major" data-lang-key="edu_cuhk_major">人工智能与机器人, 硕士</span> | <span class="dates">2025.09 - 2027.06</span>
                                     </p>
-                                    <ul class="project-contribution-list mt-2">
-                                        <div class="collapsible-content">
+                                    <!-- Initial visible content if any, outside .collapsible-content -->
+                                    <div class="collapsible-content">
+                                        <ul class="project-contribution-list mt-2">
                                             <li data-lang-key="edu_cuhk_desc1">硕士研究方向和主要课程。</li>
                                             <li data-lang-key="edu_cuhk_desc2">（此处可添加更多详情）</li>
-                                        </div>
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
@@ -1372,13 +1374,14 @@
                                     <p class="meta-info">
                                         <span class="major" data-lang-key="edu_sdu_major">数学与应用数学, 本科</span> | <span class="dates">2021.09 - 2025.06</span>
                                     </p>
-                                    <ul class="project-contribution-list mt-2">
-                                        <div class="collapsible-content">
+                                    <!-- Initial visible content if any, outside .collapsible-content -->
+                                    <div class="collapsible-content">
+                                        <ul class="project-contribution-list mt-2">
                                             <li data-lang-key="edu_sdu_desc1">GPA: 87.42/100</li>
                                             <li data-lang-key="edu_sdu_desc2">荣誉: 连续三年获得学业奖学金</li>
                                             <li data-lang-key="edu_sdu_desc3">（此处可添加更多详情）</li>
-                                        </div>
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
@@ -1427,14 +1430,17 @@
                            <div>
                                 <p class="item-title" data-lang-key="intern_gbu_name">大湾区大学</p>
                                 <p class="meta-info" data-lang-key="intern_gbu_role">访问学生, 2024.12 - 2025.8</p>
+                                <!-- Initial visible content if any -->
                                 <ul class="project-contribution-list mt-2">
-                                    <div class="collapsible-content">
-                                        <li data-lang-key="intern_gbu_desc1">研究方向: 多模态大模型, 域泛化等</li>
+                                    <li data-lang-key="intern_gbu_desc1">研究方向: 多模态大模型, 域泛化等</li>
+                                </ul>
+                                <div class="collapsible-content">
+                                    <ul class="project-contribution-list">
                                         <li data-lang-key="intern_gbu_desc2">主要职责: 作为访问学生, 深入参与国家四青人才实验室及省重点实验室的前沿科研项目, 聚焦多模态大模型和域泛化等前沿方向的研究与开发。</li>
                                         <li data-lang-key="intern_gbu_desc3">核心贡献: 负责多模态数据预处理、模型构建与算法设计, 直接促成了多篇高水平科研论文的产出, 包括NeurIPS (CCF A类会议) 在投。此外, 由我们模型驱动的智能机器已成功在世界机器人嘉年华展出, 展现了科研成果的实际落地能力。</li>
                                         <li data-lang-key="intern_gbu_desc4">技术应用: 在研究过程中, 熟练运用 Pytorch 深度学习框架、Python 编程语言以及 Slurm 集群系统进行算法开发与模型训练。</li>
-                                    </div>
-                                </ul>
+                                    </ul>
+                                </div>
                            </div>
                             <div class="collapsible-wrapper">
                                 <button class="toggle-button">
@@ -1460,8 +1466,10 @@
                                     <p class="item-title" data-lang-key="pub1_title">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</p>
                                     <p class="meta-info" data-lang-key="pub1_meta">状态: 在投, NeurIPS, CCFA, 共同一作</p>
                                     <ul class="project-contribution-list mt-2">
-                                        <div class="collapsible-content">
-                                            <li data-lang-key="pub1_desc1">研究背景: 远程光电容积描记术(PPG)在复杂环境(光照、运动伪影)下鲁棒性差, 现有方法难以有效融合多模态信息并捕捉长时序依赖。</li>
+                                        <li data-lang-key="pub1_desc1">研究背景: 远程光电容积描记术(PPG)在复杂环境(光照、运动伪影)下鲁棒性差, 现有方法难以有效融合多模态信息并捕捉长时序依赖。</li>
+                                    </ul>
+                                    <div class="collapsible-content">
+                                        <ul class="project-contribution-list">
                                             <li data-lang-key="pub1_desc2_1">研究贡献:</li>
                                             <li data-lang-key="pub1_desc2_2" style="padding-left: 2em;">- 提出 PhysLLM, 一个结合LLMs与PPG专用组件的协同优化框架,rPPG领域第一个大模型。</li>
                                             <li data-lang-key="pub1_desc2_3" style="padding-left: 2em;">- 设计双域平稳算法(DDS),在时频域对PPG信号自适应平滑,有效降噪并增强信号稳定性。</li>
@@ -1469,8 +1477,8 @@
                                             <li data-lang-key="pub1_desc2_5" style="padding-left: 2em;">- 文本原型引导(TPG)策略将生理特征投影到LLM语义空间,弥合表示鸿沟,实现跨模态对齐。</li>
                                             <li data-lang-key="pub1_desc2_6" style="padding-left: 2em;">- 通过生理线索感知提示学习,利用LLaVA自动生成视觉/任务/统计线索,并自适应融合,增强模型对复杂场景的适应性。</li>
                                             <li data-lang-key="pub1_desc3">论文链接: <a href="https://arxiv.org/abs/2505.03621" target="_blank" class="text-[var(--color-publication-link-text)] hover:text-[var(--color-publication-link-hover-text)]">https://arxiv.org/abs/2505.03621</a></li>
-                                        </div>
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
@@ -1490,15 +1498,17 @@
                                     <p class="item-title" data-lang-key="pub2_title">Towards Universal rPPG: Optimal Transport-Based Multi-Source Domain Generalization for Remote Physiological Measurement</p>
                                     <p class="meta-info" data-lang-key="pub2_meta">状态: 在投, NeurIPS, CCFA, 独立一作</p>
                                     <ul class="project-contribution-list mt-2">
-                                        <div class="collapsible-content">
-                                            <li data-lang-key="pub2_desc1">背景挑战: 远程光电容积描记术(rPPG)是一种非接触式生理信号测量技术,在健康监测中潜力巨大。然而,现有方法易受光照、运动伪影等干扰,且在处理长时序依赖和多模态信息融合方面存在局限。大型语言模型(LLMs)在捕捉长距离依赖方面表现出色,但在rPPG连续、噪声敏感的信号特性面前仍面临挑战。因此,迫切需要一种能有效整合视觉和文本信息、提升rPPG鲁棒性的先进框架。</li>
+                                        <li data-lang-key="pub2_desc1">背景挑战: 远程光电容积描记术(rPPG)是一种非接触式生理信号测量技术,在健康监测中潜力巨大。然而,现有方法易受光照、运动伪影等干扰,且在处理长时序依赖和多模态信息融合方面存在局限。大型语言模型(LLMs)在捕捉长距离依赖方面表现出色,但在rPPG连续、噪声敏感的信号特性面前仍面临挑战。因此,迫切需要一种能有效整合视觉和文本信息、提升rPPG鲁棒性的先进框架。</li>
+                                    </ul>
+                                    <div class="collapsible-content">
+                                        <ul class="project-contribution-list">
                                             <li data-lang-key="pub2_desc2_1">研究贡献:</li>
                                             <li data-lang-key="pub2_desc2_2" style="padding-left: 2em;">- 提出一个基于最优传输理论的多源领域泛化框架,旨在提升端到端rPPG的泛化能力。</li>
                                             <li data-lang-key="pub2_desc2_3" style="padding-left: 2em;">- 创新引入一个即插即用的OT模块 OTAdapter,显式对齐多个源领域间的特征分布,从而增强模型的泛化性。</li>
                                             <li data-lang-key="pub2_desc2_4" style="padding-left: 2em;">- 提供理论依据:推导了一个新的基于OT差异的泛化边界,从理论上将源领域间的差异与未见目标领域的预期误差联系起来。</li>
                                             <li data-lang-key="pub2_desc2_5" style="padding-left: 2em;">- 结合大型语言模型(LLMs)与rPPG,并利用 OTAdapter 进行集成,进一步增强了模型在复杂真实世界环境中的适应性和稳定性。</li>
-                                        </div>
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
@@ -1518,8 +1528,10 @@
                                     <p class="item-title" data-lang-key="pub3_title">CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement</p>
                                     <p class="meta-info" data-lang-key="pub3_meta">状态: 在投, JBHI, JCR Q1, 三作</p>
                                     <ul class="project-contribution-list mt-2">
-                                        <div class="collapsible-content">
-                                            <li data-lang-key="pub3_desc1">背景挑战:心率(HR)估计对于健康监测至关重要,而远程光电容积描记术(PPG)提供了一种非侵入性解决方案。然而,传统的单一模态方法(如基于RGB摄像机或射频(RF)雷达)在平衡鲁棒性和准确性方面面临挑战,这主要受光照变化、运动伪影和肤色偏差等因素的影响。例如,RGB信号易受环境光照影响,而RF信号则对横向运动敏感且数据获取难度较大。现有的多模态融合策略在跨模态特征对齐、频域特征利用以及处理不同人口群体(如肤色差异)的公平性方面仍存在不足。因此,迫切需要一种能够有效融合RGB视觉信息和RF雷达信号互补优势的框架,以提升rPPG在复杂真实世界场景中的准确性、鲁棒性和公平性。</li>
+                                        <li data-lang-key="pub3_desc1">背景挑战:心率(HR)估计对于健康监测至关重要,而远程光电容积描记术(PPG)提供了一种非侵入性解决方案。然而,传统的单一模态方法(如基于RGB摄像机或射频(RF)雷达)在平衡鲁棒性和准确性方面面临挑战,这主要受光照变化、运动伪影和肤色偏差等因素的影响。例如,RGB信号易受环境光照影响,而RF信号则对横向运动敏感且数据获取难度较大。现有的多模态融合策略在跨模态特征对齐、频域特征利用以及处理不同人口群体(如肤色差异)的公平性方面仍存在不足。因此,迫切需要一种能够有效融合RGB视觉信息和RF雷达信号互补优势的框架,以提升rPPG在复杂真实世界场景中的准确性、鲁棒性和公平性。</li>
+                                    </ul>
+                                    <div class="collapsible-content">
+                                        <ul class="project-contribution-list">
                                             <li data-lang-key="pub3_desc2_1">研究贡献:</li>
                                             <li data-lang-key="pub3_desc2_2" style="padding-left: 2em;">- 提出 CardiacMamba,一个融合RGB 视频和RF传感器数据的多模态框架,用于精确的rPPG心率估计。</li>
                                             <li data-lang-key="pub3_desc2_3" style="padding-left: 2em;">- 创新性地引入了时域差分 Mamba 模块(TDMM)和分叉差分卷积融合(BDCF)进行双层特征提取与对齐,捕捉动态信号变化并增强特征表示。</li>
@@ -1527,8 +1539,8 @@
                                             <li data-lang-key="pub3_desc2_5" style="padding-left: 2em;">- 设计了通道式快速傅里叶变换(CFFT)进行双向特征融合,将特征映射到频域,自适应增强与心率相关的频带并抑制噪声,从而提升心率估计的准确性和周期性检测能力。</li>
                                             <li data-lang-key="pub3_desc3">成果: CardiacMamba 在 EquiPleth 数据集上展现了最先进的性能,显著缓解了肤色偏差问题,并在模态缺失场景下保持了强大的鲁棒性,有效推动了rPPG技术在医疗领域的可靠应用。</li>
                                             <li data-lang-key="pub3_desc4">论文链接: <a href="https://arxiv.org/abs/2502.13624" target="_blank" class="text-[var(--color-publication-link-text)] hover:text-[var(--color-publication-link-hover-text)]">https://arxiv.org/abs/2502.13624</a></li>
-                                        </div>
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
@@ -1547,11 +1559,11 @@
                                 <div>
                                     <p class="item-title" data-lang-key="pub4_title">CCBR</p>
                                     <p class="meta-info" data-lang-key="pub4_meta">状态: 在写, CCBR, 三作</p>
-                                    <ul class="project-contribution-list mt-2">
-                                        <div class="collapsible-content">
+                                    <div class="collapsible-content">
+                                        <ul class="project-contribution-list mt-2">
                                             <li data-lang-key="pub4_desc1">详细描述: 筹备中的论文，目前正在撰写阶段。</li>
-                                        </div>
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
@@ -1570,11 +1582,11 @@
                                 <div>
                                     <p class="item-title" data-lang-key="pub5_title">NMI</p>
                                     <p class="meta-info" data-lang-key="pub5_meta">状态: 筹备, Nature Machine Intelligence, 一作</p>
-                                    <ul class="project-contribution-list mt-2">
-                                        <div class="collapsible-content">
+                                    <div class="collapsible-content">
+                                        <ul class="project-contribution-list mt-2">
                                             <li data-lang-key="pub5_desc1">详细描述: 一项处于初期筹备阶段的重要研究，旨在为 Nature Machine Intelligence 准备。</li>
-                                        </div>
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
@@ -1601,12 +1613,14 @@
                                     <p class="item-title" data-lang-key="proj1_title">信息扩散模型建立</p>
                                     <p class="meta-info" data-lang-key="proj1_meta">2023.06 (排名: 1/133)</p>
                                     <ul class="project-contribution-list mt-2">
-                                        <div class="collapsible-content">
-                                            <li data-lang-key="proj1_desc1">探究信息扩散能力, 旨在定量分析病毒式市场营销、谣言控制等实际场景;</li>
+                                        <li data-lang-key="proj1_desc1">探究信息扩散能力, 旨在定量分析病毒式市场营销、谣言控制等实际场景;</li>
+                                    </ul>
+                                    <div class="collapsible-content">
+                                        <ul class="project-contribution-list">
                                             <li data-lang-key="proj1_desc2">建立合适的信息扩散模型, 利用 Java 对信息节点激活机制进行代码实现;</li>
                                             <li data-lang-key="proj1_desc3">对数据集节点的影响能力进行初步排序, 依据单点的影响力制定合理的种子节点选择策略。</li>
-                                        </div>
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
@@ -1626,12 +1640,14 @@
                                     <p class="item-title" data-lang-key="proj2_title">基于量子退火算法——QUBO 模型的信用评分卡组合优化问题 (国三)</p>
                                     <p class="meta-info">2023.04</p>
                                     <ul class="project-contribution-list mt-2">
-                                        <div class="collapsible-content">
-                                            <li data-lang-key="proj2_desc1">结合量子退火算法与 QUBO 模型, 列出数学模型所需数学方程;</li>
+                                        <li data-lang-key="proj2_desc1">结合量子退火算法与 QUBO 模型, 列出数学模型所需数学方程;</li>
+                                    </ul>
+                                    <div class="collapsible-content">
+                                        <ul class="project-contribution-list">
                                             <li data-lang-key="proj2_desc2">使用 pyqubo 库建立 QUBO 模型, 将数学模型进行代码实现, 利用 neal 库中的退火算法函数求解模型;</li>
                                             <li data-lang-key="proj2_desc3">完成 10000 字论文一篇, 获得 Mathorcup 数模竞赛国家三等奖。</li>
-                                        </div>
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
@@ -1656,11 +1672,11 @@
                             <div class="publication-details">
                                 <p class="item-title" data-lang-key="patent1_title">基于大语言模型的跨模态远程生理信号感知</p>
                                 <p class="meta-info" data-lang-key="patent1_meta">状态: 审核, 发明专利</p>
-                                <ul class="project-contribution-list mt-2">
-                                    <div class="collapsible-content">
+                                <div class="collapsible-content">
+                                    <ul class="project-contribution-list mt-2">
                                         <li data-lang-key="patent1_desc">此专利聚焦于利用大语言模型提升跨模态远程生理信号感知的准确性和鲁棒性。</li>
-                                    </div>
-                                </ul>
+                                    </ul>
+                                </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
                                         <span data-lang-key="view_details">查看详情</span> <i class="fas fa-chevron-down"></i>
@@ -1676,11 +1692,11 @@
                             <div class="publication-details">
                                 <p class="item-title" data-lang-key="patent2_title">基于时频大语言模型的框架增强时间序列方法</p>
                                 <p class="meta-info" data-lang-key="patent2_meta">状态: 审核, 发明专利</p>
-                                <ul class="project-contribution-list mt-2">
-                                    <div class="collapsible-content">
+                                <div class="collapsible-content">
+                                    <ul class="project-contribution-list mt-2">
                                         <li data-lang-key="patent2_desc">此专利探索如何通过结合时频分析和大语言模型框架来增强时间序列数据的处理和分析能力。</li>
-                                    </div>
-                                </ul>
+                                    </ul>
+                                </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
                                         <span data-lang-key="view_details">查看详情</span> <i class="fas fa-chevron-down"></i>
@@ -1696,11 +1712,11 @@
                             <div class="publication-details">
                                 <p class="item-title" data-lang-key="patent3_title">基于最优运输理论的鲁棒远程生理信号感知</p>
                                 <p class="meta-info" data-lang-key="patent3_meta">状态: 审核, 发明专利</p>
-                                <ul class="project-contribution-list mt-2">
-                                    <div class="collapsible-content">
+                                <div class="collapsible-content">
+                                    <ul class="project-contribution-list mt-2">
                                         <li data-lang-key="patent3_desc">此专利利用最优运输理论来提高远程生理信号感知的鲁棒性，使其在复杂环境下表现更稳定。</li>
-                                    </div>
-                                </ul>
+                                    </ul>
+                                </div>
                                 <div class="collapsible-wrapper">
                                     <button class="toggle-button">
                                         <span data-lang-key="view_details">查看详情</span> <i class="fas fa-chevron-down"></i>
@@ -1883,7 +1899,7 @@
 
                     'pub3_title': 'CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement',
                     'pub3_meta': 'Status: Under Review, JBHI, JCR Q1, Third Author',
-                    'pub3_desc1': 'Challenge: Heart rate (HR) estimation is vital for health monitoring. While rPPG offers a non-invasive solution, traditional single-modal methods (RGB or RF radar) struggle with robustness and accuracy due to factors like lighting changes, motion artifacts, and skin tone bias. Existing multimodal fusion strategies have shortcomings in feature alignment, frequency domain utilization, and fairness across different demographics. A framework that effectively fuses the complementary strengths of RGB and RF signals is needed.',
+                    'pub3_desc1': 'Challenge: Heart rate (HR) estimation is vital for health monitoring. While rPPG offers a non-invasive solution, traditional single-modal methods (RGB or RF radar) struggle with robustness and accuracy due to factors like lighting changes, motion artifacts, and skin tone bias. Existing multimodal fusion strategies have shortcomings in feature alignment, frequency domain utilization, and fairness across different demographics. A framework that有效地 fuses the complementary strengths of RGB and RF signals is needed.',
                     'pub3_desc2_1': 'Contribution:',
                     'pub3_desc2_2': '- Proposed CardiacMamba, a multimodal framework fusing RGB video and RF sensor data for precise rPPG HR estimation.',
                     'pub3_desc2_3': '- Introduced a Temporal Difference Mamba Module (TDMM) and Bifurcated Differential Convolutional Fusion (BDCF) for dual-layer feature extraction and alignment.',
