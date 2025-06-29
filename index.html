@@ -425,7 +425,7 @@
         /* Hover effect for highlight box, mirroring publication cards */
         .highlight-box:hover {
             transform: translateY(-5px) scale(1.01); /* Add slight lift and scale */
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06); /* More pronounced shadow on hover */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06);
         }
         html.dark .highlight-box:hover {
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.15);
@@ -856,20 +856,23 @@
             width: 150px; /* Fixed width for thumbnail */
             height: 120px; /* Fixed height */
             position: relative;
-            background-color: #f0f4f8; /* Placeholder background */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            /* 统一校徽背景色为接近白色的浅灰色 */
+            background-color: #f7f7f7; /* Light grey for all thumbnails in light mode */
+            display: flex; /* Use flexbox to center image */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            transition: background-color 0.5s ease; /* Add transition for theme change */
         }
         html.dark .publication-thumbnail {
-            background-color: #3a5c7f;
+            background-color: #3a3a3a; /* Lighter dark grey for all thumbnails in dark mode */
         }
-
+        
         .publication-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 18px 0 0 18px; /* Rounded only on the left side */
+            width: 80%; /* Scale down the image to 80% of its container */
+            height: 80%; /* Scale down the image to 80% of its container */
+            object-fit: contain; /* Ensure the image is contained within the box without cropping */
+            border-radius: 0; /* Remove border-radius on the image itself for logos */
+            /* Remove specific background colors from individual images, as the container now handles it */
         }
 
         .publication-thumbnail .status-icon {
@@ -1637,7 +1640,7 @@
                 const viewportHeight = document.documentElement.clientHeight;
                 const navHeight = getTopNavHeight();
                 // We consider the scrollable area to be from the bottom of the nav to the end of content
-                const scrollableContentHeight = totalHeight - viewportHeight; 
+                const scrollableContentHeight = totalHeight - viewportHeight;
                 
                 // Adjust scroll position by nav height for accurate progress calculation
                 const scrolled = document.documentElement.scrollTop;
@@ -1658,9 +1661,9 @@
                     backToTopBtn.classList.remove('show');
                     // Hide completely after transition for accessibility/layout
                     setTimeout(() => {
-                         if (!backToTopBtn.classList.contains('show')) { // Only hide if not re-shown during timeout
-                             backToTopBtn.style.display = 'none';
-                         }
+                            if (!backToTopBtn.classList.contains('show')) { // Only hide if not re-shown during timeout
+                                backToTopBtn.style.display = 'none';
+                            }
                     }, 300); // Match opacity transition duration
                 }
             }
