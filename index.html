@@ -987,6 +987,8 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
+            /* Added this line to prevent cards from stretching vertically to match the tallest one */
+            align-items: start;
         }
 
         /* New styles for publication cards - techy, glowing cards */
@@ -1023,7 +1025,7 @@
             transition: background-color 0.5s ease;
             border-bottom: 1px solid var(--color-publication-card-border);
         }
-                                
+                                                
         .publication-thumbnail img {
             width: auto; /* Let height control the size */
             height: 80%;
@@ -1118,13 +1120,16 @@
             max-height: 0;
             overflow: hidden;
             opacity: 0;
-            transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out; /* Adjusted transition duration */
+            /* Adjusted transition duration and added overflow-y */
+            transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out;
             margin-top: 0;
+            overflow-y: hidden; /* Ensure it's hidden when collapsed */
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
         }
         .collapsible-content.expanded {
-            max-height: 1000px; /* Increased for more content */
+            max-height: 250px; /* Reduced max-height to introduce scrollbar */
             opacity: 1;
-            /* margin-top: 10px; Removed as it can cause jumpiness, let padding/margin of children handle spacing */
+            overflow-y: auto; /* Show scrollbar if content exceeds max-height */
         }
 
         /* Styles for the toggle button - techy button */
@@ -1214,7 +1219,7 @@
                 border-radius: 16px 16px 0 0;
             }
             .publication-thumbnail img {
-                 border-radius: 0;
+                border-radius: 0;
             }
             .publication-details {
                 padding: 15px;
@@ -1583,7 +1588,7 @@
                                 </div>
                             </div>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </section>
 
@@ -1640,13 +1645,13 @@
                                 </div>
                             </div>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </section>
 
             <section id="patents-section" class="section-content">
                 <h2 data-lang-key="patents_title" class="section-title">专利成果 / Patents</h2>
-                   <div class="main-section-card">
+                    <div class="main-section-card">
                    <div class="publication-grid">
                         <div class="publication-card">
                             <div class="publication-thumbnail">
@@ -1708,7 +1713,7 @@
                                 </div>
                             </div>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </section>
         </div>
