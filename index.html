@@ -321,11 +321,6 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .pub-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
         
         .pub-image iframe {
             width: 100%;
@@ -355,6 +350,30 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             color: #999;
             font-size: 0.9em;
+        }
+        
+        .pub-image .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #999;
+            font-size: 0.9em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .pub-image img {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .pub-image img.loaded {
+            opacity: 1;
         }
         
         .pub-image::after {
@@ -693,10 +712,10 @@
     <div class="wrapper">
         <!-- 左侧边栏 -->
         <aside class="sidebar">
-            <img src="picture.jpg" alt="赵博" class="profile-photo">
+            <img src="picture.jpg" alt="赵博" class="profile-photo" loading="lazy">
                 <h1>赵博</h1>
             <div class="affiliation">
-                <img src="香港中文大学(深圳).png" alt="香港中文大学（深圳）">
+                <img src="香港中文大学(深圳).png" alt="香港中文大学（深圳）" loading="lazy">
                 <span>香港中文大学（深圳）</span>
                 </div>
             <div class="about-text">
@@ -885,7 +904,7 @@
                     </h2>
                     <div class="education-item">
                         <div class="education-logo">
-                            <img src="香港中文大学(深圳).png" alt="香港中文大学（深圳）">
+                            <img src="香港中文大学(深圳).png" alt="香港中文大学（深圳）" loading="lazy">
                 </div>
                         <div class="education-content">
                             <div class="education-venue">香港中文大学（深圳）</div>
@@ -895,7 +914,7 @@
                     </div>
                     <div class="education-item">
                         <div class="education-logo">
-                            <img src="山东大学.png" alt="山东大学">
+                            <img src="山东大学.png" alt="山东大学" loading="lazy">
                         </div>
                         <div class="education-content">
                             <div class="education-venue">山东大学</div>
@@ -913,7 +932,7 @@
                     </h2>
                     <div class="education-item">
                         <div class="education-logo">
-                            <img src="Tencent.avif" alt="腾讯科技">
+                            <img src="Tencent.avif" alt="腾讯科技" loading="lazy">
                         </div>
                         <div class="education-content">
                             <div class="education-venue">腾讯科技（深圳）有限公司</div>
@@ -1021,6 +1040,76 @@
 
         updateActiveNav();
 
+        // 图片懒加载功能
+        function loadImageLazy(pubItem, pubImage, imageFileName, pubTitle) {
+            const badge = pubImage.querySelector('.pub-badge');
+            const badgeClone = badge ? badge.cloneNode(true) : null;
+            
+            pubImage.innerHTML = '';
+            if (badgeClone) {
+                pubImage.appendChild(badgeClone);
+            }
+            
+            // 添加加载占位符
+            const placeholder = document.createElement('div');
+            placeholder.className = 'image-placeholder';
+            placeholder.textContent = '加载中...';
+            pubImage.appendChild(placeholder);
+            
+            const img = document.createElement('img');
+            img.loading = 'lazy';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'contain';
+            img.style.borderRadius = '8px';
+            img.style.display = 'block';
+            img.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15), inset 0 0 30px rgba(0, 0, 0, 0.05)';
+            img.style.transition = 'all 0.3s ease';
+            img.style.position = 'relative';
+            img.style.zIndex = '2';
+            
+            // 图片加载完成后的处理
+            img.addEventListener('load', function() {
+                placeholder.remove();
+                img.classList.add('loaded');
+            });
+            
+            img.addEventListener('error', function() {
+                placeholder.textContent = '加载失败';
+                placeholder.style.color = '#e74c3c';
+            });
+            
+            pubImage.appendChild(img);
+            
+            // 添加悬停效果
+            img.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2), inset 0 0 40px rgba(0, 0, 0, 0.08)';
+                this.style.transform = 'scale(1.02)';
+            });
+            img.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15), inset 0 0 30px rgba(0, 0, 0, 0.05)';
+                this.style.transform = 'scale(1)';
+            });
+            
+            pubImage.addEventListener('click', function() {
+                openPDFModal(imageFileName, pubTitle);
+            });
+            
+            // 使用 Intersection Observer 实现懒加载
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        img.src = imageFileName;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '50px' // 提前50px开始加载
+            });
+            
+            imageObserver.observe(pubImage);
+        }
+
         // PDF显示功能 - 使用PDF.js渲染第一页作为预览
         async function loadPDFs() {
             if (typeof pdfjsLib === 'undefined') {
@@ -1040,40 +1129,8 @@
                 // 优先检查是否有图片文件
                 const imageFileName = pubItem.getAttribute('data-image');
                 if (imageFileName) {
-                    // 显示PNG图片
-                    const badge = pubImage.querySelector('.pub-badge');
-                    const badgeClone = badge ? badge.cloneNode(true) : null;
                     const pubTitle = pubItem.querySelector('.pub-title')?.textContent || '';
-                    
-                    pubImage.innerHTML = '';
-                    if (badgeClone) {
-                        pubImage.appendChild(badgeClone);
-                    }
-                    
-                    const img = document.createElement('img');
-                    img.src = imageFileName;
-                    img.style.width = '100%';
-                    img.style.height = '100%';
-                    img.style.objectFit = 'contain';
-                    img.style.borderRadius = '8px';
-                    img.style.display = 'block';
-                    img.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15), inset 0 0 30px rgba(0, 0, 0, 0.05)';
-                    img.style.transition = 'all 0.3s ease';
-                    pubImage.appendChild(img);
-                    
-                    // 添加悬停效果
-                    img.addEventListener('mouseenter', function() {
-                        this.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2), inset 0 0 40px rgba(0, 0, 0, 0.08)';
-                        this.style.transform = 'scale(1.02)';
-                    });
-                    img.addEventListener('mouseleave', function() {
-                        this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15), inset 0 0 30px rgba(0, 0, 0, 0.05)';
-                        this.style.transform = 'scale(1)';
-                    });
-                    
-                    pubImage.addEventListener('click', function() {
-                        openPDFModal(imageFileName, pubTitle);
-                    });
+                    loadImageLazy(pubItem, pubImage, imageFileName, pubTitle);
                     continue;
                 }
                 
