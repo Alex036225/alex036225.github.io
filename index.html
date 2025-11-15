@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>赵博 - 个人学术主页</title>
+    <!-- DNS预解析和预连接，加速资源加载 -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <!-- 预加载前几张论文图片 -->
+    <link rel="preload" as="image" href="paper/PhysLLM.png">
+    <link rel="preload" as="image" href="paper/FLOW.png">
+    <link rel="preload" as="image" href="paper/PHASE-NET.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
@@ -797,7 +804,7 @@
             </div>
                             <div class="pub-authors">共同一作</div>
                             <div class="pub-meta">
-                                <span><em>ICLR</em> (CCF A类会议) - Under Review</span>
+                                <span><em>ICLR</em> (CCF A类会议) - Under Review | Scores: 6/4/6/4</span>
                             </div>
                             <div class="pub-description">
                                 远程光电容积描记术(rPPG)在复杂环境（光照、运动伪影）下鲁棒性差，现有方法难以有效融合多模态信息并捕捉长时序依赖。提出PhysLLM，一个结合LLMs与rPPG专用组件的协同优化框架，rPPG领域第一个大模型。设计双域平稳算法(DDS)、视觉聚合器(VA)和文本原型引导(TPG)策略，通过生理线索感知提示学习增强模型对复杂场景的适应性。
@@ -1040,8 +1047,8 @@
 
         updateActiveNav();
 
-        // 图片懒加载功能
-        function loadImageLazy(pubItem, pubImage, imageFileName, pubTitle) {
+        // 图片懒加载功能（优化版）
+        function loadImageLazy(pubItem, pubImage, imageFileName, pubTitle, isPriority = false) {
             const badge = pubImage.querySelector('.pub-badge');
             const badgeClone = badge ? badge.cloneNode(true) : null;
             
@@ -1057,7 +1064,12 @@
             pubImage.appendChild(placeholder);
             
             const img = document.createElement('img');
-            img.loading = 'lazy';
+            // 对于优先图片，不使用lazy loading，立即加载
+            if (!isPriority) {
+                img.loading = 'lazy';
+            } else {
+                img.fetchPriority = 'high';
+            }
             img.style.width = '100%';
             img.style.height = '100%';
             img.style.objectFit = 'contain';
@@ -1095,7 +1107,13 @@
                 openPDFModal(imageFileName, pubTitle);
             });
             
-            // 使用 Intersection Observer 实现懒加载
+            // 如果是优先图片，立即加载
+            if (isPriority) {
+                img.src = imageFileName;
+                return;
+            }
+            
+            // 使用 Intersection Observer 实现懒加载，大幅增加提前加载距离
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1104,7 +1122,7 @@
                     }
                 });
             }, {
-                rootMargin: '50px' // 提前50px开始加载
+                rootMargin: '300px' // 大幅提前：提前300px开始加载
             });
             
             imageObserver.observe(pubImage);
@@ -1122,7 +1140,8 @@
             
             const pubItems = document.querySelectorAll('.publication-item');
             
-            for (const pubItem of pubItems) {
+            for (let i = 0; i < pubItems.length; i++) {
+                const pubItem = pubItems[i];
                 const pubImage = pubItem.querySelector('.pub-image');
                 if (!pubImage) continue;
                 
@@ -1130,7 +1149,9 @@
                 const imageFileName = pubItem.getAttribute('data-image');
                 if (imageFileName) {
                     const pubTitle = pubItem.querySelector('.pub-title')?.textContent || '';
-                    loadImageLazy(pubItem, pubImage, imageFileName, pubTitle);
+                    // 前3张图片立即加载（高优先级），其他使用懒加载
+                    const isPriority = i < 3;
+                    loadImageLazy(pubItem, pubImage, imageFileName, pubTitle, isPriority);
                     continue;
                 }
                 
