@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>赵博 - 个人学术主页</title>
+    <title>Bo Zhao - Academic Homepage</title>
     <!-- DNS预解析和预连接，加速资源加载 -->
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -161,12 +161,45 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .nav-links {
             display: flex;
             gap: 30px;
             list-style: none;
+        }
+        
+        /* 语言切换按钮 */
+        .language-switcher {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .language-switcher button {
+            background: transparent;
+            border: 1px solid #e0e0e0;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85em;
+            color: #555;
+            transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', 'Lora', 'Merriweather', serif;
+        }
+        
+        .language-switcher button:hover {
+            background: #f5f5f5;
+            border-color: #4285f4;
+        }
+        
+        .language-switcher button.active {
+            background: #4285f4;
+            color: white;
+            border-color: #4285f4;
         }
 
         .nav-links a {
@@ -301,8 +334,9 @@
         .pub-image {
             width: 280px;
             height: 220px;          /* 固定高度 */
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 8px;
+            background: transparent;  /* 透明背景，无装饰 */
+            border: none;            /* 无边框 */
+            border-radius: 0;        /* 无圆角 */
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -311,21 +345,21 @@
             font-size: 0.85em;
             position: relative;
             overflow: hidden;       /* 关键：裁剪掉下面长黑条 */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s ease;
+            box-shadow: none;       /* 无阴影 */
+            transition: none;       /* 无过渡效果 */
             cursor: pointer;
         }
         
         /* PNG图片容器的特殊样式 */
         .pub-image:has(img[src$=".png"]),
         .pub-image:has(img[src$=".PNG"]) {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f1f3f5 100%);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), inset 0 0 30px rgba(0, 0, 0, 0.05);
+            background: transparent;
+            box-shadow: none;
         }
 
         .pub-image:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: none;        /* 悬停时无变换 */
+            box-shadow: none;       /* 悬停时无阴影 */
         }
 
         
@@ -333,7 +367,7 @@
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 8px;
+            border-radius: 0;       /* 无圆角 */
             pointer-events: none;
         }
         
@@ -342,10 +376,11 @@
             height: auto !important;
             max-width: 100%;
             object-fit: contain;
-            border-radius: 8px;
+            border-radius: 0;       /* 无圆角 */
             display: block;
             margin: 0;
             padding: 0;
+            box-shadow: none;       /* 无阴影 */
         }
         
         .pub-image .pdf-placeholder {
@@ -354,7 +389,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: transparent;  /* 透明背景 */
             color: #999;
             font-size: 0.9em;
         }
@@ -365,7 +400,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: transparent;  /* 透明背景 */
             color: #999;
             font-size: 0.9em;
             position: absolute;
@@ -384,22 +419,7 @@
         }
         
         .pub-image::after {
-            content: '🔍 点击查看';
-            position: absolute;
-            bottom: 8px;
-            right: 8px;
-            background: rgba(66, 133, 244, 0.9);
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.7em;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .pub-image:hover::after {
-            opacity: 1;
+            display: none;  /* 移除悬停提示 */
         }
 
         .pub-badge {
@@ -675,11 +695,18 @@
 
             .navbar {
                 padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
             }
-
+            
             .nav-links {
                 flex-wrap: wrap;
                 gap: 15px;
+                width: 100%;
+            }
+            
+            .language-switcher {
+                align-self: flex-end;
             }
 
             .content {
@@ -720,17 +747,17 @@
         <!-- 左侧边栏 -->
         <aside class="sidebar">
             <img src="picture.jpg" alt="赵博" class="profile-photo" loading="lazy">
-                <h1>赵博</h1>
+                <h1 data-en="Bo ZHAO" data-zh="赵博">Bo ZHAO</h1>
             <div class="affiliation">
                 <img src="香港中文大学(深圳).png" alt="香港中文大学（深圳）" loading="lazy">
-                <span>香港中文大学（深圳）</span>
+                <span data-en="The Chinese University of Hong Kong, Shenzhen" data-zh="香港中文大学（深圳）">The Chinese University of Hong Kong, Shenzhen</span>
                 </div>
-            <div class="about-text">
+            <div class="about-text" data-en="Focusing on research in remote physiological signal sensing (rPPG), large language models, and multimodal learning. Submitting papers to top-tier conferences and journals including ICLR, CVPR, IJCV, etc." data-zh="专注于远程生理信号感知（rPPG）、大语言模型、多模态等领域的研究。在多个顶级会议和期刊投稿论文，包括ICLR、CVPR、IJCV等。">
                 专注于远程生理信号感知（rPPG）、大语言模型、多模态等领域的研究。在多个顶级会议和期刊投稿论文，包括ICLR、CVPR、IJCV等。
             </div>
             <div class="contact-item">
                 <span class="icon">📍</span>
-                <span>深圳，中国</span>
+                <span data-en="Shenzhen, China" data-zh="深圳，中国">Shenzhen, China</span>
                 </div>
             <div class="contact-item">
                 <span class="icon">✉️</span>
@@ -747,14 +774,18 @@
             <!-- 导航栏 -->
             <nav class="navbar">
                 <ul class="nav-links">
-                    <li><a href="#home" class="active">Homepage</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#education">Educations</a></li>
-                    <li><a href="#internships">Internships</a></li>
-                    <li><a href="#honors">Honors and Awards</a></li>
-                    <li><a href="#patents">Patents</a></li>
+                    <li><a href="#home" class="active" data-en="Homepage" data-zh="首页">Homepage</a></li>
+                    <li><a href="#news" data-en="News" data-zh="新闻">News</a></li>
+                    <li><a href="#publications" data-en="Publications" data-zh="论文">Publications</a></li>
+                    <li><a href="#education" data-en="Educations" data-zh="教育背景">Educations</a></li>
+                    <li><a href="#internships" data-en="Internships" data-zh="实习经历">Internships</a></li>
+                    <li><a href="#honors" data-en="Honors and Awards" data-zh="荣誉奖项">Honors and Awards</a></li>
+                    <li><a href="#patents" data-en="Patents" data-zh="专利">Patents</a></li>
                 </ul>
+                <div class="language-switcher">
+                    <button id="lang-en" class="active">EN</button>
+                    <button id="lang-zh">中文</button>
+                </div>
             </nav>
 
             <!-- 内容区域 -->
@@ -762,12 +793,12 @@
                 <!-- 介绍部分 -->
                 <section id="home" class="section">
                     <div class="intro-text">
-                        <p>欢迎访问我的个人学术主页！我目前是香港中文大学（深圳）人工智能与机器人专业的硕士研究生（预计2027年毕业）。我的研究兴趣主要集中在远程生理信号感知（rPPG）、大语言模型、多模态等领域。</p>
-                        <p>我在多个顶级会议和期刊投稿论文，包括ICLR、CVPR、IJCV、JBHI等。目前正在腾讯科技（深圳）有限公司混元多模态模型部实习，主要从事游戏NPC记忆项目和视觉-语言-动作（VLA）模型的研究。</p>
+                        <p data-en="Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). My research interests focus on remote physiological signal sensing (rPPG), large language models, and multimodal learning." data-zh="欢迎访问我的个人学术主页！我目前是香港中文大学（深圳）人工智能与机器人专业的硕士研究生（预计2027年毕业）。我的研究兴趣主要集中在远程生理信号感知（rPPG）、大语言模型、多模态等领域。">Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). My research interests focus on remote physiological signal sensing (rPPG), large language models, and multimodal learning.</p>
+                        <p data-en="I have submitted papers to multiple top-tier conferences and journals, including ICLR, CVPR, IJCV, JBHI, etc. Currently, I am interning at Tencent Technology (Shenzhen) Co., Ltd., in the Hunyuan Multimodal Model Department, primarily working on game NPC memory projects and visual-language-action (VLA) model research." data-zh="我在多个顶级会议和期刊投稿论文，包括ICLR、CVPR、IJCV、JBHI等。目前正在腾讯科技（深圳）有限公司混元多模态模型部实习，主要从事游戏NPC记忆项目和视觉-语言-动作（VLA）模型的研究。">I have submitted papers to multiple top-tier conferences and journals, including ICLR, CVPR, IJCV, JBHI, etc. Currently, I am interning at Tencent Technology (Shenzhen) Co., Ltd., in the Hunyuan Multimodal Model Department, primarily working on game NPC memory projects and visual-language-action (VLA) model research.</p>
                 </div>
                     <div class="research-stats">
-                        <p><strong>研究兴趣：</strong>远程生理信号感知（rPPG）、大语言模型、多模态</p>
-                        <p><strong>论文投稿：</strong>在ICLR、CVPR、IJCV、JBHI等顶级会议和期刊投稿多篇论文</p>
+                        <p><strong data-en="Research Interests:" data-zh="研究兴趣：">Research Interests:</strong> <span data-en="Remote physiological signal sensing (rPPG), large language models, multimodal learning" data-zh="远程生理信号感知（rPPG）、大语言模型、多模态">Remote physiological signal sensing (rPPG), large language models, multimodal learning</span></p>
+                        <p><strong data-en="Paper Submissions:" data-zh="论文投稿：">Paper Submissions:</strong> <span data-en="Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc." data-zh="在ICLR、CVPR、IJCV、JBHI等顶级会议和期刊投稿多篇论文">Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.</span></p>
             </div>
         </section>
 
@@ -775,15 +806,15 @@
                 <section id="news" class="section">
                     <h2 class="section-title">
                         <span class="icon">🔥</span>
-                        News
+                        <span data-en="News" data-zh="新闻">News</span>
                     </h2>
                     <div class="news-item">
                         <span class="news-date">2025.10</span>
-                        <span class="news-content">开始在腾讯科技（深圳）有限公司混元多模态模型部实习</span>
+                        <span class="news-content" data-en="Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department" data-zh="开始在腾讯科技（深圳）有限公司混元多模态模型部实习">Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department</span>
                     </div>
                     <div class="news-item">
                         <span class="news-date">2025.09</span>
-                        <span class="news-content">进入香港中文大学（深圳）攻读人工智能与机器人专业硕士学位</span>
+                        <span class="news-content" data-en="Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics" data-zh="进入香港中文大学（深圳）攻读人工智能与机器人专业硕士学位">Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics</span>
             </div>
         </section>
 
@@ -791,7 +822,7 @@
                 <section id="publications" class="section">
                     <h2 class="section-title">
                         <span class="icon">📄</span>
-                        Publications
+                        <span data-en="Publications" data-zh="论文">Publications</span>
                     </h2>
 
                     <div class="publication-item" data-image="paper/PhysLLM.png">
@@ -802,12 +833,12 @@
                             <div class="pub-title">
                                 <a href="https://arxiv.org/abs/2505.03621" target="_blank">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</a>
             </div>
-                            <div class="pub-authors">共同一作</div>
+                            <div class="pub-authors" data-en="Co-first author" data-zh="共同一作">Co-first author</div>
                             <div class="pub-meta">
-                                <span><em>ICLR</em> (CCF A类会议) - Under Review | Scores: 6/4/6/4</span>
+                                <span><em>ICLR</em> <span data-en="(CCF Class A Conference)" data-zh="(CCF A类会议)">(CCF Class A Conference)</span> - Under Review | Scores: 6/4/6/4</span>
                             </div>
-                            <div class="pub-description">
-                                远程光电容积描记术(rPPG)在复杂环境（光照、运动伪影）下鲁棒性差，现有方法难以有效融合多模态信息并捕捉长时序依赖。提出PhysLLM，一个结合LLMs与rPPG专用组件的协同优化框架，rPPG领域第一个大模型。设计双域平稳算法(DDS)、视觉聚合器(VA)和文本原型引导(TPG)策略，通过生理线索感知提示学习增强模型对复杂场景的适应性。
+                            <div class="pub-description" data-en="Remote photoplethysmography (rPPG) suffers from poor robustness in complex environments (lighting, motion artifacts), and existing methods struggle to effectively fuse multimodal information and capture long-term temporal dependencies. We propose PhysLLM, a collaborative optimization framework combining LLMs with rPPG-specific components, the first large model in the rPPG field. We design Dual-Domain Stabilization (DDS) algorithm, Vision Aggregator (VA), and Text Prototype Guidance (TPG) strategy, enhancing model adaptability to complex scenarios through physiological cue-aware prompt learning." data-zh="远程光电容积描记术(rPPG)在复杂环境（光照、运动伪影）下鲁棒性差，现有方法难以有效融合多模态信息并捕捉长时序依赖。提出PhysLLM，一个结合LLMs与rPPG专用组件的协同优化框架，rPPG领域第一个大模型。设计双域平稳算法(DDS)、视觉聚合器(VA)和文本原型引导(TPG)策略，通过生理线索感知提示学习增强模型对复杂场景的适应性。">
+                                Remote photoplethysmography (rPPG) suffers from poor robustness in complex environments (lighting, motion artifacts), and existing methods struggle to effectively fuse multimodal information and capture long-term temporal dependencies. We propose PhysLLM, a collaborative optimization framework combining LLMs with rPPG-specific components, the first large model in the rPPG field. We design Dual-Domain Stabilization (DDS) algorithm, Vision Aggregator (VA), and Text Prototype Guidance (TPG) strategy, enhancing model adaptability to complex scenarios through physiological cue-aware prompt learning.
                             </div>
                         </div>
                     </div>
@@ -820,12 +851,12 @@
                             <div class="pub-title">
                                 FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement
                             </div>
-                            <div class="pub-authors">独立一作</div>
+                            <div class="pub-authors" data-en="First author" data-zh="独立一作">First author</div>
                             <div class="pub-meta">
-                                <span><em>CVPR</em> (CCF A类会议) - Under Review</span>
+                                <span><em>CVPR</em> <span data-en="(CCF Class A Conference)" data-zh="(CCF A类会议)">(CCF Class A Conference)</span> - Under Review</span>
                             </div>
-                            <div class="pub-description">
-                                提出一个基于最优传输理论的多源领域泛化框架，旨在提升端到端rPPG的泛化能力。创新引入一个即插即用的OT模块OTAdapter，显式对齐多个源领域间的特征分布，从而增强模型的泛化性。提供理论依据：推导了一个新的基于OT差异的泛化边界，从理论上将源领域间的差异与未见目标领域的预期误差联系起来。
+                            <div class="pub-description" data-en="We propose a multi-source domain generalization framework based on optimal transport theory to enhance the generalization capability of end-to-end rPPG. We innovatively introduce a plug-and-play OT module OTAdapter that explicitly aligns feature distributions across multiple source domains, thereby enhancing model generalization. We provide theoretical justification by deriving a new generalization bound based on OT divergence, theoretically linking the differences between source domains with the expected error on unseen target domains." data-zh="提出一个基于最优传输理论的多源领域泛化框架，旨在提升端到端rPPG的泛化能力。创新引入一个即插即用的OT模块OTAdapter，显式对齐多个源领域间的特征分布，从而增强模型的泛化性。提供理论依据：推导了一个新的基于OT差异的泛化边界，从理论上将源领域间的差异与未见目标领域的预期误差联系起来。">
+                                We propose a multi-source domain generalization framework based on optimal transport theory to enhance the generalization capability of end-to-end rPPG. We innovatively introduce a plug-and-play OT module OTAdapter that explicitly aligns feature distributions across multiple source domains, thereby enhancing model generalization. We provide theoretical justification by deriving a new generalization bound based on OT divergence, theoretically linking the differences between source domains with the expected error on unseen target domains.
                             </div>
                         </div>
                     </div>
@@ -838,12 +869,12 @@
                             <div class="pub-title">
                                 <a href="https://arxiv.org/pdf/2509.24850" target="_blank">PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement</a>
                             </div>
-                            <div class="pub-authors">独立一作</div>
+                            <div class="pub-authors" data-en="First author" data-zh="独立一作">First author</div>
                             <div class="pub-meta">
-                                <span><em>CVPR</em> (CCF A类会议) - Under Review</span>
+                                <span><em>CVPR</em> <span data-en="(CCF Class A Conference)" data-zh="(CCF A类会议)">(CCF Class A Conference)</span> - Under Review</span>
                             </div>
-                            <div class="pub-description">
-                                物理驱动建模：首创从Navier–Stokes血流动力学推导网络结构，严格证明二阶阻尼谐振与因果卷积等价，为使用Temporal Convolution Network提供理论依据。创新模块设计：提出Zero-FLOPs Axial Swapper（零参数跨区域交互）与Adaptive Spatial Filter（动态空间滤波+时间差分），在不增加计算量的前提下提升信号纯度和时序建模能力。仅0.29M参数即在UBFC/PURE/BUAA/MMPD四大基准上取得跨域SOTA。
+                            <div class="pub-description" data-en="Physics-driven modeling: First to derive network structure from Navier-Stokes hemodynamics, rigorously proving the equivalence between second-order damped harmonic resonance and causal convolution, providing theoretical foundation for using Temporal Convolution Network. Innovative module design: Propose Zero-FLOPs Axial Swapper (zero-parameter cross-region interaction) and Adaptive Spatial Filter (dynamic spatial filtering + temporal difference), enhancing signal purity and temporal modeling capability without increasing computational cost. Achieved cross-domain SOTA on four major benchmarks (UBFC/PURE/BUAA/MMPD) with only 0.29M parameters." data-zh="物理驱动建模：首创从Navier–Stokes血流动力学推导网络结构，严格证明二阶阻尼谐振与因果卷积等价，为使用Temporal Convolution Network提供理论依据。创新模块设计：提出Zero-FLOPs Axial Swapper（零参数跨区域交互）与Adaptive Spatial Filter（动态空间滤波+时间差分），在不增加计算量的前提下提升信号纯度和时序建模能力。仅0.29M参数即在UBFC/PURE/BUAA/MMPD四大基准上取得跨域SOTA。">
+                                Physics-driven modeling: First to derive network structure from Navier-Stokes hemodynamics, rigorously proving the equivalence between second-order damped harmonic resonance and causal convolution, providing theoretical foundation for using Temporal Convolution Network. Innovative module design: Propose Zero-FLOPs Axial Swapper (zero-parameter cross-region interaction) and Adaptive Spatial Filter (dynamic spatial filtering + temporal difference), enhancing signal purity and temporal modeling capability without increasing computational cost. Achieved cross-domain SOTA on four major benchmarks (UBFC/PURE/BUAA/MMPD) with only 0.29M parameters.
                             </div>
                 </div>
             </div>
@@ -856,12 +887,12 @@
                             <div class="pub-title">
                                 <a href="https://arxiv.org/abs/2507.21778" target="_blank">AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature</a>
                             </div>
-                            <div class="pub-authors">第三作者</div>
+                            <div class="pub-authors" data-en="Third author" data-zh="第三作者">Third author</div>
                             <div class="pub-meta">
-                                <span><em>CCBR</em> - 已接收</span>
+                                <span><em>CCBR</em> - <span data-en="Accepted" data-zh="已接收">Accepted</span></span>
                             </div>
-                            <div class="pub-description">
-                                参与设计并提出了AU-LLM，这是学术界首个成功利用LLM进行微表情AU检测的框架。研发了关键的增强融合投影器(EFP)模块，通过多层感知机(MLP)智能地将来自视觉骨干的中层(局部纹理)与高层(全局语义)特征融合成一个信息密集的单一视觉令牌(token)，高效地弥合了视觉与语言的模态鸿沟。在CASME II和SAMM两大基准数据集上均建立了新的SOTA。
+                            <div class="pub-description" data-en="Participated in designing and proposing AU-LLM, the first framework in academia to successfully utilize LLMs for micro-expression AU detection. Developed the key Enhanced Fusion Projector (EFP) module, which intelligently fuses mid-level (local texture) and high-level (global semantic) features from the visual backbone into an information-dense single visual token using MLP, effectively bridging the modality gap between vision and language. Established new SOTA on both CASME II and SAMM benchmark datasets." data-zh="参与设计并提出了AU-LLM，这是学术界首个成功利用LLM进行微表情AU检测的框架。研发了关键的增强融合投影器(EFP)模块，通过多层感知机(MLP)智能地将来自视觉骨干的中层(局部纹理)与高层(全局语义)特征融合成一个信息密集的单一视觉令牌(token)，高效地弥合了视觉与语言的模态鸿沟。在CASME II和SAMM两大基准数据集上均建立了新的SOTA。">
+                                Participated in designing and proposing AU-LLM, the first framework in academia to successfully utilize LLMs for micro-expression AU detection. Developed the key Enhanced Fusion Projector (EFP) module, which intelligently fuses mid-level (local texture) and high-level (global semantic) features from the visual backbone into an information-dense single visual token using MLP, effectively bridging the modality gap between vision and language. Established new SOTA on both CASME II and SAMM benchmark datasets.
                             </div>
                 </div>
             </div>
@@ -874,12 +905,12 @@
                             <div class="pub-title">
                                 <a href="https://arxiv.org/abs/2502.13624" target="_blank">CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement</a>
                             </div>
-                            <div class="pub-authors">第三作者</div>
+                            <div class="pub-authors" data-en="Third author" data-zh="第三作者">Third author</div>
                             <div class="pub-meta">
-                                <span><em>JBHI</em> (清华B类, CCF C, JCR Q1, 影响因子 7.2)</span>
+                                <span><em>JBHI</em> <span data-en="(Tsinghua Class B, CCF C, JCR Q1, Impact Factor 7.2)" data-zh="(清华B类, CCF C, JCR Q1, 影响因子 7.2)">(Tsinghua Class B, CCF C, JCR Q1, Impact Factor 7.2)</span></span>
                             </div>
-                            <div class="pub-description">
-                                提出CardiacMamba，一个融合RGB视频和RF传感器数据的多模态框架，用于精确的rPPG心率估计。创新性地引入了时域差分Mamba模块(TDMM)和分叉差分卷积融合(BDCF)进行双层特征提取与对齐，通过双向状态空间模型(Bi-SSM)实现RGB和RF模态的协同建模。设计了通道式快速傅里叶变换(CFFT)进行双向特征融合，在EquiPleth数据集上展现了最先进的性能，显著缓解了肤色偏差问题。
+                            <div class="pub-description" data-en="We propose CardiacMamba, a multimodal framework that fuses RGB video and RF sensor data for accurate rPPG heart rate estimation. We innovatively introduce Temporal Difference Mamba Module (TDMM) and Bifurcated Difference Convolution Fusion (BDCF) for dual-layer feature extraction and alignment, achieving collaborative modeling of RGB and RF modalities through Bidirectional State Space Model (Bi-SSM). We design Channel-wise Fast Fourier Transform (CFFT) for bidirectional feature fusion, demonstrating state-of-the-art performance on the EquiPleth dataset and significantly mitigating skin tone bias issues." data-zh="提出CardiacMamba，一个融合RGB视频和RF传感器数据的多模态框架，用于精确的rPPG心率估计。创新性地引入了时域差分Mamba模块(TDMM)和分叉差分卷积融合(BDCF)进行双层特征提取与对齐，通过双向状态空间模型(Bi-SSM)实现RGB和RF模态的协同建模。设计了通道式快速傅里叶变换(CFFT)进行双向特征融合，在EquiPleth数据集上展现了最先进的性能，显著缓解了肤色偏差问题。">
+                                We propose CardiacMamba, a multimodal framework that fuses RGB video and RF sensor data for accurate rPPG heart rate estimation. We innovatively introduce Temporal Difference Mamba Module (TDMM) and Bifurcated Difference Convolution Fusion (BDCF) for dual-layer feature extraction and alignment, achieving collaborative modeling of RGB and RF modalities through Bidirectional State Space Model (Bi-SSM). We design Channel-wise Fast Fourier Transform (CFFT) for bidirectional feature fusion, demonstrating state-of-the-art performance on the EquiPleth dataset and significantly mitigating skin tone bias issues.
                             </div>
                 </div>
             </div>
@@ -892,12 +923,12 @@
                             <div class="pub-title">
                                 Intervention-Based Self-Supervised Learning: A Causal Probe Paradigm for Remote Photoplethysmography
                 </div>
-                            <div class="pub-authors">第二作者</div>
+                            <div class="pub-authors" data-en="Second author" data-zh="第二作者">Second author</div>
                             <div class="pub-meta">
-                                <span><em>IJCV</em> (CCF A类期刊, 影响因子 19.5) - Under Review</span>
+                                <span><em>IJCV</em> <span data-en="(CCF Class A Journal, Impact Factor 19.5)" data-zh="(CCF A类期刊, 影响因子 19.5)">(CCF Class A Journal, Impact Factor 19.5)</span> - Under Review</span>
             </div>
-                            <div class="pub-description">
-                                基于干预的自监督学习方法，采用因果探针范式进行远程光电容积描记法研究。
+                            <div class="pub-description" data-en="Intervention-based self-supervised learning method using a causal probe paradigm for remote photoplethysmography research." data-zh="基于干预的自监督学习方法，采用因果探针范式进行远程光电容积描记法研究。">
+                                Intervention-based self-supervised learning method using a causal probe paradigm for remote photoplethysmography research.
                             </div>
                         </div>
                     </div>
@@ -907,16 +938,16 @@
                 <section id="education" class="section">
                     <h2 class="section-title">
                         <span class="icon">🎓</span>
-                        Educations
+                        <span data-en="Educations" data-zh="教育背景">Educations</span>
                     </h2>
                     <div class="education-item">
                         <div class="education-logo">
                             <img src="香港中文大学(深圳).png" alt="香港中文大学（深圳）" loading="lazy">
                 </div>
                         <div class="education-content">
-                            <div class="education-venue">香港中文大学（深圳）</div>
-                            <div class="education-title">硕士研究生 | 人工智能与机器人</div>
-                            <div class="education-date">2025.09 - 2027.06（预计）</div>
+                            <div class="education-venue" data-en="The Chinese University of Hong Kong, Shenzhen" data-zh="香港中文大学（深圳）">The Chinese University of Hong Kong, Shenzhen</div>
+                            <div class="education-title" data-en="Master's Student | Artificial Intelligence and Robotics" data-zh="硕士研究生 | 人工智能与机器人">Master's Student | Artificial Intelligence and Robotics</div>
+                            <div class="education-date" data-en="2025.09 - 2027.06 (Expected)" data-zh="2025.09 - 2027.06（预计）">2025.09 - 2027.06 (Expected)</div>
                         </div>
                     </div>
                     <div class="education-item">
@@ -924,8 +955,8 @@
                             <img src="山东大学.png" alt="山东大学" loading="lazy">
                         </div>
                         <div class="education-content">
-                            <div class="education-venue">山东大学</div>
-                            <div class="education-title">本科 | 数学与应用数学</div>
+                            <div class="education-venue" data-en="Shandong University" data-zh="山东大学">Shandong University</div>
+                            <div class="education-title" data-en="Bachelor's Degree | Mathematics and Applied Mathematics" data-zh="本科 | 数学与应用数学">Bachelor's Degree | Mathematics and Applied Mathematics</div>
                             <div class="education-date">2021.09 - 2025.06 | GPA: 87.42/100</div>
                         </div>
                     </div>
@@ -935,20 +966,20 @@
                 <section id="internships" class="section">
                     <h2 class="section-title">
                         <span class="icon">💼</span>
-                        Internships
+                        <span data-en="Internships" data-zh="实习经历">Internships</span>
                     </h2>
                     <div class="education-item">
                         <div class="education-logo">
                             <img src="Tencent.avif" alt="腾讯科技" loading="lazy">
                         </div>
                         <div class="education-content">
-                            <div class="education-venue">腾讯科技（深圳）有限公司</div>
-                            <div class="education-title">实习 | 混元多模态模型部</div>
-                            <div class="education-date">2025.10 - 至今</div>
+                            <div class="education-venue" data-en="Tencent Technology (Shenzhen) Co., Ltd." data-zh="腾讯科技（深圳）有限公司">Tencent Technology (Shenzhen) Co., Ltd.</div>
+                            <div class="education-title" data-en="Intern | Hunyuan Multimodal Model Department" data-zh="实习 | 混元多模态模型部">Intern | Hunyuan Multimodal Model Department</div>
+                            <div class="education-date" data-en="2025.10 - Present" data-zh="2025.10 - 至今">2025.10 - Present</div>
                             <div class="description" style="margin-top: 15px;">
                                 <ul>
-                                    <li><strong>业务方向：</strong>主导游戏NPC记忆项目，从原始数据中提取记忆相关内容，构造LLM需要的格式，训练32B记忆模型</li>
-                                    <li><strong>科研方向：</strong>研究游戏视觉-语言-动作（VLA）模型</li>
+                                    <li><strong data-en="Business Direction:" data-zh="业务方向：">Business Direction:</strong> <span data-en="Leading game NPC memory project, extracting memory-related content from raw data, constructing LLM-required formats, training 32B memory model" data-zh="主导游戏NPC记忆项目，从原始数据中提取记忆相关内容，构造LLM需要的格式，训练32B记忆模型">Leading game NPC memory project, extracting memory-related content from raw data, constructing LLM-required formats, training 32B memory model</span></li>
+                                    <li><strong data-en="Research Direction:" data-zh="科研方向：">Research Direction:</strong> <span data-en="Researching game visual-language-action (VLA) models" data-zh="研究游戏视觉-语言-动作（VLA）模型">Researching game visual-language-action (VLA) models</span></li>
                     </ul>
                 </div>
             </div>
@@ -959,11 +990,11 @@
                 <section id="honors" class="section">
                     <h2 class="section-title">
                         <span class="icon">🏆</span>
-                        Honors and Awards
+                        <span data-en="Honors and Awards" data-zh="荣誉奖项">Honors and Awards</span>
                     </h2>
                 <div class="description">
                         <ul>
-                            <li>连续三年获得学业奖学金（2022-2024）</li>
+                            <li data-en="Academic Scholarship for three consecutive years (2022-2024)" data-zh="连续三年获得学业奖学金（2022-2024）">Academic Scholarship for three consecutive years (2022-2024)</li>
                         </ul>
             </div>
         </section>
@@ -972,14 +1003,14 @@
                 <section id="patents" class="section">
                     <h2 class="section-title">
                         <span class="icon">📜</span>
-                        Patents
+                        <span data-en="Patents" data-zh="专利">Patents</span>
                     </h2>
             <div class="description">
                 <ul>
-                    <li>时间序列分析模型训练方法、时间序列分析方法及相关装置（发明专利）</li>
-                    <li>基于时频大语言模型的框架增强时间序列方法（审核中，发明专利）</li>
-                    <li>基于最优运输理论的鲁棒远程生理信号感知（审核中，发明专利）</li>
-                    <li>基于大语言模型以及特征融合的微表情面部动作单元检测（审核中，发明专利）</li>
+                    <li data-en="Time Series Analysis Model Training Method, Time Series Analysis Method and Related Devices (Invention Patent)" data-zh="时间序列分析模型训练方法、时间序列分析方法及相关装置（发明专利）">Time Series Analysis Model Training Method, Time Series Analysis Method and Related Devices (Invention Patent)</li>
+                    <li data-en="Time-Frequency Large Language Model-Based Framework for Enhanced Time Series Methods (Under Review, Invention Patent)" data-zh="基于时频大语言模型的框架增强时间序列方法（审核中，发明专利）">Time-Frequency Large Language Model-Based Framework for Enhanced Time Series Methods (Under Review, Invention Patent)</li>
+                    <li data-en="Robust Remote Physiological Signal Sensing Based on Optimal Transport Theory (Under Review, Invention Patent)" data-zh="基于最优运输理论的鲁棒远程生理信号感知（审核中，发明专利）">Robust Remote Physiological Signal Sensing Based on Optimal Transport Theory (Under Review, Invention Patent)</li>
+                    <li data-en="Micro-Expression Facial Action Unit Detection Based on Large Language Models and Feature Fusion (Under Review, Invention Patent)" data-zh="基于大语言模型以及特征融合的微表情面部动作单元检测（审核中，发明专利）">Micro-Expression Facial Action Unit Detection Based on Large Language Models and Feature Fusion (Under Review, Invention Patent)</li>
                 </ul>
             </div>
         </section>
@@ -988,6 +1019,55 @@
     </div>
 
     <script>
+        // 语言切换功能
+        let currentLang = 'en'; // 默认英文
+        
+        // 从localStorage读取语言设置
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang) {
+            currentLang = savedLang;
+        }
+        
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // 更新HTML lang属性
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            
+            // 更新所有带有data-en和data-zh属性的元素
+            document.querySelectorAll('[data-en][data-zh]').forEach(element => {
+                if (lang === 'zh') {
+                    element.textContent = element.getAttribute('data-zh');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // 更新导航链接
+            document.querySelectorAll('.nav-links a[data-en][data-zh]').forEach(link => {
+                if (lang === 'zh') {
+                    link.textContent = link.getAttribute('data-zh');
+                } else {
+                    link.textContent = link.getAttribute('data-en');
+                }
+            });
+            
+            // 更新语言切换按钮状态
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-zh').classList.toggle('active', lang === 'zh');
+            
+            // 更新页面标题
+            document.title = lang === 'zh' ? '赵博 - 个人学术主页' : 'Bo ZHAO - Academic Homepage';
+        }
+        
+        // 初始化语言
+        switchLanguage(currentLang);
+        
+        // 语言切换按钮事件
+        document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+        document.getElementById('lang-zh').addEventListener('click', () => switchLanguage('zh'));
+        
         // 导航点击功能
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function(e) {
@@ -1073,10 +1153,10 @@
             img.style.width = '100%';
             img.style.height = '100%';
             img.style.objectFit = 'contain';
-            img.style.borderRadius = '8px';
+            img.style.borderRadius = '0';      /* 无圆角 */
             img.style.display = 'block';
-            img.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15), inset 0 0 30px rgba(0, 0, 0, 0.05)';
-            img.style.transition = 'all 0.3s ease';
+            img.style.boxShadow = 'none';       /* 无阴影 */
+            img.style.transition = 'none';      /* 无过渡 */
             img.style.position = 'relative';
             img.style.zIndex = '2';
             
@@ -1093,15 +1173,7 @@
             
             pubImage.appendChild(img);
             
-            // 添加悬停效果
-            img.addEventListener('mouseenter', function() {
-                this.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.2), inset 0 0 40px rgba(0, 0, 0, 0.08)';
-                this.style.transform = 'scale(1.02)';
-            });
-            img.addEventListener('mouseleave', function() {
-                this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15), inset 0 0 30px rgba(0, 0, 0, 0.05)';
-                this.style.transform = 'scale(1)';
-            });
+            // 移除悬停效果，保持图片纯粹
             
             pubImage.addEventListener('click', function() {
                 openPDFModal(imageFileName, pubTitle);
