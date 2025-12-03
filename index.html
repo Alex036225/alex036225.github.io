@@ -579,6 +579,21 @@
             margin-bottom: 12px;
             font-style: italic;
         }
+        
+        .pub-link {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .pub-link a {
+            color: #4285f4;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        
+        .pub-link a:hover {
+            text-decoration: underline;
+        }
 
         .pub-meta a {
             color: #4285f4;
@@ -793,7 +808,7 @@
                 <!-- 介绍部分 -->
                 <section id="home" class="section">
                     <div class="intro-text">
-                        <p data-en="Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). My research interests focus on remote physiological signal sensing (rPPG), large language models, and multimodal learning." data-zh="欢迎访问我的个人学术主页！我目前是香港中文大学（深圳）人工智能与机器人专业的硕士研究生（预计2027年毕业）。我的研究兴趣主要集中在远程生理信号感知（rPPG）、大语言模型、多模态等领域。">Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). My research interests focus on remote physiological signal sensing (rPPG), large language models, and multimodal learning.</p>
+                        <p><span data-en="Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). Since December 2024, supervised by Prof. " data-zh="欢迎访问我的个人学术主页！我目前是香港中文大学（深圳）人工智能与机器人专业的硕士研究生（预计2027年毕业）。自2024年十二月起，师从">Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). Since December 2024, supervised by Prof. </span><a href="https://zitong-yu.github.io/yzt/" target="_blank" style="color: #4285f4; text-decoration: underline;"><span data-en="Zitong Yu" data-zh="余梓彤">Zitong Yu</span></a><span data-en="." data-zh="教授。">.</span> <span data-en="My research interests focus on remote physiological signal sensing (rPPG), large language models, and multimodal learning." data-zh="我的研究兴趣主要集中在远程生理信号感知（rPPG）、大语言模型、多模态等领域。">My research interests focus on remote physiological signal sensing (rPPG), large language models, and multimodal learning.</span></p>
                         <p data-en="I have submitted papers to multiple top-tier conferences and journals, including ICLR, CVPR, IJCV, JBHI, etc. Currently, I am interning at Tencent Technology (Shenzhen) Co., Ltd., in the Hunyuan Multimodal Model Department, primarily working on game NPC memory projects and visual-language-action (VLA) model research." data-zh="我在多个顶级会议和期刊投稿论文，包括ICLR、CVPR、IJCV、JBHI等。目前正在腾讯科技（深圳）有限公司混元多模态模型部实习，主要从事游戏NPC记忆项目和视觉-语言-动作（VLA）模型的研究。">I have submitted papers to multiple top-tier conferences and journals, including ICLR, CVPR, IJCV, JBHI, etc. Currently, I am interning at Tencent Technology (Shenzhen) Co., Ltd., in the Hunyuan Multimodal Model Department, primarily working on game NPC memory projects and visual-language-action (VLA) model research.</p>
                 </div>
                     <div class="research-stats">
@@ -831,14 +846,17 @@
                 </div>
                         <div class="pub-details">
                             <div class="pub-title">
-                                <a href="https://arxiv.org/abs/2505.03621" target="_blank">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</a>
-            </div>
+                                PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing
+                            </div>
                             <div class="pub-authors" data-en="Co-first author" data-zh="共同一作">Co-first author</div>
                             <div class="pub-meta">
                                 <span><em>ICLR</em> <span data-en="(CCF Class A Conference)" data-zh="(CCF A类会议)">(CCF Class A Conference)</span> - Under Review | Scores: 6/4/6/4</span>
                             </div>
                             <div class="pub-description" data-en="Remote photoplethysmography (rPPG) suffers from poor robustness in complex environments (lighting, motion artifacts), and existing methods struggle to effectively fuse multimodal information and capture long-term temporal dependencies. We propose PhysLLM, a collaborative optimization framework combining LLMs with rPPG-specific components, the first large model in the rPPG field. We design Dual-Domain Stabilization (DDS) algorithm, Vision Aggregator (VA), and Text Prototype Guidance (TPG) strategy, enhancing model adaptability to complex scenarios through physiological cue-aware prompt learning." data-zh="远程光电容积描记术(rPPG)在复杂环境（光照、运动伪影）下鲁棒性差，现有方法难以有效融合多模态信息并捕捉长时序依赖。提出PhysLLM，一个结合LLMs与rPPG专用组件的协同优化框架，rPPG领域第一个大模型。设计双域平稳算法(DDS)、视觉聚合器(VA)和文本原型引导(TPG)策略，通过生理线索感知提示学习增强模型对复杂场景的适应性。">
                                 Remote photoplethysmography (rPPG) suffers from poor robustness in complex environments (lighting, motion artifacts), and existing methods struggle to effectively fuse multimodal information and capture long-term temporal dependencies. We propose PhysLLM, a collaborative optimization framework combining LLMs with rPPG-specific components, the first large model in the rPPG field. We design Dual-Domain Stabilization (DDS) algorithm, Vision Aggregator (VA), and Text Prototype Guidance (TPG) strategy, enhancing model adaptability to complex scenarios through physiological cue-aware prompt learning.
+                            </div>
+                            <div class="pub-link">
+                                <a href="https://arxiv.org/abs/2505.03621" target="_blank" data-en="[Paper Link]" data-zh="[论文链接]">[Paper Link]</a>
                             </div>
                         </div>
                     </div>
@@ -867,7 +885,7 @@
                 </div>
                         <div class="pub-details">
                             <div class="pub-title">
-                                <a href="https://arxiv.org/pdf/2509.24850" target="_blank">PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement</a>
+                                PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement
                             </div>
                             <div class="pub-authors" data-en="First author" data-zh="独立一作">First author</div>
                             <div class="pub-meta">
@@ -875,6 +893,9 @@
                             </div>
                             <div class="pub-description" data-en="Physics-driven modeling: First to derive network structure from Navier-Stokes hemodynamics, rigorously proving the equivalence between second-order damped harmonic resonance and causal convolution, providing theoretical foundation for using Temporal Convolution Network. Innovative module design: Propose Zero-FLOPs Axial Swapper (zero-parameter cross-region interaction) and Adaptive Spatial Filter (dynamic spatial filtering + temporal difference), enhancing signal purity and temporal modeling capability without increasing computational cost. Achieved cross-domain SOTA on four major benchmarks (UBFC/PURE/BUAA/MMPD) with only 0.29M parameters." data-zh="物理驱动建模：首创从Navier–Stokes血流动力学推导网络结构，严格证明二阶阻尼谐振与因果卷积等价，为使用Temporal Convolution Network提供理论依据。创新模块设计：提出Zero-FLOPs Axial Swapper（零参数跨区域交互）与Adaptive Spatial Filter（动态空间滤波+时间差分），在不增加计算量的前提下提升信号纯度和时序建模能力。仅0.29M参数即在UBFC/PURE/BUAA/MMPD四大基准上取得跨域SOTA。">
                                 Physics-driven modeling: First to derive network structure from Navier-Stokes hemodynamics, rigorously proving the equivalence between second-order damped harmonic resonance and causal convolution, providing theoretical foundation for using Temporal Convolution Network. Innovative module design: Propose Zero-FLOPs Axial Swapper (zero-parameter cross-region interaction) and Adaptive Spatial Filter (dynamic spatial filtering + temporal difference), enhancing signal purity and temporal modeling capability without increasing computational cost. Achieved cross-domain SOTA on four major benchmarks (UBFC/PURE/BUAA/MMPD) with only 0.29M parameters.
+                            </div>
+                            <div class="pub-link">
+                                <a href="https://arxiv.org/pdf/2509.24850" target="_blank" data-en="[Paper Link]" data-zh="[论文链接]">[Paper Link]</a>
                             </div>
                 </div>
             </div>
@@ -885,7 +906,7 @@
                 </div>
                         <div class="pub-details">
                             <div class="pub-title">
-                                <a href="https://arxiv.org/abs/2507.21778" target="_blank">AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature</a>
+                                AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature
                             </div>
                             <div class="pub-authors" data-en="Third author" data-zh="第三作者">Third author</div>
                             <div class="pub-meta">
@@ -893,6 +914,9 @@
                             </div>
                             <div class="pub-description" data-en="Participated in designing and proposing AU-LLM, the first framework in academia to successfully utilize LLMs for micro-expression AU detection. Developed the key Enhanced Fusion Projector (EFP) module, which intelligently fuses mid-level (local texture) and high-level (global semantic) features from the visual backbone into an information-dense single visual token using MLP, effectively bridging the modality gap between vision and language. Established new SOTA on both CASME II and SAMM benchmark datasets." data-zh="参与设计并提出了AU-LLM，这是学术界首个成功利用LLM进行微表情AU检测的框架。研发了关键的增强融合投影器(EFP)模块，通过多层感知机(MLP)智能地将来自视觉骨干的中层(局部纹理)与高层(全局语义)特征融合成一个信息密集的单一视觉令牌(token)，高效地弥合了视觉与语言的模态鸿沟。在CASME II和SAMM两大基准数据集上均建立了新的SOTA。">
                                 Participated in designing and proposing AU-LLM, the first framework in academia to successfully utilize LLMs for micro-expression AU detection. Developed the key Enhanced Fusion Projector (EFP) module, which intelligently fuses mid-level (local texture) and high-level (global semantic) features from the visual backbone into an information-dense single visual token using MLP, effectively bridging the modality gap between vision and language. Established new SOTA on both CASME II and SAMM benchmark datasets.
+                            </div>
+                            <div class="pub-link">
+                                <a href="https://arxiv.org/abs/2507.21778" target="_blank" data-en="[Paper Link]" data-zh="[论文链接]">[Paper Link]</a>
                             </div>
                 </div>
             </div>
@@ -903,14 +927,17 @@
                 </div>
                         <div class="pub-details">
                             <div class="pub-title">
-                                <a href="https://arxiv.org/abs/2502.13624" target="_blank">CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement</a>
+                                CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement
                             </div>
-                            <div class="pub-authors" data-en="Third author" data-zh="第三作者">Third author</div>
+                            <div class="pub-authors" data-en="Co-first author" data-zh="共同一作">Co-first author</div>
                             <div class="pub-meta">
                                 <span><em>JBHI</em> <span data-en="(Tsinghua Class B, CCF C, JCR Q1, Impact Factor 7.2)" data-zh="(清华B类, CCF C, JCR Q1, 影响因子 7.2)">(Tsinghua Class B, CCF C, JCR Q1, Impact Factor 7.2)</span></span>
                             </div>
                             <div class="pub-description" data-en="We propose CardiacMamba, a multimodal framework that fuses RGB video and RF sensor data for accurate rPPG heart rate estimation. We innovatively introduce Temporal Difference Mamba Module (TDMM) and Bifurcated Difference Convolution Fusion (BDCF) for dual-layer feature extraction and alignment, achieving collaborative modeling of RGB and RF modalities through Bidirectional State Space Model (Bi-SSM). We design Channel-wise Fast Fourier Transform (CFFT) for bidirectional feature fusion, demonstrating state-of-the-art performance on the EquiPleth dataset and significantly mitigating skin tone bias issues." data-zh="提出CardiacMamba，一个融合RGB视频和RF传感器数据的多模态框架，用于精确的rPPG心率估计。创新性地引入了时域差分Mamba模块(TDMM)和分叉差分卷积融合(BDCF)进行双层特征提取与对齐，通过双向状态空间模型(Bi-SSM)实现RGB和RF模态的协同建模。设计了通道式快速傅里叶变换(CFFT)进行双向特征融合，在EquiPleth数据集上展现了最先进的性能，显著缓解了肤色偏差问题。">
                                 We propose CardiacMamba, a multimodal framework that fuses RGB video and RF sensor data for accurate rPPG heart rate estimation. We innovatively introduce Temporal Difference Mamba Module (TDMM) and Bifurcated Difference Convolution Fusion (BDCF) for dual-layer feature extraction and alignment, achieving collaborative modeling of RGB and RF modalities through Bidirectional State Space Model (Bi-SSM). We design Channel-wise Fast Fourier Transform (CFFT) for bidirectional feature fusion, demonstrating state-of-the-art performance on the EquiPleth dataset and significantly mitigating skin tone bias issues.
+                            </div>
+                            <div class="pub-link">
+                                <a href="https://arxiv.org/abs/2502.13624" target="_blank" data-en="[Paper Link]" data-zh="[论文链接]">[Paper Link]</a>
                             </div>
                 </div>
             </div>
