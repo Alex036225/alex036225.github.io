@@ -24,10 +24,9 @@ author:
   name: "Bo ZHAO"
   avatar: "images/picture.jpg"
   bio: "Master's student @CUHK(SZ)"
-  location: "Shenzhen, China"
-  employer: "The Chinese University of Hong Kong, Shenzhen"
+  location: "China"
   pubmed:
-  googlescholar: "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
+  # googlescholar: "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
   email: "3057018496@qq.com"
   researchgate: # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri:
