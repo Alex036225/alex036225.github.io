@@ -138,8 +138,10 @@ Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao*
 </div>
 
 # 🎓 Educations
-- *2025.09 - 2027.06 (Expected)*, **Master's Student**, Artificial Intelligence and Robotics, The Chinese University of Hong Kong, Shenzhen
-- *2021.09 - 2025.06*, **Bachelor's Degree**, Mathematics and Applied Mathematics, Shandong University 
+- **The Chinese University of Hong Kong, Shenzhen**, 2025.09 - 2027.06 (expected)  
+  Master's Student in Artificial Intelligence and Robotics
+- **Shandong University**, 2021.09 - 2025.06  
+  Bachelor's Degree in Mathematics and Applied Mathematics
 
 # 💼 Internships
 - *2025.10 - Present*, **Intern**, Hunyuan Multimodal Model Department, Tencent Technology (Shenzhen) Co., Ltd.
