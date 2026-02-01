@@ -65,7 +65,7 @@ ICLR (CCF Class A Conference)
 
 **First author**
 
-*CVPR (CCF Class A Conference) - Under Review*
+*CVPR (CCF Class A Conference) - 3 3 4*
 
 - We propose a multi-source domain generalization framework based on optimal transport theory to enhance the generalization capability of end-to-end rPPG. We innovatively introduce a plug-and-play OT module OTAdapter that explicitly aligns feature distributions across multiple source domains, thereby enhancing model generalization. We provide theoretical justification by deriving a new generalization bound based on OT divergence, theoretically linking the differences between source domains with the expected error on unseen target domains.
 </div>
@@ -78,7 +78,7 @@ ICLR (CCF Class A Conference)
 
 **First author**
 
-*CVPR (CCF Class A Conference) - Under Review*
+*CVPR (CCF Class A Conference) - 5 4 2*
 
 - Physics-driven modeling: First to derive network structure from Navier-Stokes hemodynamics, rigorously proving the equivalence between second-order damped harmonic resonance and causal convolution, providing theoretical foundation for using Temporal Convolution Network. Innovative module design: Propose Zero-FLOPs Axial Swapper (zero-parameter cross-region interaction) and Adaptive Spatial Filter (dynamic spatial filtering + temporal difference), enhancing signal purity and temporal modeling capability without increasing computational cost. Achieved cross-domain SOTA on four major benchmarks (UBFC/PURE/BUAA/MMPD) with only 0.29M parameters.
 </div>
@@ -142,7 +142,7 @@ Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao*
 - <span class="edu-logo"><img src="images/山东大学.png" alt="Shandong University"></span><span class="edu-text"><strong>Shandong University</strong>, 2021.09 - 2025.06<br>Bachelor's Degree in Mathematics and Applied Mathematics</span>
 
 # 💼 Internships
-- <span class="edu-logo edu-logo--intern"><img src="images/Tencent.avif" alt="Tencent"></span><span class="edu-text"><em>2025.10 - Present</em>, <strong>Intern</strong>, Hunyuan Multimodal Model Department, Tencent Technology (Shenzhen) Co., Ltd.</span>
+- <span class="edu-logo edu-logo--intern"><img src="images/Tencent.avif" alt="Tencent"></span><span class="edu-text"><em>2025.10 - Present</em>, <strong>Intern</strong>, Tencent Hunyuan Multimodal Model Department, Tencent Technology (Shenzhen) Co., Ltd.</span>
   - **Business Direction:** Leading game NPC memory project, extracting memory-related content from raw data, constructing LLM-required formats, training 32B memory model
   - **Research Direction:** Researching game visual-language-action (VLA) models
 
