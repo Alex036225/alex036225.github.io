@@ -120,7 +120,8 @@
 
   .edu-logo img {
     width: 28px;
-    height: auto;
+    max-width: 28px;
+    height: 28px;
     display: block;
   }
 
@@ -130,12 +131,19 @@
 
   .edu-logo--intern img {
     width: 24px;
+    max-width: 24px;
+    height: 24px;
   }
 
   .edu-text {
     display: inline-block;
     vertical-align: top;
     max-width: calc(100% - 40px);
+  }
+
+  /* Ensure list bullets align with small logos */
+  li .edu-logo {
+    vertical-align: middle;
   }
 
   /* blockquote citations */
