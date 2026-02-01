@@ -43,6 +43,21 @@ ICLR (CCF Class A Conference)
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CCBR 2025</div><img src='images/paper/AULLM.png' alt="AU-LLM" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature](https://arxiv.org/abs/2507.21778)
+
+**Third author**
+
+*CCBR - Accepted*
+
+- Participated in designing and proposing AU-LLM, the first framework in academia to successfully utilize LLMs for micro-expression AU detection. Developed the key Enhanced Fusion Projector (EFP) module, which intelligently fuses mid-level (local texture) and high-level (global semantic) features from the visual backbone into an information-dense single visual token using MLP, effectively bridging the modality gap between vision and language. Established new SOTA on both CASME II and SAMM benchmark datasets.
+</div>
+</div>
+
+# 📄 Preprints
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='images/paper/FLOW.png' alt="FLOW" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -66,19 +81,6 @@ ICLR (CCF Class A Conference)
 *CVPR (CCF Class A Conference) - Under Review*
 
 - Physics-driven modeling: First to derive network structure from Navier-Stokes hemodynamics, rigorously proving the equivalence between second-order damped harmonic resonance and causal convolution, providing theoretical foundation for using Temporal Convolution Network. Innovative module design: Propose Zero-FLOPs Axial Swapper (zero-parameter cross-region interaction) and Adaptive Spatial Filter (dynamic spatial filtering + temporal difference), enhancing signal purity and temporal modeling capability without increasing computational cost. Achieved cross-domain SOTA on four major benchmarks (UBFC/PURE/BUAA/MMPD) with only 0.29M parameters.
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CCBR 2025</div><img src='images/paper/AULLM.png' alt="AU-LLM" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature](https://arxiv.org/abs/2507.21778)
-
-**Third author**
-
-*CCBR - Accepted*
-
-- Participated in designing and proposing AU-LLM, the first framework in academia to successfully utilize LLMs for micro-expression AU detection. Developed the key Enhanced Fusion Projector (EFP) module, which intelligently fuses mid-level (local texture) and high-level (global semantic) features from the visual backbone into an information-dense single visual token using MLP, effectively bridging the modality gap between vision and language. Established new SOTA on both CASME II and SAMM benchmark datasets.
 </div>
 </div>
 
@@ -108,30 +110,36 @@ ICLR (CCF Class A Conference)
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACL 2026</div><img src='images/500x300.png' alt="ACL 2026" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACL 2026</div><img src='images/paper/script.png' alt="ACL 2026" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation
+**The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation**
 
 Chenyu Mu, Xin He, Qu Yang, Wanshun CHEN, Jiadi Yao, Huang Liu, Zihao Yi, **Bo Zhao**, Xingyu Chen, Ruotian Ma, Fanghua Ye, Erkun Yang, Cheng Deng, Zhaopeng Tu, Xiaolong Li, Linus
+
+*ACL 2026*
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/500x300.png' alt="ICML 2026" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/paper/Unsupervised Camouflaged Object Detection.png' alt="ICML 2026" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-Unsupervised Camouflaged Object Detection with Dual-Eigenvector Spectral Pseudo-Labeling and Contrastive Refinement
+**Unsupervised Camouflaged Object Detection with Dual-Eigenvector Spectral Pseudo-Labeling and Contrastive Refinement**
 
 Pingzhu Liu, Chunming He, Zunnan Xu, Chao Hao, **Bo Zhao**, Xingyu Shao, Jun Zhou, Zitong YU, Xiu Li
+
+*ICML 2026*
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/500x300.png' alt="ICML 2026" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/paper/Think Fast and Slow.png' alt="ICML 2026" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents
+**Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents**
 
 Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao**, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus
+
+*ICML 2026*
 </div>
 </div>
 
