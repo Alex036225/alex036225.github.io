@@ -111,6 +111,33 @@
     font-size: $type-size-6;
   }
 
+  .edu-logo {
+    display: inline-block;
+    width: 44px;
+    margin-right: 12px;
+    vertical-align: top;
+  }
+
+  .edu-logo img {
+    width: 44px;
+    height: auto;
+    display: block;
+  }
+
+  .edu-logo--intern {
+    width: 36px;
+  }
+
+  .edu-logo--intern img {
+    width: 36px;
+  }
+
+  .edu-text {
+    display: inline-block;
+    vertical-align: top;
+    max-width: calc(100% - 60px);
+  }
+
   /* blockquote citations */
   blockquote + .small {
     margin-top: -1.5em;
