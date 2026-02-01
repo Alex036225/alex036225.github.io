@@ -37,7 +37,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Co-first author**
 
-*ICLR (CCF Class A Conference) | Scores: 6/4/6/4*
+ICLR (CCF Class A Conference)
 
 - Remote photoplethysmography (rPPG) suffers from poor robustness in complex environments (lighting, motion artifacts), and existing methods struggle to effectively fuse multimodal information and capture long-term temporal dependencies. We propose PhysLLM, a collaborative optimization framework combining LLMs with rPPG-specific components, the first large model in the rPPG field. We design Dual-Domain Stabilization (DDS) algorithm, Vision Aggregator (VA), and Text Prototype Guidance (TPG) strategy, enhancing model adaptability to complex scenarios through physiological cue-aware prompt learning.
 </div>
@@ -108,9 +108,36 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACL 2026</div><img src='images/500x300.png' alt="ACL 2026" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation
+
+Chenyu Mu, Xin He, Qu Yang, Wanshun CHEN, Jiadi Yao, Huang Liu, Zihao Yi, **Bo Zhao**, Xingyu Chen, Ruotian Ma, Fanghua Ye, Erkun Yang, Cheng Deng, Zhaopeng Tu, Xiaolong Li, Linus
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/500x300.png' alt="ICML 2026" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+Unsupervised Camouflaged Object Detection with Dual-Eigenvector Spectral Pseudo-Labeling and Contrastive Refinement
+
+Pingzhu Liu, Chunming He, Zunnan Xu, Chao Hao, **Bo Zhao**, Xingyu Shao, Jun Zhou, Zitong YU, Xiu Li
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/500x300.png' alt="ICML 2026" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents
+
+Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao**, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus
+</div>
+</div>
+
 # 🎓 Educations
 - *2025.09 - 2027.06 (Expected)*, **Master's Student**, Artificial Intelligence and Robotics, The Chinese University of Hong Kong, Shenzhen
-- *2021.09 - 2025.06*, **Bachelor's Degree**, Mathematics and Applied Mathematics, Shandong University | GPA: 87.42/100
+- *2021.09 - 2025.06*, **Bachelor's Degree**, Mathematics and Applied Mathematics, Shandong University 
 
 # 💼 Internships
 - *2025.10 - Present*, **Intern**, Hunyuan Multimodal Model Department, Tencent Technology (Shenzhen) Co., Ltd.
