@@ -138,13 +138,13 @@ Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao*
 </div>
 
 # 🎓 Educations
-- **The Chinese University of Hong Kong, Shenzhen**, 2025.09 - 2027.06 (expected)  
+- <img src="images/香港中文大学(深圳).png" alt="The Chinese University of Hong Kong, Shenzhen" width="24" style="vertical-align: middle; margin-right: 8px;"> **The Chinese University of Hong Kong, Shenzhen**, 2025.09 - 2027.06 (expected)  
   Master's Student in Artificial Intelligence and Robotics
-- **Shandong University**, 2021.09 - 2025.06  
+- <img src="images/山东大学.png" alt="Shandong University" width="24" style="vertical-align: middle; margin-right: 8px;"> **Shandong University**, 2021.09 - 2025.06  
   Bachelor's Degree in Mathematics and Applied Mathematics
 
 # 💼 Internships
-- *2025.10 - Present*, **Intern**, Hunyuan Multimodal Model Department, Tencent Technology (Shenzhen) Co., Ltd.
+- <img src="images/Tencent.avif" alt="Tencent" width="24" style="vertical-align: middle; margin-right: 8px;"> *2025.10 - Present*, **Intern**, Hunyuan Multimodal Model Department, Tencent Technology (Shenzhen) Co., Ltd.
   - **Business Direction:** Leading game NPC memory project, extracting memory-related content from raw data, constructing LLM-required formats, training 32B memory model
   - **Research Direction:** Researching game visual-language-action (VLA) models
 
