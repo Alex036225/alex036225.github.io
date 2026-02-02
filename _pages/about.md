@@ -84,6 +84,13 @@ ICLR (CCF Class A Conference)
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/paper/PhysNeXt.png' alt="PhysNeXt" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation**
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">JBHI 2025</div><img src='images/paper/CardiacMamba.png' alt="CardiacMamba" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
