@@ -84,12 +84,7 @@ ICLR (CCF Class A Conference)
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/paper/PhysNeXt.png' alt="PhysNeXt" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
 
-**PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation**
-</div>
-</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">JBHI 2025</div><img src='images/paper/CardiacMamba.png' alt="CardiacMamba" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -141,6 +136,13 @@ Pingzhu Liu, Chunming He, Zunnan Xu, Chao Hao, **Bo Zhao**, Xingyu Shao, Jun Zho
 **Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents**
 
 Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao**, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/paper/PhysNeXt.png' alt="PhysNeXt" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation**
 </div>
 </div>
 
