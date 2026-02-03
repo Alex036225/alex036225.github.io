@@ -143,6 +143,10 @@ Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao*
 <div class='paper-box-text' markdown="1">
 
 **PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation**
+
+Junzhe Cao*, **Bo Zhao***, Zhiyi Niu, Dan Guo, Yue Sun, Hui Ma, Yong Xu†, Zitong Yu†
+
+* co-first author; † corresponding author
 </div>
 </div>
 
