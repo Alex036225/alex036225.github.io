@@ -39,8 +39,6 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU<sup>†</sup>
 
 ICLR (CCF Class A Conference)
-
-- Remote photoplethysmography (rPPG) suffers from poor robustness in complex environments (lighting, motion artifacts), and existing methods struggle to effectively fuse multimodal information and capture long-term temporal dependencies. We propose PhysLLM, a collaborative optimization framework combining LLMs with rPPG-specific components, the first large model in the rPPG field. We design Dual-Domain Stabilization (DDS) algorithm, Vision Aggregator (VA), and Text Prototype Guidance (TPG) strategy, enhancing model adaptability to complex scenarios through physiological cue-aware prompt learning.
 </div>
 </div>
 
@@ -62,9 +60,9 @@ ICLR (CCF Class A Conference)
 
 [FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement](https://arxiv.org/abs/XXXX)
 
-*CVPR (CCF Class A Conference) - Accepted*
-
 **Bo Zhao**, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
+
+*CVPR (CCF Class A Conference) - Accepted*
 </div>
 </div>
 
@@ -73,9 +71,9 @@ ICLR (CCF Class A Conference)
 
 [PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement](https://arxiv.org/pdf/2509.24850)
 
-*CVPR (CCF Class A Conference) - Accepted*
-
 **Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
+
+*CVPR (CCF Class A Conference) - Accepted*
 </div>
 </div>
 
