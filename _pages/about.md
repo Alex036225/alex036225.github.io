@@ -24,6 +24,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 **Paper Submissions:** Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.
 
 # 🔥 News
+- *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
 - *2026.01*: &nbsp;🎉🎉 One paper accepted by ICLR 2026
 - *2025.10*: &nbsp;Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department
 - *2025.09*: &nbsp;Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics
@@ -56,8 +57,6 @@ ICLR (CCF Class A Conference)
 </div>
 </div>
 
-# 📄 Preprints
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='images/paper/FLOW.png' alt="FLOW" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -65,7 +64,7 @@ ICLR (CCF Class A Conference)
 
 **First author**
 
-*CVPR (CCF Class A Conference) - 3 3 4*
+*CVPR (CCF Class A Conference) - Accepted*
 
 - We propose a multi-source domain generalization framework based on optimal transport theory to enhance the generalization capability of end-to-end rPPG. We innovatively introduce a plug-and-play OT module OTAdapter that explicitly aligns feature distributions across multiple source domains, thereby enhancing model generalization. We provide theoretical justification by deriving a new generalization bound based on OT divergence, theoretically linking the differences between source domains with the expected error on unseen target domains.
 </div>
@@ -78,11 +77,13 @@ ICLR (CCF Class A Conference)
 
 **First author**
 
-*CVPR (CCF Class A Conference) - 5 4 2*
+*CVPR (CCF Class A Conference) - Accepted*
 
 - Physics-driven modeling: First to derive network structure from Navier-Stokes hemodynamics, rigorously proving the equivalence between second-order damped harmonic resonance and causal convolution, providing theoretical foundation for using Temporal Convolution Network. Innovative module design: Propose Zero-FLOPs Axial Swapper (zero-parameter cross-region interaction) and Adaptive Spatial Filter (dynamic spatial filtering + temporal difference), enhancing signal purity and temporal modeling capability without increasing computational cost. Achieved cross-domain SOTA on four major benchmarks (UBFC/PURE/BUAA/MMPD) with only 0.29M parameters.
 </div>
 </div>
+
+# 📄 Preprints
 
 
 
