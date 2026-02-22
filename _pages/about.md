@@ -31,27 +31,14 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 # 📝 Publications
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/paper/PhysLLM.png' alt="PhysLLM" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='images/paper/PHASE-NET.png' alt="PHASE-Net" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing](https://arxiv.org/abs/2505.03621)
+[PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement](https://arxiv.org/pdf/2509.24850)
 
-Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU<sup>†</sup>
+**Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
-ICLR (CCF Class A Conference)
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CCBR 2025</div><img src='images/paper/AULLM.png' alt="AU-LLM" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature](https://arxiv.org/abs/2507.21778)
-
-**Third author**
-
-*CCBR - Accepted*
-
-- Participated in designing and proposing AU-LLM, the first framework in academia to successfully utilize LLMs for micro-expression AU detection. Developed the key Enhanced Fusion Projector (EFP) module, which intelligently fuses mid-level (local texture) and high-level (global semantic) features from the visual backbone into an information-dense single visual token using MLP, effectively bridging the modality gap between vision and language. Established new SOTA on both CASME II and SAMM benchmark datasets.
+*CVPR (CCF Class A Conference)*
 </div>
 </div>
 
@@ -62,18 +49,29 @@ ICLR (CCF Class A Conference)
 
 **Bo Zhao**, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
-*CVPR (CCF Class A Conference) - Accepted*
+*CVPR (CCF Class A Conference)*
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='images/paper/PHASE-NET.png' alt="PHASE-Net" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2026</div><img src='images/paper/PhysLLM.png' alt="PhysLLM" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement](https://arxiv.org/pdf/2509.24850)
+[PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing](https://arxiv.org/abs/2505.03621)
 
-**Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
+Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU<sup>†</sup>
 
-*CVPR (CCF Class A Conference) - Accepted*
+*ICLR (CCF Class A Conference)*
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CCBR 2025</div><img src='images/paper/AULLM.png' alt="AU-LLM" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature](https://arxiv.org/abs/2507.21778)
+
+Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
+
+*CCBR Oral*
 </div>
 </div>
 
