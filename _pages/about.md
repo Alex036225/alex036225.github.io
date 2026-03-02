@@ -77,6 +77,16 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 # 📄 Preprints
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/paper/script.png' alt="Complementarity-Supervised Spectral-Band Routing" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Complementarity-Supervised Spectral-Band Routing for Multimodal Emotion Recognition**
+
+Zhexian Huang, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhang, Ruixin Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
+
+</div>
+</div>
+
 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">JBHI 2025</div><img src='images/paper/CardiacMamba.png' alt="CardiacMamba" width="100%"></div></div>
