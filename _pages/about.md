@@ -133,7 +133,7 @@ Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao*
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/paper/PhysNeXt.png' alt="PhysNeXt" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation**
+[PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation](https://arxiv.org/abs/2603.19752)
 
 Junzhe Cao<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Zhiyi Niu, Dan Guo, Yue Sun, Hui Ma, Yong Xu<sup>†</sup>, Zitong Yu<sup>†</sup>
 
@@ -143,9 +143,9 @@ Junzhe Cao<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Zhiyi Niu, Dan Guo, Yue Sun, Hu
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/paper/Complementarity-Supervised.png' alt="Complementarity-Supervised Spectral-Band Routing" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Complementarity-Supervised Spectral-Band Routing for Multimodal Emotion Recognition**
+[Complementarity-Supervised Spectral-Band Routing for Multimodal Emotion Recognition](https://arxiv.org/pdf/2603.13340)
 
-Zhexian Huang, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhang, Ruixin Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
+Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhang, Ruixin Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
 
 </div>
 </div>
