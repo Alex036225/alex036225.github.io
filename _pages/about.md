@@ -21,8 +21,6 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Research Interests:** Remote physiological signal sensing (rPPG), MLLMs, Agentic Memory.
 
-**Google Scholar:** [https://scholar.google.com/citations?user=yi9OsEQAAAAJ&hl=zh-CN](https://scholar.google.com/citations?user=yi9OsEQAAAAJ&hl=zh-CN)
-
 **Paper Submissions:** Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.
 
 # 🔥 News
