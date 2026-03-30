@@ -21,6 +21,8 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Research Interests:** Remote physiological signal sensing (rPPG), MLLMs, Agentic Memory.
 
+**Google Scholar:** [https://scholar.google.com/citations?user=yi9OsEQAAAAJ&hl=zh-CN](https://scholar.google.com/citations?user=yi9OsEQAAAAJ&hl=zh-CN)
+
 **Paper Submissions:** Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.
 
 # 🔥 News
@@ -106,7 +108,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACL 2026</div><img src='images/paper/script.png' alt="ACL 2026" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation**
+[The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation](https://arxiv.org/abs/2601.17737)
 
 Chenyu Mu, Xin He, Qu Yang, Wanshun CHEN, Jiadi Yao, Huang Liu, Zihao Yi, **Bo Zhao**, Xingyu Chen, Ruotian Ma, Fanghua Ye, Erkun Yang, Cheng Deng, Zhaopeng Tu, Xiaolong Li, Linus
 </div>
@@ -124,7 +126,7 @@ Pingzhu Liu, Chunming He, Zunnan Xu, Chao Hao, **Bo Zhao**, Xingyu Shao, Jun Zho
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/paper/Think Fast and Slow.png' alt="ICML 2026" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents**
+[Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents](https://arxiv.org/abs/2602.12662)
 
 Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao**, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus
 </div>
