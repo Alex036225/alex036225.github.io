@@ -150,6 +150,51 @@ Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhan
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="PCA" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models**
+
+Zihan Song, Shuo Ye, **Bo Zhao**, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="AffectAgent" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition**
+
+Zeheng Wang, Zitong YU<sup>†</sup>, Yijie Zhu, **Bo Zhao**, Haochen Liang, Taorui Wang, Wei Xia, Jiayu Zhang, Zhishu Liu, Hui Ma, Fei Ma, Qi Tian
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="Navigating the Emotion Tree" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Navigating the Emotion Tree: Hierarchical Hyperbolic RAG for Multimodal Emotion Recognition**
+
+Zeheng Wang, **Bo Zhao**, Yijie Zhu, Zhishu Liu, Hui Ma, Ruixin Zhang, Shouhong Ding, Qianyu Xie, Zitong YU<sup>†</sup>
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="Open-Set Domain Gaps in Video Retrieval" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Empowering Large Vision-Language Models to Bridge Open-Set Domain Gaps in Video Retrieval**
+
+Jie Zhang, Haochen Liang, Qilang Ye, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou, Fei Luo, Zitong YU<sup>†</sup>
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="Semantic Manifold Completion" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Semantic Manifold Completion for Partially Relevant Video Retrieval**
+
+Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou, Fei Luo, Zitong YU<sup>†</sup>
+</div>
+</div>
+
 # 🎓 Educations
 - <span class="edu-logo"><img src="images/香港中文大学(深圳).png" alt="The Chinese University of Hong Kong, Shenzhen"></span><span class="edu-text"><strong>The Chinese University of Hong Kong, Shenzhen</strong>, 2025.09 - 2027.06 (expected)<br>Master's Student in Artificial Intelligence and Robotics</span>
 - <span class="edu-logo"><img src="images/山东大学.png" alt="Shandong University"></span><span class="edu-text"><strong>Shandong University</strong>, 2021.09 - 2025.06<br>Bachelor's Degree in Mathematics and Applied Mathematics</span>
