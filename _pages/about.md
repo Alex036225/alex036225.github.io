@@ -150,7 +150,7 @@ Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhan
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="PCA" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/PCA.png' alt="PCA" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models**
@@ -159,7 +159,7 @@ Zihan Song, Shuo Ye, **Bo Zhao**, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zito
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="AffectAgent" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/AffectAgent.png' alt="AffectAgent" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition**
@@ -168,7 +168,7 @@ Zeheng Wang, Zitong YU<sup>†</sup>, Yijie Zhu, **Bo Zhao**, Haochen Liang, Tao
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="Navigating the Emotion Tree" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='/images/paper/Navigating the Emotion Tree.png' alt="Navigating the Emotion Tree" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Navigating the Emotion Tree: Hierarchical Hyperbolic RAG for Multimodal Emotion Recognition**
@@ -177,7 +177,7 @@ Zeheng Wang, **Bo Zhao**, Yijie Zhu, Zhishu Liu, Hui Ma, Ruixin Zhang, Shouhong 
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="Open-Set Domain Gaps in Video Retrieval" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='/images/paper/Empowering Large Vision-Language Models to Bridge Open-Set Domain Gaps in Video Retrieval.png' alt="Open-Set Domain Gaps in Video Retrieval" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Empowering Large Vision-Language Models to Bridge Open-Set Domain Gaps in Video Retrieval**
@@ -186,7 +186,7 @@ Jie Zhang, Haochen Liang, Qilang Ye, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='images/paper/script.png' alt="Semantic Manifold Completion" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACMMM 2026</div><img src='/images/paper/Semantic Manifold Completion for Partially Relevant Video Retrieval.png' alt="Semantic Manifold Completion" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Semantic Manifold Completion for Partially Relevant Video Retrieval**
