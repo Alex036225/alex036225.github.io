@@ -197,13 +197,47 @@ Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
 </div>
 
 # 🎓 Educations
-- <span class="edu-logo"><img src="images/香港中文大学(深圳).png" alt="The Chinese University of Hong Kong, Shenzhen"></span><span class="edu-text"><strong>The Chinese University of Hong Kong, Shenzhen</strong>, 2025.09 - 2027.06 (expected)<br>Master's Student in Artificial Intelligence and Robotics</span>
-- <span class="edu-logo"><img src="images/山东大学.png" alt="Shandong University"></span><span class="edu-text"><strong>Shandong University</strong>, 2021.09 - 2025.06<br>Bachelor's Degree in Mathematics and Applied Mathematics</span>
+<div class="profile-section">
+  <div class="profile-card">
+    <div class="experience-item">
+      <img src="images/香港中文大学(深圳).png" alt="The Chinese University of Hong Kong, Shenzhen" class="institution-logo">
+      <div class="experience-content">
+        <p class="exp-title"><strong>The Chinese University of Hong Kong, Shenzhen</strong></p>
+        <p class="exp-detail">Master's Student in Artificial Intelligence and Robotics</p>
+        <p class="exp-period">2025.09 - 2027.06 (expected)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="experience-item">
+      <img src="images/山东大学.png" alt="Shandong University" class="institution-logo">
+      <div class="experience-content">
+        <p class="exp-title"><strong>Shandong University</strong></p>
+        <p class="exp-detail">Bachelor's Degree in Mathematics and Applied Mathematics</p>
+        <p class="exp-period">2021.09 - 2025.06</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 # 💼 Internships
-- <span class="edu-logo edu-logo--intern"><img src="images/Tencent.avif" alt="Tencent"></span><span class="edu-text"><em>2025.10 - Present</em>, <strong>Intern</strong>, Tencent Hunyuan Multimodal Model Department, Tencent Technology (Shenzhen) Co., Ltd.</span>
-  - **Business Direction:** Leading game NPC memory project, extracting memory-related content from raw data, constructing LLM-required formats, training 32B memory model
-  - **Research Direction:** Researching game visual-language-action (VLA) models
+<div class="profile-section">
+  <div class="profile-card">
+    <div class="experience-item">
+      <img src="images/Tencent.avif" alt="Tencent" class="institution-logo">
+      <div class="experience-content">
+        <p class="exp-title"><strong>Tencent Technology (Shenzhen) Co., Ltd.</strong></p>
+        <p class="exp-detail">Intern, Hunyuan Multimodal Model Department</p>
+        <p class="exp-period">2025.10 - Present</p>
+        <ul class="exp-highlights">
+          <li><strong>Business Direction:</strong> Leading game NPC memory project, extracting memory-related content from raw data, constructing LLM-required formats, training 32B memory model.</li>
+          <li><strong>Research Direction:</strong> Researching game visual-language-action (VLA) models.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 # 🎖 Honors and Awards
 - *2022-2024*: Academic Scholarship for three consecutive years (2022-2024)

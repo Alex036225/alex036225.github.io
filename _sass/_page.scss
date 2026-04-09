@@ -111,39 +111,72 @@
     font-size: $type-size-6;
   }
 
-  .edu-logo {
-    display: inline-block;
-    width: 28px;
-    margin-right: 10px;
-    vertical-align: top;
+  .profile-section {
+    margin: 0 0 1em;
   }
 
-  .edu-logo img {
-    width: 28px;
-    max-width: 28px;
-    height: 28px;
-    display: block;
+  .profile-card {
+    margin-bottom: 0.6em;
+    padding: 0.35em 0;
   }
 
-  .edu-logo--intern {
-    width: 28px;
+  .experience-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0;
+    padding-bottom: 4px;
   }
 
-  .edu-logo--intern img {
-    width: 28px;
-    max-width: 28px;
-    height: 28px;
+  .institution-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    margin-right: 16px;
+    flex-shrink: 0;
   }
 
-  .edu-text {
-    display: inline-block;
-    vertical-align: top;
-    max-width: calc(100% - 40px);
+  .experience-content {
+    flex: 1;
   }
 
-  /* Ensure list bullets align with small logos */
-  li .edu-logo {
-    vertical-align: middle;
+  .experience-content p {
+    margin: 0 0 2px;
+  }
+
+  .exp-title {
+    font-size: 15px;
+    color: $text-color;
+  }
+
+  .exp-detail {
+    font-size: 14px;
+    color: $gray;
+  }
+
+  .exp-period {
+    font-size: 13px;
+    color: $primary-color;
+    font-weight: 500;
+    margin-bottom: 0.4em;
+  }
+
+  .exp-highlights {
+    margin: 0.3em 0 0;
+    padding-left: 1.2em;
+  }
+
+  .exp-highlights li {
+    margin-bottom: 0.3em;
+    font-size: $type-size-6;
+    color: $gray;
+  }
+
+  @include breakpoint(max-width $small) {
+    .institution-logo {
+      width: 46px;
+      height: 46px;
+      margin-right: 12px;
+    }
   }
 
   /* blockquote citations */
