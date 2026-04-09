@@ -100,13 +100,15 @@ h1:before, .anchor:before {
     margin-top: -$scroll_offset;
 }
 
-.badge {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: absolute;
-    margin-top: .5em;
-    margin-left: -.5em;
-    color: white;
-    background-color: #00369f;
-    font-size: .8em;
+.paper-venue {
+    display: inline-block;
+    margin-top: 0.15em;
+    margin-bottom: 0.45em;
+    padding: 0.1rem 0.6rem;
+    color: $primary-color;
+    border: 1px solid mix(#fff, $primary-color, 65%);
+    background-color: mix(#fff, $primary-color, 92%);
+    font-size: 0.78em;
+    font-weight: 600;
+    border-radius: 999px;
 }
