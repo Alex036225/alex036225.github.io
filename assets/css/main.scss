@@ -100,15 +100,16 @@ h1:before, .anchor:before {
     margin-top: -$scroll_offset;
 }
 
-.paper-venue-group {
-    display: flex;
+.pub-tags {
+    display: inline-flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    align-items: center;
+    gap: 0.45rem;
     margin-top: 0.15em;
     margin-bottom: 0.45em;
 }
 
-.paper-venue {
+.pub-tag {
     display: inline-block;
     padding: 0.14rem 0.72rem;
     font-size: 0.78em;
@@ -118,22 +119,23 @@ h1:before, .anchor:before {
     color: $primary-color;
     border: 1px solid mix(#fff, $primary-color, 60%);
     background-color: mix(#fff, $primary-color, 90%);
+    white-space: nowrap;
 }
 
-.paper-venue--status {
+.pub-tag--status {
     color: mix(#000, $gray, 18%);
     border: 1px solid mix(#fff, $gray, 50%);
     background-color: mix(#fff, $gray, 88%);
 }
 
-.paper-venue--highlight,
-.paper-venue--oral {
+.pub-tag--highlight,
+.pub-tag--oral {
     color: #fff;
     border: 1px solid mix(#000, $primary-color, 28%);
     background-color: mix(#000, $primary-color, 10%);
 }
 
-.paper-venue--review {
+.pub-tag--review {
     color: mix(#000, $gray, 18%);
     border: 1px solid mix(#fff, $gray, 50%);
     background-color: mix(#fff, $gray, 88%);
