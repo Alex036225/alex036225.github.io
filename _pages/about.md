@@ -38,7 +38,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
-*CVPR (CCF Class A Conference)*
+*CVPR (CCF Class A Conference)* <span style="color: red;"><i>Highlight</i></span>
 </div>
 </div>
 
