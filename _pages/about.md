@@ -223,8 +223,8 @@ Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
 </div>
 
 # 🎓 Educations
-<div class="profile-section">
-  <div class="profile-card">
+<div class="profile-section profile-section--timeline">
+  <div class="profile-card timeline-item">
     <div class="experience-item">
       <img src="images/香港中文大学(深圳).png" alt="The Chinese University of Hong Kong, Shenzhen" class="institution-logo">
       <div class="experience-content">
@@ -235,7 +235,7 @@ Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
     </div>
   </div>
 
-  <div class="profile-card">
+  <div class="profile-card timeline-item">
     <div class="experience-item">
       <img src="images/山东大学.png" alt="Shandong University" class="institution-logo">
       <div class="experience-content">
