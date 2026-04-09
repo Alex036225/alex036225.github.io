@@ -23,6 +23,8 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Paper Submissions:** Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.
 
+<a href="/CV.pdf" download>Download my CV</a>
+
 # 🔥 News
 - *2026.04*: &nbsp;🎉🎉 One CVPR 2026 paper was selected as Highlight
 - *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
