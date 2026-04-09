@@ -25,6 +25,88 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 <a href="/CV.pdf" target="_blank" rel="noopener" style="font-weight: 700; font-family: 'SimHei', 'Microsoft YaHei', 'PingFang SC', sans-serif;">Download my CV</a>
 
+<style>
+.pub-tags {
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  margin-top: 0.15em !important;
+  margin-bottom: 0.45em !important;
+}
+.pub-tag {
+  display: inline-block !important;
+  padding: 0.14rem 0.72rem !important;
+  font-size: 0.78em !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  border-radius: 999px !important;
+  white-space: nowrap !important;
+  color: #C2714F !important;
+  border: 1px solid #e8c8ba !important;
+  background-color: #f7ece7 !important;
+}
+.pub-tag--status {
+  color: #6f685b !important;
+  border: 1px solid #d8d2c8 !important;
+  background-color: #f3f1ed !important;
+}
+.pub-tag--highlight,
+.pub-tag--oral {
+  color: #fff !important;
+  border: 1px solid #ad6145 !important;
+  background-color: #c2714f !important;
+}
+.pub-tag--review {
+  color: #6f685b !important;
+  border: 1px solid #d8d2c8 !important;
+  background-color: #f3f1ed !important;
+}
+.profile-section--timeline .timeline-item {
+  position: relative !important;
+  margin-left: 20px !important;
+  padding-left: 8px !important;
+  padding-bottom: 20px !important;
+}
+.profile-section--timeline .timeline-item::before {
+  content: "" !important;
+  position: absolute !important;
+  left: -20px !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 2px !important;
+  background: linear-gradient(to bottom, #C2714F, rgba(194, 113, 79, 0.12)) !important;
+}
+.profile-section--timeline .timeline-item:last-child::before {
+  bottom: 50% !important;
+}
+.profile-section--timeline .timeline-item::after {
+  content: "" !important;
+  position: absolute !important;
+  left: -25px !important;
+  top: 22px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #C2714F !important;
+  border: 2px solid #FAF9F7 !important;
+}
+@media (max-width: 600px) {
+  .profile-section--timeline .timeline-item {
+    margin-left: 16px !important;
+    padding-left: 6px !important;
+    padding-bottom: 16px !important;
+  }
+  .profile-section--timeline .timeline-item::before {
+    left: -16px !important;
+  }
+  .profile-section--timeline .timeline-item::after {
+    left: -21px !important;
+    top: 18px !important;
+  }
+}
+</style>
+
 # 🔥 News
 - *2026.04*: &nbsp;🎉🎉 One CVPR 2026 paper was selected as Highlight
 - *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
@@ -39,7 +121,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 [PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement](https://arxiv.org/pdf/2509.24850)
 
-<div class="pub-tags"><span class="pub-tag">CVPR 2026</span><span class="pub-tag pub-tag--status pub-tag--highlight">Highlight</span></div>
+<div class="pub-tags"><span class="pub-tag">CVPR 2026</span> <span class="pub-tag pub-tag--status pub-tag--highlight">Highlight</span></div>
 
 **Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
@@ -75,7 +157,7 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 
 [AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature](https://arxiv.org/abs/2507.21778)
 
-<div class="pub-tags"><span class="pub-tag">CCBR 2025</span><span class="pub-tag pub-tag--status pub-tag--oral">Oral</span></div>
+<div class="pub-tags"><span class="pub-tag">CCBR 2025</span> <span class="pub-tag pub-tag--status pub-tag--oral">Oral</span></div>
 
 Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
@@ -89,7 +171,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 [CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement](https://arxiv.org/abs/2502.13624)
 
-<div class="pub-tags"><span class="pub-tag">JBHI 2025</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">JBHI 2025</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 **Co-first author**
 
@@ -102,7 +184,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 [Intervention-Based Self-Supervised Learning: A Causal Probe Paradigm for Remote Photoplethysmography](https://arxiv.org/abs/XXXX)
 
-<div class="pub-tags"><span class="pub-tag">IJCV 2025</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">IJCV 2025</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 **Second author**
 
@@ -115,7 +197,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 [The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation](https://arxiv.org/abs/2601.17737)
 
-<div class="pub-tags"><span class="pub-tag">ACL 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ACL 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Chenyu Mu, Xin He, Qu Yang, Wanshun CHEN, Jiadi Yao, Huang Liu, Zihao Yi, **Bo Zhao**, Xingyu Chen, Ruotian Ma, Fanghua Ye, Erkun Yang, Cheng Deng, Zhaopeng Tu, Xiaolong Li, Linus
 </div>
@@ -126,7 +208,7 @@ Chenyu Mu, Xin He, Qu Yang, Wanshun CHEN, Jiadi Yao, Huang Liu, Zihao Yi, **Bo Z
 
 **Unsupervised Camouflaged Object Detection with Dual-Eigenvector Spectral Pseudo-Labeling and Contrastive Refinement**
 
-<div class="pub-tags"><span class="pub-tag">ICML 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ICML 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Pingzhu Liu, Chunming He, Zunnan Xu, Chao Hao, **Bo Zhao**, Xingyu Shao, Jun Zhou, Zitong YU, Xiu Li
 </div>
@@ -137,7 +219,7 @@ Pingzhu Liu, Chunming He, Zunnan Xu, Chao Hao, **Bo Zhao**, Xingyu Shao, Jun Zho
 
 [Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents](https://arxiv.org/abs/2602.12662)
 
-<div class="pub-tags"><span class="pub-tag">ICML 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ICML 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao**, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus
 </div>
@@ -148,7 +230,7 @@ Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao*
 
 [PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation](https://arxiv.org/abs/2603.19752)
 
-<div class="pub-tags"><span class="pub-tag">ECCV 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ECCV 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Junzhe Cao<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Zhiyi Niu, Dan Guo, Yue Sun, Hui Ma, Yong Xu<sup>†</sup>, Zitong Yu<sup>†</sup>
 
@@ -160,7 +242,7 @@ Junzhe Cao<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Zhiyi Niu, Dan Guo, Yue Sun, Hu
 
 [Complementarity-Supervised Spectral-Band Routing for Multimodal Emotion Recognition](https://arxiv.org/pdf/2603.13340)
 
-<div class="pub-tags"><span class="pub-tag">ECCV 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ECCV 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhang, Ruixin Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
 
@@ -172,7 +254,7 @@ Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhan
 
 **PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models**
 
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Zihan Song, Shuo Ye, **Bo Zhao**, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
 </div>
@@ -183,7 +265,7 @@ Zihan Song, Shuo Ye, **Bo Zhao**, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zito
 
 **AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition**
 
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Zeheng Wang, Zitong YU<sup>†</sup>, Yijie Zhu, **Bo Zhao**, Haochen Liang, Taorui Wang, Wei Xia, Jiayu Zhang, Zhishu Liu, Hui Ma, Fei Ma, Qi Tian
 </div>
@@ -194,7 +276,7 @@ Zeheng Wang, Zitong YU<sup>†</sup>, Yijie Zhu, **Bo Zhao**, Haochen Liang, Tao
 
 **Navigating the Emotion Tree: Hierarchical Hyperbolic RAG for Multimodal Emotion Recognition**
 
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Zeheng Wang, **Bo Zhao**, Yijie Zhu, Zhishu Liu, Hui Ma, Ruixin Zhang, Shouhong Ding, Qianyu Xie, Zitong YU<sup>†</sup>
 </div>
@@ -205,7 +287,7 @@ Zeheng Wang, **Bo Zhao**, Yijie Zhu, Zhishu Liu, Hui Ma, Ruixin Zhang, Shouhong 
 
 **Empowering Large Vision-Language Models to Bridge Open-Set Domain Gaps in Video Retrieval**
 
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Jie Zhang, Haochen Liang, Qilang Ye, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou, Fei Luo, Zitong YU<sup>†</sup>
 </div>
@@ -216,7 +298,7 @@ Jie Zhang, Haochen Liang, Qilang Ye, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
 
 **Semantic Manifold Completion for Partially Relevant Video Retrieval**
 
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span><span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou, Fei Luo, Zitong YU<sup>†</sup>
 </div>
