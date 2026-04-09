@@ -38,7 +38,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
-*CVPR (CCF Class A Conference)* <span style="color: red;"><i>Highlight</i></span>
+*CVPR* <span style="color: red;"><i>Highlight</i></span>
 </div>
 </div>
 
@@ -49,7 +49,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Bo Zhao**, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
-*CVPR (CCF Class A Conference)*
+*CVPR*
 </div>
 </div>
 
@@ -60,7 +60,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU<sup>†</sup>
 
-*ICLR (CCF Class A Conference)*
+*ICLR*
 </div>
 </div>
 
@@ -84,7 +84,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 **Co-first author**
 
-*JBHI (Tsinghua Class B, CCF C, JCR Q1, Impact Factor 7.2)*
+*JBHI (JCR Q1, Impact Factor 7.2)*
 
 - We propose CardiacMamba, a multimodal framework that fuses RGB video and RF sensor data for accurate rPPG heart rate estimation. We innovatively introduce Temporal Difference Mamba Module (TDMM) and Bifurcated Difference Convolution Fusion (BDCF) for dual-layer feature extraction and alignment, achieving collaborative modeling of RGB and RF modalities through Bidirectional State Space Model (Bi-SSM). We design Channel-wise Fast Fourier Transform (CFFT) for bidirectional feature fusion, demonstrating state-of-the-art performance on the EquiPleth dataset and significantly mitigating skin tone bias issues.
 </div>
@@ -97,7 +97,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 **Second author**
 
-*IJCV (CCF Class A Journal, Impact Factor 19.5) - Under Review*
+*IJCV (Impact Factor 19.5) - Under Review*
 
 - Intervention-based self-supervised learning method using a causal probe paradigm for remote photoplethysmography research.
 </div>
