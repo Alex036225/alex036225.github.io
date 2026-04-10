@@ -62,6 +62,17 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
   border: 1px solid #d8d2c8 !important;
   background-color: #f3f1ed !important;
 }
+.paper-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0.06rem 0 0.5rem !important;
+  color: #C2714F !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+}
+.paper-link:hover {
+  color: #ad6145 !important;
+}
 .profile-section--timeline .timeline-item {
   position: relative !important;
   margin-left: 20px !important;
@@ -119,11 +130,13 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/PHASE-NET.png' alt="PHASE-Net" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement](https://arxiv.org/pdf/2509.24850)
+**PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement**
 
 <div class="pub-tags"><span class="pub-tag">CVPR 2026</span> <span class="pub-tag pub-tag--status pub-tag--highlight">Highlight</span></div>
 
 **Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
+
+<a class="paper-link" href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -131,11 +144,13 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/FLOW.png' alt="FLOW" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement](https://arxiv.org/abs/XXXX)
+**FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement**
 
 <div class="pub-tags"><span class="pub-tag">CVPR 2026</span></div>
 
 **Bo Zhao**, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
+
+<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -143,11 +158,13 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/PhysLLM.png' alt="PhysLLM" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing](https://arxiv.org/abs/2505.03621)
+**PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing**
 
 <div class="pub-tags"><span class="pub-tag">ICLR 2026</span></div>
 
 Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU<sup>†</sup>
+
+<a class="paper-link" href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -155,11 +172,13 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/AULLM.png' alt="AU-LLM" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature](https://arxiv.org/abs/2507.21778)
+**AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature**
 
 <div class="pub-tags"><span class="pub-tag">CCBR 2025</span> <span class="pub-tag pub-tag--status pub-tag--oral">Oral</span></div>
 
 Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
+
+<a class="paper-link" href="https://arxiv.org/abs/2507.21778" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -169,11 +188,13 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/CardiacMamba.png' alt="CardiacMamba" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement](https://arxiv.org/abs/2502.13624)
+**CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement**
 
 <div class="pub-tags"><span class="pub-tag">JBHI 2025</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 **Co-first author**
+
+<a class="paper-link" href="https://arxiv.org/abs/2502.13624" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 
 - We propose CardiacMamba, a multimodal framework that fuses RGB video and RF sensor data for accurate rPPG heart rate estimation. We innovatively introduce Temporal Difference Mamba Module (TDMM) and Bifurcated Difference Convolution Fusion (BDCF) for dual-layer feature extraction and alignment, achieving collaborative modeling of RGB and RF modalities through Bidirectional State Space Model (Bi-SSM). We design Channel-wise Fast Fourier Transform (CFFT) for bidirectional feature fusion, demonstrating state-of-the-art performance on the EquiPleth dataset and significantly mitigating skin tone bias issues.
 </div>
@@ -182,11 +203,13 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/Intervention.png' alt="Intervention-Based SSL" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Intervention-Based Self-Supervised Learning: A Causal Probe Paradigm for Remote Photoplethysmography](https://arxiv.org/abs/XXXX)
+**Intervention-Based Self-Supervised Learning: A Causal Probe Paradigm for Remote Photoplethysmography**
 
 <div class="pub-tags"><span class="pub-tag">IJCV 2025</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 **Second author**
+
+<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 
 - Intervention-based self-supervised learning method using a causal probe paradigm for remote photoplethysmography research.
 </div>
@@ -195,11 +218,13 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/script.png' alt="ACL 2026" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation](https://arxiv.org/abs/2601.17737)
+**The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation**
 
 <div class="pub-tags"><span class="pub-tag">ACL 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Chenyu Mu, Xin He, Qu Yang, Wanshun CHEN, Jiadi Yao, Huang Liu, Zihao Yi, **Bo Zhao**, Xingyu Chen, Ruotian Ma, Fanghua Ye, Erkun Yang, Cheng Deng, Zhaopeng Tu, Xiaolong Li, Linus
+
+<a class="paper-link" href="https://arxiv.org/abs/2601.17737" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 </div>
 </div>
 
@@ -217,22 +242,26 @@ Pingzhu Liu, Chunming He, Zunnan Xu, Chao Hao, **Bo Zhao**, Xingyu Shao, Jun Zho
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/Think Fast and Slow.png' alt="ICML 2026" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents](https://arxiv.org/abs/2602.12662)
+**Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents**
 
 <div class="pub-tags"><span class="pub-tag">ICML 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao**, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus
+
+<a class="paper-link" href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 </div>
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/PhysNeXt.png' alt="PhysNeXt" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation](https://arxiv.org/abs/2603.19752)
+**PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation**
 
 <div class="pub-tags"><span class="pub-tag">ECCV 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Junzhe Cao<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Zhiyi Niu, Dan Guo, Yue Sun, Hui Ma, Yong Xu<sup>†</sup>, Zitong Yu<sup>†</sup>
+
+<a class="paper-link" href="https://arxiv.org/abs/2603.19752" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -240,11 +269,13 @@ Junzhe Cao<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Zhiyi Niu, Dan Guo, Yue Sun, Hu
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/Complementarity-Supervised.png' alt="Complementarity-Supervised Spectral-Band Routing" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Complementarity-Supervised Spectral-Band Routing for Multimodal Emotion Recognition](https://arxiv.org/pdf/2603.13340)
+**Complementarity-Supervised Spectral-Band Routing for Multimodal Emotion Recognition**
 
 <div class="pub-tags"><span class="pub-tag">ECCV 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhang, Ruixin Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
+
+<a class="paper-link" href="https://arxiv.org/pdf/2603.13340" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -337,7 +368,7 @@ Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
       <div class="experience-content">
         <p class="exp-title"><strong>Tencent Technology (Shenzhen) Co., Ltd.</strong></p>
         <p class="exp-detail">Intern, Hunyuan Multimodal Model Department</p>
-        <p class="exp-period">2025.10 - Present</p>
+        <p class="exp-period">2025.10 - 2026.3</p>
         <ul class="exp-highlights">
           <li><strong>Business Direction:</strong> Leading game NPC memory project, extracting memory-related content from raw data, constructing LLM-required formats, training 32B memory model.</li>
           <li><strong>Research Direction:</strong> Researching game visual-language-action (VLA) models.</li>
