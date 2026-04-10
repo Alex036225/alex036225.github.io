@@ -65,13 +65,21 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 .paper-link {
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   margin: 0.06rem 0 0.5rem !important;
   color: #C2714F !important;
   text-decoration: none !important;
-  font-size: 0.95rem !important;
+  font-size: 1.08rem !important;
+  width: 1.9rem !important;
+  height: 1.9rem !important;
+  border-radius: 999px !important;
+  border: 1px solid #e8c8ba !important;
+  background-color: #f7ece7 !important;
 }
 .paper-link:hover {
   color: #ad6145 !important;
+  border-color: #d7a893 !important;
+  background-color: #f2dfd6 !important;
 }
 .profile-section--timeline .timeline-item {
   position: relative !important;
@@ -136,7 +144,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
-<a class="paper-link" href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -150,7 +158,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Bo Zhao**, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
-<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -164,7 +172,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU<sup>†</sup>
 
-<a class="paper-link" href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -178,7 +186,7 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 
 Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
-<a class="paper-link" href="https://arxiv.org/abs/2507.21778" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/abs/2507.21778" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -194,7 +202,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 **Co-first author**
 
-<a class="paper-link" href="https://arxiv.org/abs/2502.13624" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/abs/2502.13624" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 - We propose CardiacMamba, a multimodal framework that fuses RGB video and RF sensor data for accurate rPPG heart rate estimation. We innovatively introduce Temporal Difference Mamba Module (TDMM) and Bifurcated Difference Convolution Fusion (BDCF) for dual-layer feature extraction and alignment, achieving collaborative modeling of RGB and RF modalities through Bidirectional State Space Model (Bi-SSM). We design Channel-wise Fast Fourier Transform (CFFT) for bidirectional feature fusion, demonstrating state-of-the-art performance on the EquiPleth dataset and significantly mitigating skin tone bias issues.
 </div>
@@ -209,7 +217,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 **Second author**
 
-<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 - Intervention-based self-supervised learning method using a causal probe paradigm for remote photoplethysmography research.
 </div>
@@ -224,7 +232,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 Chenyu Mu, Xin He, Qu Yang, Wanshun CHEN, Jiadi Yao, Huang Liu, Zihao Yi, **Bo Zhao**, Xingyu Chen, Ruotian Ma, Fanghua Ye, Erkun Yang, Cheng Deng, Zhaopeng Tu, Xiaolong Li, Linus
 
-<a class="paper-link" href="https://arxiv.org/abs/2601.17737" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/abs/2601.17737" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 </div>
 </div>
 
@@ -248,7 +256,7 @@ Pingzhu Liu, Chunming He, Zunnan Xu, Chao Hao, **Bo Zhao**, Xingyu Shao, Jun Zho
 
 Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao**, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus
 
-<a class="paper-link" href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 </div>
 </div>
 
@@ -261,7 +269,7 @@ Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao*
 
 Junzhe Cao<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Zhiyi Niu, Dan Guo, Yue Sun, Hui Ma, Yong Xu<sup>†</sup>, Zitong Yu<sup>†</sup>
 
-<a class="paper-link" href="https://arxiv.org/abs/2603.19752" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/abs/2603.19752" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -275,7 +283,7 @@ Junzhe Cao<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Zhiyi Niu, Dan Guo, Yue Sun, Hu
 
 Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhang, Ruixin Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
 
-<a class="paper-link" href="https://arxiv.org/pdf/2603.13340" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+<a class="paper-link" href="https://arxiv.org/pdf/2603.13340" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 </div>
 </div>
