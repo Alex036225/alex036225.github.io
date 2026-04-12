@@ -17,37 +17,123 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). Since December 2024, I have been supervised by Prof. [Zitong Yu](https://zitong-yu.github.io/yzt/).
+Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). Since December 2024, supervised by Prof. [Zitong Yu](https://zitong-yu.github.io/yzt/). My research interests focus on remote physiological signal sensing (rPPG), MLLMs, and Agentic Memory.
 
-<div class="intro-panel">
-  <div class="intro-panel-grid">
-    <div class="intro-item">
-      <p class="intro-label">Research Focus</p>
-      <p class="intro-value">Remote physiological signal sensing (rPPG), MLLMs, and agentic memory.</p>
-    </div>
-    <div class="intro-item">
-      <p class="intro-label">Current Position</p>
-      <p class="intro-value">Master's student, CUHK-Shenzhen, AI and Robotics Program.</p>
-    </div>
-    <div class="intro-item">
-      <p class="intro-label">Selected Achievements</p>
-      <p class="intro-value">Papers accepted at ICLR 2026 and CVPR 2026, including one CVPR Highlight.</p>
-    </div>
-  </div>
-  <div class="intro-actions">
-    <a class="intro-btn" href="/CV.pdf" target="_blank" rel="noopener">Download CV</a>
-    <a class="intro-btn intro-btn--subtle" href="https://scholar.google.com/citations?user=yi9OsEQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a>
-  </div>
-</div>
+**Research Interests:** Remote physiological signal sensing (rPPG), MLLMs, Agentic Memory.
 
-# News
-- *2026.04*: One CVPR 2026 paper was selected as Highlight
-- *2026.02*: Two papers accepted by CVPR 2026
-- *2026.01*: One paper accepted by ICLR 2026
-- *2025.10*: Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department
-- *2025.09*: Enrolled in The Chinese University of Hong Kong, Shenzhen for a Master's degree in Artificial Intelligence and Robotics
+**Paper Submissions:** Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.
 
-# Selected Publications
+<a href="/CV.pdf" target="_blank" rel="noopener" style="font-weight: 700; font-family: 'SimHei', 'Microsoft YaHei', 'PingFang SC', sans-serif;">Download my CV</a>
+
+<style>
+.pub-tags {
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  margin-top: 0.15em !important;
+  margin-bottom: 0.45em !important;
+}
+.pub-tag {
+  display: inline-block !important;
+  padding: 0.14rem 0.72rem !important;
+  font-size: 0.78em !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  border-radius: 999px !important;
+  white-space: nowrap !important;
+  color: #C2714F !important;
+  border: 1px solid #e8c8ba !important;
+  background-color: #f7ece7 !important;
+}
+.pub-tag--status {
+  color: #6f685b !important;
+  border: 1px solid #d8d2c8 !important;
+  background-color: #f3f1ed !important;
+}
+.pub-tag--highlight,
+.pub-tag--oral {
+  color: #fff !important;
+  border: 1px solid #ad6145 !important;
+  background-color: #c2714f !important;
+}
+.pub-tag--review {
+  color: #6f685b !important;
+  border: 1px solid #d8d2c8 !important;
+  background-color: #f3f1ed !important;
+}
+.paper-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0.06rem 0 0.5rem !important;
+  color: #C2714F !important;
+  text-decoration: none !important;
+  font-size: 1.08rem !important;
+  width: 1.9rem !important;
+  height: 1.9rem !important;
+  border-radius: 999px !important;
+  border: 1px solid #e8c8ba !important;
+  background-color: #f7ece7 !important;
+}
+.paper-link:hover {
+  color: #ad6145 !important;
+  border-color: #d7a893 !important;
+  background-color: #f2dfd6 !important;
+}
+.profile-section--timeline .timeline-item {
+  position: relative !important;
+  margin-left: 20px !important;
+  padding-left: 8px !important;
+  padding-bottom: 20px !important;
+}
+.profile-section--timeline .timeline-item::before {
+  content: "" !important;
+  position: absolute !important;
+  left: -20px !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 2px !important;
+  background: linear-gradient(to bottom, #C2714F, rgba(194, 113, 79, 0.12)) !important;
+}
+.profile-section--timeline .timeline-item:last-child::before {
+  bottom: 50% !important;
+}
+.profile-section--timeline .timeline-item::after {
+  content: "" !important;
+  position: absolute !important;
+  left: -25px !important;
+  top: 22px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #C2714F !important;
+  border: 2px solid #FAF9F7 !important;
+}
+@media (max-width: 600px) {
+  .profile-section--timeline .timeline-item {
+    margin-left: 16px !important;
+    padding-left: 6px !important;
+    padding-bottom: 16px !important;
+  }
+  .profile-section--timeline .timeline-item::before {
+    left: -16px !important;
+  }
+  .profile-section--timeline .timeline-item::after {
+    left: -21px !important;
+    top: 18px !important;
+  }
+}
+</style>
+
+# 🔥 News
+- *2026.04*: &nbsp;🎉🎉 One CVPR 2026 paper was selected as Highlight
+- *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
+- *2026.01*: &nbsp;🎉🎉 One paper accepted by ICLR 2026
+- *2025.10*: &nbsp;Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department
+- *2025.09*: &nbsp;Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics
+
+# 📝 Publications
 
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/PHASE-NET.png' alt="PHASE-Net" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -59,8 +145,6 @@ I am a Master's student in Artificial Intelligence and Robotics at The Chinese U
 **Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
 <a class="paper-link" href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-
-<p class="paper-summary">Physics-grounded attention design for efficient and robust remote PPG measurement.</p>
 
 </div>
 </div>
@@ -74,9 +158,7 @@ I am a Master's student in Artificial Intelligence and Robotics at The Chinese U
 
 **Bo Zhao**, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
-<span class="paper-link paper-link--disabled" aria-label="Paper link coming soon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
-
-<p class="paper-summary">Feature-level optimal warping for improved generalization in remote physiological measurement.</p>
+<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -92,12 +174,8 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 
 <a class="paper-link" href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
-<p class="paper-summary">Cross-modal remote physiological sensing powered by large language models.</p>
-
 </div>
 </div>
-
-# All Publications
 
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/AULLM.png' alt="AU-LLM" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -113,7 +191,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 </div>
 </div>
 
-# Current Preprints
+# 📄 Preprints
 
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/CardiacMamba.png' alt="CardiacMamba" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -139,7 +217,7 @@ Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
 
 **Second author**
 
-<span class="paper-link paper-link--disabled" aria-label="Paper link coming soon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
+<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 - Intervention-based self-supervised learning method using a causal probe paradigm for remote photoplethysmography research.
 </div>
@@ -265,7 +343,7 @@ Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
 </div>
 </div>
 
-# Education
+# 🎓 Educations
 <div class="profile-section profile-section--timeline">
   <div class="profile-card timeline-item">
     <div class="experience-item">
@@ -290,7 +368,7 @@ Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
   </div>
 </div>
 
-# Internship
+# 💼 Internships
 <div class="profile-section">
   <div class="profile-card">
     <div class="experience-item">
@@ -308,10 +386,10 @@ Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
   </div>
 </div>
 
-# Honors and Awards
+# 🎖 Honors and Awards
 - *2022-2024*: Academic Scholarship for three consecutive years (2022-2024)
 
-# Patents
+# 📜 Patents
 - Time Series Analysis Model Training Method, Time Series Analysis Method and Related Devices (Invention Patent)
 - Time-Frequency Large Language Model-Based Framework for Enhanced Time Series Methods (Invention Patent)
 - Robust Remote Physiological Signal Sensing Based on Optimal Transport Theory (Invention Patent)
