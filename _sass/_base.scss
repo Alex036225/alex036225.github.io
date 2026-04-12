@@ -12,8 +12,10 @@ body {
   padding: 0;
   padding-bottom: 0em;
   color: $text-color;
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.5;
+  font-family: $global-font-family;
+  font-size: 1rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -22,24 +24,26 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 1em 0 0.5em;
-  line-height: 1.2;
-  font-family: "Times New Roman", Times, serif;
+  margin: 1.15em 0 0.55em;
+  line-height: 1.25;
+  font-family: $header-font-family;
   font-weight: bold;
+  letter-spacing: 0.015em;
 }
 
 h1 {
-  // margin: 4em 0 0.5em;
-  margin-top: 1em;
-  font-size: $type-size-3;
+  margin-top: 1.2em;
+  font-size: clamp(1.9rem, 1.55rem + 1.1vw, 2.35rem);
+  line-height: 1.2;
 }
 
 h2 {
-  font-size: $type-size-4;
+  font-size: clamp(1.45rem, 1.25rem + 0.6vw, 1.75rem);
+  line-height: 1.25;
 }
 
 h3 {
-  font-size: $type-size-5;
+  font-size: clamp(1.2rem, 1.08rem + 0.4vw, 1.35rem);
 }
 
 h4 {
@@ -59,7 +63,7 @@ small, .small {
 }
 
 p {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.95em;
 }
 
 u,

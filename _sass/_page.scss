@@ -49,6 +49,8 @@
 }
 
 .page__content {
+  --prose-max-width: 72ch;
+
   #about-me{
     margin-top: -10em;
       &:before { 
@@ -68,11 +70,20 @@
 
   p, li, dl {
     font-size: 1em;
+    line-height: 1.78;
+  }
+
+  p,
+  ul,
+  ol,
+  dl,
+  blockquote {
+    max-width: var(--prose-max-width);
   }
 
   /* paragraph indents */
   p {
-    margin: 0 0 $indent-var;
+    margin: 0 0 1.05em;
 
     /* sibling indentation*/
     @if $paragraph-indent == true {
@@ -118,6 +129,23 @@
   .profile-card {
     margin-bottom: 0.6em;
     padding: 0.35em 0;
+  }
+
+  .paper-box,
+  .profile-card {
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  }
+
+  .js & .paper-box,
+  .js & .profile-card {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .js & .paper-box.is-visible,
+  .js & .profile-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .profile-section--timeline .timeline-item {
@@ -206,6 +234,8 @@
   }
 
   @include breakpoint(max-width $small) {
+    --prose-max-width: 66ch;
+
     .institution-logo {
       width: 46px;
       height: 46px;

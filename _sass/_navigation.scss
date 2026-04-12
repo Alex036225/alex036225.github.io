@@ -2,6 +2,16 @@
    NAVIGATION
    ========================================================================== */
 
+.masthead {
+  transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.masthead.masthead--scrolled {
+  background-color: rgba($background-color, 0.93);
+  box-shadow: 0 5px 18px rgba(#000, 0.07);
+  backdrop-filter: blur(8px);
+}
+
 /*
    Breadcrumb navigation links
    ========================================================================== */
@@ -175,7 +185,7 @@
 .greedy-nav {
   position: relative;
   min-width: 250px;
-  background: $background-color;
+  background: transparent;
 
   a {
     display: block;
@@ -225,6 +235,7 @@
 
     a {
       position: relative;
+      transition: color 0.2s ease-out;
 
       &:before {
         content: "";
@@ -239,6 +250,17 @@
         -webkit-transform: scaleX(0);
             -ms-transform: scaleX(0);
                 transform: scaleX(0); /* hide*/
+      }
+
+      &.is-active {
+        color: mix(#000, $primary-color, 30%);
+        font-weight: 600;
+      }
+
+      &.is-active:before {
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1);
       }
 
       &:hover:before {
@@ -264,6 +286,13 @@
       margin: 0;
       padding: 10px 20px;
       font-size: $type-size-5;
+      transition: background-color 0.2s ease-out, color 0.2s ease-out;
+
+      &.is-active {
+        font-weight: 600;
+        color: mix(#000, $primary-color, 30%);
+        background: mix(#fff, $primary-color, 84%);
+      }
 
       &:hover {
         color: $masthead-link-color-hover;
