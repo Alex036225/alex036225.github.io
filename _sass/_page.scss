@@ -49,7 +49,7 @@
 }
 
 .page__content {
-  --prose-max-width: 84ch;
+  --prose-max-width: 100%;
 
   #about-me{
     margin-top: -10em;
@@ -234,7 +234,7 @@
   }
 
   @include breakpoint(max-width $small) {
-    --prose-max-width: 66ch;
+    --prose-max-width: 100%;
 
     .institution-logo {
       width: 46px;
