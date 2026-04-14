@@ -6,20 +6,27 @@
   @include container;
   @include clearfix;
   margin-top: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
+  width: min(100%, 1360px);
+  max-width: 1360px;
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
+  @include breakpoint($medium) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   @include breakpoint($x-large) {
-    max-width: $x-large;
+    max-width: 1400px;
   }
 }
 
 .page {
   @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
+    @include span(10.25 of 12 last);
+    @include prefix(0.25 of 12);
     @include suffix(0 of 12);
   }
 
@@ -124,6 +131,52 @@
 
   .profile-section {
     margin: 0 0 1em;
+  }
+
+  .profile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.15rem 0 1.6rem;
+  }
+
+  .profile-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.72rem 1.15rem;
+    border: 1px solid mix(#fff, $primary-color, 65%);
+    border-radius: 999px;
+    background: mix(#fff, $primary-color, 92%);
+    color: $primary-color;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba($primary-color, 0.08);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      border-color: mix(#fff, $primary-color, 45%);
+      background: mix(#fff, $primary-color, 86%);
+      box-shadow: 0 14px 28px rgba($primary-color, 0.12);
+      text-decoration: none;
+    }
+
+    i {
+      font-size: 0.95em;
+    }
+  }
+
+  .profile-action--primary {
+    background: linear-gradient(135deg, mix(#fff, $primary-color, 15%), $primary-color);
+    border-color: mix(#000, $primary-color, 8%);
+    color: #fff;
+
+    &:hover {
+      background: linear-gradient(135deg, mix(#fff, $primary-color, 10%), mix(#000, $primary-color, 8%));
+      border-color: mix(#000, $primary-color, 16%);
+      color: #fff;
+    }
   }
 
   .profile-card {

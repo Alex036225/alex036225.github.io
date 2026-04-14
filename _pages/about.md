@@ -23,7 +23,12 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 **Paper Submissions:** Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.
 
-<a href="/CV.pdf" target="_blank" rel="noopener" style="font-weight: 700; font-family: 'SimHei', 'Microsoft YaHei', 'PingFang SC', sans-serif;">Download my CV</a>
+<div class="profile-actions">
+  <a class="profile-action profile-action--primary" href="/CV.pdf" target="_blank" rel="noopener">
+    <i class="fas fa-file-arrow-down" aria-hidden="true"></i>
+    <span>Download CV</span>
+  </a>
+</div>
 
 <style>
 .pub-tags {
