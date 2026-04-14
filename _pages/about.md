@@ -25,7 +25,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 <div class="profile-actions">
   <a class="profile-action profile-action--primary" href="/CV.pdf" target="_blank" rel="noopener">
-    <i class="fas fa-file-arrow-down" aria-hidden="true"></i>
+    <span class="profile-action__icon" aria-hidden="true">↓</span>
     <span>Download CV</span>
   </a>
 </div>
