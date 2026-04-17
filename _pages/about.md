@@ -35,7 +35,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 
 <p class="home-section__intro">A curated snapshot of my recent representative work. For the full list, please visit the publications page.</p>
 
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/PHASE-NET.png' alt="PHASE-Net" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><img src="{{ '/images/paper/PHASE-NET.png' | relative_url }}" alt="PHASE-Net" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement**
@@ -49,7 +49,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/PhysLLM.png' alt="PhysLLM" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><img src="{{ '/images/paper/PhysLLM.png' | relative_url }}" alt="PhysLLM" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing**
@@ -63,7 +63,7 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/FLOW.png' alt="FLOW" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><img src="{{ '/images/paper/FLOW.png' | relative_url }}" alt="FLOW" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement**
@@ -98,7 +98,7 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 <div class="profile-section profile-section--timeline">
   <div class="profile-card timeline-item">
     <div class="experience-item">
-      <img src="images/香港中文大学(深圳).png" alt="The Chinese University of Hong Kong, Shenzhen" class="institution-logo">
+      <img src="{{ '/images/香港中文大学(深圳).png' | relative_url }}" alt="The Chinese University of Hong Kong, Shenzhen" class="institution-logo">
       <div class="experience-content">
         <p class="exp-title"><strong>The Chinese University of Hong Kong, Shenzhen</strong></p>
         <p class="exp-detail">Master's Student in Artificial Intelligence and Robotics</p>
@@ -109,7 +109,7 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 
   <div class="profile-card timeline-item">
     <div class="experience-item">
-      <img src="images/山东大学.png" alt="Shandong University" class="institution-logo">
+      <img src="{{ '/images/山东大学.png' | relative_url }}" alt="Shandong University" class="institution-logo">
       <div class="experience-content">
         <p class="exp-title"><strong>Shandong University</strong></p>
         <p class="exp-detail">Bachelor's Degree in Mathematics and Applied Mathematics</p>
@@ -125,7 +125,7 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 <div class="profile-section">
   <div class="profile-card">
     <div class="experience-item">
-      <img src="images/Tencent.avif" alt="Tencent" class="institution-logo">
+      <img src="{{ '/images/Tencent.avif' | relative_url }}" alt="Tencent" class="institution-logo">
       <div class="experience-content">
         <p class="exp-title"><strong>Tencent Technology (Shenzhen) Co., Ltd.</strong></p>
         <p class="exp-detail">Intern, Hunyuan Multimodal Model Department</p>
