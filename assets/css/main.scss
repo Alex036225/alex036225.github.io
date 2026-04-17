@@ -165,66 +165,6 @@ h1:before, .anchor:before {
     }
 }
 
-.home-hero {
-    padding: 0.4rem 0 2.2rem;
-}
-
-.home-hero__eyebrow {
-    margin: 0 0 0.55rem;
-    color: $primary-color;
-    font-size: 0.84rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.home-hero__title {
-    margin: 0 0 0.7rem;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    line-height: 1.02;
-    letter-spacing: -0.04em;
-}
-
-.home-hero__lead {
-    max-width: 760px;
-    margin: 0 0 1rem;
-    font-size: 1.08rem;
-    line-height: 1.75;
-    color: mix(#000, $gray, 16%);
-}
-
-.home-hero__meta,
-.home-hero__interests {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    margin: 0 0 0.95rem;
-}
-
-.home-hero__meta-item,
-.hero-interest {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2rem;
-    padding: 0.35rem 0.8rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    line-height: 1.3;
-}
-
-.home-hero__meta-item {
-    color: mix(#000, $gray, 16%);
-    background: mix(#fff, $gray, 92%);
-    border: 1px solid mix(#fff, $gray, 62%);
-}
-
-.hero-interest {
-    color: mix(#000, $primary-color, 10%);
-    background: mix(#fff, $primary-color, 92%);
-    border: 1px solid mix(#fff, $primary-color, 60%);
-    font-weight: 600;
-}
-
 .home-section__intro {
     max-width: 720px;
     margin: -0.2rem 0 1.1rem;

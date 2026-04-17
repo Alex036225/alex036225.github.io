@@ -17,28 +17,16 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-<div class="home-hero">
-  <p class="home-hero__eyebrow">Bo Zhao</p>
-  <h1 class="home-hero__title">Bo Zhao</h1>
-  <p class="home-hero__lead">Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen. I work on multimodal learning for remote physiological sensing, large multimodal models, and agentic memory systems.</p>
-  <div class="home-hero__meta">
-    <span class="home-hero__meta-item">CUHK-Shenzhen · M.S. in AIR</span>
-    <span class="home-hero__meta-item">Supervised by Prof. Zitong Yu</span>
-    <span class="home-hero__meta-item">Tencent Hunyuan Multimodal Intern</span>
-  </div>
-  <div class="home-hero__interests">
-    <span class="hero-interest">Remote Physiological Sensing</span>
-    <span class="hero-interest">Multimodal LLMs</span>
-    <span class="hero-interest">Agentic Memory</span>
-  </div>
-  <div class="profile-actions">
-    <a class="profile-action profile-action--primary" href="/publications/">
-      <span>View All Publications</span>
-    </a>
-    <a class="profile-action" href="mailto:3057018496@qq.com">
-      <span>Contact Me</span>
-    </a>
-  </div>
+Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). Since December 2024, supervised by Prof. [Zitong Yu](https://zitong-yu.github.io/yzt/). My research interests focus on remote physiological signal sensing (rPPG), MLLMs, and Agentic Memory.
+
+**Research Interests:** Remote physiological signal sensing (rPPG), MLLMs, Agentic Memory.
+
+**Paper Submissions:** Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.
+
+<div class="profile-actions">
+  <a class="profile-action profile-action--primary" href="{{ '/publications/' | relative_url }}">
+    <span>All Publications</span>
+  </a>
 </div>
 
 <span class='anchor' id='selected-publications'></span>
@@ -90,7 +78,7 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 </div>
 
 <div class="profile-actions">
-  <a class="profile-action" href="/publications/">
+  <a class="profile-action" href="{{ '/publications/' | relative_url }}">
     <span>Browse the full publication list</span>
   </a>
 </div>
