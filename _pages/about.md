@@ -17,128 +17,35 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). Since December 2024, supervised by Prof. [Zitong Yu](https://zitong-yu.github.io/yzt/). My research interests focus on remote physiological signal sensing (rPPG), MLLMs, and Agentic Memory.
-
-**Research Interests:** Remote physiological signal sensing (rPPG), MLLMs, Agentic Memory.
-
-**Paper Submissions:** Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.
-
-<div class="profile-actions">
-  <a class="profile-action profile-action--primary" href="/CV.pdf" target="_blank" rel="noopener">
-    <span class="profile-action__icon" aria-hidden="true">↓</span>
-    <span>Download CV</span>
-  </a>
+<div class="home-hero">
+  <p class="home-hero__eyebrow">Bo Zhao</p>
+  <h1 class="home-hero__title">Bo Zhao</h1>
+  <p class="home-hero__lead">Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen. I work on multimodal learning for remote physiological sensing, large multimodal models, and agentic memory systems.</p>
+  <div class="home-hero__meta">
+    <span class="home-hero__meta-item">CUHK-Shenzhen · M.S. in AIR</span>
+    <span class="home-hero__meta-item">Supervised by Prof. Zitong Yu</span>
+    <span class="home-hero__meta-item">Tencent Hunyuan Multimodal Intern</span>
+  </div>
+  <div class="home-hero__interests">
+    <span class="hero-interest">Remote Physiological Sensing</span>
+    <span class="hero-interest">Multimodal LLMs</span>
+    <span class="hero-interest">Agentic Memory</span>
+  </div>
+  <div class="profile-actions">
+    <a class="profile-action profile-action--primary" href="/publications/">
+      <span>View All Publications</span>
+    </a>
+    <a class="profile-action" href="mailto:3057018496@qq.com">
+      <span>Contact Me</span>
+    </a>
+  </div>
 </div>
 
-<style>
-.pub-tags {
-  display: inline-flex !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  gap: 0.45rem !important;
-  margin-top: 0.15em !important;
-  margin-bottom: 0.45em !important;
-}
-.pub-tag {
-  display: inline-block !important;
-  padding: 0.14rem 0.72rem !important;
-  font-size: 0.78em !important;
-  font-weight: 600 !important;
-  line-height: 1.25 !important;
-  border-radius: 999px !important;
-  white-space: nowrap !important;
-  color: #C2714F !important;
-  border: 1px solid #e8c8ba !important;
-  background-color: #f7ece7 !important;
-}
-.pub-tag--status {
-  color: #6f685b !important;
-  border: 1px solid #d8d2c8 !important;
-  background-color: #f3f1ed !important;
-}
-.pub-tag--highlight,
-.pub-tag--oral {
-  color: #fff !important;
-  border: 1px solid #ad6145 !important;
-  background-color: #c2714f !important;
-}
-.pub-tag--review {
-  color: #6f685b !important;
-  border: 1px solid #d8d2c8 !important;
-  background-color: #f3f1ed !important;
-}
-.paper-link {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0.06rem 0 0.5rem !important;
-  color: #C2714F !important;
-  text-decoration: none !important;
-  font-size: 1.08rem !important;
-  width: 1.9rem !important;
-  height: 1.9rem !important;
-  border-radius: 999px !important;
-  border: 1px solid #e8c8ba !important;
-  background-color: #f7ece7 !important;
-}
-.paper-link:hover {
-  color: #ad6145 !important;
-  border-color: #d7a893 !important;
-  background-color: #f2dfd6 !important;
-}
-.profile-section--timeline .timeline-item {
-  position: relative !important;
-  margin-left: 20px !important;
-  padding-left: 8px !important;
-  padding-bottom: 20px !important;
-}
-.profile-section--timeline .timeline-item::before {
-  content: "" !important;
-  position: absolute !important;
-  left: -20px !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  width: 2px !important;
-  background: linear-gradient(to bottom, #C2714F, rgba(194, 113, 79, 0.12)) !important;
-}
-.profile-section--timeline .timeline-item:last-child::before {
-  bottom: 50% !important;
-}
-.profile-section--timeline .timeline-item::after {
-  content: "" !important;
-  position: absolute !important;
-  left: -25px !important;
-  top: 22px !important;
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 50% !important;
-  background: #C2714F !important;
-  border: 2px solid #FAF9F7 !important;
-}
-@media (max-width: 600px) {
-  .profile-section--timeline .timeline-item {
-    margin-left: 16px !important;
-    padding-left: 6px !important;
-    padding-bottom: 16px !important;
-  }
-  .profile-section--timeline .timeline-item::before {
-    left: -16px !important;
-  }
-  .profile-section--timeline .timeline-item::after {
-    left: -21px !important;
-    top: 18px !important;
-  }
-}
-</style>
+<span class='anchor' id='selected-publications'></span>
 
-# 🔥 News
-- *2026.04*: &nbsp;🎉🎉 One CVPR 2026 paper was selected as Highlight
-- *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
-- *2026.01*: &nbsp;🎉🎉 One paper accepted by ICLR 2026
-- *2025.10*: &nbsp;Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department
-- *2025.09*: &nbsp;Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics
+# Selected Publications
 
-# 📝 Publications
+<p class="home-section__intro">A curated snapshot of my recent representative work. For the full list, please visit the publications page.</p>
 
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/PHASE-NET.png' alt="PHASE-Net" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -150,20 +57,6 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 **Bo Zhao**, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
 <a class="paper-link" href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/FLOW.png' alt="FLOW" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement**
-
-<div class="pub-tags"><span class="pub-tag">CVPR 2026</span></div>
-
-**Bo Zhao**, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
-
-<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
 </div>
 </div>
@@ -182,175 +75,38 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/AULLM.png' alt="AU-LLM" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/FLOW.png' alt="FLOW" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**AU-LLM: Micro-Expression Action Unit Detection via Enhanced LLM-Based Feature**
+**FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement**
 
-<div class="pub-tags"><span class="pub-tag">CCBR 2025</span> <span class="pub-tag pub-tag--status pub-tag--oral">Oral</span></div>
+<div class="pub-tags"><span class="pub-tag">CVPR 2026</span></div>
 
-Zhishu Liu, Kaishen Yuan, **Bo Zhao**, Yong Xu, Zitong Yu<sup>†</sup>
-
-<a class="paper-link" href="https://arxiv.org/abs/2507.21778" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-
-</div>
-</div>
-
-# 📄 Preprints
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/CardiacMamba.png' alt="CardiacMamba" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**CardiacMamba: A Multimodal RGB-RF Fusion Framework with State Space Models for Remote Physiological Measurement**
-
-<div class="pub-tags"><span class="pub-tag">JBHI 2025</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-**Co-first author**
-
-<a class="paper-link" href="https://arxiv.org/abs/2502.13624" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-
-- We propose CardiacMamba, a multimodal framework that fuses RGB video and RF sensor data for accurate rPPG heart rate estimation. We innovatively introduce Temporal Difference Mamba Module (TDMM) and Bifurcated Difference Convolution Fusion (BDCF) for dual-layer feature extraction and alignment, achieving collaborative modeling of RGB and RF modalities through Bidirectional State Space Model (Bi-SSM). We design Channel-wise Fast Fourier Transform (CFFT) for bidirectional feature fusion, demonstrating state-of-the-art performance on the EquiPleth dataset and significantly mitigating skin tone bias issues.
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/Intervention.png' alt="Intervention-Based SSL" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Intervention-Based Self-Supervised Learning: A Causal Probe Paradigm for Remote Photoplethysmography**
-
-<div class="pub-tags"><span class="pub-tag">IJCV 2025</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-**Second author**
+**Bo Zhao**, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
 <a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 
-- Intervention-based self-supervised learning method using a causal probe paradigm for remote photoplethysmography research.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/script.png' alt="ACL 2026" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**The Script is All You Need: An Agentic Framework for Long-Horizon Dialogue-to-Cinematic Video Generation**
-
-<div class="pub-tags"><span class="pub-tag">ACL 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-Chenyu Mu, Xin He, Qu Yang, Wanshun CHEN, Jiadi Yao, Huang Liu, Zihao Yi, **Bo Zhao**, Xingyu Chen, Ruotian Ma, Fanghua Ye, Erkun Yang, Cheng Deng, Zhaopeng Tu, Xiaolong Li, Linus
-
-<a class="paper-link" href="https://arxiv.org/abs/2601.17737" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-</div>
+<div class="profile-actions">
+  <a class="profile-action" href="/publications/">
+    <span>Browse the full publication list</span>
+  </a>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/Unsupervised Camouflaged Object Detection.png' alt="ICML 2026" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+<span class='anchor' id='news'></span>
 
-**Unsupervised Camouflaged Object Detection with Dual-Eigenvector Spectral Pseudo-Labeling and Contrastive Refinement**
+# News
+- *2026.04*: &nbsp;🎉🎉 One CVPR 2026 paper was selected as Highlight
+- *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
+- *2026.01*: &nbsp;🎉🎉 One paper accepted by ICLR 2026
+- *2025.10*: &nbsp;Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department
+- *2025.09*: &nbsp;Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics
 
-<div class="pub-tags"><span class="pub-tag">ICML 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+<span class='anchor' id='educations'></span>
 
-Pingzhu Liu, Chunming He, Zunnan Xu, Chao Hao, **Bo Zhao**, Xingyu Shao, Jun Zhou, Zitong YU, Xiu Li
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/Think Fast and Slow.png' alt="ICML 2026" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents**
-
-<div class="pub-tags"><span class="pub-tag">ICML 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, **Bo Zhao**, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus
-
-<a class="paper-link" href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/PhysNeXt.png' alt="PhysNeXt" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**PhysNeXt: Next-Generation Dual-Branch Structured Attention Fusion Network for Remote Photoplethysmography Estimation**
-
-<div class="pub-tags"><span class="pub-tag">ECCV 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-Junzhe Cao<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Zhiyi Niu, Dan Guo, Yue Sun, Hui Ma, Yong Xu<sup>†</sup>, Zitong Yu<sup>†</sup>
-
-<a class="paper-link" href="https://arxiv.org/abs/2603.19752" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/Complementarity-Supervised.png' alt="Complementarity-Supervised Spectral-Band Routing" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Complementarity-Supervised Spectral-Band Routing for Multimodal Emotion Recognition**
-
-<div class="pub-tags"><span class="pub-tag">ECCV 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Hui Ma, Zhishu Liu, Jie Zhang, Ruixin Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
-
-<a class="paper-link" href="https://arxiv.org/pdf/2603.13340" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/PCA.png' alt="PCA" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models**
-
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-Zihan Song, Shuo Ye, **Bo Zhao**, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zitong YU<sup>†</sup>
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='images/paper/AffectAgent.png' alt="AffectAgent" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition**
-
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-Zeheng Wang, Zitong YU<sup>†</sup>, Yijie Zhu, **Bo Zhao**, Haochen Liang, Taorui Wang, Wei Xia, Jiayu Zhang, Zhishu Liu, Hui Ma, Fei Ma, Qi Tian
-
-<a class="paper-link" href="https://arxiv.org/abs/2604.12735" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='/images/paper/Navigating the Emotion Tree.png' alt="Navigating the Emotion Tree" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Navigating the Emotion Tree: Hierarchical Hyperbolic RAG for Multimodal Emotion Recognition**
-
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-Zeheng Wang, **Bo Zhao**, Yijie Zhu, Zhishu Liu, Hui Ma, Ruixin Zhang, Shouhong Ding, Qianyu Xie, Zitong YU<sup>†</sup>
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='/images/paper/Empowering Large Vision-Language Models to Bridge Open-Set Domain Gaps in Video Retrieval.png' alt="Open-Set Domain Gaps in Video Retrieval" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Empowering Large Vision-Language Models to Bridge Open-Set Domain Gaps in Video Retrieval**
-
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-Jie Zhang, Haochen Liang, Qilang Ye, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou, Fei Luo, Zitong YU<sup>†</sup>
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><img src='/images/paper/Semantic Manifold Completion for Partially Relevant Video Retrieval.png' alt="Semantic Manifold Completion" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Semantic Manifold Completion for Partially Relevant Video Retrieval**
-
-<div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
-
-Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou, Fei Luo, Zitong YU<sup>†</sup>
-</div>
-</div>
-
-# 🎓 Educations
+# Educations
 <div class="profile-section profile-section--timeline">
   <div class="profile-card timeline-item">
     <div class="experience-item">
@@ -375,7 +131,9 @@ Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
   </div>
 </div>
 
-# 💼 Internships
+<span class='anchor' id='internships'></span>
+
+# Internships
 <div class="profile-section">
   <div class="profile-card">
     <div class="experience-item">
@@ -393,10 +151,12 @@ Jie Zhang, Qilang Ye, Haochen Liang, **Bo Zhao**, Jue Wang, Jieming Ma, Hao Zhou
   </div>
 </div>
 
-# 🎖 Honors and Awards
+<span class='anchor' id='honors-and-awards'></span>
+
+# Honors and Awards
 - *2022-2024*: Academic Scholarship for three consecutive years (2022-2024)
 
-# 📜 Patents
+# Patents
 - Time Series Analysis Model Training Method, Time Series Analysis Method and Related Devices (Invention Patent)
 - Time-Frequency Large Language Model-Based Framework for Enhanced Time Series Methods (Invention Patent)
 - Robust Remote Physiological Signal Sensing Based on Optimal Transport Theory (Invention Patent)
