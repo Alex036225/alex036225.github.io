@@ -19,21 +19,18 @@ redirect_from:
 
 Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). Since December 2024, supervised by Prof. [Zitong Yu](https://zitong-yu.github.io/yzt/). My research interests focus on remote physiological signal sensing (rPPG), MLLMs, and Agentic Memory.
 
-**Research Interests:** Remote physiological signal sensing (rPPG), MLLMs, Agentic Memory.
+<span class='anchor' id='news'></span>
 
-**Paper Submissions:** Multiple papers submitted to top-tier conferences and journals including ICLR, CVPR, IJCV, JBHI, etc.
-
-<div class="profile-actions">
-  <a class="profile-action profile-action--primary" href="{{ '/publications/' | relative_url }}">
-    <span>All Publications</span>
-  </a>
-</div>
+# News
+- *2026.04*: &nbsp;🎉🎉 One CVPR 2026 paper was selected as Highlight
+- *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
+- *2026.01*: &nbsp;🎉🎉 One paper accepted by ICLR 2026
+- *2025.10*: &nbsp;Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department
+- *2025.09*: &nbsp;Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics
 
 <span class='anchor' id='selected-publications'></span>
 
 # Selected Publications
-
-<p class="home-section__intro">A curated snapshot of my recent representative work. For the full list, please visit the publications page.</p>
 
 <div class='paper-box'><div class='paper-box-image'><div><img src="{{ '/images/paper/PHASE-NET.png' | relative_url }}" alt="PHASE-Net" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -76,21 +73,6 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 
 </div>
 </div>
-
-<div class="profile-actions">
-  <a class="profile-action" href="{{ '/publications/' | relative_url }}">
-    <span>Browse the full publication list</span>
-  </a>
-</div>
-
-<span class='anchor' id='news'></span>
-
-# News
-- *2026.04*: &nbsp;🎉🎉 One CVPR 2026 paper was selected as Highlight
-- *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
-- *2026.01*: &nbsp;🎉🎉 One paper accepted by ICLR 2026
-- *2025.10*: &nbsp;Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department
-- *2025.09*: &nbsp;Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics
 
 <span class='anchor' id='educations'></span>
 
