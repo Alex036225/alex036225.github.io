@@ -312,6 +312,8 @@ Zihan Song, Shuo Ye, **Bo Zhao**, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zito
 <div class="pub-tags"><span class="pub-tag">ACMMM 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
 
 Zeheng Wang, Zitong YU<sup>†</sup>, Yijie Zhu, **Bo Zhao**, Haochen Liang, Taorui Wang, Wei Xia, Jiayu Zhang, Zhishu Liu, Hui Ma, Fei Ma, Qi Tian
+
+<a class="paper-link" href="https://arxiv.org/abs/2604.12735" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
 </div>
 </div>
 
