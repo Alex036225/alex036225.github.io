@@ -17,17 +17,19 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Welcome to my academic homepage! I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (expected graduation in 2027). Since December 2024, supervised by Prof. [Zitong Yu](https://zitong-yu.github.io/yzt/). My research interests focus on remote physiological signal sensing (rPPG), MLLMs, and Agentic Memory.
+<div class="home-section__intro" markdown="1">Welcome to my academic homepage. I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen, supervised by Prof. [Zitong Yu](https://zitong-yu.github.io/yzt/) since December 2024. My research interests focus on remote physiological signal sensing (rPPG), MLLMs, and agentic memory.</div>
 
 <span class='anchor' id='news'></span>
 
 # News
-- *2026.05*: &nbsp;🎉🎉 Two papers accepted by ICML 2026
-- *2026.04*: &nbsp;🎉🎉 One CVPR 2026 paper was selected as Highlight
-- *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
-- *2026.01*: &nbsp;🎉🎉 One paper accepted by ICLR 2026
-- *2025.10*: &nbsp;Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department
-- *2025.09*: &nbsp;Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics
+<div class="news-list">
+  <div class="news-item"><span class="news-date">2026.05</span><span class="news-text">Two co-authored papers accepted by ICML 2026.</span></div>
+  <div class="news-item"><span class="news-date">2026.04</span><span class="news-text">One CVPR 2026 paper selected as Highlight.</span></div>
+  <div class="news-item"><span class="news-date">2026.02</span><span class="news-text">Two papers accepted by CVPR 2026.</span></div>
+  <div class="news-item"><span class="news-date">2026.01</span><span class="news-text">One paper accepted by ICLR 2026.</span></div>
+  <div class="news-item"><span class="news-date">2025.10</span><span class="news-text">Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department.</span></div>
+  <div class="news-item"><span class="news-date">2025.09</span><span class="news-text">Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics.</span></div>
+</div>
 
 <span class='anchor' id='selected-publications'></span>
 
@@ -70,14 +72,12 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 
 **Bo Zhao**, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup>
 
-<a class="paper-link" href="https://arxiv.org/abs/XXXX" target="_blank" rel="noopener" aria-label="Paper link"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
-
 </div>
 </div>
 
 <span class='anchor' id='educations'></span>
 
-# Educations
+# Education
 <div class="profile-section profile-section--timeline">
   <div class="profile-card timeline-item">
     <div class="experience-item">
@@ -112,7 +112,7 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
       <div class="experience-content">
         <p class="exp-title"><strong>Tencent Technology (Shenzhen) Co., Ltd.</strong></p>
         <p class="exp-detail">Intern, Hunyuan Multimodal Model Department</p>
-        <p class="exp-period">2025.10 - 2026.3</p>
+        <p class="exp-period">2025.10 - 2026.03</p>
         <ul class="exp-highlights">
           <li><strong>Business Direction:</strong> Leading game NPC memory project, extracting memory-related content from raw data, constructing LLM-required formats, training 32B memory model.</li>
           <li><strong>Research Direction:</strong> Researching game visual-language-action (VLA) models.</li>
