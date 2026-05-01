@@ -22,6 +22,7 @@ Welcome to my academic homepage! I am currently a Master's student in Artificial
 <span class='anchor' id='news'></span>
 
 # News
+- *2026.05*: &nbsp;🎉🎉 Two papers accepted by ICML 2026
 - *2026.04*: &nbsp;🎉🎉 One CVPR 2026 paper was selected as Highlight
 - *2026.02*: &nbsp;🎉🎉 Two papers accepted by CVPR 2026
 - *2026.01*: &nbsp;🎉🎉 One paper accepted by ICLR 2026
