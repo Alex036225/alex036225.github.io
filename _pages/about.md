@@ -95,7 +95,7 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
       <img src="{{ '/images/山东大学.png' | relative_url }}" alt="Shandong University" class="institution-logo">
       <div class="experience-content">
         <p class="exp-title"><strong>Shandong University</strong></p>
-        <p class="exp-detail">Bachelor's Degree in Mathematics and Applied Mathematics</p>
+        <p class="exp-detail">Bachelor's Degree in Mathematics and Applied Mathematics | GPA: 86.54/100</p>
         <p class="exp-period">2021.09 - 2025.06</p>
       </div>
     </div>
