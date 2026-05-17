@@ -75,6 +75,30 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><img src="{{ '/images/paper/AffectVerse.png' | relative_url }}" alt="AffectVerse" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**AffectVerse: Emotional World Models for Multimodal Affective Computing**
+
+<div class="pub-tags"><span class="pub-tag">NeurIPS 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+
+**Bo Zhao**<sup>*</sup>, Fanghua Ye<sup>*</sup>, Yixin Ji, Sicheng Zhao, Xiaojiang Peng, Zitong YU<sup>†</sup>
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><img src="{{ '/images/paper/EmoR1.png' | relative_url }}" alt="EmoR1" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**EmoR1: Neutral-Calibrated Reinforcement Learning for Multimodal Emotion Recognition**
+
+<div class="pub-tags"><span class="pub-tag">NeurIPS 2026</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+
+Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Sicheng Zhao, Hui Ma, Zitong YU<sup>†</sup>
+
+</div>
+</div>
+
 <span class='anchor' id='educations'></span>
 
 # Education
