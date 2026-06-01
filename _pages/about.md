@@ -23,6 +23,7 @@ Welcome to my academic homepage. I am currently a Master's student in Artificial
 
 # News
 <div class="news-list">
+  <div class="news-item"><span class="news-date">2026.06</span><span class="news-text">Tencent Hunyuan-supported AI celebrity teammate "Xiao Tian" was launched in Peace Elite; I contributed to the GameMate1.0 memory and game-agent work during my internship.</span></div>
   <div class="news-item"><span class="news-date">2026.05</span><span class="news-text">Two co-authored papers accepted by ICML 2026.</span></div>
   <div class="news-item"><span class="news-date">2026.04</span><span class="news-text">One CVPR 2026 paper selected as Highlight.</span></div>
   <div class="news-item"><span class="news-date">2026.02</span><span class="news-text">Two papers accepted by CVPR 2026.</span></div>
@@ -138,8 +139,9 @@ Zhexian Huang<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Sicheng Zhao, Hui Ma, Zitong
         <p class="exp-detail">Intern, Hunyuan Multimodal Model Department</p>
         <p class="exp-period">2025.10 - 2026.03</p>
         <ul class="exp-highlights">
-          <li><strong>Business Direction:</strong> Leading game NPC memory project, extracting memory-related content from raw data, constructing LLM-required formats, training 32B memory model.</li>
-          <li><strong>Research Direction:</strong> Researching game visual-language-action (VLA) models.</li>
+          <li><strong>Product Launch:</strong> Contributed to GameMate1.0, the full-stack game-agent framework behind Peace Elite's AI celebrity teammate "Xiao Tian", supporting dialogue, perception, decision-making, action, and long-term memory.</li>
+          <li><strong>Memory Agent:</strong> Built memory-data construction pipelines that transform raw game events and player interactions into structured LLM training formats for persistent player preference, habit, and relationship memory.</li>
+          <li><strong>Multimodal Agent:</strong> Participated in game vision-language-action research for proactive teammate behavior, multimodal battlefield-state understanding, and emotionally responsive interaction.</li>
         </ul>
       </div>
     </div>
