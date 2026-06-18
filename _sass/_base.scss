@@ -12,6 +12,9 @@ body {
   padding: 0;
   padding-bottom: 0em;
   color: $text-color;
+  background:
+    linear-gradient(115deg, rgba(#fff, 0.92) 0%, rgba($body-color, 0.92) 38%, rgba(#eef4ef, 0.84) 100%),
+    linear-gradient(180deg, rgba(#fff, 0.82), rgba(#f4eee8, 0.72));
   font-family: $global-font-family;
   font-size: 1rem;
   line-height: 1.7;
