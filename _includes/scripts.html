@@ -90,6 +90,37 @@
       cards.forEach(function (card) { observer.observe(card); });
     }
 
+    function initLiquidGlassFeedback() {
+      var glassItems = Array.prototype.slice.call(document.querySelectorAll(
+        ".sidebar, .page__content .news-list, .page__content .paper-box, .page__content .profile-card, .page__content .profile-action, .page__content .pub-tag, .paper-link"
+      ));
+      if (!glassItems.length) return;
+
+      function resetPressState(item) {
+        item.classList.remove("is-pressing");
+      }
+
+      glassItems.forEach(function (item) {
+        item.classList.add("liquid-glass");
+
+        item.addEventListener("pointerdown", function () {
+          item.classList.add("is-pressing");
+        });
+
+        item.addEventListener("pointerup", function () {
+          item.classList.remove("is-pressing");
+        });
+
+        item.addEventListener("pointercancel", function () {
+          resetPressState(item);
+        });
+
+        item.addEventListener("pointerleave", function () {
+          resetPressState(item);
+        });
+      });
+    }
+
     var ticking = false;
     function onScroll() {
       if (!ticking) {
@@ -106,6 +137,7 @@
     updateMastheadState();
     updateActiveSection();
     initRevealAnimations();
+    initLiquidGlassFeedback();
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", function () {

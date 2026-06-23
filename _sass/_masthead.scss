@@ -6,11 +6,11 @@
   position: sticky;
   top: 0;
   background:
-    linear-gradient(135deg, rgba(#fff, 0.78), rgba(#fff, 0.48));
-  border-bottom: 1px solid rgba(#fff, 0.7);
-  box-shadow: 0 10px 30px rgba(#3d3929, 0.06);
-  backdrop-filter: blur(18px) saturate(150%);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
+    linear-gradient(135deg, rgba(#fff, 0.42), rgba(#fff, 0.2));
+  border-bottom: 1px solid rgba(#fff, 0.48);
+  box-shadow: 0 10px 34px rgba(#000, 0.1), inset 0 1px 3px rgba(#fff, 0.28);
+  backdrop-filter: blur(9px) saturate(185%);
+  -webkit-backdrop-filter: blur(9px) saturate(185%);
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.15s;
@@ -64,4 +64,3 @@
     font-weight: 700;
   }
 }
-

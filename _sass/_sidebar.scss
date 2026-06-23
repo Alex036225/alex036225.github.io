@@ -7,17 +7,55 @@
    ========================================================================== */
 
 .sidebar {
+  --glass-rotate-x: 0deg;
+  --glass-rotate-y: 0deg;
+  --glass-press: 0;
   -webkit-transform: translate3d(0, 0 , 0);
-          transform: translate3d(0, 0 , 0);
+          transform: perspective(900px)
+            rotateX(0deg)
+            rotateY(0deg)
+            scale(calc(1 - var(--glass-press) * 0.01));
 
   @include clearfix();
   margin-bottom: 1em;
+  padding: 0.95rem;
+  isolation: isolate;
+  border: 1px solid rgba(#fff, 0.58);
+  border-radius: 8px;
+  background: rgba(#fff, 0.12);
+  box-shadow:
+    0 14px 42px rgba(#0f172a, 0.13),
+    0 2px 8px rgba(#0f172a, 0.06),
+    inset 0 0 0 0.5px rgba(#fff, 0.56),
+    inset 0 1px 3px rgba(#fff, 0.3),
+    inset 0 -1px 2px rgba(#0f172a, 0.06);
+  backdrop-filter: blur(6px) saturate(170%);
+  -webkit-backdrop-filter: blur(6px) saturate(170%);
+  transition: transform 0.16s ease-out, box-shadow 0.18s ease, border-color 0.18s ease;
+
+  &:hover {
+    border-color: rgba(#fff, 0.72);
+    box-shadow:
+      0 16px 46px rgba(#0f172a, 0.15),
+      0 2px 8px rgba(#0f172a, 0.07),
+      inset 0 0 0 0.5px rgba(#fff, 0.62),
+      inset 0 1px 3px rgba(#fff, 0.34),
+      inset 0 -1px 2px rgba(#0f172a, 0.06);
+  }
+
+  &.is-pressing {
+    --glass-press: 1;
+    border-color: rgba(#fff, 0.82);
+    box-shadow:
+      0 8px 30px rgba(#000, 0.2),
+      inset 0 2px 7px rgba(#fff, 0.42);
+  }
 
   @include breakpoint($large) {
     @include span(1.75 of 12);
     opacity: 1;
-    -webkit-transition: opacity 0.2s ease-in-out;
-            transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out, transform 0.16s ease-out, box-shadow 0.18s ease, border-color 0.18s ease;
+            transition: opacity 0.2s ease-in-out, transform 0.16s ease-out, box-shadow 0.18s ease, border-color 0.18s ease;
 
     &:hover {
       opacity: 1;
@@ -95,10 +133,11 @@
     max-width: 135px;
     min-width: 70px;
     border-radius: 50%;
+    box-shadow: 0 12px 26px rgba(#0f172a, 0.1);
 
     @include breakpoint($large) {
       padding: 5px;
-      border: 1px solid $border-color;
+      border: 1px solid rgba(#fff, 0.52);
     }
   }
 }
@@ -183,11 +222,13 @@
   margin-top: 15px;
   padding: 10px;
   list-style-type: none;
-  border: 1px solid $border-color;
+  border: 1px solid rgba(#fff, 0.52);
   border-radius: $border-radius;
-  background: #fff;
+  background: rgba(#fff, 0.32);
   z-index: -1;
-  box-shadow: 0 0 10px rgba(#000, 0.25);
+  box-shadow: 0 14px 32px rgba(#000, 0.12), inset 0 1px 2px rgba(#fff, 0.3);
+  backdrop-filter: blur(8px) saturate(185%);
+  -webkit-backdrop-filter: blur(8px) saturate(185%);
   cursor: default;
 
   @include breakpoint($large) {

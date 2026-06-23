@@ -10,6 +10,59 @@ layout: compress
   </head>
 
   <body>
+    <svg class="liquid-glass-defs" aria-hidden="true" focusable="false">
+      <filter id="liquid-glass-edge">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.032" numOctaves="2" seed="11" result="DISPLACEMENT_MAP" />
+        <feColorMatrix
+          in="DISPLACEMENT_MAP"
+          type="matrix"
+          values="0.35 0.35 0.35 0 0
+                  0.35 0.35 0.35 0 0
+                  0.35 0.35 0.35 0 0
+                  0 0 0 1 0"
+          result="EDGE_INTENSITY" />
+        <feComponentTransfer in="EDGE_INTENSITY" result="EDGE_MASK">
+          <feFuncA type="discrete" tableValues="0 0.12 0.9" />
+        </feComponentTransfer>
+        <feOffset in="SourceGraphic" dx="0" dy="0" result="CENTER_ORIGINAL" />
+        <feDisplacementMap in="SourceGraphic" in2="DISPLACEMENT_MAP" scale="-10" xChannelSelector="R" yChannelSelector="B" result="RED_DISPLACED" />
+        <feColorMatrix
+          in="RED_DISPLACED"
+          type="matrix"
+          values="1 0 0 0 0
+                  0 0 0 0 0
+                  0 0 0 0 0
+                  0 0 0 1 0"
+          result="RED_CHANNEL" />
+        <feDisplacementMap in="SourceGraphic" in2="DISPLACEMENT_MAP" scale="-9" xChannelSelector="R" yChannelSelector="B" result="GREEN_DISPLACED" />
+        <feColorMatrix
+          in="GREEN_DISPLACED"
+          type="matrix"
+          values="0 0 0 0 0
+                  0 1 0 0 0
+                  0 0 0 0 0
+                  0 0 0 1 0"
+          result="GREEN_CHANNEL" />
+        <feDisplacementMap in="SourceGraphic" in2="DISPLACEMENT_MAP" scale="-8" xChannelSelector="R" yChannelSelector="B" result="BLUE_DISPLACED" />
+        <feColorMatrix
+          in="BLUE_DISPLACED"
+          type="matrix"
+          values="0 0 0 0 0
+                  0 0 0 0 0
+                  0 0 1 0 0
+                  0 0 0 1 0"
+          result="BLUE_CHANNEL" />
+        <feBlend in="GREEN_CHANNEL" in2="BLUE_CHANNEL" mode="screen" result="GB_COMBINED" />
+        <feBlend in="RED_CHANNEL" in2="GB_COMBINED" mode="screen" result="RGB_COMBINED" />
+        <feGaussianBlur in="RGB_COMBINED" stdDeviation="0.18" result="ABERRATED_BLURRED" />
+        <feComposite in="ABERRATED_BLURRED" in2="EDGE_MASK" operator="in" result="EDGE_ABERRATION" />
+        <feComponentTransfer in="EDGE_MASK" result="INVERTED_MASK">
+          <feFuncA type="table" tableValues="1 0" />
+        </feComponentTransfer>
+        <feComposite in="CENTER_ORIGINAL" in2="INVERTED_MASK" operator="in" result="CENTER_CLEAN" />
+        <feComposite in="EDGE_ABERRATION" in2="CENTER_CLEAN" operator="over" />
+      </filter>
+    </svg>
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}

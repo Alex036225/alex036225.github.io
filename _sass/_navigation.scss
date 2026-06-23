@@ -7,9 +7,11 @@
 }
 
 .masthead.masthead--scrolled {
-  background-color: rgba($background-color, 0.93);
-  box-shadow: 0 5px 18px rgba(#000, 0.07);
-  backdrop-filter: blur(8px);
+  background-color: rgba(#fff, 0.34);
+  border-bottom-color: rgba(#fff, 0.58);
+  box-shadow: 0 12px 40px rgba(#000, 0.12), inset 0 1px 3px rgba(#fff, 0.3);
+  backdrop-filter: blur(9px) saturate(190%);
+  -webkit-backdrop-filter: blur(9px) saturate(190%);
 }
 
 /*
