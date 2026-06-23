@@ -836,3 +836,28 @@ h1:before, .anchor:before {
     backdrop-filter: blur(18px) saturate(180%) brightness(1.05);
     -webkit-backdrop-filter: blur(18px) saturate(180%) brightness(1.05);
 }
+
+.page__content .pub-tag--highlight.liquid-glass,
+.page__content .pub-tag--oral.liquid-glass {
+    color: #fff;
+    border-color: rgba($primary-color, 0.82);
+    background:
+        linear-gradient(135deg, mix(#fff, $primary-color, 16%), mix(#000, $primary-color, 8%));
+    box-shadow:
+        0 10px 22px rgba($primary-color, 0.2),
+        inset 0 1px 2px rgba(#fff, 0.4),
+        inset 0 -1px 2px rgba(#000, 0.12);
+    text-shadow: 0 1px 1px rgba(#000, 0.22);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.page__content .pub-tag--highlight.liquid-glass::before,
+.page__content .pub-tag--oral.liquid-glass::before {
+    opacity: 0;
+}
+
+.page__content .pub-tag--highlight.liquid-glass::after,
+.page__content .pub-tag--oral.liquid-glass::after {
+    opacity: 0.42;
+}
