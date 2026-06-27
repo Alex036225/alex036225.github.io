@@ -9,3 +9,6 @@ node_modules/
 .sass-cache/
 vendor/
 .vercel/
+tencent-scf/.env
+tencent-scf/.serverless/
+tencent-scf/package-lock.json

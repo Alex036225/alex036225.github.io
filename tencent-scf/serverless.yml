@@ -1,0 +1,19 @@
+component: scf
+name: ask-bo-deepseek
+
+inputs:
+  name: ask-bo-deepseek
+  namespace: default
+  region: ap-guangzhou
+  type: web
+  runtime: Nodejs18.15
+  src: ./src
+  handler: scf_bootstrap
+  memorySize: 256
+  timeout: 60
+  publicAccess: true
+  environment:
+    variables:
+      DEEPSEEK_MODEL: deepseek-chat
+      ALLOWED_ORIGINS: https://alex036225.github.io,http://127.0.0.1:4000,http://localhost:4000
+      DEEPSEEK_API_KEY: ${env:DEEPSEEK_API_KEY}

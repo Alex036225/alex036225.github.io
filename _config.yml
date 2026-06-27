@@ -12,6 +12,7 @@ repository: "Alex036225/alex036225.github.io"
 google_scholar_stats_use_cdn: true
 ai_chat_endpoint: "https://alex-rho-sandy.vercel.app/api/chat"
 ai_chat_endpoints:
+  - "https://1404299806-ervarhynrt.ap-guangzhou.tencentscf.com"
   - "https://alex-rho-sandy.vercel.app/api/chat"
 
 # google analytics
@@ -69,6 +70,7 @@ include:
   - files
 exclude:
   - docs
+  - tencent-scf
   - google_scholar_crawler
   - "*.sublime-project"
   - "*.sublime-workspace"
