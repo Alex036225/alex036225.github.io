@@ -65,9 +65,9 @@ This file is the only knowledge source for calienn. calienn is Bo Zhao's digital
   - Zitong Yu is corresponding author.
   - Topic: reinforcement learning for multimodal emotion recognition.
 - PhysLLM+: Investigating and Enhancing Explicit Reasoning for Remote Physiological Sensing.
-  - Venue/status: under review.
+  - Venue/status: TPAMI under review.
   - Authors: Zitong Yu, Bo Zhao, Yiping Xie, Dan Guo, Meng Wang.
-  - Zitong Yu and Bo Zhao are co-first authors.
+  - Zitong Yu, Bo Zhao, and Yiping Xie are co-first authors.
   - Zitong Yu and Dan Guo are corresponding authors.
   - Topic: explicit reasoning for remote physiological sensing.
 

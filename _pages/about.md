@@ -64,6 +64,18 @@ Yiping Xie<sup>*</sup>, **Bo Zhao**<sup>*</sup>, Mingtong Dai, Jian-Ping Zhou, Y
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><img src="{{ '/images/paper/PhysLLM+.png' | relative_url }}" alt="PhysLLM+" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**PhysLLM+: Investigating and Enhancing Explicit Reasoning for Remote Physiological Sensing**
+
+<div class="pub-tags"><span class="pub-tag">TPAMI</span> <span class="pub-tag pub-tag--status pub-tag--review">Under Review</span></div>
+
+Zitong YU<sup>*†</sup>, **Bo Zhao**<sup>*</sup>, Yiping Xie<sup>*</sup>, Dan Guo<sup>†</sup>, Meng Wang
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><img src="{{ '/images/paper/FLOW.png' | relative_url }}" alt="FLOW" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
