@@ -69,11 +69,16 @@
     history.push({ role: "user", content: text });
     setBusy(true);
     var pending = appendMessage("assistant", "Thinking...");
+    var controller = window.AbortController ? new AbortController() : null;
+    var timeoutId = window.setTimeout(function () {
+      if (controller) controller.abort();
+    }, 20000);
 
     fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: history.slice(-8) })
+      body: JSON.stringify({ messages: history.slice(-8) }),
+      signal: controller ? controller.signal : undefined
     })
       .then(function (response) {
         if (!response.ok) {
@@ -87,9 +92,13 @@
         history.push({ role: "assistant", content: answer });
       })
       .catch(function () {
-        pending.textContent = "I cannot reach the AI service right now. If you are running locally, start the DeepSeek proxy first.";
+        var isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+        pending.textContent = isLocal
+          ? "I cannot reach the local AI service right now. Please start the DeepSeek proxy first."
+          : "I cannot reach the AI service right now. The backend is hosted on Vercel, which may be unreachable from this network.";
       })
       .finally(function () {
+        window.clearTimeout(timeoutId);
         setBusy(false);
       });
   });
