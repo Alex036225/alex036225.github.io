@@ -67,6 +67,7 @@ This file is the only knowledge source for Ask Bo. Answer questions about Bo Zha
 ## Publications Answering Rules
 - Never describe an under-review paper as accepted.
 - Never infer acceptance, ranking, citation counts, oral status, best paper status, or impact metrics unless explicitly listed here.
+- The backend may append cached Google Scholar data. If present, use it for citation counts and Scholar-indexed publication lists, but state that the counts are cached Google Scholar counts and may lag. If absent, do not invent citation counts.
 - If asked for "main publications", prioritize PHASE-Net, PhysLLM, FLOW, AffectVerse, EmoR1, and PhysLLM+.
 - If asked for "accepted publications only", exclude under-review papers.
 - If asked for "rPPG/physiological sensing papers", mention PHASE-Net, PhysLLM, FLOW, and PhysLLM+.

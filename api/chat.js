@@ -8,6 +8,14 @@ const DEFAULT_ALLOWED_ORIGINS = [
 ];
 
 let cachedContext;
+let cachedScholarContext;
+let cachedScholarContextAt = 0;
+
+const SCHOLAR_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
+const SCHOLAR_DATA_URLS = [
+  "https://cdn.jsdelivr.net/gh/Alex036225/alex036225.github.io@google-scholar-stats/gs_data.json",
+  "https://raw.githubusercontent.com/Alex036225/alex036225.github.io/google-scholar-stats/gs_data.json"
+];
 
 function getContext() {
   if (!cachedContext) {
@@ -50,6 +58,79 @@ function sendJson(response, statusCode, payload) {
   response.status(statusCode).json(payload);
 }
 
+function formatScholarContext(data) {
+  const publications = Object.values(data.publications || {})
+    .map((publication) => ({
+      title: publication.bib?.title || publication.title,
+      venue: publication.bib?.venue || publication.bib?.journal || publication.bib?.conference,
+      year: publication.bib?.pub_year || publication.bib?.year,
+      citations: publication.num_citations
+    }))
+    .filter((publication) => publication.title)
+    .sort((a, b) => Number(b.citations || 0) - Number(a.citations || 0))
+    .slice(0, 12);
+
+  const lines = [
+    "## Cached Google Scholar Data",
+    "This section is loaded from Bo Zhao's cached Google Scholar data. Citation counts may lag behind Google Scholar.",
+    `- Scholar profile name: ${data.name || "Bo Zhao"}.`,
+    `- Total citations: ${data.citedby ?? "unavailable"}.`,
+    `- h-index: ${data.hindex ?? "unavailable"}.`,
+    `- i10-index: ${data.i10index ?? "unavailable"}.`,
+    `- Cache updated at: ${data.updated || "unavailable"}.`
+  ];
+
+  if (publications.length) {
+    lines.push("- Publications by Google Scholar citation count:");
+    publications.forEach((publication, index) => {
+      const details = [
+        publication.year,
+        publication.venue,
+        publication.citations !== undefined ? `${publication.citations} citations` : null
+      ].filter(Boolean).join(", ");
+      lines.push(`  ${index + 1}. ${publication.title}${details ? ` (${details})` : ""}`);
+    });
+  }
+
+  return lines.join("\n");
+}
+
+async function fetchWithTimeout(url, timeoutMs) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function getScholarContext() {
+  if (cachedScholarContext && Date.now() - cachedScholarContextAt < SCHOLAR_CACHE_TTL_MS) {
+    return cachedScholarContext;
+  }
+
+  for (const url of SCHOLAR_DATA_URLS) {
+    try {
+      const response = await fetchWithTimeout(url, 4000);
+      if (!response.ok) continue;
+      const data = await response.json();
+      cachedScholarContext = formatScholarContext(data);
+      cachedScholarContextAt = Date.now();
+      return cachedScholarContext;
+    } catch (error) {
+      // Try the next public cache URL.
+    }
+  }
+
+  cachedScholarContext = [
+    "## Cached Google Scholar Data",
+    "Google Scholar cached data is currently unavailable. Do not invent citation counts or Scholar-only publication details."
+  ].join("\n");
+  cachedScholarContextAt = Date.now();
+  return cachedScholarContext;
+}
+
 module.exports = async function handler(request, response) {
   const origin = resolveOrigin(request.headers.origin);
   if (!origin) {
@@ -82,6 +163,7 @@ module.exports = async function handler(request, response) {
   }
 
   try {
+    const scholarContext = await getScholarContext();
     const deepseekResponse = await fetch("https://api.deepseek.com/chat/completions", {
       method: "POST",
       headers: {
@@ -102,7 +184,9 @@ module.exports = async function handler(request, response) {
               "If the answer is not supported, say that Bo's public profile does not provide enough information.",
               "Answer in Chinese when the user writes Chinese; otherwise answer in concise professional English.",
               "",
-              getContext()
+              getContext(),
+              "",
+              scholarContext
             ].join("\n")
           },
           ...messages
