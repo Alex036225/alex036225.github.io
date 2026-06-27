@@ -128,6 +128,8 @@ def main():
             author = unavailable_profile("Google Scholar returned HTTP 403 to the crawler.")
         else:
             raise
+    except RuntimeError as error:
+        author = unavailable_profile(str(error))
     write_results(author)
 
 
