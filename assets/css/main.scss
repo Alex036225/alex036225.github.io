@@ -861,3 +861,174 @@ h1:before, .anchor:before {
 .page__content .pub-tag--oral.liquid-glass::after {
     opacity: 0.42;
 }
+
+.ask-bo {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 120;
+    font-family: $sans-serif;
+}
+
+.ask-bo__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.48rem;
+    min-height: 2.75rem;
+    padding: 0 1rem;
+    color: $primary-color;
+    font-family: $sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.ask-bo__panel {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.8rem);
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    width: min(22rem, calc(100vw - 2rem));
+    height: min(34rem, calc(100vh - 7rem));
+    padding: 1rem;
+    border-radius: 26px;
+}
+
+.ask-bo__panel[hidden] {
+    display: none;
+}
+
+.ask-bo__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(#fff, 0.42);
+}
+
+.ask-bo__header h2 {
+    margin: 0;
+    color: $text-color;
+    font-family: $sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.ask-bo__header p {
+    margin: 0.18rem 0 0;
+    color: mix(#fff, $gray, 12%);
+    font-family: $sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.ask-bo__close,
+.ask-bo__send {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    border: 0;
+    border-radius: 999px;
+    color: $primary-color;
+    background: rgba(#fff, 0.24);
+    box-shadow: inset 0 1px 2px rgba(#fff, 0.5), 0 6px 14px rgba(#0f172a, 0.1);
+    cursor: pointer;
+}
+
+.ask-bo__close {
+    width: 2rem;
+    height: 2rem;
+}
+
+.ask-bo__messages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.62rem;
+    min-height: 0;
+    padding: 0.9rem 0;
+    overflow-y: auto;
+}
+
+.ask-bo__message {
+    max-width: 88%;
+    padding: 0.62rem 0.78rem;
+    border-radius: 16px;
+    color: $text-color;
+    font-family: $sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    white-space: pre-wrap;
+}
+
+.ask-bo__message--assistant {
+    align-self: flex-start;
+    border: 1px solid rgba(#fff, 0.48);
+    background: rgba(#fff, 0.28);
+}
+
+.ask-bo__message--user {
+    align-self: flex-end;
+    color: #fff;
+    background: linear-gradient(135deg, $primary-color, mix(#000, $primary-color, 16%));
+    box-shadow: 0 8px 18px rgba($primary-color, 0.2);
+}
+
+.ask-bo__form {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(#fff, 0.42);
+}
+
+.ask-bo__input {
+    min-width: 0;
+    flex: 1;
+    height: 2.35rem;
+    padding: 0 0.82rem;
+    border: 1px solid rgba(#fff, 0.54);
+    border-radius: 999px;
+    color: $text-color;
+    background: rgba(#fff, 0.34);
+    box-shadow: inset 0 1px 2px rgba(#fff, 0.5);
+    font-family: $sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.ask-bo__input:focus {
+    border-color: rgba($primary-color, 0.6);
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.12), inset 0 1px 2px rgba(#fff, 0.5);
+}
+
+.ask-bo__send {
+    width: 2.35rem;
+    height: 2.35rem;
+}
+
+.ask-bo__send:disabled,
+.ask-bo__input:disabled {
+    cursor: wait;
+    opacity: 0.72;
+}
+
+@include breakpoint(max-width $small) {
+    .ask-bo {
+        right: 0.85rem;
+        bottom: 0.85rem;
+    }
+
+    .ask-bo__toggle {
+        min-height: 2.55rem;
+        padding: 0 0.85rem;
+    }
+
+    .ask-bo__panel {
+        width: calc(100vw - 1.7rem);
+        height: min(32rem, calc(100vh - 6rem));
+    }
+}

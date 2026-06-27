@@ -1,0 +1,10 @@
+{
+  "installCommand": "echo \"No install needed for API deployment\"",
+  "buildCommand": "echo \"API only\"",
+  "outputDirectory": ".",
+  "functions": {
+    "api/chat.js": {
+      "includeFiles": "ai/profile-context.md"
+    }
+  }
+}

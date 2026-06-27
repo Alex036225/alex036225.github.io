@@ -1,0 +1,9 @@
+_site/
+vendor/
+.bundle/
+.sass-cache/
+.git/
+Gemfile
+Gemfile.lock
+CV.pdf
+node_modules/

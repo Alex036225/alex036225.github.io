@@ -1,0 +1,31 @@
+<div class="ask-bo" data-endpoint="{{ site.ai_chat_endpoint | default: '' }}">
+  <button class="ask-bo__toggle liquid-glass" type="button" aria-expanded="false" aria-controls="ask-bo-panel">
+    <i class="fas fa-comments" aria-hidden="true"></i>
+    <span>Ask Bo</span>
+  </button>
+
+  <section class="ask-bo__panel liquid-glass" id="ask-bo-panel" aria-label="Ask Bo AI assistant" hidden>
+    <header class="ask-bo__header">
+      <div>
+        <h2>Ask Bo</h2>
+        <p>Ask about my research, publications, internship, or CV.</p>
+      </div>
+      <button class="ask-bo__close" type="button" aria-label="Close Ask Bo">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <div class="ask-bo__messages" role="log" aria-live="polite">
+      <div class="ask-bo__message ask-bo__message--assistant">
+        Hi, I can answer questions about Bo Zhao's public profile.
+      </div>
+    </div>
+
+    <form class="ask-bo__form">
+      <input class="ask-bo__input" type="text" name="message" autocomplete="off" placeholder="Ask about Bo's work..." aria-label="Ask about Bo's work">
+      <button class="ask-bo__send" type="submit" aria-label="Send">
+        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+      </button>
+    </form>
+  </section>
+</div>
