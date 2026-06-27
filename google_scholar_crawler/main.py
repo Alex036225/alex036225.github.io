@@ -5,6 +5,7 @@ from urllib.parse import parse_qs, urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
+from requests import HTTPError
 
 
 SCHOLAR_ID = os.environ["GOOGLE_SCHOLAR_ID"]
@@ -78,28 +79,56 @@ def parse_publications(soup):
     return publications
 
 
-def main():
-    soup = fetch_profile()
+def write_results(author):
+    os.makedirs("results", exist_ok=True)
+    with open("results/gs_data.json", "w", encoding="utf-8") as outfile:
+        json.dump(author, outfile, ensure_ascii=False)
+
+    message = str(author["citedby"]) if author.get("citedby") is not None else "unavailable"
+    shieldio_data = {
+        "schemaVersion": 1,
+        "label": "citations",
+        "message": message,
+    }
+    with open("results/gs_data_shieldsio.json", "w", encoding="utf-8") as outfile:
+        json.dump(shieldio_data, outfile, ensure_ascii=False)
+
+
+def unavailable_profile(reason):
+    return {
+        "name": "Bo Zhao",
+        "scholar_id": SCHOLAR_ID,
+        "scholar_available": False,
+        "unavailable_reason": reason,
+        "updated": datetime.now(timezone.utc).isoformat(),
+        "citedby": None,
+        "hindex": None,
+        "i10index": None,
+        "publications": {},
+    }
+
+
+def available_profile(soup):
     indices = parse_indices(soup)
-    author = {
+    return {
         "name": soup.select_one("#gsc_prf_in").get_text(" ", strip=True) if soup.select_one("#gsc_prf_in") else "Bo Zhao",
         "scholar_id": SCHOLAR_ID,
+        "scholar_available": True,
         "updated": datetime.now(timezone.utc).isoformat(),
         **indices,
         "publications": parse_publications(soup),
     }
 
-    os.makedirs("results", exist_ok=True)
-    with open("results/gs_data.json", "w", encoding="utf-8") as outfile:
-        json.dump(author, outfile, ensure_ascii=False)
 
-    shieldio_data = {
-        "schemaVersion": 1,
-        "label": "citations",
-        "message": f"{author['citedby']}",
-    }
-    with open("results/gs_data_shieldsio.json", "w", encoding="utf-8") as outfile:
-        json.dump(shieldio_data, outfile, ensure_ascii=False)
+def main():
+    try:
+        author = available_profile(fetch_profile())
+    except HTTPError as error:
+        if error.response is not None and error.response.status_code == 403:
+            author = unavailable_profile("Google Scholar returned HTTP 403 to the crawler.")
+        else:
+            raise
+    write_results(author)
 
 
 if __name__ == "__main__":

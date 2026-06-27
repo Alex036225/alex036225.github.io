@@ -73,6 +73,16 @@ function normalizeMessages(messages) {
 }
 
 function formatScholarContext(data) {
+  if (data.scholar_available === false) {
+    return [
+      "## Cached Google Scholar Data",
+      "Google Scholar cached data is currently unavailable.",
+      `- Reason: ${data.unavailable_reason || "unknown"}.`,
+      `- Cache updated at: ${data.updated || "unavailable"}.`,
+      "Do not invent citation counts or Scholar-only publication details."
+    ].join("\n");
+  }
+
   const publications = Object.values(data.publications || {})
     .map((publication) => ({
       title: publication.bib?.title || publication.title,
