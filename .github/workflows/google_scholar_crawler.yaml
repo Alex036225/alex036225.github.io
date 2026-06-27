@@ -23,7 +23,7 @@ jobs:
         run: |
           cd ./google_scholar_crawler
           pip3 install -r requirements.txt
-          python3 main.py
+          timeout 120s python3 main.py
         env:
           GOOGLE_SCHOLAR_ID: yi9OsEQAAAAJ
       - name: Publish citation data
