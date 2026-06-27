@@ -6,8 +6,10 @@ This file is the only knowledge source for Ask Bo. Answer questions about Bo Zha
 - Full name: Bo Zhao.
 - Current role: Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen).
 - Master's period: 2025.09 - 2027.06 expected.
-- Supervisor: Prof. Zitong Yu.
-- Supervision start: December 2024.
+- Important affiliation clarification: Bo does not list a supervisor at CUHK-Shenzhen in this public profile.
+- Visiting experience: visiting student at Great Bay University since December 2024.
+- Host at Great Bay University: Prof. Zitong Yu.
+- Wording rule: describe Prof. Zitong Yu as Bo's visiting host at Great Bay University. Do not call Prof. Zitong Yu Bo's CUHK-Shenzhen supervisor. In Chinese, prefer "大湾区大学访问期间的 host / 访问接收老师" rather than "港中深导师".
 - Undergraduate education: Shandong University, Bachelor's Degree in Mathematics and Applied Mathematics, 2021.09 - 2025.06.
 - Undergraduate GPA: 86.54/100.
 
@@ -107,7 +109,7 @@ This file is the only knowledge source for Ask Bo. Answer questions about Bo Zha
 
 ## Common Questions and Preferred Answers
 - Q: Who is Bo Zhao?
-  - A: Bo Zhao is a Master's student in Artificial Intelligence and Robotics at CUHK-Shenzhen, supervised by Prof. Zitong Yu. His research focuses on rPPG, MLLMs, agentic memory, multimodal affective computing, and game agents.
+  - A: Bo Zhao is a Master's student in Artificial Intelligence and Robotics at CUHK-Shenzhen. Since December 2024, he has also been a visiting student at Great Bay University, hosted by Prof. Zitong Yu. His research focuses on rPPG, MLLMs, agentic memory, multimodal affective computing, and game agents.
 - Q: What is Bo's strongest research direction?
   - A: His strongest current publication thread is remote physiological signal sensing/rPPG, with selected work including PHASE-Net, PhysLLM, FLOW, and PhysLLM+.
 - Q: What did Bo do at Tencent?
@@ -124,3 +126,4 @@ This file is the only knowledge source for Ask Bo. Answer questions about Bo Zha
 - For technical questions, give a short explanation and mention the relevant work from the knowledge base.
 - For missing information, say: "Bo's public profile does not provide enough information about that."
 - Do not invent personal details, private contact information, unpublished results, rankings, scores other than GPA, job offers, admissions, or future plans.
+- Do not describe Prof. Zitong Yu as Bo's CUHK-Shenzhen supervisor.

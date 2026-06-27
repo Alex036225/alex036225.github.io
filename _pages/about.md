@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Welcome to my academic homepage. I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen, supervised by Prof. [Zitong Yu](https://zitong-yu.github.io/yzt/) since December 2024. My research interests focus on remote physiological signal sensing (rPPG), MLLMs, and agentic memory.
+Welcome to my academic homepage. I am currently a Master's student in Artificial Intelligence and Robotics at The Chinese University of Hong Kong, Shenzhen. Since December 2024, I have also been a visiting student at Great Bay University, hosted by Prof. [Zitong Yu](https://zitong-yu.github.io/yzt/). My research interests focus on remote physiological signal sensing (rPPG), MLLMs, and agentic memory.
 
 <span class='anchor' id='news'></span>
 
