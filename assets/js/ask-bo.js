@@ -11,13 +11,55 @@
   var sendButton = root.querySelector(".ask-bo__send");
   var history = [];
 
-  function getEndpoint() {
-    var configured = root.getAttribute("data-endpoint");
-    if (configured) return configured;
+  function getEndpoints() {
+    var configured = root.getAttribute("data-endpoints") || root.getAttribute("data-endpoint") || "";
+    var endpoints = configured.split(",").map(function (endpoint) {
+      return endpoint.trim();
+    }).filter(Boolean);
+    if (endpoints.length) return endpoints;
     if (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") {
-      return "http://127.0.0.1:8790/api/chat";
+      return ["http://127.0.0.1:8790/api/chat"];
     }
-    return "";
+    return [];
+  }
+
+  function requestAnswer(endpoints, payload) {
+    var index = 0;
+
+    function tryNext() {
+      if (index >= endpoints.length) {
+        return Promise.reject(new Error("All AI endpoints failed."));
+      }
+
+      var endpoint = endpoints[index];
+      index += 1;
+      var controller = window.AbortController ? new AbortController() : null;
+      var timeoutId = window.setTimeout(function () {
+        if (controller) controller.abort();
+      }, 16000);
+
+      return fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        signal: controller ? controller.signal : undefined
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Request failed with status " + response.status);
+          }
+          return response.json();
+        })
+        .catch(function (error) {
+          if (index < endpoints.length) return tryNext();
+          throw error;
+        })
+        .finally(function () {
+          window.clearTimeout(timeoutId);
+        });
+    }
+
+    return tryNext();
   }
 
   function appendMessage(role, text) {
@@ -54,14 +96,14 @@
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    var endpoint = getEndpoint();
+    var endpoints = getEndpoints();
     var text = input.value.trim();
     if (!text) return;
 
     appendMessage("user", text);
     input.value = "";
 
-    if (!endpoint) {
+    if (!endpoints.length) {
       appendMessage("assistant", "The AI endpoint is not configured for this deployment yet.");
       return;
     }
@@ -69,23 +111,8 @@
     history.push({ role: "user", content: text });
     setBusy(true);
     var pending = appendMessage("assistant", "Thinking...");
-    var controller = window.AbortController ? new AbortController() : null;
-    var timeoutId = window.setTimeout(function () {
-      if (controller) controller.abort();
-    }, 20000);
 
-    fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: history.slice(-8) }),
-      signal: controller ? controller.signal : undefined
-    })
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error("Request failed with status " + response.status);
-        }
-        return response.json();
-      })
+    requestAnswer(endpoints, { messages: history.slice(-8) })
       .then(function (data) {
         var answer = data && data.answer ? String(data.answer) : "I could not generate an answer.";
         pending.textContent = answer;
@@ -95,10 +122,9 @@
         var isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
         pending.textContent = isLocal
           ? "I cannot reach the local AI service right now. Please start the DeepSeek proxy first."
-          : "I cannot reach the AI service right now. The backend is hosted on Vercel, which may be unreachable from this network.";
+          : "I cannot reach the AI service right now. The configured AI backends may be unreachable from this network.";
       })
       .finally(function () {
-        window.clearTimeout(timeoutId);
         setBusy(false);
       });
   });

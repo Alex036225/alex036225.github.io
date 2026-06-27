@@ -1,4 +1,5 @@
-<div class="ask-bo" data-endpoint="{{ site.ai_chat_endpoint | default: '' }}">
+{% assign ai_chat_endpoints = site.ai_chat_endpoints | default: site.ai_chat_endpoint %}
+<div class="ask-bo" data-endpoints="{{ ai_chat_endpoints | join: ',' }}">
   <button class="ask-bo__toggle liquid-glass" type="button" aria-expanded="false" aria-controls="ask-bo-panel">
     <i class="fas fa-comments" aria-hidden="true"></i>
     <span>Ask Bo</span>

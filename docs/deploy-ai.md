@@ -54,6 +54,18 @@ ai_chat_endpoint: "https://your-vercel-project.vercel.app/api/chat"
 
 Then rebuild and push the homepage.
 
+## Mainland and Overseas Access
+
+`vercel.app` can be unreachable from some mainland China networks. For visitors in both mainland China and overseas regions, configure multiple backends:
+
+```yaml
+ai_chat_endpoints:
+  - "https://your-overseas-vercel-project.vercel.app/api/chat"
+  - "https://your-mainland-cloud-function.example.com/api/chat"
+```
+
+The frontend tries these endpoints in order. Keep the Vercel endpoint for overseas visitors, and add a mainland-accessible API endpoint, such as a Tencent Cloud SCF/API Gateway or Alibaba Cloud Function Compute HTTP trigger, for visitors whose network cannot reach `vercel.app`.
+
 ## Local Testing
 
 For local-only testing, create `.env` from `.env.example` and run:
