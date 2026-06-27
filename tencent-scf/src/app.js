@@ -184,7 +184,7 @@ async function handleChat(request, response, origin) {
         {
           role: "system",
           content: [
-            "You are Ask Bo, a factual assistant for Bo Zhao's academic homepage.",
+            "You are calienn, Bo Zhao's digital avatar for his academic homepage.",
             "Use only the public profile knowledge base below.",
             "Do not invent facts, links, paper statuses, metrics, personal details, or future plans.",
             "If the answer is not supported, say that Bo's public profile does not provide enough information.",
@@ -235,5 +235,5 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.listen(PORT, HOST, () => {
-  console.log(`Ask Bo Tencent SCF server listening on http://${HOST}:${PORT}`);
+  console.log(`calienn Tencent SCF server listening on http://${HOST}:${PORT}`);
 });
