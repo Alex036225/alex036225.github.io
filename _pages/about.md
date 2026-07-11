@@ -23,13 +23,13 @@ Welcome to my academic homepage. I am currently a Master's student in Artificial
 
 # News
 <div class="news-list">
+  <div class="news-item"><span class="news-date">2026.07</span><span class="news-text">Two co-authored papers accepted by ACM MM 2026.</span></div>
   <div class="news-item"><span class="news-date">2026.06</span><span class="news-text">Tencent Hunyuan-supported AI celebrity teammate "Xiao Tian" was launched in Peace Elite; I contributed to the GameMate1.0 memory and game-agent work during my internship.</span></div>
   <div class="news-item"><span class="news-date">2026.05</span><span class="news-text">Two co-authored papers accepted by ICML 2026.</span></div>
   <div class="news-item"><span class="news-date">2026.04</span><span class="news-text">One CVPR 2026 paper selected as Highlight.</span></div>
   <div class="news-item"><span class="news-date">2026.02</span><span class="news-text">Two papers accepted by CVPR 2026.</span></div>
   <div class="news-item"><span class="news-date">2026.01</span><span class="news-text">One paper accepted by ICLR 2026.</span></div>
   <div class="news-item"><span class="news-date">2025.10</span><span class="news-text">Started internship at Tencent Technology (Shenzhen) Co., Ltd., Hunyuan Multimodal Model Department.</span></div>
-  <div class="news-item"><span class="news-date">2025.09</span><span class="news-text">Enrolled in The Chinese University of Hong Kong, Shenzhen for Master's degree in Artificial Intelligence and Robotics.</span></div>
 </div>
 
 <span class='anchor' id='selected-publications'></span>
