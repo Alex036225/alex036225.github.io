@@ -518,7 +518,11 @@
     </div>
   </section>
 
-  <button id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
+  <button id="backToTop" onclick="scrollToTop()" title="Back to top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5 5 12l1.6 1.6 4.3-4.3V20h2.2V9.3l4.3 4.3L19 12l-7-7Z"></path>
+    </svg>
+  </button>
   <div id="toast" class="toast-message">Copied</div>
 
   <script>

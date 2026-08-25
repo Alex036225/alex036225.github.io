@@ -711,23 +711,22 @@ span.highlight {
   z-index: 99;
   width: 44px;
   height: 44px;
-  border: none;
+  border: 1px solid rgba(244, 147, 0, 0.24);
   outline: none;
-  background: rgba(60, 60, 60, 0.75);
+  background: rgba(255, 255, 255, 0.84);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: #fff;
+  color: #f49300;
   cursor: pointer;
   border-radius: 50%;
-  font-size: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 24px rgba(97, 72, 46, 0.14);
   opacity: 0;
   visibility: hidden;
   transform: translateY(16px);
-  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s, background 0.2s;
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s, background 0.2s, color 0.2s, border-color 0.2s;
 }
 #backToTop.visible {
   opacity: 1;
@@ -735,9 +734,11 @@ span.highlight {
   transform: translateY(0);
 }
 #backToTop:hover {
-  background: rgba(40, 40, 40, 0.9);
+  background: rgba(255, 248, 235, 0.96);
+  border-color: rgba(244, 147, 0, 0.42);
+  color: #6e3519;
   transform: translateY(-3px);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 28px rgba(97, 72, 46, 0.18);
 }
 #backToTop:active {
   transform: translateY(0);
@@ -745,6 +746,7 @@ span.highlight {
 #backToTop svg {
   width: 20px;
   height: 20px;
+  fill: currentColor;
   transition: transform 0.25s ease;
 }
 #backToTop:hover svg {
