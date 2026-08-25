@@ -1,0 +1,593 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Bo Zhao | Academic Homepage</title>
+  <meta name="author" content="Bo Zhao">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/jpeg" href="images/profile/bo-zhao-portrait-new.jpg?v=20260825d">
+  <style>
+    body, * {
+      cursor: url('images/icon/cursor.png'), auto;
+    }
+    a, a * {
+      cursor: url('images/icon/cursor-pointer.png'), pointer !important;
+    }
+    .portrait {
+      width: 85%;
+      max-width: 85%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+    }
+    .venue {
+      color: #b45309;
+      font-weight: 700;
+    }
+    .status {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 1px 7px;
+      border-radius: 999px;
+      background: rgba(244, 147, 0, 0.12);
+      color: #7c3f00;
+      font-size: 12px;
+      font-weight: 700;
+      vertical-align: 1px;
+    }
+    .paper-links a {
+      margin-right: 8px;
+    }
+    .profile-note {
+      color: #555;
+      line-height: 1.65;
+    }
+    .mini-section td {
+      border-top: 1px solid rgba(0, 0, 0, 0.10);
+    }
+    .mini-meta {
+      color: #666;
+      line-height: 1.7;
+    }
+    .publication-authors {
+      color: #333;
+      line-height: 1.55;
+    }
+    papertitle,
+    a papertitle {
+      color: #f49300;
+    }
+    a:hover papertitle,
+    a:focus papertitle {
+      color: #6e3519;
+    }
+    .institution-logo {
+      max-width: 92px;
+      max-height: 70px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    .logo-mark {
+      width: 82px;
+      height: 82px;
+      border-radius: 18px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(249, 242, 232, 0.82));
+      border: 1px solid rgba(177, 121, 69, 0.22);
+      box-shadow: 0 12px 28px rgba(97, 72, 46, 0.10);
+      color: #8a4f18;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .logo-mark img {
+      max-width: 68px;
+      max-height: 58px;
+      object-fit: contain;
+    }
+    .scholar-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e88400;
+      text-decoration: none;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+    .scholar-badge:hover {
+      color: #c76f00;
+      text-decoration: none;
+    }
+    .scholar-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: -3px;
+      fill: currentColor;
+      flex: 0 0 auto;
+    }
+    .citation-pill {
+      display: inline-flex;
+      overflow: hidden;
+      border-radius: 5px;
+      color: #333;
+      font-size: 13px;
+      line-height: 20px;
+      box-shadow: inset 0 0 0 1px rgba(38, 111, 191, 0.08);
+    }
+    .citation-label {
+      background: #edf1f7;
+      padding: 0 7px;
+    }
+    .citation-number {
+      background: #bad7f0;
+      padding: 0 7px;
+      font-weight: 700;
+    }
+    .tag-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+    .tag-btn {
+      appearance: none;
+      border: 1px solid rgba(177, 121, 69, 0.24);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: #6d6257;
+      padding: 5px 11px;
+      font-size: 13px;
+      transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+    .tag-btn:hover,
+    .tag-btn.active {
+      background: rgba(255, 246, 234, 0.92);
+      border-color: rgba(177, 121, 69, 0.48);
+      color: #8a4f18;
+      transform: translateY(-1px);
+    }
+    .tag-count {
+      display: inline-block;
+      margin-left: 6px;
+      color: #9a8f82;
+      font-size: 11px;
+    }
+    .toast-message {
+      position: fixed;
+      left: var(--toast-x, 50%);
+      top: var(--toast-y, 50%);
+      z-index: 1000;
+      transform: translate(-50%, -135%);
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(40, 34, 29, 0.88);
+      color: #fff;
+      font-size: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+    .toast-message.show {
+      opacity: 1;
+      transform: translate(-50%, -160%);
+    }
+    .contact-links {
+      line-height: 1.8;
+    }
+    .contact-sep {
+      color: #111;
+      margin: 0 6px;
+    }
+    .cv-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+    .cv-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      vertical-align: -2px;
+    }
+    .news-clean-list {
+      margin-top: 12px;
+      border-top: 1px solid rgba(0, 0, 0, 0.10);
+    }
+    .news-clean-item {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      gap: 16px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      align-items: baseline;
+    }
+    .news-clean-date {
+      color: #8a8177;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .news-clean-text {
+      color: #333;
+      line-height: 1.45;
+    }
+    .news-highlight {
+      color: #a35f13;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    @media (max-width: 640px) {
+      .news-clean-item {
+        grid-template-columns: 1fr;
+        gap: 3px;
+        padding: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="section-drip-nav" aria-label="Section navigation">
+    <a href="#about"><span>About</span></a>
+    <a href="#news"><span>News</span></a>
+    <a href="#publications"><span>Publications</span></a>
+    <a href="#education"><span>Education</span></a>
+    <a href="#experience"><span>Experience</span></a>
+    <a href="#awards"><span>Awards</span></a>
+  </nav>
+
+  <table id="about" class="page-section" style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr>
+      <td style="padding:0">
+        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:2.5%;width:68%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Bo Zhao &nbsp | &nbsp 赵博<span id="bio-copy" style="cursor:pointer;margin-left:5px;" title="Copy short bio">✦</span></name>
+              </p>
+              <p class="profile-note">
+                I am currently a first-year Master's student in Artificial Intelligence and Robotics at
+                <a href="https://www.cuhk.edu.cn/en" target="_blank" rel="noopener">The Chinese University of Hong Kong, Shenzhen</a>. Since December 2024, I have also been a visiting student at
+                Great Bay University, hosted by Prof. <a href="https://zitong-yu.github.io/yzt/">Zitong Yu</a>.
+              </p>
+              <p class="profile-note">
+                My research interests focus on remote physiological signal sensing (rPPG), MLLMs,
+                generative models, and agentic memory.
+              </p>
+              <div style="width:100%;height:1px;background:linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent);margin:10px 0;"></div>
+              <p class="contact-links">
+                <span class="contact-line">
+                  <a href="mailto:225040248@link.cuhk.edu.cn" id="email-copy" class="email-link" title="Click to copy email">Email: <span class="contact-sub">225040248@link.cuhk.edu.cn</span></a><span class="contact-sep">/</span>
+                  <a class="cv-link" href="CV.pdf?v=20260818" target="_blank" rel="noopener" aria-label="CV"><svg class="cv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l5 5v15H6V2Zm7 1.8V8h4.2L13 3.8ZM8 12h8v1.8H8V12Zm0 4h8v1.8H8V16Z"></path></svg><span>CV</span></a><span class="contact-sep">/</span>
+                  <a class="scholar-badge" href="https://scholar.google.com/citations?user=yi9OsEQAAAAJ&hl=zh-CN" target="_blank" rel="noopener" aria-label="Google Scholar citations">
+                    <svg class="scholar-icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 3 1.8 8.5 12 14l8.2-4.4V15h1.5V8.5L12 3Z"></path>
+                      <path d="M5.4 12.1v4.1c0 1.2 2.9 3.1 6.6 3.1s6.6-1.9 6.6-3.1v-4.1L12 15.7l-6.6-3.6Z"></path>
+                    </svg>
+                    <span>Google Scholar</span>
+                    <span class="citation-pill"><span class="citation-label">citations</span><span class="citation-number">89</span></span>
+                  </a><span class="contact-sep">/</span>
+                  <a href="https://alex036225.github.io" target="_blank" rel="noopener">Current Homepage</a>
+                </span>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <img class="portrait" alt="Bo Zhao portrait" src="images/profile/bo-zhao-portrait-new.jpg?v=20260825d">
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table id="news" class="page-section" style="width:96%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0;width:100%;vertical-align:middle">
+              <heading>News</heading>
+              <div class="news-clean-list">
+                <div class="news-clean-item">
+                  <span class="news-clean-date">Jul. 2026</span>
+                  <span class="news-clean-text">Two co-authored papers accepted by <span class="news-highlight">ACM MM 2026</span>.</span>
+                </div>
+                <div class="news-clean-item">
+                  <span class="news-clean-date">Jun. 2026</span>
+                  <span class="news-clean-text">Tencent Hunyuan-supported AI celebrity teammate "Xiao Tian" was launched in Peace Elite; I contributed to the GameMate1.0 memory and game-agent work during my internship.</span>
+                </div>
+                <div class="news-clean-item">
+                  <span class="news-clean-date">May. 2026</span>
+                  <span class="news-clean-text">Two co-authored papers accepted by <span class="news-highlight">ICML 2026</span>.</span>
+                </div>
+                <div class="news-clean-item">
+                  <span class="news-clean-date">Apr. 2026</span>
+                  <span class="news-clean-text">One <span class="news-highlight">CVPR 2026 Highlight</span> paper.</span>
+                </div>
+                <div class="news-clean-item">
+                  <span class="news-clean-date">Feb. 2026</span>
+                  <span class="news-clean-text">Two papers accepted by <span class="news-highlight">CVPR 2026</span>.</span>
+                </div>
+                <div class="news-clean-item">
+                  <span class="news-clean-date">Jan. 2026</span>
+                  <span class="news-clean-text">One paper accepted by <span class="news-highlight">ICLR 2026</span>.</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table id="publications" class="publications-table page-section" style="width:100%;border:0;border-spacing:0 16px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <heading>Selected Publications</heading>
+          <br>
+          <p>* Equal contribution. † Corresponding author. The leading papers are <span style="background-color:#FFFEE0;">highlighted</span>.</p>
+
+          <div class="tag-filter" id="tagFilter">
+            <button class="tag-btn active" data-tag="all">All</button>
+            <button class="tag-btn" data-tag="rppg">rPPG</button>
+            <button class="tag-btn" data-tag="mllm">MLLM</button>
+            <button class="tag-btn" data-tag="affect">Affective Computing</button>
+            <button class="tag-btn" data-tag="agent">Agents</button>
+          </div>
+
+          <tr style="background-color:lightyellow;" data-tags="rppg">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one"><img src="images/paper/PHASE-NET.png" width="190" alt="PHASE-Net"></div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <a href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener"><papertitle>PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement</papertitle></a>
+              <br>
+              <div class="publication-authors"><strong>Bo Zhao</strong>, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU†</div>
+              <span class="venue">CVPR 2026</span><span class="status">Highlight</span>
+              <p>Physics-grounded harmonic attention for efficient remote photoplethysmography measurement.</p>
+            </td>
+          </tr>
+
+          <tr style="background-color:lightyellow;" data-tags="rppg,mllm">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one"><img src="images/paper/PhysLLM.png" width="190" alt="PhysLLM"></div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener"><papertitle>PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</papertitle></a>
+              <br>
+              <div class="publication-authors">Yiping Xie*, <strong>Bo Zhao*</strong>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU†</div>
+              <span class="venue">ICLR 2026</span>
+              <p>Large-language-model-based cross-modal reasoning for remote physiological sensing.</p>
+            </td>
+          </tr>
+
+          <tr style="background-color:lightyellow;" data-tags="rppg,mllm">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one"><img src="images/paper/PhysLLM+.png" width="190" alt="PhysLLM+"></div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <papertitle>PhysLLM+: Investigating and Enhancing Explicit Reasoning for Remote Physiological Sensing</papertitle>
+              <br>
+              <div class="publication-authors">Zitong YU*†, <strong>Bo Zhao*</strong>, Yiping Xie*, Dan Guo†, Meng Wang</div>
+              <span class="venue">TPAMI</span><span class="status">Under Review</span>
+              <p>Explicit reasoning for robust remote physiological signal sensing.</p>
+            </td>
+          </tr>
+
+          <tr style="background-color:lightyellow;" data-tags="rppg">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one"><img src="images/paper/FLOW.png" width="190" alt="FLOW"></div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_FLOW_Optimal_Transport-Driven_Feature_Warping_for_Generalized_Remote_Physiological_Measurement_CVPR_2026_paper.pdf" target="_blank" rel="noopener"><papertitle>FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement</papertitle></a>
+              <br>
+              <div class="publication-authors"><strong>Bo Zhao</strong>, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU†</div>
+              <span class="venue">CVPR 2026</span>
+              <p>Feature-level optimal warping for generalized remote physiological measurement.</p>
+            </td>
+          </tr>
+
+          <tr style="background-color:lightyellow;" data-tags="affect,mllm">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one"><img src="images/paper/AffectVerse.png" width="190" alt="AffectVerse"></div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <a href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener"><papertitle>AffectVerse: Emotional World Models for Multimodal Affective Computing</papertitle></a>
+              <br>
+              <div class="publication-authors"><strong>Bo Zhao*</strong>, Fanghua Ye*, Yixin Ji, Sicheng Zhao, Xiaojiang Peng, Zitong YU†</div>
+              <span class="venue">NeurIPS 2026</span><span class="status">Under Review</span>
+              <p>Emotional world models for multimodal affective computing.</p>
+            </td>
+          </tr>
+
+          <tr data-tags="agent,mllm">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one"><img src="images/paper/Think Fast and Slow.png" width="190" alt="Think Fast and Slow"></div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener"><papertitle>Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents</papertitle></a>
+              <br>
+              <div class="publication-authors">Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, <strong>Bo Zhao</strong>, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus</div>
+              <span class="venue">ICML 2026</span>
+              <p>Adaptive cognitive-depth control for more efficient LLM agent reasoning.</p>
+            </td>
+          </tr>
+
+          <tr data-tags="mllm">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one"><img src="images/paper/PCA.png" width="190" alt="PCA"></div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <a href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener"><papertitle>PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models</papertitle></a>
+              <br>
+              <div class="publication-authors">Zihan Song, Shuo Ye, <strong>Bo Zhao</strong>, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zitong YU†</div>
+              <span class="venue">ACM MM 2026</span>
+              <p>Persistence-aware compression and aggregation for fast video large language models.</p>
+            </td>
+          </tr>
+
+          <tr data-tags="affect,agent,mllm">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="one"><img src="images/paper/AffectAgent.png" width="190" alt="AffectAgent"></div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2604.12735" target="_blank" rel="noopener"><papertitle>AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition</papertitle></a>
+              <br>
+              <div class="publication-authors">Zeheng Wang, Zitong YU†, Yijie Zhu, <strong>Bo Zhao</strong>, Haochen Liang, Taorui Wang, Wei Xia, Jiayu Zhang, Zhishu Liu, Hui Ma, Fei Ma, Qi Tian</div>
+              <span class="venue">ACM MM 2026</span>
+              <p>Collaborative multi-agent reasoning for retrieval-augmented multimodal emotion recognition.</p>
+            </td>
+          </tr>
+        </table>
+
+        <table id="education" class="page-section mini-section" width="100%" align="center" border="0" cellpadding="10"><tbody>
+          <tr><td colspan="2"><heading>Education</heading></td></tr>
+          <tr>
+            <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle">
+              <div class="logo-mark"><img src="images/experience/cuhksz.png" alt="The Chinese University of Hong Kong, Shenzhen"></div>
+            </td>
+            <td width="90%" valign="center" class="mini-meta">
+              <strong>The Chinese University of Hong Kong, Shenzhen</strong>
+              <br> Sep. 2025 - Jun. 2027 (expected)
+              <br> M.S. in Artificial Intelligence and Robotics
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle">
+              <div class="logo-mark"><img src="images/experience/shandong.png" alt="Shandong University"></div>
+            </td>
+            <td width="90%" valign="center" class="mini-meta">
+              <strong>Shandong University</strong>
+              <br> Sep. 2021 - Jun. 2025
+              <br> B.S. in Mathematics and Applied Mathematics | GPA: 86.54/100
+            </td>
+          </tr>
+        </tbody></table>
+
+
+        <table id="experience" class="page-section mini-section" width="100%" align="center" border="0" cellpadding="10"><tbody>
+          <tr><td colspan="2"><heading>Experience</heading></td></tr>
+          <tr>
+            <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle">
+              <div class="logo-mark"><img src="images/experience/gbu.png" alt="Great Bay University"></div>
+            </td>
+            <td width="90%" valign="center" class="mini-meta">
+              <strong>Great Bay University</strong>
+              <br> Dec. 2024 - Present
+              <br> Visiting Student | Host: Prof. <a href="https://zitong-yu.github.io/yzt/" target="_blank" rel="noopener">Zitong Yu</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle">
+              <div class="logo-mark"><img src="images/experience/tencent.avif" alt="Tencent"></div>
+            </td>
+            <td width="90%" valign="center" class="mini-meta">
+              <strong>Tencent Technology (Shenzhen) Co., Ltd.</strong>
+              <br> Oct. 2025 - Mar. 2026
+              <br> Intern, Hunyuan Multimodal Model Department | Mentor: <a href="https://scholar.google.com/citations?hl=zh-CN&user=-dxasEcAAAAJ" target="_blank" rel="noopener">Fanghua Ye</a>
+              <br> GameMate1.0 memory data construction, multimodal game-agent research, and proactive AI teammate behavior for Peace Elite's "Xiao Tian".
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table id="awards" class="page-section" style="width:90%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0;width:100%;vertical-align:middle">
+              <heading>Awards and Honors</heading>
+              <p><li>2022-2024: Academic Scholarship, Shandong University</li></p>
+              <p><li>Invited Talk: Paper Preview Seminar, Guangdong Society of Image and Graphics</li></p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+
+  <section class="mountain-footer" aria-label="Footer landscape">
+    <div class="mountain-stage">
+      <picture>
+        <source type="image/webp" srcset="images/experience/background-960.webp 960w, images/experience/background-1440.webp 1440w, images/experience/background-1920.webp 1920w" sizes="100vw">
+        <img class="mountain-img" src="images/experience/background.jpeg" alt="Mountain landscape" loading="lazy" decoding="async" fetchpriority="low">
+      </picture>
+      <div class="mountain-content">
+        <h2>Bo Zhao</h2>
+        <p class="mountain-sub">Remote physiological sensing, MLLMs, generative models, and agentic memory.</p>
+        <a href="mailto:225040248@link.cuhk.edu.cn" class="mountain-cta">
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
+  <div id="toast" class="toast-message">Copied</div>
+
+  <script>
+    function copyText(text, event) {
+      const toast = document.getElementById('toast');
+      navigator.clipboard.writeText(text).then(function() {
+        if (event) {
+          toast.style.setProperty('--toast-x', event.clientX + 'px');
+          toast.style.setProperty('--toast-y', event.clientY + 'px');
+        }
+        toast.classList.add('show');
+        setTimeout(function() { toast.classList.remove('show'); }, 1600);
+      });
+    }
+
+    document.getElementById('bio-copy').addEventListener('click', function(e) {
+      copyText("Bo Zhao is a first-year Master's student in Artificial Intelligence and Robotics at CUHK-Shenzhen and a visiting student at Great Bay University, hosted by Prof. Zitong Yu. His research focuses on rPPG, MLLMs, generative models, and agentic memory.", e);
+    });
+
+    document.getElementById('email-copy').addEventListener('click', function(e) {
+      e.preventDefault();
+      copyText('225040248@link.cuhk.edu.cn', e);
+    });
+
+    document.getElementById('tagFilter').addEventListener('click', function(e) {
+      const btn = e.target.closest('.tag-btn');
+      if (!btn) return;
+      document.querySelectorAll('.tag-btn').forEach(function(button) { button.classList.remove('active'); });
+      btn.classList.add('active');
+      const tag = btn.dataset.tag;
+      document.querySelectorAll('tr[data-tags]').forEach(function(row) {
+        row.style.display = tag === 'all' || row.dataset.tags.split(',').includes(tag) ? '' : 'none';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const rows = document.querySelectorAll('tr[data-tags]');
+      document.querySelectorAll('.tag-btn').forEach(function(btn) {
+        const tag = btn.dataset.tag;
+        const count = tag === 'all' ? rows.length : Array.from(rows).filter(function(row) {
+          return row.dataset.tags.split(',').includes(tag);
+        }).length;
+        btn.insertAdjacentHTML('beforeend', '<span class="tag-count">' + count + '</span>');
+      });
+    });
+
+    (function() {
+      var btn = document.getElementById('backToTop');
+      var sectionNav = document.querySelector('.section-drip-nav');
+      var footer = document.querySelector('.mountain-footer');
+
+      function updateSectionNav() {
+        if (!sectionNav || !footer) return;
+        var footerTop = footer.getBoundingClientRect().top;
+        var navBottom = sectionNav.getBoundingClientRect().bottom;
+        sectionNav.classList.toggle('is-footer-visible', footerTop < navBottom + 28);
+      }
+
+      window.addEventListener('scroll', function() {
+        btn.classList.toggle('visible', window.scrollY > 300);
+        updateSectionNav();
+      });
+      window.addEventListener('resize', updateSectionNav);
+      updateSectionNav();
+    })();
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
