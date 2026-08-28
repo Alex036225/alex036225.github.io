@@ -791,8 +791,8 @@ body.modal-open {
 }
 
 .cv-modal-panel {
-  width: min(920px, 94vw);
-  height: min(92vh, 1060px);
+  width: min(1120px, 96vw);
+  height: min(94vh, 1120px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
