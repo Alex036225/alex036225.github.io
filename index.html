@@ -1,630 +1,654 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Bo Zhao | Academic Homepage</title>
-  <meta name="author" content="Bo Zhao">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>Bo Zhao · Academic Homepage</title>
+  <meta name="description" content="Bo Zhao — M.S. student in Artificial Intelligence and Robotics at CUHK-Shenzhen, working on remote physiological sensing (rPPG), MLLMs, generative models, and agentic memory.">
+  <meta name="author" content="Bo Zhao">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bo Zhao · Academic Homepage">
+  <meta property="og:description" content="M.S. student at CUHK-Shenzhen working on remote physiological sensing (rPPG), MLLMs, generative models, and agentic memory.">
   <link rel="icon" type="image/jpeg" href="images/profile/bo-zhao-portrait-new.jpg?v=20260825d">
-  <style>
-    body, * {
-      cursor: url('images/icon/cursor.png'), auto;
-    }
-    a, a * {
-      cursor: url('images/icon/cursor-pointer.png'), pointer !important;
-    }
-    .portrait {
-      width: 85%;
-      max-width: 85%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
-    }
-    .venue {
-      color: #1D6FBF;
-      font-weight: 700;
-    }
-    .status {
-      display: inline-block;
-      margin-left: 6px;
-      padding: 1px 7px;
-      border-radius: 999px;
-      background: rgba(51, 156, 255, 0.12);
-      color: #0B5CAD;
-      font-size: 12px;
-      font-weight: 700;
-      vertical-align: 1px;
-    }
-    .paper-links a {
-      margin-right: 8px;
-    }
-    .profile-note {
-      color: #555;
-      line-height: 1.65;
-    }
-    .mini-section td {
-      border-top: 1px solid rgba(0, 0, 0, 0.10);
-    }
-    .mini-meta {
-      color: #666;
-      line-height: 1.7;
-    }
-    .publication-authors {
-      color: #333;
-      line-height: 1.55;
-    }
-    papertitle,
-    a papertitle {
-      color: #339CFF;
-    }
-    a:hover papertitle,
-    a:focus papertitle {
-      color: #0B5CAD;
-    }
-    .institution-logo {
-      max-width: 92px;
-      max-height: 70px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-    .logo-mark {
-      width: 82px;
-      height: 82px;
-      border-radius: 18px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(236, 247, 255, 0.82));
-      border: 1px solid rgba(51, 156, 255, 0.22);
-      box-shadow: 0 12px 28px rgba(31, 111, 191, 0.10);
-      color: #1D6FBF;
-      font-weight: 700;
-      letter-spacing: 0;
-    }
-    .logo-mark img {
-      max-width: 68px;
-      max-height: 58px;
-      object-fit: contain;
-    }
-    .scholar-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #339CFF;
-      text-decoration: none;
-      white-space: nowrap;
-      vertical-align: middle;
-    }
-    .scholar-badge:hover {
-      color: #0B5CAD;
-      text-decoration: none;
-    }
-    .scholar-icon {
-      width: 18px;
-      height: 18px;
-      display: inline-block;
-      vertical-align: -3px;
-      fill: currentColor;
-      flex: 0 0 auto;
-    }
-    .citation-pill {
-      display: inline-flex;
-      overflow: hidden;
-      border-radius: 5px;
-      color: #333;
-      font-size: 13px;
-      line-height: 20px;
-      box-shadow: inset 0 0 0 1px rgba(38, 111, 191, 0.08);
-    }
-    .citation-label {
-      background: #edf1f7;
-      padding: 0 7px;
-    }
-    .citation-number {
-      background: #bad7f0;
-      padding: 0 7px;
-      font-weight: 700;
-    }
-    .tag-filter {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0 14px;
-    }
-    .tag-btn {
-      appearance: none;
-      border: 1px solid rgba(51, 156, 255, 0.24);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
-      color: #6d6257;
-      padding: 5px 11px;
-      font-size: 13px;
-      transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
-    }
-    .tag-btn:hover,
-    .tag-btn.active {
-      background: rgba(236, 247, 255, 0.92);
-      border-color: rgba(51, 156, 255, 0.48);
-      color: #1D6FBF;
-      transform: translateY(-1px);
-    }
-    .tag-count {
-      display: inline-block;
-      margin-left: 6px;
-      color: #9a8f82;
-      font-size: 11px;
-    }
-    .toast-message {
-      position: fixed;
-      left: var(--toast-x, 50%);
-      top: var(--toast-y, 50%);
-      z-index: 1000;
-      transform: translate(-50%, -135%);
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(40, 34, 29, 0.88);
-      color: #fff;
-      font-size: 12px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 160ms ease, transform 160ms ease;
-    }
-    .toast-message.show {
-      opacity: 1;
-      transform: translate(-50%, -160%);
-    }
-    .contact-links {
-      line-height: 1.8;
-    }
-    .contact-sep {
-      color: #111;
-      margin: 0 6px;
-    }
-    .cv-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      white-space: nowrap;
-      vertical-align: middle;
-    }
-    .cv-icon {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
-      vertical-align: -2px;
-    }
-    .news-clean-list {
-      margin-top: 12px;
-      border-top: 1px solid rgba(0, 0, 0, 0.10);
-    }
-    .news-clean-item {
-      display: grid;
-      grid-template-columns: 86px minmax(0, 1fr);
-      gap: 16px;
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-      align-items: baseline;
-    }
-    .news-clean-date {
-      color: #8a8177;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0;
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-    }
-    .news-clean-text {
-      color: #333;
-      line-height: 1.45;
-    }
-    .news-highlight {
-      color: #1D6FBF;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    @media (max-width: 640px) {
-      .news-clean-item {
-        grid-template-columns: 1fr;
-        gap: 3px;
-        padding: 10px 0;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-  <nav class="section-drip-nav" aria-label="Section navigation">
-    <a href="#about"><span>About</span></a>
-    <a href="#news"><span>News</span></a>
-    <a href="#publications"><span>Publications</span></a>
-    <a href="#education"><span>Education</span></a>
-    <a href="#experience"><span>Experience</span></a>
-    <a href="#awards"><span>Awards</span></a>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="top-anchor" id="top" aria-hidden="true"></div>
 
-  <table id="about" class="page-section" style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr>
-      <td style="padding:0">
-        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:2.5%;width:68%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Bo Zhao &nbsp | &nbsp 赵博</name>
-              </p>
-              <p class="profile-note">
-                I am currently a first-year Master's student in Artificial Intelligence and Robotics at
-                <a href="https://www.cuhk.edu.cn/en" target="_blank" rel="noopener">The Chinese University of Hong Kong, Shenzhen</a>. Since December 2024, I have also been a visiting student at
-                <a href="https://www.gbu.edu.cn/" target="_blank" rel="noopener">Great Bay University</a>, hosted by Prof. <a href="https://zitong-yu.github.io/yzt/">Zitong Yu</a>.
-              </p>
-              <p class="profile-note">
-                My research interests focus on remote physiological signal sensing (rPPG), MLLMs,
-                generative models, and agentic memory.
-              </p>
-              <div style="width:100%;height:1px;background:linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent);margin:10px 0;"></div>
-              <p class="contact-links">
-                <span class="contact-line">
-                  <a href="mailto:225040248@link.cuhk.edu.cn" id="email-copy" class="email-link" title="Click to copy email">Email: <span class="contact-sub">225040248@link.cuhk.edu.cn</span></a><span class="contact-sep">/</span>
-                  <a class="cv-link" href="CV.pdf?v=20260930d" id="cv-open" aria-label="View CV"><svg class="cv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l5 5v15H6V2Zm7 1.8V8h4.2L13 3.8ZM8 12h8v1.8H8V12Zm0 4h8v1.8H8V16Z"></path></svg><span>CV</span></a><span class="contact-sep">/</span>
-                  <a class="scholar-badge" href="https://scholar.google.com/citations?user=yi9OsEQAAAAJ&hl=zh-CN" target="_blank" rel="noopener" aria-label="Google Scholar citations">
-                    <svg class="scholar-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 3 1.8 8.5 12 14l8.2-4.4V15h1.5V8.5L12 3Z"></path>
-                      <path d="M5.4 12.1v4.1c0 1.2 2.9 3.1 6.6 3.1s6.6-1.9 6.6-3.1v-4.1L12 15.7l-6.6-3.6Z"></path>
-                    </svg>
-                    <span>Google Scholar</span>
-                    <span class="citation-pill"><span class="citation-label">citations</span><span class="citation-number">107</span></span>
-                  </a>
-                </span>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img class="portrait" alt="Bo Zhao portrait" src="images/profile/bo-zhao-portrait-new.jpg?v=20260825d">
-            </td>
-          </tr>
-        </tbody></table>
+  <header class="site-header">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="Bo Zhao — back to top">
+        <span class="brand-mark" aria-hidden="true">BZ</span>
+        <span class="brand-text">Bo Zhao</span>
+      </a>
 
-        <table id="news" class="page-section" style="width:96%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0;width:100%;vertical-align:middle">
-              <heading>News</heading>
-              <div class="news-clean-list">
-                <div class="news-clean-item">
-                  <span class="news-clean-date">Jul. 2026</span>
-                  <span class="news-clean-text">Two co-authored papers accepted by <span class="news-highlight">ACM MM 2026</span>.</span>
-                </div>
-                <div class="news-clean-item">
-                  <span class="news-clean-date">Jun. 2026</span>
-                  <span class="news-clean-text">Tencent Hunyuan-supported AI celebrity teammate "Xiao Tian" was launched in Peace Elite; I contributed to the GameMate1.0 memory and game-agent work during my internship.</span>
-                </div>
-                <div class="news-clean-item">
-                  <span class="news-clean-date">May. 2026</span>
-                  <span class="news-clean-text">Two co-authored papers accepted by <span class="news-highlight">ICML 2026</span>.</span>
-                </div>
-                <div class="news-clean-item">
-                  <span class="news-clean-date">Apr. 2026</span>
-                  <span class="news-clean-text">One <span class="news-highlight">CVPR 2026 Highlight</span> paper.</span>
-                </div>
-                <div class="news-clean-item">
-                  <span class="news-clean-date">Feb. 2026</span>
-                  <span class="news-clean-text">Two papers accepted by <span class="news-highlight">CVPR 2026</span>.</span>
-                </div>
-                <div class="news-clean-item">
-                  <span class="news-clean-date">Jan. 2026</span>
-                  <span class="news-clean-text">One paper accepted by <span class="news-highlight">ICLR 2026</span>.</span>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody></table>
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#awards">Awards</a>
+      </nav>
 
-        <table id="publications" class="publications-table page-section" style="width:100%;border:0;border-spacing:0 16px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <heading>Selected Publications</heading>
-          <br>
-          <p>More publications are available on my <a href="https://scholar.google.com/citations?user=yi9OsEQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a>.</p>
-          <p>* Equal contribution. † Corresponding author. The leading papers are <span class="leading-mark">highlighted</span>.</p>
-
-          <div class="tag-filter" id="tagFilter">
-            <button class="tag-btn active" data-tag="all">All</button>
-            <button class="tag-btn" data-tag="rppg">rPPG</button>
-            <button class="tag-btn" data-tag="mllm">MLLM</button>
-            <button class="tag-btn" data-tag="affect">Affective Computing</button>
-            <button class="tag-btn" data-tag="agent">Agents</button>
-          </div>
-
-          <tr class="leading-paper" data-tags="rppg">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one"><img src="images/paper/PHASE-NET.png" width="190" alt="PHASE-Net"></div>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener"><papertitle>PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement</papertitle></a>
-              <br>
-              <div class="publication-authors"><strong>Bo Zhao</strong>, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU†</div>
-              <span class="venue">CVPR 2026</span><span class="status">Highlight</span>
-              <p>Physics-grounded harmonic attention for efficient remote photoplethysmography measurement.</p>
-            </td>
-          </tr>
-
-          <tr class="leading-paper" data-tags="rppg,mllm">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one"><img src="images/paper/PhysLLM.png" width="190" alt="PhysLLM"></div>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener"><papertitle>PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</papertitle></a>
-              <br>
-              <div class="publication-authors">Yiping Xie*, <strong>Bo Zhao*</strong>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU†</div>
-              <span class="venue">ICLR 2026</span>
-              <p>Large-language-model-based cross-modal reasoning for remote physiological sensing.</p>
-            </td>
-          </tr>
-
-          <tr class="leading-paper" data-tags="rppg,mllm">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one"><img src="images/paper/PhysLLM+.png" width="190" alt="PhysLLM+"></div>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <papertitle>PhysLLM+: Investigating and Enhancing Explicit Reasoning for Remote Physiological Sensing</papertitle>
-              <br>
-              <div class="publication-authors">Zitong YU*†, <strong>Bo Zhao*</strong>, Yiping Xie*, Dan Guo†, Meng Wang</div>
-              <span class="venue">TPAMI</span><span class="status">Major Revision</span>
-              <p>Explicit reasoning for robust remote physiological signal sensing.</p>
-            </td>
-          </tr>
-
-          <tr class="leading-paper" data-tags="rppg">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one"><img src="images/paper/FLOW.png" width="190" alt="FLOW"></div>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_FLOW_Optimal_Transport-Driven_Feature_Warping_for_Generalized_Remote_Physiological_Measurement_CVPR_2026_paper.pdf" target="_blank" rel="noopener"><papertitle>FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement</papertitle></a>
-              <br>
-              <div class="publication-authors"><strong>Bo Zhao</strong>, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU†</div>
-              <span class="venue">CVPR 2026</span>
-              <p>Feature-level optimal warping for generalized remote physiological measurement.</p>
-            </td>
-          </tr>
-
-          <tr class="leading-paper" data-tags="affect,mllm">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one"><img src="images/paper/AffectVerse.png" width="190" alt="AffectVerse"></div>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener"><papertitle>AffectVerse: Emotional World Models for Multimodal Affective Computing</papertitle></a>
-              <br>
-              <div class="publication-authors"><strong>Bo Zhao*</strong>, Fanghua Ye*, Yixin Ji, Sicheng Zhao, Xiaojiang Peng, Zitong YU†</div>
-              <span class="venue">NeurIPS 2026</span><span class="status">Under Review</span>
-              <p>Emotional world models for multimodal affective computing.</p>
-            </td>
-          </tr>
-
-          <tr data-tags="agent,mllm">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one"><img src="images/paper/Think Fast and Slow.png" width="190" alt="Think Fast and Slow"></div>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener"><papertitle>Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents</papertitle></a>
-              <br>
-              <div class="publication-authors">Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, <strong>Bo Zhao</strong>, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus</div>
-              <span class="venue">ICML 2026</span>
-              <p>Adaptive cognitive-depth control for more efficient LLM agent reasoning.</p>
-            </td>
-          </tr>
-
-          <tr data-tags="mllm">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one"><img src="images/paper/PCA.png" width="190" alt="PCA"></div>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener"><papertitle>PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models</papertitle></a>
-              <br>
-              <div class="publication-authors">Zihan Song, Shuo Ye, <strong>Bo Zhao</strong>, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zitong YU†</div>
-              <span class="venue">ACM MM 2026</span>
-              <p>Persistence-aware compression and aggregation for fast video large language models.</p>
-            </td>
-          </tr>
-
-          <tr data-tags="affect,agent,mllm">
-            <td style="padding:20px;width:30%;vertical-align:middle">
-              <div class="one"><img src="images/paper/AffectAgent.png" width="190" alt="AffectAgent"></div>
-            </td>
-            <td style="padding:20px;width:70%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2604.12735" target="_blank" rel="noopener"><papertitle>AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition</papertitle></a>
-              <br>
-              <div class="publication-authors">Zeheng Wang, Zitong YU†, Yijie Zhu, <strong>Bo Zhao</strong>, Haochen Liang, Taorui Wang, Wei Xia, Jiayu Zhang, Zhishu Liu, Hui Ma, Fei Ma, Qi Tian</div>
-              <span class="venue">ACM MM 2026</span>
-              <p>Collaborative multi-agent reasoning for retrieval-augmented multimodal emotion recognition.</p>
-            </td>
-          </tr>
-        </table>
-
-        <table id="education" class="page-section mini-section" width="100%" align="center" border="0" cellpadding="10"><tbody>
-          <tr><td colspan="2"><heading>Education</heading></td></tr>
-          <tr>
-            <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle">
-              <div class="logo-mark"><img src="images/experience/cuhksz.png" alt="The Chinese University of Hong Kong, Shenzhen"></div>
-            </td>
-            <td width="90%" valign="center" class="mini-meta">
-              <strong>The Chinese University of Hong Kong, Shenzhen</strong>
-              <br> Sep. 2025 - Jun. 2027 (expected)
-              <br> M.S. in Artificial Intelligence and Robotics
-            </td>
-          </tr>
-          <tr>
-            <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle">
-              <div class="logo-mark"><img src="images/experience/shandong.png" alt="Shandong University"></div>
-            </td>
-            <td width="90%" valign="center" class="mini-meta">
-              <strong>Shandong University</strong>
-              <br> Sep. 2021 - Jun. 2025
-              <br> B.S. in Mathematics and Applied Mathematics | GPA: 86.54/100
-            </td>
-          </tr>
-        </tbody></table>
-
-
-        <table id="experience" class="page-section mini-section" width="100%" align="center" border="0" cellpadding="10"><tbody>
-          <tr><td colspan="2"><heading>Experience</heading></td></tr>
-          <tr>
-            <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle">
-              <div class="logo-mark"><img src="images/experience/gbu.png" alt="Great Bay University"></div>
-            </td>
-            <td width="90%" valign="center" class="mini-meta">
-              <strong>Great Bay University</strong>
-              <br> Dec. 2024 - Present
-              <br> Visiting Student | Host: Prof. <a href="https://zitong-yu.github.io/yzt/" target="_blank" rel="noopener">Zitong Yu</a>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding-left:20px;padding-right:20px;width:20%;vertical-align:middle">
-              <div class="logo-mark"><img src="images/experience/tencent.avif" alt="Tencent"></div>
-            </td>
-            <td width="90%" valign="center" class="mini-meta">
-              <strong>Tencent Technology (Shenzhen) Co., Ltd.</strong>
-              <br> Oct. 2025 - Mar. 2026
-              <br> Intern, Hunyuan Multimodal Model Department | Mentor: <a href="https://scholar.google.com/citations?hl=zh-CN&user=-dxasEcAAAAJ" target="_blank" rel="noopener">Fanghua Ye</a>
-              <br> GameMate1.0 memory data construction, multimodal game-agent research, and proactive AI teammate behavior for Peace Elite's "Xiao Tian".
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table id="awards" class="page-section" style="width:90%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0;width:100%;vertical-align:middle">
-              <heading>Awards and Honors</heading>
-              <p><li>2022-2024: Academic Scholarship, Shandong University</li></p>
-              <p><li>Invited Talk: Paper Preview Seminar, Guangdong Society of Image and Graphics</li></p>
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </tbody></table>
-
-  <section class="mountain-footer" aria-label="Footer landscape">
-    <div class="mountain-stage">
-      <picture>
-        <source type="image/webp" srcset="images/experience/background-960.webp 960w, images/experience/background-1440.webp 1440w, images/experience/background-1920.webp 1920w" sizes="100vw">
-        <img class="mountain-img" src="images/experience/background.jpeg" alt="Mountain landscape" loading="lazy" decoding="async" fetchpriority="low">
-      </picture>
-      <div class="mountain-content">
-        <h2>Go Further</h2>
-        <p class="mountain-sub">The next question is always waiting.</p>
-        <a href="mailto:225040248@link.cuhk.edu.cn" class="mountain-cta">
-          <span>Contact</span>
-        </a>
+      <div class="nav-actions">
+        <button class="nav-cv js-cv-open" type="button">CV</button>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <button id="backToTop" onclick="scrollToTop()" title="Back to top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 5 5 12l1.6 1.6 4.3-4.3V20h2.2V9.3l4.3 4.3L19 12l-7-7Z"></path>
-    </svg>
-  </button>
-  <div id="cv-modal" class="cv-modal" aria-hidden="true">
-    <div class="cv-modal-panel" role="dialog" aria-modal="true" aria-label="Bo Zhao CV">
-      <div class="cv-modal-header">
-        <span>CV</span>
-        <button id="cv-close" class="cv-modal-close" type="button" aria-label="Close CV">×</button>
+  <main id="main">
+    <section class="hero shell" id="about">
+      <div class="hero-copy">
+        <h1 class="hero-title">Bo Zhao</h1>
+        <p class="hero-lead">
+          I am a first-year Master's student in Artificial Intelligence and Robotics at
+          <a href="https://www.cuhk.edu.cn/en" target="_blank" rel="noopener">The Chinese University of Hong Kong, Shenzhen</a>.
+          Since December 2024, I have also been a visiting student at
+          <a href="https://www.gbu.edu.cn/" target="_blank" rel="noopener">Great Bay University</a>,
+          hosted by Prof. <a href="https://zitong-yu.github.io/yzt/" target="_blank" rel="noopener">Zitong Yu</a>.
+        </p>
+
+        <p class="focus-label">Research interests</p>
+        <ul class="focus-list">
+          <li>rPPG</li>
+          <li>MLLMs</li>
+          <li>Generative Models</li>
+          <li>Agentic Memory</li>
+        </ul>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary js-email" type="button" title="Copy email address">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            <span>Copy email</span>
+          </button>
+          <button class="btn btn-secondary js-cv-open" type="button">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h4"/></svg>
+            <span>View CV</span>
+          </button>
+          <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=yi9OsEQAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">
+            <svg class="icon icon-scholar" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1.8 8.5 12 14l8.2-4.4V15h1.5V8.5L12 3Z"/><path d="M5.4 12.1v4.1c0 1.2 2.9 3.1 6.6 3.1s6.6-1.9 6.6-3.1v-4.1L12 15.7l-6.6-3.6Z"/></svg>
+            <span>Google Scholar</span>
+            <span class="citation-badge">117</span>
+          </a>
+        </div>
       </div>
-      <iframe class="cv-frame" src="CV.pdf?v=20260930d#toolbar=1&navpanes=0&zoom=125" title="Bo Zhao CV"></iframe>
+
+      <figure class="hero-figure">
+        <div class="portrait-frame">
+          <img src="images/profile/bo-zhao-portrait-new.jpg?v=20260825d" alt="Bo Zhao standing on a snow-covered glacier" width="783" height="1200" fetchpriority="high">
+        </div>
+      </figure>
+    </section>
+
+    <section class="section shell" id="news">
+      <header class="section-head">
+        <div>
+          <p class="section-kicker">01 — News</p>
+          <h2>Latest updates</h2>
+        </div>
+        <p class="section-note">Recent milestones</p>
+      </header>
+
+      <ol class="news-list">
+        <li class="news-item">
+          <time class="news-date" datetime="2026-07">Jul 2026</time>
+          <p class="news-text">Two co-authored papers accepted by <span class="venue">ACM MM 2026</span></p>
+        </li>
+        <li class="news-item">
+          <time class="news-date" datetime="2026-06">Jun 2026</time>
+          <p class="news-text">Tencent Hunyuan-supported AI celebrity teammate “Xiao Tian” was launched in Peace Elite; I contributed to the GameMate1.0 memory and game-agent work during my internship.</p>
+        </li>
+        <li class="news-item">
+          <time class="news-date" datetime="2026-05">May 2026</time>
+          <p class="news-text">Two co-authored papers accepted by <span class="venue">ICML 2026</span></p>
+        </li>
+        <li class="news-item">
+          <time class="news-date" datetime="2026-04">Apr 2026</time>
+          <p class="news-text">One <span class="venue">CVPR 2026 Highlight</span> paper.</p>
+        </li>
+        <li class="news-item">
+          <time class="news-date" datetime="2026-02">Feb 2026</time>
+          <p class="news-text">Two papers accepted by <span class="venue">CVPR 2026</span></p>
+        </li>
+        <li class="news-item">
+          <time class="news-date" datetime="2026-01">Jan 2026</time>
+          <p class="news-text">One paper accepted by <span class="venue">ICLR 2026</span></p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section shell" id="publications">
+      <header class="section-head">
+        <div>
+          <p class="section-kicker">02 — Research</p>
+          <h2>Selected publications</h2>
+        </div>
+        <p class="section-note" id="pub-note">8 selected papers</p>
+      </header>
+
+      <p class="section-lead">More publications are available on my <a href="https://scholar.google.com/citations?user=yi9OsEQAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      <p class="pub-legend"><span aria-hidden="true">*</span> Equal contribution. <span aria-hidden="true">†</span> Corresponding author. Leading papers are highlighted.</p>
+
+      <div class="filters" id="tag-filter" role="group" aria-label="Filter publications by research area">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="rppg" aria-pressed="false">rPPG</button>
+        <button class="filter" type="button" data-filter="mllm" aria-pressed="false">MLLMs</button>
+        <button class="filter" type="button" data-filter="affect" aria-pressed="false">Affective computing</button>
+        <button class="filter" type="button" data-filter="agent" aria-pressed="false">Agents</button>
+      </div>
+      <p class="sr-only" id="filter-status" aria-live="polite"></p>
+
+      <div class="pub-list" id="pub-list">
+        <article class="pub is-featured" data-tags="rppg">
+          <div class="pub-media">
+            <img src="images/paper/PHASE-NET.png" alt="PHASE-Net paper overview" width="1166" height="452">
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta">
+              <span class="badge badge-venue">CVPR 2026</span>
+              <span class="badge badge-status badge-status--award">Highlight</span>
+              <span class="badge-featured">Leading</span>
+            </div>
+            <h3 class="pub-title">
+              <a href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener">PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement</a>
+            </h3>
+            <p class="pub-authors"><strong>Bo Zhao</strong>, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU†</p>
+            <p class="pub-summary">Physics-grounded harmonic attention for efficient remote photoplethysmography measurement.</p>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub is-featured" data-tags="rppg,mllm">
+          <div class="pub-media">
+            <img src="images/paper/PhysLLM.png" alt="PhysLLM paper overview" width="1694" height="1004">
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta">
+              <span class="badge badge-venue">ICLR 2026</span>
+              <span class="badge-featured">Leading</span>
+            </div>
+            <h3 class="pub-title">
+              <a href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</a>
+            </h3>
+            <p class="pub-authors">Yiping Xie*, <strong>Bo Zhao*</strong>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU†</p>
+            <p class="pub-summary">Large-language-model-based cross-modal reasoning for remote physiological sensing.</p>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub is-featured" data-tags="rppg,mllm">
+          <div class="pub-media">
+            <img src="images/paper/PhysLLM+.png" alt="PhysLLM+ paper overview" width="1914" height="1102">
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta">
+              <span class="badge badge-venue">TPAMI</span>
+              <span class="badge badge-status">Major Revision</span>
+              <span class="badge-featured">Leading</span>
+            </div>
+            <h3 class="pub-title">PhysLLM+: Investigating and Enhancing Explicit Reasoning for Remote Physiological Sensing</h3>
+            <p class="pub-authors">Zitong YU*†, <strong>Bo Zhao*</strong>, Yiping Xie*, Dan Guo†, Meng Wang</p>
+            <p class="pub-summary">Explicit reasoning for robust remote physiological signal sensing.</p>
+          </div>
+        </article>
+
+        <article class="pub is-featured" data-tags="rppg">
+          <div class="pub-media">
+            <img src="images/paper/FLOW.png" alt="FLOW paper overview" width="1358" height="580">
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta">
+              <span class="badge badge-venue">CVPR 2026</span>
+              <span class="badge-featured">Leading</span>
+            </div>
+            <h3 class="pub-title">
+              <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_FLOW_Optimal_Transport-Driven_Feature_Warping_for_Generalized_Remote_Physiological_Measurement_CVPR_2026_paper.pdf" target="_blank" rel="noopener">FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement</a>
+            </h3>
+            <p class="pub-authors"><strong>Bo Zhao</strong>, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU†</p>
+            <p class="pub-summary">Feature-level optimal warping for generalized remote physiological measurement.</p>
+            <div class="pub-links">
+              <a class="pub-link" href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_FLOW_Optimal_Transport-Driven_Feature_Warping_for_Generalized_Remote_Physiological_Measurement_CVPR_2026_paper.pdf" target="_blank" rel="noopener">PDF <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub is-featured" data-tags="affect,mllm">
+          <div class="pub-media">
+            <img src="images/paper/AffectVerse.png" alt="AffectVerse paper overview" width="1400" height="657">
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta">
+              <span class="badge badge-venue">NeurIPS 2026</span>
+              <span class="badge badge-status">Under Review</span>
+              <span class="badge-featured">Leading</span>
+            </div>
+            <h3 class="pub-title">
+              <a href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">AffectVerse: Emotional World Models for Multimodal Affective Computing</a>
+            </h3>
+            <p class="pub-authors"><strong>Bo Zhao*</strong>, Fanghua Ye*, Yixin Ji, Sicheng Zhao, Xiaojiang Peng, Zitong YU†</p>
+            <p class="pub-summary">Emotional world models for multimodal affective computing.</p>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub" data-tags="agent,mllm">
+          <div class="pub-media">
+            <img src="images/paper/Think Fast and Slow.png" alt="Think Fast and Slow paper overview" width="1230" height="576">
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta">
+              <span class="badge badge-venue">ICML 2026</span>
+            </div>
+            <h3 class="pub-title">
+              <a href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener">Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents</a>
+            </h3>
+            <p class="pub-authors">Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, <strong>Bo Zhao</strong>, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus</p>
+            <p class="pub-summary">Adaptive cognitive-depth control for more efficient LLM agent reasoning.</p>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub" data-tags="mllm">
+          <div class="pub-media">
+            <img src="images/paper/PCA.png" alt="PCA paper overview" width="1374" height="552">
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta">
+              <span class="badge badge-venue">ACM MM 2026</span>
+            </div>
+            <h3 class="pub-title">
+              <a href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models</a>
+            </h3>
+            <p class="pub-authors">Zihan Song, Shuo Ye, <strong>Bo Zhao</strong>, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zitong YU†</p>
+            <p class="pub-summary">Persistence-aware compression and aggregation for fast video large language models.</p>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub" data-tags="affect,agent,mllm">
+          <div class="pub-media">
+            <img src="images/paper/AffectAgent.png" alt="AffectAgent paper overview" width="2056" height="924">
+          </div>
+          <div class="pub-body">
+            <div class="pub-meta">
+              <span class="badge badge-venue">ACM MM 2026</span>
+            </div>
+            <h3 class="pub-title">
+              <a href="https://arxiv.org/abs/2604.12735" target="_blank" rel="noopener">AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition</a>
+            </h3>
+            <p class="pub-authors">Zeheng Wang, Zitong YU†, Yijie Zhu, <strong>Bo Zhao</strong>, Haochen Liang, Taorui Wang, Wei Xia, Jiayu Zhang, Zhishu Liu, Hui Ma, Fei Ma, Qi Tian</p>
+            <p class="pub-summary">Collaborative multi-agent reasoning for retrieval-augmented multimodal emotion recognition.</p>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2604.12735" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="education">
+      <header class="section-head">
+        <div>
+          <p class="section-kicker">03 — Academic</p>
+          <h2>Education</h2>
+        </div>
+        <p class="section-note">2021 – 2027</p>
+      </header>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <div class="logo-tile">
+            <img src="images/experience/cuhksz.png" alt="The Chinese University of Hong Kong, Shenzhen logo" width="1907" height="1532">
+          </div>
+          <div class="info-body">
+            <h3 class="info-title">The Chinese University of Hong Kong, Shenzhen</h3>
+            <p class="info-meta">M.S. in Artificial Intelligence and Robotics</p>
+            <p class="info-date">Sep 2025 – Jun 2027 (expected)</p>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="logo-tile">
+            <img src="images/experience/shandong.png" alt="Shandong University logo" width="1970" height="2004">
+          </div>
+          <div class="info-body">
+            <h3 class="info-title">Shandong University</h3>
+            <p class="info-meta">B.S. in Mathematics and Applied Mathematics <span class="meta-chip">GPA: 86.54/100</span></p>
+            <p class="info-date">Sep 2021 – Jun 2025</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="experience">
+      <header class="section-head">
+        <div>
+          <p class="section-kicker">04 — Experience</p>
+          <h2>Research &amp; industry</h2>
+        </div>
+        <p class="section-note">2024 – present</p>
+      </header>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <div class="logo-tile">
+            <img src="images/experience/gbu.png" alt="Great Bay University logo" width="644" height="589">
+          </div>
+          <div class="info-body">
+            <h3 class="info-title">Great Bay University</h3>
+            <p class="info-meta">Visiting Student · Host: Prof. <a href="https://zitong-yu.github.io/yzt/" target="_blank" rel="noopener">Zitong Yu</a></p>
+            <p class="info-date">Dec 2024 – Present</p>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="logo-tile">
+            <img src="images/experience/tencent.avif" alt="Tencent logo" width="1915" height="889">
+          </div>
+          <div class="info-body">
+            <h3 class="info-title">Tencent Technology (Shenzhen) Co., Ltd.</h3>
+            <p class="info-meta">Intern, Hunyuan Multimodal Model Department · Mentor: <a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=-dxasEcAAAAJ" target="_blank" rel="noopener">Fanghua Ye</a></p>
+            <p class="info-date">Oct 2025 – Mar 2026</p>
+            <p class="info-desc">GameMate1.0 memory data construction, multimodal game-agent research, and proactive AI teammate behavior for Peace Elite’s “Xiao Tian”.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="awards">
+      <header class="section-head">
+        <div>
+          <p class="section-kicker">05 — Recognition</p>
+          <h2>Awards &amp; honors</h2>
+        </div>
+        <p class="section-note">Selected honors</p>
+      </header>
+
+      <ul class="award-list">
+        <li>
+          <span class="award-date">2022–2024</span>
+          <span class="award-text">Academic Scholarship, Shandong University</span>
+        </li>
+        <li>
+          <span class="award-date">Invited talk</span>
+          <span class="award-text">Paper Preview Seminar, Guangdong Society of Image and Graphics</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="shell footer-grid">
+        <div class="footer-lead">
+          <p class="footer-kicker">Contact</p>
+          <a class="footer-email" href="mailto:225040248@link.cuhk.edu.cn">
+            <span>225040248@link.cuhk.edu.cn</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <p class="footer-sub">The next question is always waiting.</p>
+        </div>
+        <div class="footer-contact">
+          <p class="footer-label">Links</p>
+          <div class="footer-links">
+            <button class="footer-link js-cv-open" type="button">
+              Curriculum vitae
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </button>
+            <a class="footer-link" href="https://scholar.google.com/citations?user=yi9OsEQAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">
+              Google Scholar
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="shell footer-bottom-inner">
+        <p>© <span id="year">2026</span> Bo Zhao. All rights reserved.</p>
+        <p class="footer-bottom-right">
+          <a href="#top">Back to top ↑</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <div class="cv-modal" id="cv-modal" aria-hidden="true">
+    <div class="cv-dialog" role="dialog" aria-modal="true" aria-labelledby="cv-title">
+      <div class="cv-head">
+        <h2 id="cv-title">Curriculum vitae</h2>
+        <div class="cv-head-actions">
+          <a class="cv-download" href="CV.pdf?v=20260930d" download>Download PDF</a>
+          <button class="cv-close" id="cv-close" type="button" aria-label="Close CV">×</button>
+        </div>
+      </div>
+      <iframe class="cv-frame" src="CV.pdf?v=20260930d#view=FitH&amp;navpanes=0&amp;toolbar=1" title="Bo Zhao curriculum vitae"></iframe>
     </div>
   </div>
-  <div id="toast" class="toast-message">Copied</div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Email copied to clipboard</div>
 
   <script>
-    function copyText(text, event) {
+    (function () {
+      const email = '225040248@link.cuhk.edu.cn';
       const toast = document.getElementById('toast');
-      navigator.clipboard.writeText(text).then(function() {
-        if (event) {
-          toast.style.setProperty('--toast-x', event.clientX + 'px');
-          toast.style.setProperty('--toast-y', event.clientY + 'px');
-        }
-        toast.classList.add('show');
-        setTimeout(function() { toast.classList.remove('show'); }, 1600);
-      });
-    }
+      let toastTimer;
 
-    document.getElementById('email-copy').addEventListener('click', function(e) {
-      e.preventDefault();
-      copyText('225040248@link.cuhk.edu.cn', e);
-    });
-
-    const cvModal = document.getElementById('cv-modal');
-    const cvOpen = document.getElementById('cv-open');
-    const cvClose = document.getElementById('cv-close');
-
-    function openCvModal(event) {
-      event.preventDefault();
-      cvModal.classList.add('visible');
-      cvModal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('modal-open');
-      cvClose.focus();
-    }
-
-    function closeCvModal() {
-      cvModal.classList.remove('visible');
-      cvModal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
-      cvOpen.focus();
-    }
-
-    cvOpen.addEventListener('click', openCvModal);
-    cvClose.addEventListener('click', closeCvModal);
-    cvModal.addEventListener('click', function(e) {
-      if (e.target === cvModal) closeCvModal();
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && cvModal.classList.contains('visible')) closeCvModal();
-    });
-
-    document.getElementById('tagFilter').addEventListener('click', function(e) {
-      const btn = e.target.closest('.tag-btn');
-      if (!btn) return;
-      document.querySelectorAll('.tag-btn').forEach(function(button) { button.classList.remove('active'); });
-      btn.classList.add('active');
-      const tag = btn.dataset.tag;
-      document.querySelectorAll('tr[data-tags]').forEach(function(row) {
-        row.style.display = tag === 'all' || row.dataset.tags.split(',').includes(tag) ? '' : 'none';
-      });
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const rows = document.querySelectorAll('tr[data-tags]');
-      document.querySelectorAll('.tag-btn').forEach(function(btn) {
-        const tag = btn.dataset.tag;
-        const count = tag === 'all' ? rows.length : Array.from(rows).filter(function(row) {
-          return row.dataset.tags.split(',').includes(tag);
-        }).length;
-        btn.insertAdjacentHTML('beforeend', '<span class="tag-count">' + count + '</span>');
-      });
-    });
-
-    (function() {
-      var btn = document.getElementById('backToTop');
-      var sectionNav = document.querySelector('.section-drip-nav');
-      var footer = document.querySelector('.mountain-footer');
-
-      function updateSectionNav() {
-        if (!sectionNav || !footer) return;
-        var footerTop = footer.getBoundingClientRect().top;
-        var navBottom = sectionNav.getBoundingClientRect().bottom;
-        sectionNav.classList.toggle('is-footer-visible', footerTop < navBottom + 28);
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove('is-visible'); }, 1900);
       }
 
-      window.addEventListener('scroll', function() {
-        btn.classList.toggle('visible', window.scrollY > 300);
-        updateSectionNav();
-      });
-      window.addEventListener('resize', updateSectionNav);
-      updateSectionNav();
-    })();
+      function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text);
+        }
+        return new Promise(function (resolve, reject) {
+          const area = document.createElement('textarea');
+          area.value = text;
+          area.setAttribute('readonly', '');
+          area.style.position = 'fixed';
+          area.style.opacity = '0';
+          document.body.appendChild(area);
+          area.select();
+          try { document.execCommand('copy') ? resolve() : reject(); }
+          catch (error) { reject(error); }
+          finally { document.body.removeChild(area); }
+        });
+      }
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+      document.querySelectorAll('.js-email').forEach(function (button) {
+        button.addEventListener('click', function () {
+          copyText(email).then(function () {
+            showToast('Email copied to clipboard');
+          }).catch(function () {
+            showToast(email);
+          });
+        });
+      });
+
+      /* CV modal */
+      const cvModal = document.getElementById('cv-modal');
+      const cvClose = document.getElementById('cv-close');
+      let lastFocused = null;
+
+      function openCv(event) {
+        lastFocused = event.currentTarget;
+        cvModal.classList.add('is-open');
+        cvModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        setTimeout(function () {
+          if (cvModal.classList.contains('is-open')) cvClose.focus();
+        }, 80);
+      }
+
+      function closeCv() {
+        cvModal.classList.remove('is-open');
+        cvModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lastFocused) lastFocused.focus();
+      }
+
+      document.querySelectorAll('.js-cv-open').forEach(function (button) {
+        button.addEventListener('click', openCv);
+      });
+      const cvFrame = cvModal.querySelector('.cv-frame');
+
+      cvFrame.addEventListener('load', function () {
+        if (cvModal.classList.contains('is-open')) cvClose.focus();
+      });
+
+      cvClose.addEventListener('click', closeCv);
+      cvModal.addEventListener('click', function (event) {
+        if (event.target === cvModal) closeCv();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && cvModal.classList.contains('is-open')) closeCv();
+      });
+
+      /* Publication filters */
+      const filterGroup = document.getElementById('tag-filter');
+      const publications = Array.from(document.querySelectorAll('#pub-list .pub'));
+      const filterStatus = document.getElementById('filter-status');
+      const pubNote = document.getElementById('pub-note');
+
+      function updateCounts() {
+        filterGroup.querySelectorAll('.filter').forEach(function (button) {
+          const key = button.dataset.filter;
+          const count = key === 'all' ? publications.length : publications.filter(function (pub) {
+            return pub.dataset.tags.split(',').includes(key);
+          }).length;
+          const badge = document.createElement('span');
+          badge.className = 'filter-count';
+          badge.textContent = count;
+          button.appendChild(badge);
+        });
+      }
+
+      function applyFilter(key) {
+        let visible = 0;
+        publications.forEach(function (pub) {
+          const match = key === 'all' || pub.dataset.tags.split(',').includes(key);
+          pub.hidden = !match;
+          if (match) visible += 1;
+        });
+        filterStatus.textContent = 'Showing ' + visible + ' publication' + (visible === 1 ? '' : 's') + '.';
+        pubNote.textContent = key === 'all'
+          ? publications.length + ' selected papers'
+          : visible + ' of ' + publications.length + ' papers';
+      }
+
+      updateCounts();
+      filterGroup.addEventListener('click', function (event) {
+        const button = event.target.closest('.filter');
+        if (!button) return;
+        filterGroup.querySelectorAll('.filter').forEach(function (item) {
+          item.setAttribute('aria-pressed', String(item === button));
+        });
+        applyFilter(button.dataset.filter);
+      });
+
+      /* Mobile navigation */
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      function setMenu(open) {
+        navLinks.classList.toggle('is-open', open);
+        navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+
+      navToggle.addEventListener('click', function () {
+        setMenu(!navLinks.classList.contains('is-open'));
+      });
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () { setMenu(false); });
+      });
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 880) setMenu(false);
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && navLinks.classList.contains('is-open')) {
+          setMenu(false);
+          navToggle.focus();
+        }
+      });
+
+      /* Header state, back to top, active section */
+      const header = document.querySelector('.site-header');
+      const backToTop = document.getElementById('back-to-top');
+      const sectionLinks = Array.from(navLinks.querySelectorAll('a'));
+      const sections = sectionLinks.map(function (link) {
+        return document.querySelector(link.getAttribute('href'));
+      }).filter(Boolean);
+
+      function updateActiveSection() {
+        const marker = header.offsetHeight + 36;
+        let current = null;
+        sections.forEach(function (section) {
+          if (section.getBoundingClientRect().top <= marker) current = section;
+        });
+        sectionLinks.forEach(function (link) {
+          const active = !!current && link.getAttribute('href') === '#' + current.id;
+          link.classList.toggle('is-active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }
+
+      function onScroll() {
+        header.classList.toggle('is-scrolled', window.scrollY > 8);
+        backToTop.classList.toggle('is-visible', window.scrollY > 420);
+        updateActiveSection();
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      function scrollToTop() {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      }
+
+      backToTop.addEventListener('click', scrollToTop);
+
+      /* #top anchors must work even after the URL already carries the hash,
+         and the sticky header must not act as the anchor target. */
+      document.querySelectorAll('a[href="#top"]').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          scrollToTop();
+        });
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
