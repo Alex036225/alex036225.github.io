@@ -879,169 +879,16 @@ button { font: inherit; }
    ========================================================================== */
 .site-footer {
   margin-top: 0;
-  color: #fff;
-  background:
-    radial-gradient(900px 520px at 8% -20%, rgba(30, 79, 216, 0.26), transparent 64%),
-    radial-gradient(760px 420px at 96% 118%, rgba(92, 120, 255, 0.10), transparent 70%),
-    #080a10;
-}
-.footer-main { padding: 64px 0 48px; }
-.footer-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: clamp(40px, 7vw, 96px);
-}
-.footer-kicker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 18px;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-.footer-kicker::before {
-  content: "";
-  width: 24px;
-  height: 1px;
-  background: #6f8cff;
-}
-.footer-sub {
-  max-width: 34ch;
-  margin: 16px 0 0;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 15.5px;
-  line-height: 1.55;
-}
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 48px;
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-}
-.footer-label {
-  margin: 0 0 12px;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-.footer-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-size: clamp(1.15rem, 2.6vw, 2.2rem);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-decoration-color: rgba(255, 255, 255, 0.28);
-  text-underline-offset: 7px;
-  overflow-wrap: anywhere;
-}
-.footer-email:hover {
-  color: #b9c8ff;
-  text-decoration-color: #b9c8ff;
-}
-.footer-email .icon {
-  width: 18px;
-  height: 18px;
-  flex: none;
-}
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
-}
-.footer-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: rgba(255, 255, 255, 0.68);
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.4;
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.18s ease;
-}
-.footer-link:hover { color: #fff; }
-.footer-link .icon { width: 12px; height: 12px; }
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg);
+  color: var(--muted);
+  border-top: 1px solid var(--line);
 }
 .footer-bottom-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-  padding: 20px 0;
-  color: rgba(255, 255, 255, 0.55);
+  padding: 22px 0;
+  color: var(--muted);
   font-size: 12px;
 }
 .footer-bottom-inner p { margin: 0; }
-.footer-bottom-inner a { color: rgba(255, 255, 255, 0.6); }
-.footer-bottom-inner a:hover { color: #fff; }
-
-/* ==========================================================================
-   Back to top
-   ========================================================================== */
-.back-to-top {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 110;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--ink);
-  box-shadow: 0 12px 30px -14px rgba(16, 24, 40, 0.4);
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s,
-              background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-.back-to-top.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.back-to-top:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-  transform: translateY(-2px);
-}
-.back-to-top svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
 
 /* ==========================================================================
    CV modal
@@ -1174,16 +1021,6 @@ body.modal-open { overflow: hidden; }
    ========================================================================== */
 @media (max-width: 1024px) {
   .pub { grid-template-columns: 200px minmax(0, 1fr); gap: 22px; }
-  .footer-grid {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    gap: 40px;
-  }
-  .footer-contact {
-    padding: 28px 0 0;
-    border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
 }
 
 @media (max-width: 900px) {
@@ -1280,19 +1117,6 @@ body.modal-open { overflow: hidden; }
   }
   .award-date { flex: none; }
 
-  .footer-main { padding: 72px 0 48px; }
-  .footer-grid {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    gap: 40px;
-  }
-  .footer-contact {
-    padding: 28px 0 0;
-    border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-  .footer-bottom-inner { flex-direction: column; align-items: flex-start; }
-
   .cv-modal { padding: 10px; }
   .cv-dialog { height: 92vh; border-radius: 14px; }
 }
@@ -1308,13 +1132,6 @@ body.modal-open { overflow: hidden; }
   .pub-title { font-size: 15.5px; }
   .pub-authors { font-size: 12px; }
   .toast { bottom: 24px; white-space: nowrap; }
-  .back-to-top { right: 16px; bottom: 16px; }
-}
-
-/* The fixed button overlaps the content column below this width;
-   the header brand and the footer link both return to the top. */
-@media (max-width: 1279px) {
-  .back-to-top { display: none; }
 }
 
 /* ==========================================================================

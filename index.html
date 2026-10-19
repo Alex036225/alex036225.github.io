@@ -398,44 +398,10 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-main">
-      <div class="shell footer-grid">
-        <div class="footer-lead">
-          <p class="footer-kicker">Contact</p>
-          <a class="footer-email" href="mailto:225040248@link.cuhk.edu.cn">
-            <span>225040248@link.cuhk.edu.cn</span>
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
-          <p class="footer-sub">The next question is always waiting.</p>
-        </div>
-        <div class="footer-contact">
-          <p class="footer-label">Links</p>
-          <div class="footer-links">
-            <button class="footer-link js-cv-open" type="button">
-              Curriculum vitae
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-            </button>
-            <a class="footer-link" href="https://scholar.google.com/citations?user=yi9OsEQAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">
-              Google Scholar
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="shell footer-bottom-inner">
-        <p>© <span id="year">2026</span> Bo Zhao. All rights reserved.</p>
-        <p class="footer-bottom-right">
-          <a href="#top">Back to top ↑</a>
-        </p>
-      </div>
+    <div class="shell footer-bottom-inner">
+      <p>© <span id="year">2026</span> Bo Zhao. All rights reserved.</p>
     </div>
   </footer>
-
-  <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
 
   <div class="cv-modal" id="cv-modal" aria-hidden="true">
     <div class="cv-dialog" role="dialog" aria-modal="true" aria-labelledby="cv-title">
@@ -600,9 +566,8 @@
         }
       });
 
-      /* Header state, back to top, active section */
+      /* Header state and active section */
       const header = document.querySelector('.site-header');
-      const backToTop = document.getElementById('back-to-top');
       const sectionLinks = Array.from(navLinks.querySelectorAll('a'));
       const sections = sectionLinks.map(function (link) {
         return document.querySelector(link.getAttribute('href'));
@@ -624,7 +589,6 @@
 
       function onScroll() {
         header.classList.toggle('is-scrolled', window.scrollY > 8);
-        backToTop.classList.toggle('is-visible', window.scrollY > 420);
         updateActiveSection();
       }
 
@@ -635,8 +599,6 @@
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
       }
-
-      backToTop.addEventListener('click', scrollToTop);
 
       /* #top anchors must work even after the URL already carries the hash,
          and the sticky header must not act as the anchor target. */
