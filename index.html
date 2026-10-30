@@ -7,10 +7,19 @@
   <meta name="description" content="Bo Zhao — M.S. student in Artificial Intelligence and Robotics at CUHK-Shenzhen, working on remote physiological sensing (rPPG), MLLMs, generative models, and agentic memory.">
   <meta name="author" content="Bo Zhao">
   <meta name="theme-color" content="#f8f7f3">
+  <link rel="canonical" href="https://alex036225.github.io/">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alex036225.github.io/">
   <meta property="og:title" content="Bo Zhao · Academic Homepage">
   <meta property="og:description" content="M.S. student at CUHK-Shenzhen working on remote physiological sensing (rPPG), MLLMs, generative models, and agentic memory.">
-  <link rel="icon" type="image/jpeg" href="images/profile/bo-zhao-portrait-new.jpg?v=20260825d">
+  <meta property="og:image" content="https://alex036225.github.io/images/profile/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bo Zhao · Academic Homepage">
+  <meta name="twitter:description" content="M.S. student at CUHK-Shenzhen working on remote physiological sensing (rPPG), MLLMs, generative models, and agentic memory.">
+  <meta name="twitter:image" content="https://alex036225.github.io/images/profile/og-cover.jpg">
+  <link rel="icon" type="image/png" sizes="128x128" href="images/icon/favicon-128.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -81,11 +90,16 @@
             <span class="citation-badge">117</span>
           </a>
         </div>
+
+        <p class="hero-contact">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          <a href="mailto:225040248@link.cuhk.edu.cn">225040248@link.cuhk.edu.cn</a>
+        </p>
       </div>
 
       <figure class="hero-figure">
         <div class="portrait-frame">
-          <img src="images/profile/bo-zhao-portrait-new.jpg?v=20260825d" alt="Bo Zhao standing on a snow-covered glacier" width="783" height="1200" fetchpriority="high">
+          <img src="images/profile/bo-zhao-portrait-new.webp" alt="Bo Zhao standing on a snow-covered glacier" width="640" height="981" fetchpriority="high" decoding="async">
         </div>
       </figure>
     </section>
@@ -149,76 +163,64 @@
       <p class="sr-only" id="filter-status" aria-live="polite"></p>
 
       <div class="pub-list" id="pub-list">
-        <article class="pub is-featured" data-tags="rppg">
-          <div class="pub-media">
-            <img src="images/paper/PHASE-NET.png" alt="PHASE-Net paper overview" width="1166" height="452">
-          </div>
+        <article class="pub is-featured" id="pub-phase-net" data-tags="rppg">
+          <button class="pub-media" type="button" aria-label="Enlarge figure — PHASE-Net">
+            <img src="images/paper/PHASE-NET.webp" alt="PHASE-Net paper overview" width="1166" height="452" loading="lazy" decoding="async">
+          </button>
           <div class="pub-body">
             <div class="pub-meta">
-              <span class="badge badge-venue">CVPR 2026</span>
-              <span class="badge badge-status badge-status--award">Highlight</span>
-              <span class="badge-featured">Leading</span>
+              <span class="badge badge-venue">CVPR 2026</span> <span class="badge badge-status badge-status--award">Highlight</span>
             </div>
-            <h3 class="pub-title">
-              <a href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener">PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement</a>
-            </h3>
-            <p class="pub-authors"><strong>Bo Zhao</strong>, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU†</p>
+            <h3 class="pub-title"><a href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener">PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement</a></h3>
+            <p class="pub-authors"><strong>Bo Zhao</strong>, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou, Tao Tan, Yue Sun, Zitong YU<sup>†</sup></p>
             <p class="pub-summary">Physics-grounded harmonic attention for efficient remote photoplethysmography measurement.</p>
             <div class="pub-links">
-              <a class="pub-link" href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="pub-link" href="https://arxiv.org/pdf/2509.24850" target="_blank" rel="noopener">PDF <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
         </article>
 
-        <article class="pub is-featured" data-tags="rppg,mllm">
-          <div class="pub-media">
-            <img src="images/paper/PhysLLM.png" alt="PhysLLM paper overview" width="1694" height="1004">
-          </div>
+        <article class="pub is-featured" id="pub-physllm" data-tags="rppg,mllm">
+          <button class="pub-media" type="button" aria-label="Enlarge figure — PhysLLM">
+            <img src="images/paper/PhysLLM.webp" alt="PhysLLM paper overview" width="1200" height="711" loading="lazy" decoding="async">
+          </button>
           <div class="pub-body">
             <div class="pub-meta">
               <span class="badge badge-venue">ICLR 2026</span>
-              <span class="badge-featured">Leading</span>
             </div>
-            <h3 class="pub-title">
-              <a href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</a>
-            </h3>
-            <p class="pub-authors">Yiping Xie*, <strong>Bo Zhao*</strong>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU†</p>
+            <h3 class="pub-title"><a href="https://arxiv.org/pdf/2505.03621" target="_blank" rel="noopener">PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing</a></h3>
+            <p class="pub-authors">Yiping Xie<sup>*</sup>, <strong>Bo Zhao<sup>*</sup></strong>, Mingtong Dai, Jian-Ping Zhou, Yue Sun, Tao Tan, Weicheng Xie, Linlin Shen, Zitong YU<sup>†</sup></p>
             <p class="pub-summary">Large-language-model-based cross-modal reasoning for remote physiological sensing.</p>
             <div class="pub-links">
-              <a class="pub-link" href="https://arxiv.org/abs/2505.03621" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="pub-link" href="https://arxiv.org/pdf/2505.03621" target="_blank" rel="noopener">PDF <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
         </article>
 
-        <article class="pub is-featured" data-tags="rppg,mllm">
-          <div class="pub-media">
-            <img src="images/paper/PhysLLM+.png" alt="PhysLLM+ paper overview" width="1914" height="1102">
-          </div>
+        <article class="pub is-featured" id="pub-physllm-plus" data-tags="rppg,mllm">
+          <button class="pub-media" type="button" aria-label="Enlarge figure — PhysLLM+">
+            <img src="images/paper/PhysLLM+.webp" alt="PhysLLM+ paper overview" width="1200" height="691" loading="lazy" decoding="async">
+          </button>
           <div class="pub-body">
             <div class="pub-meta">
-              <span class="badge badge-venue">TPAMI</span>
-              <span class="badge badge-status">Major Revision</span>
-              <span class="badge-featured">Leading</span>
+              <span class="badge badge-venue">TPAMI</span> <span class="badge badge-status">Major Revision</span>
             </div>
             <h3 class="pub-title">PhysLLM+: Investigating and Enhancing Explicit Reasoning for Remote Physiological Sensing</h3>
-            <p class="pub-authors">Zitong YU*†, <strong>Bo Zhao*</strong>, Yiping Xie*, Dan Guo†, Meng Wang</p>
+            <p class="pub-authors">Zitong YU<sup>*†</sup>, <strong>Bo Zhao<sup>*</sup></strong>, Yiping Xie<sup>*</sup>, Dan Guo<sup>†</sup>, Meng Wang</p>
             <p class="pub-summary">Explicit reasoning for robust remote physiological signal sensing.</p>
           </div>
         </article>
 
-        <article class="pub is-featured" data-tags="rppg">
-          <div class="pub-media">
-            <img src="images/paper/FLOW.png" alt="FLOW paper overview" width="1358" height="580">
-          </div>
+        <article class="pub is-featured" id="pub-flow" data-tags="rppg">
+          <button class="pub-media" type="button" aria-label="Enlarge figure — FLOW">
+            <img src="images/paper/FLOW.webp" alt="FLOW paper overview" width="1200" height="513" loading="lazy" decoding="async">
+          </button>
           <div class="pub-body">
             <div class="pub-meta">
               <span class="badge badge-venue">CVPR 2026</span>
-              <span class="badge-featured">Leading</span>
             </div>
-            <h3 class="pub-title">
-              <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_FLOW_Optimal_Transport-Driven_Feature_Warping_for_Generalized_Remote_Physiological_Measurement_CVPR_2026_paper.pdf" target="_blank" rel="noopener">FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement</a>
-            </h3>
-            <p class="pub-authors"><strong>Bo Zhao</strong>, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU†</p>
+            <h3 class="pub-title"><a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_FLOW_Optimal_Transport-Driven_Feature_Warping_for_Generalized_Remote_Physiological_Measurement_CVPR_2026_paper.pdf" target="_blank" rel="noopener">FLOW: Feature-Level Optimal Warping for Generalized Remote Physiological Measurement</a></h3>
+            <p class="pub-authors"><strong>Bo Zhao</strong>, Junzhe Cao, Dan Guo, Dongmin Huang, Wenjin Wang, Tao Tan, Yue Sun, Zitong YU<sup>†</sup></p>
             <p class="pub-summary">Feature-level optimal warping for generalized remote physiological measurement.</p>
             <div class="pub-links">
               <a class="pub-link" href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhao_FLOW_Optimal_Transport-Driven_Feature_Warping_for_Generalized_Remote_Physiological_Measurement_CVPR_2026_paper.pdf" target="_blank" rel="noopener">PDF <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -226,83 +228,74 @@
           </div>
         </article>
 
-        <article class="pub is-featured" data-tags="affect,mllm">
-          <div class="pub-media">
-            <img src="images/paper/AffectVerse.png" alt="AffectVerse paper overview" width="1400" height="657">
-          </div>
+        <article class="pub is-featured" id="pub-affectverse" data-tags="affect,mllm">
+          <button class="pub-media" type="button" aria-label="Enlarge figure — AffectVerse">
+            <img src="images/paper/AffectVerse.webp" alt="AffectVerse paper overview" width="1200" height="563" loading="lazy" decoding="async">
+          </button>
           <div class="pub-body">
             <div class="pub-meta">
-              <span class="badge badge-venue">NeurIPS 2026</span>
-              <span class="badge badge-status">Under Review</span>
-              <span class="badge-featured">Leading</span>
+              <span class="badge badge-venue">NeurIPS 2026</span> <span class="badge badge-status">Under Review</span>
             </div>
-            <h3 class="pub-title">
-              <a href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">AffectVerse: Emotional World Models for Multimodal Affective Computing</a>
-            </h3>
-            <p class="pub-authors"><strong>Bo Zhao*</strong>, Fanghua Ye*, Yixin Ji, Sicheng Zhao, Xiaojiang Peng, Zitong YU†</p>
+            <h3 class="pub-title"><a href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">AffectVerse: Emotional World Models for Multimodal Affective Computing</a></h3>
+            <p class="pub-authors"><strong>Bo Zhao<sup>*</sup></strong>, Fanghua Ye<sup>*</sup>, Yixin Ji, Sicheng Zhao, Xiaojiang Peng, Zitong YU<sup>†</sup></p>
             <p class="pub-summary">Emotional world models for multimodal affective computing.</p>
             <div class="pub-links">
-              <a class="pub-link" href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="pub-link" href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">PDF <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
         </article>
 
-        <article class="pub" data-tags="agent,mllm">
-          <div class="pub-media">
-            <img src="images/paper/Think Fast and Slow.png" alt="Think Fast and Slow paper overview" width="1230" height="576">
-          </div>
+        <article class="pub" id="pub-think-fast-slow" data-tags="agent,mllm">
+          <button class="pub-media" type="button" aria-label="Enlarge figure — Think Fast and Slow">
+            <img src="images/paper/Think Fast and Slow.webp" alt="Think Fast and Slow paper overview" width="1200" height="562" loading="lazy" decoding="async">
+          </button>
           <div class="pub-body">
             <div class="pub-meta">
               <span class="badge badge-venue">ICML 2026</span>
             </div>
-            <h3 class="pub-title">
-              <a href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener">Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents</a>
-            </h3>
+            <h3 class="pub-title"><a href="https://arxiv.org/pdf/2602.12662" target="_blank" rel="noopener">Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents</a></h3>
             <p class="pub-authors">Ruihan Yang, Fanghua Ye, Xiang Wei, Ruoqing Zhao, Kang Luo, Xinbo Xu, <strong>Bo Zhao</strong>, Ruotian Ma, Shanyi Wang, Zhaopeng Tu, Xiaolong Li, Deqing Yang, Linus</p>
             <p class="pub-summary">Adaptive cognitive-depth control for more efficient LLM agent reasoning.</p>
             <div class="pub-links">
-              <a class="pub-link" href="https://arxiv.org/abs/2602.12662" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="pub-link" href="https://arxiv.org/pdf/2602.12662" target="_blank" rel="noopener">PDF <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
         </article>
 
-        <article class="pub" data-tags="mllm">
-          <div class="pub-media">
-            <img src="images/paper/PCA.png" alt="PCA paper overview" width="1374" height="552">
-          </div>
+        <article class="pub" id="pub-pca" data-tags="mllm">
+          <button class="pub-media" type="button" aria-label="Enlarge figure — PCA">
+            <img src="images/paper/PCA.webp" alt="PCA paper overview" width="1200" height="482" loading="lazy" decoding="async">
+          </button>
           <div class="pub-body">
             <div class="pub-meta">
               <span class="badge badge-venue">ACM MM 2026</span>
             </div>
-            <h3 class="pub-title">
-              <a href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models</a>
-            </h3>
-            <p class="pub-authors">Zihan Song, Shuo Ye, <strong>Bo Zhao</strong>, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zitong YU†</p>
+            <h3 class="pub-title"><a href="https://arxiv.org/pdf/2607.22726" target="_blank" rel="noopener">PCA: Persistence-Aware Compression and Aggregation for Fast Video Large Language Models</a></h3>
+            <p class="pub-authors">Zihan Song, Shuo Ye, <strong>Bo Zhao</strong>, Ruixin Zhang, Jiayu Zhang, Shouhong Ding, Zitong YU<sup>†</sup></p>
             <p class="pub-summary">Persistence-aware compression and aggregation for fast video large language models.</p>
             <div class="pub-links">
-              <a class="pub-link" href="https://arxiv.org/pdf/2605.19950" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="pub-link" href="https://arxiv.org/pdf/2607.22726" target="_blank" rel="noopener">PDF <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
         </article>
 
-        <article class="pub" data-tags="affect,agent,mllm">
-          <div class="pub-media">
-            <img src="images/paper/AffectAgent.png" alt="AffectAgent paper overview" width="2056" height="924">
-          </div>
+        <article class="pub" id="pub-affectagent" data-tags="affect,agent,mllm">
+          <button class="pub-media" type="button" aria-label="Enlarge figure — AffectAgent">
+            <img src="images/paper/AffectAgent.webp" alt="AffectAgent paper overview" width="1200" height="539" loading="lazy" decoding="async">
+          </button>
           <div class="pub-body">
             <div class="pub-meta">
               <span class="badge badge-venue">ACM MM 2026</span>
             </div>
-            <h3 class="pub-title">
-              <a href="https://arxiv.org/abs/2604.12735" target="_blank" rel="noopener">AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition</a>
-            </h3>
-            <p class="pub-authors">Zeheng Wang, Zitong YU†, Yijie Zhu, <strong>Bo Zhao</strong>, Haochen Liang, Taorui Wang, Wei Xia, Jiayu Zhang, Zhishu Liu, Hui Ma, Fei Ma, Qi Tian</p>
+            <h3 class="pub-title"><a href="https://arxiv.org/pdf/2604.12735" target="_blank" rel="noopener">AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition</a></h3>
+            <p class="pub-authors">Zeheng Wang, Zitong YU<sup>†</sup>, Yijie Zhu, <strong>Bo Zhao</strong>, Haochen Liang, Taorui Wang, Wei Xia, Jiayu Zhang, Zhishu Liu, Hui Ma, Fei Ma, Qi Tian</p>
             <p class="pub-summary">Collaborative multi-agent reasoning for retrieval-augmented multimodal emotion recognition.</p>
             <div class="pub-links">
-              <a class="pub-link" href="https://arxiv.org/abs/2604.12735" target="_blank" rel="noopener">arXiv <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              <a class="pub-link" href="https://arxiv.org/pdf/2604.12735" target="_blank" rel="noopener">PDF <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
             </div>
           </div>
         </article>
+
       </div>
     </section>
 
@@ -318,7 +311,7 @@
       <div class="info-grid">
         <article class="info-card">
           <div class="logo-tile">
-            <img src="images/experience/cuhksz.png" alt="The Chinese University of Hong Kong, Shenzhen logo" width="1907" height="1532">
+            <img src="images/experience/cuhksz.webp" alt="The Chinese University of Hong Kong, Shenzhen logo" width="200" height="161" loading="lazy" decoding="async">
           </div>
           <div class="info-body">
             <h3 class="info-title">The Chinese University of Hong Kong, Shenzhen</h3>
@@ -329,7 +322,7 @@
 
         <article class="info-card">
           <div class="logo-tile">
-            <img src="images/experience/shandong.png" alt="Shandong University logo" width="1970" height="2004">
+            <img src="images/experience/shandong.webp" alt="Shandong University logo" width="200" height="203" loading="lazy" decoding="async">
           </div>
           <div class="info-body">
             <h3 class="info-title">Shandong University</h3>
@@ -352,7 +345,7 @@
       <div class="info-grid">
         <article class="info-card">
           <div class="logo-tile">
-            <img src="images/experience/gbu.png" alt="Great Bay University logo" width="644" height="589">
+            <img src="images/experience/gbu.webp" alt="Great Bay University logo" width="200" height="183" loading="lazy" decoding="async">
           </div>
           <div class="info-body">
             <h3 class="info-title">Great Bay University</h3>
@@ -363,7 +356,7 @@
 
         <article class="info-card">
           <div class="logo-tile">
-            <img src="images/experience/tencent.avif" alt="Tencent logo" width="1915" height="889">
+            <img src="images/experience/tencent.avif" alt="Tencent logo" width="1915" height="889" loading="lazy" decoding="async">
           </div>
           <div class="info-body">
             <h3 class="info-title">Tencent Technology (Shenzhen) Co., Ltd.</h3>
@@ -412,6 +405,13 @@
         </div>
       </div>
       <iframe class="cv-frame" src="CV.pdf?v=20260930d#view=FitH&amp;navpanes=0&amp;toolbar=1" title="Bo Zhao curriculum vitae"></iframe>
+    </div>
+  </div>
+
+  <div class="figure-modal" id="figure-modal" aria-hidden="true">
+    <div class="figure-dialog" role="dialog" aria-modal="true" aria-label="Paper figure">
+      <button class="figure-close" id="figure-close" type="button" aria-label="Close figure">×</button>
+      <img class="figure-image" id="figure-image" alt="">
     </div>
   </div>
 
@@ -495,6 +495,41 @@
       });
       document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape' && cvModal.classList.contains('is-open')) closeCv();
+      });
+
+      /* Paper figure zoom */
+      const figureModal = document.getElementById('figure-modal');
+      const figureImage = document.getElementById('figure-image');
+      const figureClose = document.getElementById('figure-close');
+      let lastFigure = null;
+
+      function closeFigure() {
+        figureModal.classList.remove('is-open');
+        figureModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lastFigure) lastFigure.focus();
+      }
+
+      document.querySelectorAll('.pub-media').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const img = button.querySelector('img');
+          if (!img) return;
+          lastFigure = button;
+          figureImage.src = img.currentSrc || img.src;
+          figureImage.alt = img.alt;
+          figureModal.classList.add('is-open');
+          figureModal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('modal-open');
+          setTimeout(function () { figureClose.focus(); }, 60);
+        });
+      });
+
+      figureClose.addEventListener('click', closeFigure);
+      figureModal.addEventListener('click', function (event) {
+        if (event.target === figureModal) closeFigure();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && figureModal.classList.contains('is-open')) closeFigure();
       });
 
       /* Publication filters */
