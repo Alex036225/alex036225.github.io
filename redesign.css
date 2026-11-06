@@ -244,7 +244,64 @@ body.is-redesign .pub-media:hover {
 body.is-redesign .pub-media:hover::after { color: var(--accent-ink); }
 
 /* --------------------------------------------------------------------------
-   4. Keep the editorial index intact on small screens
+   4. Education / Experience: finish what the redesign started.
+      These were still white rounded cards while News, Awards and
+      Publications had become ruled index rows.
+   -------------------------------------------------------------------------- */
+body.is-redesign .info-grid {
+  gap: 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+body.is-redesign .info-card {
+  align-items: flex-start;
+  gap: 18px;
+  padding: 24px 28px 24px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: background 0.18s ease;
+}
+
+body.is-redesign .info-card:hover {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+
+/* A single hairline between the two columns, like a printed spread */
+body.is-redesign .info-card:nth-child(even) {
+  border-left: 1px solid var(--line);
+  padding-left: 28px;
+}
+
+/* Logos sit directly on the paper instead of inside a grey app tile */
+body.is-redesign .logo-tile {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+body.is-redesign .info-title {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+body.is-redesign .meta-chip {
+  border-color: var(--line-strong);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. Keep the editorial index intact on small screens
    -------------------------------------------------------------------------- */
 @media (max-width: 760px) {
   body.is-redesign .pub {
@@ -267,6 +324,22 @@ body.is-redesign .pub-media:hover::after { color: var(--accent-ink); }
   }
 
   body.is-redesign .pub-title { font-size: 18px; }
+
+  /* One column: drop the divider and the column padding */
+  body.is-redesign .info-card,
+  body.is-redesign .info-card:nth-child(even) {
+    padding: 20px 2px;
+    border-left: 0;
+  }
+
+  body.is-redesign .logo-tile {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+
+  body.is-redesign .info-title { font-size: 15.5px; }
 }
 
 @media (max-width: 480px) {
